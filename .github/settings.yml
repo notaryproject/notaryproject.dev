@@ -10,7 +10,7 @@ repository:
   description:  Notary Project Website 
 
   # A URL with more information about the repository
-  homepage: https://notaryproject.dev/
+  homepage: https://notaryproject.dev
 
   # A comma-separated list of topics to set on the repository
   # topics: github, probot
@@ -71,6 +71,34 @@ labels:
   - name: e4-months
     description: "Effort: 1+ months"
     color: 996633
+  # Default new repo labels
+  - name: bug
+    description: "Something isn't working"
+    color: d73a4a
+  - name: documentation
+    description: Improvements or additions to documentation
+    color: 0075ca
+  - name: duplicate
+    description: This issue or pull request already exists
+    color: cfd3d7
+  - name: enhancement
+    description: New feature or request
+    color: a2eeef
+  - name: good first issue
+    description: Good for newcomers
+    color: 7057ff
+  - name: help wanted
+    description: Extra attention is needed
+    color: 008672
+  - name: invalid
+    description: "This doesn't seem right"
+    color: e4e669
+  - name: question
+    description: Further information is requested
+    color: d876e3
+  - name: wontfix
+    description: This will not be worked on
+    color: ffffff
 
 # Collaborators: give specific users access to this repository.
 # See https://developer.github.com/v3/repos/collaborators/#add-user-as-a-collaborator for available options
