@@ -111,8 +111,19 @@ collaborators:
     # * `maintain` - Recommended for project managers who need to manage the repository without access to sensitive or destructive actions.
     # * `triage` - Recommended for contributors who need to proactively manage issues and pull requests without write access.
 
+  # Admin
   - username: caniszczyk
     permission: admin
+
+  - username: celestehorgan
+    permission: admin
+
+  - username: SteveLasker
+    permission: admin
+
+  # Maintainers
+  - username: lachie83
+    permission: maintain
 
   - username: nate-double-u
     permission: maintain
