@@ -1,0 +1,45 @@
+---
+# TODO(chalin): drop the `title` field once Hugo is fixed to use the site title
+title: Notary Project
+# features:
+#  - title: Simple interface
+#    description: Read and write values using standard HTTP tools, such as curl
+#    icon: interface.svg
+#  - title: Key-value storage
+#    description: Store data in hierarchically organized directories, as in a standard filesystem
+#    icon: kv.svg
+#  - title: Watch for changes
+#    description: Watch specific keys or directories for changes and react to changes in values
+#    icon: watch.svg
+---
+
+{{< blocks/cover image_anchor="top" height="min" color="primary" >}}
+<img src="notary-horizontal-white.png" class="site-logo" />
+<h2 class="mt-4">
+  The Notary project comprises a server and a client for running and interacting
+with trusted collections.
+</h2>
+<div class="mt-5 mx-auto">
+  <a class="btn btn-lg btn-secondary mr-3 mb-4" href="/docs/{{< param versions.latest >}}/">
+    Learn more
+  </a>
+  <!--
+  <a class="btn btn-lg btn-primary mr-3 mb-4" href="/docs/{{< param versions.latest >}}/quickstart">
+    Quickstart<i class="fas fa-arrow-alt-circle-right ml-2"></i>
+  </a>
+  -->
+</div>
+{{< /blocks/cover >}}
+
+{{% blocks/lead color="white" %}}
+  <h1>What is Notary?</h1>
+  <p>
+    Notary v2 provides for multiple signatures of an <a href="https://github.com/opencontainers/artifacts">OCI Artifact</a> (including container images) to be persisted in an <a href="https://github.com/opencontainers/oci-conformance">OCI conformant</a> registry. Artifacts are signed (`nv2 sign`) with private keys, and validated with public keys (`nv2 verify`). To support user deployment flows, signing an OCI Artifact will not change the `@digest` or `artifact:tag` reference. To support content movement across multiple certification boundaries, artifacts and their signatures will be easily copied within and across <a href="https://github.com/opencontainers/oci-conformance">OCI conformant</a> registries.
+  </p>
+{{% /blocks/lead %}}
+
+<div class="container">
+  <!-- {{< home/features >}} -->
+  <!-- {{< home/used-by >}} -->
+  {{< home/cncf >}}
+</div>

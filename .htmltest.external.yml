@@ -1,0 +1,4 @@
+DirectoryPath: tmp/public
+IgnoreDirectoryMissingTrailingSlash: true
+IgnoreAltMissing: true
+IgnoreURLs: [example.com]
