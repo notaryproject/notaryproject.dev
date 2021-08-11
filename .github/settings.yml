@@ -118,10 +118,16 @@ collaborators:
   - username: celestehorgan
     permission: admin
 
+  - username: justincormack
+    permission: admin
+
   - username: SteveLasker
     permission: admin
 
   # Maintainers
+  - username: chalin
+    permission: maintain
+
   - username: lachie83
     permission: maintain
 
