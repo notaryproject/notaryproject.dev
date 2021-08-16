@@ -71,6 +71,21 @@ labels:
   - name: e4-months
     description: "Effort: 1+ months"
     color: 996633
+  - name: design
+    description: "Site design"
+    color: c5def5
+  - name: infrastructure
+    description: "Categorizes issue or PR as related to site infrastructure."
+    color: 696969
+  - name: ux 
+    color: 8719D2
+  - name: upstream
+    color: f5a4df
+  - name: blocked
+    color: B60205
+  - name: dependencies
+    description: "Pull requests that update a dependency file"
+    color: 0366d6
   # Default new repo labels
   - name: bug
     description: "Something isn't working"
