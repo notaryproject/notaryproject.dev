@@ -36,8 +36,8 @@ languages:
   en:
     title: Notary Project
     description: >-
-      A distributed, reliable key-value store for the most critical data of a
-      distributed system
+      The Notary project comprises a server and a client for running and
+      interacting with trusted collections.
     languageName: English
     contentDir: content/en
     weight: 1
