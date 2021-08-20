@@ -1,6 +1,6 @@
 ---
 title: Notary v2 Integrity Wrapper, Attested by an Entity
-decsciption: ""
+description: "Notary v2 signatures provide integrity validation, as attested by a given entity."
 weight: 1000
 ---
 
@@ -20,7 +20,7 @@ Signature validation is configured through policy, based on the configuration at
 
 ## Scenario 1: Redistribution
 
-Wabbit Networks produces several products whcih they publish on their company registry; registry.wabbit-networks.io.
+Wabbit Networks produces several products which they publish on their company registry; registry.wabbit-networks.io.
 When users download the `net-monitor:v1` image from the Wabbit Networks registry, the artifacts are signed by Wabbit Networks.
 Users may not know of Wabbit Networks, and may be concerned if the software contains malware.
 Although the artifacts, including the associated SBoM is signed by Wabbit Networks, they don't know if they can trust Wabbit Networks.
@@ -39,7 +39,7 @@ Developers and operations teams can only utilize content that has been blessed b
 
 As content is imported into an internally shared registry (`registry.acme-rockets.io/upstream/products`), the content is security scanned. The results of the security scans are associated with the artifact. If the scanner doesn't block the content due to critical vulnerabilities, the artifact is stamped with approval by adding a *acme-rockets-internally-approved* signature.
 
-> **TODO:** Insert image of the net-monitor software with a wabbit-netowrks SBoM and Signature, then another with the scan results, signed and the approved Acme Rockets signature.
+> **TODO:** Insert image of the net-monitor software with a wabbit-networks SBoM and Signature, then another with the scan results, signed and the approved Acme Rockets signature.
 
 [docker-hub]:               https://hub.docker.com/
 [net-monitor-on-hub]:       https://hub.docker.com/r/wabbitnetworks/net-monitor
