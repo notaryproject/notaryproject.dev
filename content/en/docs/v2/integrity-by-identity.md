@@ -1,4 +1,8 @@
-# Notary v2 Integrity Wrapper, Attested by an Entity
+---
+title: Notary v2 Integrity Wrapper, Attested by an Entity
+decsciption: ""
+weight: 1000
+---
 
 Notary v2 signatures provide integrity validation, as attested by a given entity.
 As content is copied within and across registries, consumers want to know the artifact's integrity remains intact, based on the signature of an entity the user trusts.
