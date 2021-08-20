@@ -1,6 +1,6 @@
 ---
 title: Notary v2 Trojan Horse Validation
-decsciption: "Notary v2 protects from Trojan Horse exploits by validating signatures independently from the artifact."
+description: "Notary v2 protects from Trojan Horse exploits by validating signatures independently from the artifact."
 weight: 1000
 ---
 
