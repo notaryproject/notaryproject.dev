@@ -1,5 +1,5 @@
 ---
-title: v1 docs
+title: Notary docs
 cascade:
   version: &vers v1
   git_version_tag: v1

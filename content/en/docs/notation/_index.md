@@ -1,5 +1,5 @@
 ---
-title: v2 docs
+title: Notation docs
 cascade:
   version: v2
   versName: &name v2
