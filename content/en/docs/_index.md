@@ -1,6 +1,6 @@
 ---
-title: Documentation versions
-linkTitle: Versions
+title: Projects Documentation
+linkTitle: Documentation
 simple_list: true
 # TODO(chalin): disable breadcrumbs for this page
 ---
