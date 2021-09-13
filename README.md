@@ -39,12 +39,6 @@ $ npm run ci-check-links
 > **Note**: If you have `htmltest` in our path, you can run the `check-links`
 > script instead.
 
-You can also locally serve using [Docker](https://docker.com):
-
-```console
-$ make docker-serve
-```
-
 # License
 
 notaryproject.dev is licensed under an [Apache 2.0 license](./LICENSE).
@@ -53,3 +47,10 @@ The Notary Project documentation (e.g., `.md` files in the `/content/docs` folde
 
 The notaryproject.dev site uses [Docsy](https://www.docsy.dev/), and was cloned from the [etcd-io/website](https://github.com/etcd-io/website/) repo to capture CNCF specific edits.
 
+[Docsy]: https://www.docsy.dev
+[Hugo]: https://gohugo.io
+[localhost:8888]: http://localhost:8888
+[LTS release]: https://nodejs.org/en/about/releases/
+[Netlify]: https://netlify.com
+[notaryproject.dev]: https://notaryproject.dev/
+[nvm]: https://github.com/nvm-sh/nvm/blob/master/README.md#installing-and-updating
