@@ -37,7 +37,7 @@ Future versions of Notation will include:
 
 ## Getting Started
 
-Here are some resources to help get started with Notation and Notary V2
+Here are some resources to help get started with Notation and Notary V2:
 
 - [Notation CLI Alpha 1 release][notation-release]
 - [Notation Quick Start](https://github.com/notaryproject/notation#notation-quick-start)
