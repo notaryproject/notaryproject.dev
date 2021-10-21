@@ -12,7 +12,7 @@ As artifacts get promoted, users/entities may add new signatures, attesting to t
 
 Through signing, users choose the artifacts they trust, from the entities they trust, [decoupling location from identity](https://stevelasker.blog/2021/09/24/separating-identity-from-location/).
 
-![](../announcing-notation-alpha1/artifact-promotion.svg)
+![](./announcing-notation-alpha1/artifact-promotion.svg)
 
 ## Features
 
