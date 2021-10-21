@@ -1,15 +1,14 @@
 ---
-title: Announcing notation alpha 1
-spelling: cSpell:ignore
+title: Announcing Notary v2 alpha 1
 author:  "[Steve Lasker](https://github.com/stevelasker), Microsoft Azure"
 date: 2021-10-20
 draft: false
 ---
 
 We are happy to announce the [alpha 1 release][notation-release] of the [Notary v2 project][notary-v2].
-Notary v2 enables signing of all artifacts (Container Images, Software Bill of Materials, Scan Results) stored in an [OCI Distribution][oci-distribution] based registries.
-A key tenant of Notary v2 enables promotion of signed artifacts within and across registries, including air-gapped and private network environments.
-As artifacts are promoted, users/entities may add new signatures, attesting to the validity of the content for the target environment, enabling a secure supply chain workflow.
+Notary v2 enables signing of all artifacts (Container Images, Software Bill of Materials, Scan Results) stored in an [OCI Distribution][oci-distribution] based registries, with [oras artifacts spec][oras-artifacts] enhancements.
+A key tenant of Notary v2 is that it enables promotion of signed artifacts within and across registries, including air-gapped and private network environments.
+As artifacts get promoted, users/entities may add new signatures, attesting to the validity of the content for the target environment, enabling a secure supply chain workflow.
 
 Through signing, users choose the artifacts they trust, from the entities they trust, [decoupling location from identity](https://stevelasker.blog/2021/09/24/separating-identity-from-location/).
 
@@ -17,14 +16,14 @@ Through signing, users choose the artifacts they trust, from the entities they t
 
 ## Features
 
-The [notation alpha 1 release][notation-release] supports the following [Notary v2 goals][notary-v2-goals]:
+The [Notation alpha 1 release][notation-release] supports the following [Notary v2 goals][notary-v2-goals]:
 - Offline signature creation
 - Signatures attesting to authenticity and/or certification
 - Maintain the original artifact digest and collection of associated tags, supporting existing dev through deployment workflows
 - Multiple signatures per artifact, enabling the originating vendor signature, public registry certification and user/environment signatures
-- Signature persistance within an [OCI Artifact][oci-artifacts] enabled, [distribution-spec][oci-distribution] based registry, with the [oras artifacts spec][oras-artifacts] enhancements.
+- Signature persistance within an [OCI Artifact][oci-artifacts] enabled, [distribution-spec][oci-distribution] based registry, with [oras artifacts spec][oras-artifacts] enhancements
 - Air-gapped environments, where the originating registry of content is not accessible
-- Artifact and signature copying within and across [OCI Artifact][oci-artifacts] enabled, [distribution-spec][distribution-spec] based registries, using [oras copy][oras-copy]
+- Artifact and signature copying within and across [OCI Artifact][oci-artifacts] enabled, [distribution-spec][distribution-spec] based registries
 - Verification of signatures, through a configuration based policy
 
 Future versions of Notary v2 will support:
