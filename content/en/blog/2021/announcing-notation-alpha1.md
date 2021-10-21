@@ -25,10 +25,10 @@ The [Notation alpha 1 release][notation-release] supports the following [Notary 
 - Multiple signatures per artifact, enabling the originating vendor signature, public registry certification and user/environment signatures
 - Signature persistance within an [OCI Artifact][oci-artifacts] enabled, [distribution-spec][oci-distribution] based registry, with [oras artifacts spec][oras-artifacts] enhancements
 - Air-gapped environments, where the originating registry of content is not accessible
-- Artifact and signature copying within and across [OCI Artifact][oci-artifacts] enabled, [distribution-spec][distribution-spec] based registries
+- Artifact and signature copying within and across [OCI Artifact][oci-artifacts] enabled, [distribution-spec][oci-distribution] based registries
 - Verification of signatures, through a configuration based policy
 
-Future versions of Notary v2 will support:
+Future versions of Notation will include:
 
 - Key hierarchies and delegation
 - Key revocation, including private and air-gapped registries
@@ -36,6 +36,8 @@ Future versions of Notary v2 will support:
 - OCI Distribution 1.0 support
 
 ## Getting Started
+
+Here are some resources to help get started with Notation and Notary V2
 
 - [Notation CLI Alpha 1 release][notation-release]
 - [Notation Quick Start](https://github.com/notaryproject/notation#notation-quick-start)
