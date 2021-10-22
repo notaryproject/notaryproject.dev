@@ -16,7 +16,15 @@ Through signing, users choose the artifacts they trust, from the entities they t
 
 ![](../announcing-notation-alpha1/artifact-promotion.svg)
 
-## Features
+## Sign & Verify
+
+![](../announcing-notation-alpha1/sign-verify.gif)
+
+## Add and sign an SBOM and Snyk Scan Result, and Promote to a Private Registry
+
+![](../announcing-notation-alpha1/additional-objects.gif)
+
+## Notation Alpha 1 Features
 
 The [Notation alpha 1 release][notation-release] supports the following [Notary v2 goals][notary-v2-goals]:
 - Offline signature creation
@@ -30,8 +38,7 @@ The [Notation alpha 1 release][notation-release] supports the following [Notary 
 
 Future versions of Notation will include:
 
-- Key hierarchies and delegation
-- Key revocation, including private and air-gapped registries
+- Certificate revocation
 - Verification through policy, enabling environment specific validations
 - OCI Distribution 1.0 support
 
