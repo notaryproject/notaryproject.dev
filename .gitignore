@@ -11,3 +11,4 @@ tmp/
 
 # Local Netlify folder
 .netlify
+package.json

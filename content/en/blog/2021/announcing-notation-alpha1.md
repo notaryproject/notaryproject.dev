@@ -16,11 +16,11 @@ Through signing, users choose the artifacts they trust, from the entities they t
 
 ![](../announcing-notation-alpha1/artifact-promotion.svg)
 
-## Sign & Verify
+### Sign & Verify
 
 ![](../announcing-notation-alpha1/sign-verify.gif)
 
-## Add and sign an SBOM and Snyk Scan Result, and Promote to a Private Registry
+### Add and sign an SBOM and Snyk Scan Result, and Promote to a Private Registry
 
 ![](../announcing-notation-alpha1/additional-objects.gif)
 
