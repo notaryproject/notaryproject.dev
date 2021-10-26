@@ -10,7 +10,7 @@ Notary v1, otherwise known as Docker Content Trust, was released at at a time wh
 At KubeCon EU 2019, container image signing was the main topic of interest for a small group in the community. By December 2019, a [multi-cloud, multi-vendor meeting kicked off Notary v2](https://github.com/notaryproject/meeting-notes/blob/main/meeting-notes-2019.md), as it was clear the time had come to solve the container image signing problem.
 Since 2019, multiple prototypes have been built validating the intended experiences around the [Notary v2 goals][notary-v2-goals], including how The Update Framework meta-data can be partitioned, supporting content promotion.
 
-***Today, we are happy to announce the [alpha 1 release][notation-release] of the [Notary v2 project][notary-v2] is ready for your feedback.***
+***Today, we are happy to announce the [alpha 1 release][notaryv2-release] of the [Notary v2 project][notary-v2] is ready for your feedback.***
 
 Notary v2 enables signing of all artifacts (Container Images, Software Bill of Materials, Scan Results) stored in [OCI Distribution][oci-distribution] based registries, with [oras artifacts spec][oras-artifacts] enhancements.
 A key tenant of Notary v2 is that it enables promotion of signed artifacts within and across registries, including air-gapped and private network environments.
@@ -121,6 +121,7 @@ Here are some resources to help get started with Notation and Notary V2:
 [notary-v2]:              https://github.com/notaryproject/notaryproject/
 [notary-v2-goals]:        https://github.com/notaryproject/notaryproject/blob/main/requirements.md#goals
 [notation-release]:       https://github.com/notaryproject/notation/releases/tag/v0.7.0-alpha.1
+[notaryv2-release]:       https://github.com/notaryproject/roadmap/blob/main/RELEASENOTES/v2.0.0.alpha-1.MD
 [notation-lib-release]:   https://github.com/notaryproject/notation-go-lib/releases/tag/v0.7.0-alpha.1
 [notary-v2-specs]:        https://github.com/notaryproject/notaryproject/releases/tag/v1.0.0-draft.1
 [oci-distribution]:       https://github.com/opencontainers/distribution-spec
