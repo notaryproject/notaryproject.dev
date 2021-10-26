@@ -5,7 +5,7 @@ date: 2021-10-20
 draft: false
 ---
 
-Notary v1, otherwise known as Docker Content Trust, was released at at a time when there was one primary registry; Docker hub. A lot has changed since then, and some design choices around Trust on First Use (TOFU), key management and a lack of content promotion within and across registries became limiting factors of Docker Content Trust and Notary v1.
+Notary v1, otherwise known as Docker Content Trust, was released at at a time when there was one primary registry: Docker Hub. A lot has changed since then, some design choices around Trust on First Use (TOFU), key management, and a lack of content promotion within and across registries have become limiting factors for Docker Content Trust and Notary v1.
 
 At KubeCon EU 2019, container image signing was the topic of small group of the community. By December 2019, a [multi-cloud, multi-vendor meeting kicked off Notary v2](https://github.com/notaryproject/meeting-notes/blob/main/meeting-notes-2019.md), as it was clear the time had come to solve the container image signing problem. Since 2019, multiple prototypes have been built validating the intended experiences around the [Notary v2 goals][notary-v2-goals], including how The Update Framework meta-data can be partitioned, supporting content promotion.
 
