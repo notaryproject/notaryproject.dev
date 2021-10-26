@@ -15,7 +15,7 @@ Since 2019, multiple prototypes have been built validating the intended experien
 Notary v2 enables signing of all artifacts (Container Images, Software Bill of Materials, Scan Results) stored in [OCI Distribution][oci-distribution] based registries, with [oras artifacts spec][oras-artifacts] enhancements.
 A key tenant of Notary v2 is that it enables promotion of signed artifacts within and across registries, including air-gapped and private network environments.
 
-![](./announcing-notation-alpha1/artifact-promotion.svg)
+![](../announcing-notation-alpha1/artifact-promotion.svg)
 
 In addition to signature promotion, Notary v2 focuses on ease of use, with minimal dependencies. While Notary v2 can integrate with other supply chain efforts, there are no additional services required to sign or validate an artifact.
 As artifacts get promoted, users/entities may add new signatures, attesting to the validity of the content for the target environment, enabling a secure supply chain workflow.
@@ -39,7 +39,7 @@ notation sign $IMAGE
 notation cert add --name "wabbit-networks.io" ~/.config/notation/certificate/wabbit-networks.io.crt
 notation verify $IMAGE
 ```
-![](./announcing-notation-alpha1/sign-verify.gif)
+![](../announcing-notation-alpha1/sign-verify.gif)
 
 ### Add and Sign other Supply Chain Artifacts
 
@@ -89,7 +89,7 @@ curl $PRIVATE_REGISTRY/v2/net-monitor/tags/list | jq
 oras discover -o tree $PRIVATE_IMAGE
 ```
 
-![](./announcing-notation-alpha1/additional-objects.gif)
+![](../announcing-notation-alpha1/additional-objects.gif)
 
 ## Notation Alpha 1 Features
 
