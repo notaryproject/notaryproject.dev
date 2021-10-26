@@ -108,7 +108,7 @@ Future versions of Notation will include:
 - Certificate revocation
 - Verification through policy, enabling environment specific validations
 - OCI Distribution 1.0 support (registries that don't yet support the oras artifacts spec enhancements)
-- TUF meta-data support
+- TUF meta-data support, enabling compromise resilience, revocation of keys and artifacts, and timeliness guarantees
 
 ## Getting Started
 
