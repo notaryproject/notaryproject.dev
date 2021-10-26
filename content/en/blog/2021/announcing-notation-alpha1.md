@@ -1,7 +1,7 @@
 ---
 title: Announcing Notary v2 alpha 1
 author:  "[Steve Lasker](https://github.com/stevelasker), Microsoft Azure"
-date: 2021-10-20
+date: 2021-10-26
 draft: false
 ---
 
