@@ -27,11 +27,11 @@ The Notary v2 Alpha includes the following releases:
 - [notation-go-lib][notation-lib-release] - a set of go libraries that may be incorporated into other tools, providing sign, configuration and verify capabilities.
 - [notary v2 specs][notary-v2-specs] - providing the specifications, such as [signature specification](https://github.com/notaryproject/notaryproject/blob/main/signature-specification.md)
 
-To get a sense for how users can use, we'll walk through a few quick examples.
+To get a sense for how users can use the notation cli, we'll walk through a few quick examples.
 
 ### Sign & Verify
 
-Signing and verify with notation is as simple as:
+Signing and verification with the notation cli is as simple as:
 ```bash
 export IMAGE=localhost:5000/net-monitor:v1
 notation cert generate-test --default "wabbit-networks.io"
@@ -43,7 +43,7 @@ notation verify $IMAGE
 
 ### Add and Sign other Supply Chain Artifacts
 
-Notary v2 supports signing any artifacts stored in a registry, including SBOMs and Scan Results:
+Notary v2 supports signing any artifacts stored in a registry, including SBOMs and Scan Results. Using [notation-go-lib][notation-lib-release], tooling may incorporate these capabilities directly into various artifact clis.
 ```bash
 export PRIVATE_REGISTRY=localhost:5050
 export PRIVATE_REPO=${PRIVATE_REGISTRY}/net-monitor
@@ -98,16 +98,16 @@ The [Notation alpha 1 release][notation-release] supports the following [Notary 
 - Signatures attesting to authenticity and/or certification
 - Maintain the original artifact digest and collection of associated tags, supporting existing dev through deployment workflows
 - Multiple signatures per artifact, enabling the originating vendor signature, public registry certification and user/environment signatures
-- Signature persistance within an [OCI Artifact][oci-artifacts] enabled, [distribution-spec][oci-distribution] based registry, with [oras artifacts spec][oras-artifacts] enhancements
+- Signature persistance within an [OCI distribution-spec][oci-distribution] based registry, with [oras artifacts spec][oras-artifacts] enhancements
 - Air-gapped environments, where the originating registry of content is not accessible
-- Artifact and signature copying within and across [OCI Artifact][oci-artifacts] enabled, [distribution-spec][oci-distribution] based registries
+- Artifact and signature copying within and across [OCI distribution-spec][oci-distribution] based registries, with [oras artifacts spec][oras-artifacts] enhancements
 - Verification of signatures, through a configuration based policy
 
 Future versions of Notation will include:
 
 - Certificate revocation
 - Verification through policy, enabling environment specific validations
-- OCI Distribution 1.0 support
+- OCI Distribution 1.0 support (registries that don't yet support the oras artifacts spec enhancements)
 - TUF meta-data support
 
 ## Getting Started
