@@ -44,24 +44,11 @@ menu:
 
 ## Community meetings
 
-### Notation
-
-Notation contributors and maintainers meet [online][] every week, on **Wednesday
-at 1400** [UTC][].
-
-For phone-in information, the date of the next meeting, and minutes from past
-meetings, see [Notary Project community meeting][notary-v2-meeting-doc].
-
-### TUF - Notary
-
-TUF-Notary contributors and maintainers meet [online][] every week, on **Thursday
-at 1700** [UTC][].
-
-For phone-in information, the date of the next meeting, and minutes from past
-meetings, see [TUF-notary community meeting][tuf-meeting-doc].
-
-
 {{% cards "community_resources" %}}
+
+### CNCF Public Events Calendar
+
+<iframe src="https://tockify.com/cncf.public.events/monthly?search=Notary" width="740" height="880" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 
 ## Contributing
 
