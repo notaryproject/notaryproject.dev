@@ -13,7 +13,7 @@ Since 2019, multiple prototypes have been built validating the intended experien
 ***Today, we are happy to announce the [alpha 1 release][notary-v2-release] of the [Notary v2 project][notary-v2] is ready for your feedback.***
 
 Notary v2 enables signing of all artifacts (Container Images, Software Bill of Materials, Scan Results) stored in [OCI Distribution][oci-distribution] based registries, with [ORAS artifacts spec][oras-artifacts] enhancements.
-A key tenant of Notary v2 is that it enables promotion of signed artifacts within and across registries, including air-gapped and private network environments.
+A key tenet of Notary v2 is that it enables promotion of signed artifacts within and across registries, including air-gapped and private network environments.
 
 ![Graphic demonstrating promotion of an artifact, including building, importing, and deploying it](../announcing-notation-alpha1/artifact-promotion.svg)
 
