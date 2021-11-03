@@ -9,4 +9,3 @@ Welcome to the docs for the Notary Project! Documentation for the following proj
 
 <!-- TODO: Replace versions shortcode -->
 <!-- {{ < versions > }} -->
-
