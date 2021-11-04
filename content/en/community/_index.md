@@ -19,6 +19,8 @@ community_resources:
       for meeting videos.
 menu:
   main:
+    name: Community
+    weight: -30
 ---
 
 {{< blocks/cover color="primary" height="sm" >}}
