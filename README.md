@@ -36,7 +36,7 @@ $ npm run build
 $ npm run check-links
 ```
 
-# License
+## License
 
 notaryproject.dev is licensed under an [Apache 2.0 license](./LICENSE).
 
