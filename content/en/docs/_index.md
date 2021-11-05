@@ -1,7 +1,7 @@
 ---
 title: Projects Documentation
 linkTitle: Documentation
-simple_list: true
+simple_list: false
 # TODO(chalin): disable breadcrumbs for this page
 ---
 
