@@ -172,9 +172,17 @@ outputs:
 menu:
   main:
     - name: Docs
-      url: /docs/latest/
-      weight: -10
+      url: /docs/
+      weight: -60
+    - name: Specifications
+      url: https://github.com/notaryproject/notaryproject
+      weight: -50
     - name: Blog
       url: /blog/
-    # - name: Install
-    #   url: /docs/latest/install/
+      weight: -40
+    - name: Roadmap
+      url: https://github.com/notaryproject/roadmap
+      weight: -20
+    - name: Notary (historic docs)
+      url: https://github.com/notaryproject/notary/tree/master/docs
+      weight: -10
