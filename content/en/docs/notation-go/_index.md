@@ -1,6 +1,6 @@
 ---
 title: Notation-go
 simple_list: true
-weight: -100
+weight: 200
 ---
 
