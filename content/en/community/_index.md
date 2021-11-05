@@ -48,6 +48,8 @@ menu:
 
 {{% cards "community_resources" %}}
 
+[Meeting Notes Archive](./meeting-notes)
+
 ### CNCF Public Events Calendar
 
 <iframe src="https://tockify.com/cncf.public.events/monthly?search=Notary" width="740" height="880" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
