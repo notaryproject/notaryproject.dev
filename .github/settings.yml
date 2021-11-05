@@ -139,6 +139,9 @@ collaborators:
   - username: SteveLasker
     permission: admin
 
+  - username: mnm678
+    permission: admin
+
   # Maintainers
   - username: chalin
     permission: maintain
