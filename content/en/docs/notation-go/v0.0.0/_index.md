@@ -1,5 +1,5 @@
 ---
-title: Notary docs
+title: Notation-go
 cascade:
   version: &vers v0.0.0
   git_version_tag: v0.0.0
