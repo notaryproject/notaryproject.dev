@@ -19,6 +19,8 @@ community_resources:
       for meeting videos.
 menu:
   main:
+    name: Community
+    weight: -30
 ---
 
 {{< blocks/cover color="primary" height="sm" >}}
@@ -45,6 +47,8 @@ menu:
 ## Community meetings
 
 {{% cards "community_resources" %}}
+
+[Meeting Notes Archive](./meeting-notes)
 
 ### CNCF Public Events Calendar
 
