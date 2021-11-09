@@ -80,15 +80,15 @@ params:
 
   # Menu title if your navbar has a versions selector to access old versions of your site.
   # This menu appears only if you have at least one [params.versions] set.
-  version_menu: Versions
-  versions:
-    latest: v2
-    all:
-      - v2
-      - v1
-    deprecation_warning: |-
-      the documentation is no longer actively maintained.
-        The page that you are viewing is the last archived version.
+  # version_menu: Versions
+  # versions:
+    # latest: v2
+    # all:
+      # - v2
+      # - v1
+    # deprecation_warning: |-
+      # the documentation is no longer actively maintained.
+      # The page that you are viewing is the last archived version.
 
   # User interface configuration
   ui:
