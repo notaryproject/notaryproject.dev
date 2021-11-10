@@ -40,7 +40,7 @@ $ npm run check-links
 
 ### Cloud IDE
 
-This repository has been setup to use a [Gitpod.io](https://gitpod.io) remote development environment. The [https://gitpod.io/#https://github.com/notaryproject/notaryproject.dev](https://gitpod.io/#https://github.com/notaryproject/notaryproject.dev) link has been setup to launch a full blown editor and preview environment for the [NotaryProject.dev](https://notaryproject.dev) site.
+This repository has been setup to use a [Gitpod.io](https://gitpod.io) remote development environment. The for example, visiting [https://gitpod.io/#https://github.com/notaryproject/notaryproject.dev](https://gitpod.io/#https://github.com/notaryproject/notaryproject.dev) launches an in browser editor and preview environment for the [NotaryProject.dev](https://notaryproject.dev) site.
 
 # License
 
