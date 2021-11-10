@@ -23,6 +23,8 @@ $ nvm install --lts
 
 ## Build or serve the site
 
+### Locally
+
 To locally serve the site at [localhost:8888][], run the following command:
 
 ```console
@@ -35,6 +37,10 @@ To build and check links, run these commands:
 $ npm run build
 $ npm run check-links
 ```
+
+### Cloud IDE
+
+This repository has been setup to use a [Gitpod.io](https://gitpod.io) remote development environment. The [https://gitpod.io/#https://github.com/notaryproject/notaryproject.dev](https://gitpod.io/#https://github.com/notaryproject/notaryproject.dev) link has been setup to launch a full blown editor and preview environment for the [NotaryProject.dev](https://notaryproject.dev) site.
 
 # License
 
