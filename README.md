@@ -4,7 +4,11 @@ The [notaryproject.dev][] website, built using [Hugo][] and hosted on [Netlify][
 
 ## Build prerequisites
 
-### Local
+### Cloud build
+
+Visit [https://gitpod.io/#https://github.com/notaryproject/notaryproject.dev](https://gitpod.io/#https://github.com/notaryproject/notaryproject.dev) to launch a [Gitpod.io](https://gitpod.io) IDE that will allow you to build, preview and make changes to this repo.
+
+### Local build
 
 To build and serve the site, you'll need the latest [LTS release][] of **Node**.
 Like Netlify, we use **[nvm][]**, the Node Version Manager, to install and
@@ -37,10 +41,6 @@ To build and check links, run these commands:
 $ npm run build
 $ npm run check-links
 ```
-
-### Cloud IDE
-
-This repository has been setup to use a [Gitpod.io](https://gitpod.io) remote development environment. The for example, visiting [https://gitpod.io/#https://github.com/notaryproject/notaryproject.dev](https://gitpod.io/#https://github.com/notaryproject/notaryproject.dev) launches an in browser editor and preview environment for the [NotaryProject.dev](https://notaryproject.dev) site.
 
 # License
 
