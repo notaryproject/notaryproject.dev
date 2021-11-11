@@ -2,7 +2,11 @@
 
 The [notaryproject.dev][] website, built using [Hugo][] and hosted on [Netlify][].
 
-## Build prerequisites
+## Cloud build
+
+Visit [https://gitpod.io/#https://github.com/notaryproject/notaryproject.dev](https://gitpod.io/#https://github.com/notaryproject/notaryproject.dev) to launch a [Gitpod.io](https://gitpod.io) IDE that will allow you to build, preview and make changes to this repo.
+
+## Local build
 
 To build and serve the site, you'll need the latest [LTS release][] of **Node**.
 Like Netlify, we use **[nvm][]**, the Node Version Manager, to install and
@@ -12,7 +16,7 @@ manage Node versions:
 $ nvm install --lts
 ```
 
-## Setup
+### Setup
 
  1. Clone this repo.
  2. From a terminal window, change to the cloned repo directory.
@@ -21,7 +25,7 @@ $ nvm install --lts
     $ npm install
     ```
 
-## Build or serve the site
+### Build or serve the site
 
 To locally serve the site at [localhost:8888][], run the following command:
 
