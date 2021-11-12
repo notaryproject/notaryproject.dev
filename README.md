@@ -40,13 +40,11 @@ $ npm run build
 $ npm run check-links
 ```
 
-# License
+## License
 
 notaryproject.dev is licensed under an [Apache 2.0 license](./LICENSE).
 
 The Notary Project documentation (e.g., `.md` files in the `/content/docs` folder) is licensed under a [CC-BY-4.0 license](./LICENSE).
-
-The notaryproject.dev site uses [Docsy](https://www.docsy.dev/), and was cloned from the [etcd-io/website](https://github.com/etcd-io/website/) repo to capture CNCF specific edits.
 
 [Docsy]: https://www.docsy.dev
 [Hugo]: https://gohugo.io
