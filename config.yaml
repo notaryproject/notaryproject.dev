@@ -150,6 +150,9 @@ params:
       - name: notaryproject.dev on GitHub
         url: https://github.com/notaryproject/notaryproject.dev
         icon: fab fa-github
+      - name: Notary v2 Conversations on Slack
+        url: https://app.slack.com/client/T08PSQ7BQ/CQUH8U287/thread/CEX1W7WMD-1582660575.076600
+        icon: fab fa-slack    
   # [params.logos]
   hero: >-
     https://github.com/cncf/artwork/raw/master/projects/notary/horizontal/white/notary-horizontal-white.png
