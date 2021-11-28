@@ -1,7 +1,9 @@
 ---
 title: Projects Documentation
-linkTitle: Documentation
+linkTitle: Docs
 simple_list: false
+menu:
+  main: {weight: -60}
 # TODO(chalin): disable breadcrumbs for this page
 ---
 

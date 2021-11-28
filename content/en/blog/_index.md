@@ -1,5 +1,8 @@
 ---
 title: Blog
+linkTitle: Blog
+menu:
+  main: {weight: -40}
 description: News, updates, release announcements, and more
 # Notes:
 # - Place blog entries under a folder corresponding to the year of publication.
