@@ -5,8 +5,6 @@ simple_list: true
 weight: 100
 ---
 
-# Discovery and Configuration for Notation Verification
-
 Notary v2 is a opt-in model for what identities are trusted for a set of artifacts.
 This is contrast to Docker Content Trust ([Notary v1][notary-v1]) which implemented a Trust on First Use ([TOFU][tofu]) model, where the public key was automatically acquired and configured.
 
