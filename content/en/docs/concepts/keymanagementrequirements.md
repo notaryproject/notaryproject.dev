@@ -1,6 +1,6 @@
 ---
 title: "Key management requirements"
-description: "Collection of requirements for key management with Notary v2"
+description: "Collection of requirements for key management with Notary"
 type: docs
 weight: 6
 ---

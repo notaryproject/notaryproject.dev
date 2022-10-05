@@ -1,6 +1,6 @@
 ---
 title: "Threat model"
-description: "Outline of the thread model addressed by Notary v2"
+description: "Outline of the thread model addressed by Notary"
 type: docs
 weight: 6
 ---

@@ -5,17 +5,17 @@ type: docs
 weight: 6
 ---
 
-This document provides the following details for Notary v2 signatures:
+This document provides the following details for Notary signatures:
 
 - **[Storage](#storage)**: Describes how signatures are stored and retrieved from an OCI registry.
-- **[Signature Envelope](#signature-envelope)**: Describes the structure of a Notary v2 signature.
+- **[Signature Envelope](#signature-envelope)**: Describes the structure of a Notary signature.
 
 ## Storage
 
-This section describes how Notary v2 signatures are stored in the OCI Distribution conformant registry.
-Notary v2 uses [ORAS artifact manifest][oras-artifact-manifest] to store the signature in the repository.
+This section describes how Notary signatures are stored in the OCI Distribution conformant registry.
+Notary uses [ORAS artifact manifest][oras-artifact-manifest] to store the signature in the repository.
 The media type of the signature manifest is `application/vnd.cncf.oras.artifact.manifest.v1+json`.
-The signature manifest has an artifact type that specifies it's a Notary V2 signature, a reference to the manifest of the artifact being signed, a blob referencing the signature, and a collection of annotations.
+The signature manifest has an artifact type that specifies it's a Notary signature, a reference to the manifest of the artifact being signed, a blob referencing the signature, and a collection of annotations.
 
 ![Signature storage inside registry](/docs/signature-specification.svg)
 
@@ -64,8 +64,8 @@ Each Notary signature artifact refers to a signature envelope blob.
 
 ### Signature Filtering
 
-An OCI artifact can have multiple signatures, Notary v2 uses annotations of the signature artifact to filter relevant signatures based on the applicable trust policy.
-The Notary v2 signature artifact's `io.cncf.notary.x509chain.thumbprint#S256` annotations key MUST contain the list of SHA-256 fingerprints of certificate and certificate chain used for signing.
+An OCI artifact can have multiple signatures, Notary uses annotations of the signature artifact to filter relevant signatures based on the applicable trust policy.
+The Notary signature artifact's `io.cncf.notary.x509chain.thumbprint#S256` annotations key MUST contain the list of SHA-256 fingerprints of certificate and certificate chain used for signing.
 
 ## Signature Envelope
 
@@ -79,19 +79,19 @@ A signature envelope consists of the following components:
 
 A signature envelope is `e = {m, v, u, s}` where `s` is signature.
 
-This specification defines the set of signed and unsigned attributes that make up a valid The Notary v2 signature. This specification aims to be be agnostic of signature envelope format (e.g. COSE, JWS), details of encoding the envelope in a specific signature envelope format are covered in in separate specs.
+This specification defines the set of signed and unsigned attributes that make up a valid The Notary signature. This specification aims to be be agnostic of signature envelope format (e.g. COSE, JWS), details of encoding the envelope in a specific signature envelope format are covered in in separate specs.
 
-Notary v2 supports the following envelope formats:
+Notary supports the following envelope formats:
 
 - [JWS]({{< ref "/docs/concepts/signature-envelope-jws" >}})
 
 ### Payload
 
-Notary v2 payload is a JSON document with media type `application/vnd.cncf.notary.payload.v1+json` and has following properties.
+Notary payload is a JSON document with media type `application/vnd.cncf.notary.payload.v1+json` and has following properties.
 
 - `targetArtifact` : Required property whose value is the descriptor of the target artifact manifest that is being signed. Both [OCI descriptor][oci-descriptor] and [ORAS artifact descriptors][artifact-descriptor] are supported.
   - Descriptor MUST contain `mediaType`, `digest`, `size` fields.
-  - Descriptor MAY contain `annotations` and if present it MUST follow the [annotation rules][annotation-rules]. Notary v2 uses annotations for storing both Notary specific and user defined metadata. The prefix `io.cncf.notary` in annotation keys is reserved for use in Notary v2 and MUST NOT be used outside this specification.
+  - Descriptor MAY contain `annotations` and if present it MUST follow the [annotation rules][annotation-rules]. Notary uses annotations for storing both Notary specific and user defined metadata. The prefix `io.cncf.notary` in annotation keys is reserved for use in Notary and MUST NOT be used outside this specification.
   - Descriptor MAY contain `artifactType` field for artifact manifests, or the `config.mediaType` for `oci.image` based manifests.
 
 #### Examples
@@ -128,11 +128,11 @@ Signed attributes/claims are additional metadata apart from the payload, which a
 - Claims that MUST be processed by a verifier MUST be marked as critical. Some claims may be optional and critical, i.e. they MUST be processed by a verifier only if they are present.
 - Claims which are informational and do not influence signature verification MUST NOT be marked critical.
 
-Notary v2 requires the signature envelope to support the following signed attributes/claims.
+Notary requires the signature envelope to support the following signed attributes/claims.
 
 #### Standard attributes
 
-- **Signing Scheme** (critical): A REQUIRED claim that defines the [Notary v2 Signing Scheme]({{< ref "/docs/concepts/signing-scheme" >}}) used by the signature. This attribute dictates the rest of signature schema - the set of signed and unsigned attributes to be included in the signature. Supported values are `notary.x509` and `notary.x509.signingAuthority`.
+- **Signing Scheme** (critical): A REQUIRED claim that defines the [Notary Signing Scheme]({{< ref "/docs/concepts/signing-scheme" >}}) used by the signature. This attribute dictates the rest of signature schema - the set of signed and unsigned attributes to be included in the signature. Supported values are `notary.x509` and `notary.x509.signingAuthority`.
 - **Signing Time**: A claim that indicates the time at which the signature was generated. Though this claim is signed by the signing key, it’s considered unauthenticated as a signer can modify local time and manipulate this claim. More details [here](#signing-time). This claim is REQUIRED and only valid when signing scheme is `notary.x509` .
 - **Authentic Signing Time** (critical): The authenticated time at which the signature was generated. This claim is REQUIRED and only valid when signing scheme is `notary.x509.signingAuthority` . More details [here](#signing-time).
 - **Expiry** (critical): An OPTIONAL claim that provides a “best by use” time for the artifact, as defined by the signer. More details [here](#expiry).
@@ -140,17 +140,17 @@ Notary v2 requires the signature envelope to support the following signed attrib
 
 #### Extended attributes
 
-Implementations of Notary v2 signature spec MAY include additional signed attributes in the signature envelope.
+Implementations of Notary signature spec MAY include additional signed attributes in the signature envelope.
 These attributes MAY be marked critical, i.e. the attribute MUST be understood and processed by a verifier, unknown critical attributes MUST cause signature verification to fail.
 Usage of extended signed attributes which are marked critical in signature will have implications on portability of the signature, these are discussed in [Signature Portability](#signature-portability) section.
 
 #### Extended attributes for *Notation* Plugins
 
-This section documents extended attributes used by Notary v2 reference implementation *Notation* to support plugins.
+This section documents extended attributes used by Notary reference implementation *Notation* to support plugins.
 Plugins is a *Notation* concept that allows parts of signing and verification logic to be performed by an external provider.
 *Signing plugins* allow *Notation* to be extended for integration with remote keys remote key management services and signing services, where as *verification plugins* allow for customization of verification logic.
 Detailed specification for plugins can be found [here](https://github.com/notaryproject/notaryproject/blob/main/specs/plugin-extensibility.md#notation-extensibility-for-signing-and-verification).
-These extended attributes are documented in this spec, as other Notary V2 implementations may encounter these attributes if they verify a signature that indicated it required a verification plugin for complete signature verification.
+These extended attributes are documented in this spec, as other Notary implementations may encounter these attributes if they verify a signature that indicated it required a verification plugin for complete signature verification.
 
 - **Verification Plugin** (critical): An OPTIONAL attribute that specifies the name of the verification plugin that MAY be used to verify the signature e.g. “com.example.nv2plugin”.
 [Notation plugin](https://github.com/notaryproject/notaryproject/blob/main/specs/plugin-extensibility.md#plugin-contract) aware implementations use this attribute to load and execute a *Notation* compliant plugin.
@@ -160,7 +160,7 @@ A Notation plugin aware implementations MUST use this attribute to verify the si
 The plugin MUST use [Semantic Versioning](https://semver.org/) (SemVer) to use this feature i.e the `get-plugin-metadata` plugin command MUST return a SemVer compliant version in the response.
 A use case for this feature is for a plugin publisher to address security bug in older plugin version, by setting the minimum version to the plugin version with fixes.
 
-See [Guidelines for Notary v2 Implementors](#guidelines-for-notary-v2-implementors) for options to handle these attributes during signature verification.
+See [Guidelines for Notary Implementors](#guidelines-for-notary-v2-implementors) for options to handle these attributes during signature verification.
 
 ### Unsigned Attributes
 
@@ -236,17 +236,7 @@ The `keyUsage` extension MUST be present and MUST be marked critical. Bit positi
 1. The certificates in the certificate chain MUST be valid at signing time. Notary MUST NOT enforce validity period nesting, i.e the validity period for a given certificate may not fall entirely within the validity period of that certificate's issuer certificate.
 1. In the absence of an Authentic Timestamp, each and every certificate in the certificate chain i.e. signing certificate, intermediate certificates, and the root certificate must be valid i.e. not expired at the time of signature verification.
 
-## FAQ
 
-**Q: How will Notary v2 support multiple signature envelope formats?**
-
-**A:** The `mediaType` of artifact manifest's blob identifies the signature envelope type.  
-The client implementation can use the aforementioned `mediaType` to parse the signature envelope.
-
-**Q: How will Notary v2 support multiple payload formats?**
-
-**A:** The Signature envelope MUST have a versioning mechanism to support multiple payload formats.
-For [JWS JSON serialization]({{< ref "/docs/concepts/signature-envelope-jws" >}}) signature envelope, versioning is achieved by the `cty` field in ProtectedHeaders.
 
 ## Appendix
 
@@ -256,7 +246,7 @@ The signing time denotes the time at which the signature was generated. A X509 c
 
 ### Expiry
 
-This is an optional feature that provides a “best by use” time for the artifact, as defined by the signer. Notary v2 allows users to include an optional expiry time when they generate a signature. The expiry time is not set by default and requires explicit configuration by users at the time of signature generation. The artifact is considered expired when the current time is greater than or equal to expiry time, users performing verification can either configure their trust policies to fail the verification or even accept the artifact with expiry date in the past using policy. This is an advanced feature that allows implementing controls for user defined semantics like deprecation for older artifacts, or block older artifacts in a production environment. Users should only include an expiry time in the signed artifact after considering the behavior they expect for consumers of the artifact after it expires. Users can choose to consume an artifact even after the expiry time based on their specific needs.
+This is an optional feature that provides a “best by use” time for the artifact, as defined by the signer. Notary allows users to include an optional expiry time when they generate a signature. The expiry time is not set by default and requires explicit configuration by users at the time of signature generation. The artifact is considered expired when the current time is greater than or equal to expiry time, users performing verification can either configure their trust policies to fail the verification or even accept the artifact with expiry date in the past using policy. This is an advanced feature that allows implementing controls for user defined semantics like deprecation for older artifacts, or block older artifacts in a production environment. Users should only include an expiry time in the signed artifact after considering the behavior they expect for consumers of the artifact after it expires. Users can choose to consume an artifact even after the expiry time based on their specific needs.
 
 ### Signature Portability
 
@@ -272,35 +262,35 @@ Signatures associated with these artifacts require broad portability.
 E.g. Images for containerized applications and services used within an organization, or shared with limited authorized parties.
 Based on user requirements a private artifact can have different levels of portability, the signature’s portability should at least match the the artifact’s portability.
 
-*Notary v2 signature portability* is based on the following
+*Notary signature portability* is based on the following
 
 **Signature discovery**
 
-Notary v2 addressed signature discovery by storing signatures in the same registry (location) where an artifact is present.
+Notary addressed signature discovery by storing signatures in the same registry (location) where an artifact is present.
 This is supported through [ORAS artifact spec](https://github.com/oras-project/artifacts-spec/blob/main/manifest-referrers-api.md) which allows reference artifacts such as signatures, SBOMs to be associated with existing artifacts like Images.
-Notary v2 allows multiple signatures to be associated with an artifact, and clients may automatically push signatures for an artifact to a destination registry when a signed artifact moves from one registry to other.
+Notary allows multiple signatures to be associated with an artifact, and clients may automatically push signatures for an artifact to a destination registry when a signed artifact moves from one registry to other.
 
 **Verification requirements**
 
-Notary v2 supports a range of signed artifacts intended for public and private distribution.
-Signatures generated by Notary v2 without extended signature attributes marked critical can be verified in any environment where Notation client or another Notary v2 standards compliant verification tool is available, without any additional dependencies.
+Notary supports a range of signed artifacts intended for public and private distribution.
+Signatures generated by Notary without extended signature attributes marked critical can be verified in any environment where Notation client or another Notary standards compliant verification tool is available, without any additional dependencies.
 It should be noted that revocations checks, which usually relies on an external mechanism such as CRL/OCSP may require the verification environment to have access to local network or public internet, to have access to the CRL/OCSP endpoint.
 
-Notary v2 also supports signatures generated using compliant signing plugins, which allow vendors to optionally provide additional features on top of Notary v2 standard features.
-Verification of these signatures may require additional dependencies like Notary v2 compliant verification plugin, making these signatures more appropriate to use where broad portability may not be required for the associated signed artifact.
+Notary also supports signatures generated using compliant signing plugins, which allow vendors to optionally provide additional features on top of Notary standard features.
+Verification of these signatures may require additional dependencies like Notary compliant verification plugin, making these signatures more appropriate to use where broad portability may not be required for the associated signed artifact.
 This allows users to implement security controls required for their organizations, that are not broadly applicable and may take time to standardize.
 E.g. Integration with a signature transparency log as part of signature verification.
 
 Based on user’s requirements, a user can select appropriate signing mechanism that produces signatures with desired portability.
 Notation signatures without any critical extended attributes do not impose any additional dependency requirements for verifiers as these can be validated with just the Notation client.
-Whereas, Notation signatures that contain critical extended attributes will require additional dependencies for signature validation, either on Notary v2 compliant plugins or equivalent tooling which may not be available in all environments.
-Similarly, Notary v2 compliant plugin vendors should be aware that usage of extended signed attributes which are marked critical in signature will have implications on portability of the signature.
+Whereas, Notation signatures that contain critical extended attributes will require additional dependencies for signature validation, either on Notary compliant plugins or equivalent tooling which may not be available in all environments.
+Similarly, Notary compliant plugin vendors should be aware that usage of extended signed attributes which are marked critical in signature will have implications on portability of the signature.
 
-### Guidelines for Notary v2 Implementors
+### Guidelines for Notary Implementors
 
-Implementations of Notary v2, can choose to be [Notation plugin protocol](https://github.com/notaryproject/notaryproject/blob/main/specs/plugin-extensibility.md#plugin-contract) aware or not. If an implementation chooses to be plugin protocol aware, and it encounters the Verification Plugin and Verification Plugin minimum version attributes during signature verification, it MUST process these attributes. This involves finding the appropriate plugin and the version to use, and executing `verify-signature` plugin command with correct inputs and processing the plugin response, as per the [Verification Plugin interface](https://github.com/notaryproject/notaryproject/blob/main/specs/plugin-extensibility.md#verification-extensibility).
+Implementations of Notary, can choose to be [Notation plugin protocol](https://github.com/notaryproject/notaryproject/blob/main/specs/plugin-extensibility.md#plugin-contract) aware or not. If an implementation chooses to be plugin protocol aware, and it encounters the Verification Plugin and Verification Plugin minimum version attributes during signature verification, it MUST process these attributes. This involves finding the appropriate plugin and the version to use, and executing `verify-signature` plugin command with correct inputs and processing the plugin response, as per the [Verification Plugin interface](https://github.com/notaryproject/notaryproject/blob/main/specs/plugin-extensibility.md#verification-extensibility).
 
-Alternatively, an implementation of Notary v2 can choose not to implement plugin protocol.
+Alternatively, an implementation of Notary can choose not to implement plugin protocol.
 
 - The implementation MUST itself perform equivalent verification logic that is usually performed by plugin specified in the signature.
 - An implementation MUST fail signature verification if it cannot perform the equivalent verification logic, as skipping the plugin equivalent verification logic will cause incorrect and inconsistent signature verification behavior.
