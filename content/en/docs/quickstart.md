@@ -9,7 +9,7 @@ weight: 2
 
 Before you begin, you need:
 
-* [Docker desktop](https://www.docker.com/products/docker-desktop/) installed and running.
+* Docker installed and running, such as [Docker desktop](https://www.docker.com/products/docker-desktop/).
 * [Notation CLI]({{< ref "/docs/installation/cli" >}}) installed and configured.
 
 ## Create a OCI-compatible registry
@@ -24,7 +24,7 @@ docker run -d -p ${PORT}:5000 ghcr.io/oras-project/registry:v0.0.3-alpha
 
 ## Add an image to the OCI-compatible registry
 
-Add an image to the registry.  The following commands build and push the `wabbit-networks/net-monitor` container image to your container registry.
+Add an image to the registry. The following commands build and push the `wabbit-networks/net-monitor` container image to your container registry.
 
 ```console
 export REPO=${REGISTRY}/net-monitor

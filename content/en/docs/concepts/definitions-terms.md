@@ -78,7 +78,7 @@ Additional reference: [Software bill of materials][sbom]
 
 ## Subject
 
-The data that is signed.
+Indicates a relationship to the specified manifest and provides a descriptor of that manifest. This is the same as the [OCI image spec](https://github.com/opencontainers/image-spec/blob/main/artifact.md#artifact-manifest-property-descriptions).
 
 ## Tag
 
@@ -91,6 +91,13 @@ E.g.:
 - `org.example.com/databases/somedb:v1-alpine` (platform specific tag)
 - `org.example.com/databases/somedb:v1-windows` (platform specific tag)
 - `org.example.com/databases/somedb:v1-helm` (helm chart to deploy a platform specific image)
+
+## Trust Store
+
+A trust store contains a set of trusted identities that is used for defining trust for the rest of the system. For X.509 PKI, the trust store typically contains a set of root certificates.
+
+## Trust Policy
+A trust policy is a policy language that indicates which identities are trusted to produce artifacts. Both a trust store and trust policy need to be configured by users or administrators before an artifact signature can be evaluated.
 
 [fingerprint]:           https://en.wikipedia.org/wiki/Public_key_fingerprint
 [oci-annotations]:       https://github.com/opencontainers/image-spec/blob/master/annotations.md
