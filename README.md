@@ -6,6 +6,8 @@ The [notaryproject.dev][] website, built using [Hugo][] and hosted on [Netlify][
 
 Visit [https://gitpod.io/#https://github.com/notaryproject/notaryproject.dev](https://gitpod.io/#https://github.com/notaryproject/notaryproject.dev) to launch a [Gitpod.io](https://gitpod.io) IDE that will allow you to build, preview and make changes to this repo.
 
+## Contributing
+For more details, see [CONTRIBUTING](CONTRIBUTING.md)
 
 ## License
 

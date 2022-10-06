@@ -160,7 +160,7 @@ A Notation plugin aware implementations MUST use this attribute to verify the si
 The plugin MUST use [Semantic Versioning](https://semver.org/) (SemVer) to use this feature i.e the `get-plugin-metadata` plugin command MUST return a SemVer compliant version in the response.
 A use case for this feature is for a plugin publisher to address security bug in older plugin version, by setting the minimum version to the plugin version with fixes.
 
-See [Guidelines for Notary Implementors](#guidelines-for-notary-v2-implementors) for options to handle these attributes during signature verification.
+See [Guidelines for Notary Implementors](#guidelines-for-notary-implementors) for options to handle these attributes during signature verification.
 
 ### Unsigned Attributes
 
