@@ -23,9 +23,18 @@ with trusted collections.
 
 {{% blocks/lead color="white" %}}
   <h1>What is Notary?</h1>
-  <p>
-    Notary v2 provides for multiple signatures of an <a href="https://github.com/opencontainers/artifacts">OCI Artifact</a> (including container images) to be persisted in an <a href="https://github.com/opencontainers/oci-conformance">OCI conformant</a> registry. Artifacts are signed (`nv2 sign`) with private keys, and validated with public keys (`nv2 verify`). To support user deployment flows, signing an OCI Artifact will not change the `@digest` or `artifact:tag` reference. To support content movement across multiple certification boundaries, artifacts and their signatures will be easily copied within and across <a href="https://github.com/opencontainers/oci-conformance">OCI conformant</a> registries.
-  </p>
+  <p>Notary is a set of tools that helps you sign, store, and verify <a href="https://github.com/opencontainers/artifacts">OCI artifacts</a> using <a href="https://github.com/opencontainers/oci-conformance">OCI-conformant</a> registries.</p>
+
+  <h1>Why use Notary?</h1>
+
+  <ul>
+    <li>Sign, store, and verify any OCI artifact, including container images</li>
+    <li>Signing and verifying uses public/private key verification</li>
+    <li>Signing does not change the <code>@digest</code> or <code>artifact:tag</code> reference</li>
+    <li>Signatures are portable across OCI-conformant registries</li>
+    <li>Support for multiple signatures</li>
+    <li>Designed to support multiple development flows</li>
+  </ul>
 {{% /blocks/lead %}}
 
 <div class="container">
