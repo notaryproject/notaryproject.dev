@@ -5,6 +5,7 @@ package-lock.json
 # Hugo-generated assets
 /public
 resources/
+.hugo_build.lock
 
 # htmltest artifacts
 tmp/
