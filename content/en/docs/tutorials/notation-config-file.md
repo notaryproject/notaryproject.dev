@@ -25,7 +25,7 @@ The default location and file will be stored at: `C:/Users/AppData/Roaming/notat
 
 ### Darwin 
 
-The default location and file will be stored at: `C:/Users/AppData/Roaming/notation/config.json`.
+The default location and file will be stored at: `~/Users/exampleuser/Library/Application Support/notation/config.json`.
 
 ## Properties
 
