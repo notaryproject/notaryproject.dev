@@ -16,26 +16,27 @@ title: Notary Project
 {{< blocks/cover image_anchor="top" height="min" color="primary" >}}
 <img src="notary-horizontal-white.png" class="site-logo" />
 <h2 class="mt-4">
-  The Notary project comprises a server and a client for running and interacting
-with trusted collections.
+  Extensible, standards-based specification and tooling for software security supply chains.
 </h2>
 {{< /blocks/cover >}}
 
 {{% blocks/lead color="white" %}}
-  <h1>What is Notary?</h1>
-  <p>Notary is a set of tools that helps you sign, store, and verify <a href="https://github.com/opencontainers/artifacts">OCI artifacts</a> using <a href="https://github.com/opencontainers/oci-conformance">OCI-conformant</a> registries.</p>
+<h1>The Notary Project</h1>
+<p>The Notary Project contains the specifications and tooling for implementing secure supply chain, which drives the Notary specification. The Notary Project is also the umbrella project for the Notary specification and Notation, its reference implementation.</p>
+<br/>
 
-  <h1>Why use Notary?</h1>
+<h3>Notary</h3>
+<p>Notary is a <a href="https://github.com/notaryproject/notaryproject/blob/main/signature-specification.md">specification</a> for signing and verifying container images and storing them as <a href="https://github.com/opencontainers/artifacts">OCI artifacts</a> using <a href="https://github.com/opencontainers/oci-conformance">OCI-conformant</a> registries. The latest version is Notary v2 which uses the <a href="https://www.iana.org/assignments/cose/cose.xhtml">COSE signature envelope</a> and <a href='https://github.com/opencontainers/wg-reference-types/blob/main/docs/proposals/PROPOSAL_E.md'>OCI Reference Types</a>.</p>
+<br/>
 
-  <ul>
-    <li>Sign, store, and verify any OCI artifact, including container images</li>
-    <li>Signing and verifying uses public/private key verification</li>
-    <li>Signing does not change the <code>@digest</code> or <code>artifact:tag</code> reference</li>
-    <li>Signatures are portable across OCI-conformant registries</li>
-    <li>Support for multiple signatures</li>
-    <li>Designed to support multiple development flows</li>
-  </ul>
+<h3>Notation</h3>
+<p>Notation is a reference implementation of the Notary specification and has three components: <a href="https://github.com/notaryproject/notation-core-go">a Notation Core Go library</a> for the core cryptography of signing and verifying, <a href="https://github.com/notaryproject/notation-go">Notation Go library</a> that builds on the core go library and adds functionality such as pushing and pulling from registries, and <a href="https://github.com/notaryproject/notation">a CLI (<code>notation</code>)</a> that uses the go libraries to expose the full implementation.</p>
+<p>In most cases, signing, verifying, and moving artifacts happens using <code>notation</code>.</p>
+<br/>
+
+
 {{% /blocks/lead %}}
+
 
 <div class="container">
   <!-- {{< home/features >}} -->
