@@ -19,7 +19,7 @@ Create and run an OCI-compatible registry on your development computer using Doc
 ```console
 export PORT=5000
 export REGISTRY=localhost:${PORT}
-docker run -d -p ${PORT}:5000 ghcr.io/oras-project/registry:v0.0.3-alpha
+docker run -d -p ${PORT}:5000 ghcr.io/oras-project/registry:v1.0.0-rc.2
 ```
 
 ## Add an image to the OCI-compatible registry
@@ -33,7 +33,7 @@ docker build -t $IMAGE https://github.com/wabbit-networks/net-monitor.git#main
 docker push $IMAGE
 ```
 
-## List the image signature
+## List the signatures associated with the container image
 
 Use `notation list` to show any signatures associated with the container image you built and pushed in the previous section.
 
@@ -43,50 +43,79 @@ notation list --plain-http $IMAGE
 
 Confirm there are no signatures.
 
-## Generate a certificate
+## Generate a test key and self-signed certificate
 
-Use `notation cert generate-test` to generate a self-signed test certificate for signing artifacts. The following generates a self-signed X.509 certificate under the `~/config/notation/` directory.
+Use `notation cert generate-test` to generate a test RSA key for signing artifacts, and a self-signed test certificate for verifying artifacts.
 
 **IMPORTANT**: Self-signed certificates should be used for development purposes only and should not be used in production environments.
+
+The following command generates a test key and a self-signed X.509 certificate under the `$HOME/.config/notation/localkeys` directory. The test key is set as a default signing key using `--default` flag. The self-signed certificate is added to a named trust store `wabbit-networks.io` of type `ca`.
 
 ```console
 notation cert generate-test --default "wabbit-networks.io"
 ```
 
-The output of the above command shows the location of the public and private key generated. For example:
-
-```output
-$ notation cert generate-test --default "wabbit-networks.io"
-generating RSA Key with 2048 bits
-generated certificates expiring on 2022-10-01T20:18:37Z
-wrote key: <EXAMPLE_PATH>/notation/localkeys/wabbit-networks.io.key
-wrote certificate: <EXAMPLE_PATH>/notation/localkeys/wabbit-networks.io.crt
-wabbit-networks.io: added to the key list
-wabbit-networks.io: marked as default
-```
-
-## Sign the image
-
-Use `notation sign` to sign the container image.
+Use `notation key list` to confirm the signing key. Key name with a `*` prefix is the default key.
 
 ```console
-notation sign --plain-http $IMAGE
+notation key list
 ```
 
-Use `notation list` to show the signatures for your container image.
+Use `notation certificate list` to confirm the certificate is stored in the trust store.
+
+```console
+notation cert list
+```
+
+## Sign the container image
+
+Use `notation sign` to sign the container image with COSE signature format.
+
+```console
+notation sign --plain-http --signature-format cose $IMAGE
+```
+
+Use `notation list` to show the signatures associated with the container image.
 
 ```console
 notation list --plain-http $IMAGE
 ```
 
-Confirm there is one listed, for example:
+Confirm there is one signature, for example:
 
 ```output
 $ notation list --plain-http $IMAGE
 sha256:1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef
 ```
 
-## Verify the signature of an image
+## Create a trust policy
+
+In order to verify the container image, you need to configure the trust policy to specify trusted identities which sign the artifacts, and level of signature verification to use. The trust policy is a JSON document with the name `trustpolicy.json` under `$HOME/.config/notation/`.
+
+Once the trust policy file is executed as below, it creates one trust policy named `wabbit-networks-images`. This policy only applies to the repository `$REPO`. The level of signatureVerification is `strict`, which enforces a full validation. Any validation failure will fail the whole signature verification process. The trust store used for this policy is named `wabbit-networks.io` of type `ca`, which is created in previous step. Use `notation cert show` to get trust identity info from the subject field of the self-signed certificate.
+
+```console
+cat <<EOF > $HOME/.config/notation/trustpolicy.json
+{
+    "version": "1.0",
+    "trustPolicies": [
+        {
+            "name": "wabbit-networks-images",
+            "registryScopes": [ "$REPO" ],
+            "signatureVerification": {
+                "level" : "strict" 
+            },
+            "trustStores": [ "ca:wabbit-networks.io" ],
+            "trustedIdentities": [
+                "x509.subject: CN=wabbit-networks.io,O=Notary,L=Seattle,ST=WA,C=US"
+            ]
+        }
+    ]
+}
+EOF
+```
+
+## Verify the container image
 
 Use `notification verify` to verify any signatures on your container image.
 
@@ -94,35 +123,8 @@ Use `notification verify` to verify any signatures on your container image.
 notation verify --plain-http $IMAGE
 ```
 
-Confirm your container image fails validation. For example:
-
-```output
-$ notation verify --plain-http $IMAGE
-Error: trust certificate not specified
-2022/09/30 15:24:14 trust certificate not specified
-```
-
-This verification fails because you have not trusted the public key for your container image.
-
-## Add a trusted public key
-
-Add the public from the certificate you generated earlier as a trusted certificate.
-
-```console
-notation cert add --name "wabbit-networks.io" <EXAMPLE_PATH>/notation/localkeys/wabbit-networks.io.crt
-```
-
-Adding this public key as a trusted public key allows you to verify any container images that are signed with the corresponding private key. 
-
-```output
-$ notation verify --plain-http $IMAGE
-sha256:1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef
-```
-
-The above example shows one trusted signature.
-
 ## Next steps
 
 For additional examples on using Notary, see:
 
-- [Build, sign, and verify container images using Notary and Azure Key Vault](https://learn.microsoft.com/azure/container-registry/container-registry-tutorial-sign-build-push)
+* [Build, sign, and verify container images using Notary and Azure Key Vault](https://learn.microsoft.com/azure/container-registry/container-registry-tutorial-sign-build-push)
