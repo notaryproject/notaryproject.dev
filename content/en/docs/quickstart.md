@@ -85,7 +85,9 @@ Confirm there is one signature, for example:
 
 ```output
 $ notation list --plain-http $IMAGE
-sha256:1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef
+localhost:5000/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a
+└── application/vnd.cncf.notary.v2.signature
+    └── sha256:ba3a68a28648ba18c51a479145fca60d96b43dc96c6ab22f412c89ac56a9038b
 ```
 
 ## Create a trust policy
