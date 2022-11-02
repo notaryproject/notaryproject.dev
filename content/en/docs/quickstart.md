@@ -61,7 +61,7 @@ Use `notation key list` to confirm the signing key. Key name with a `*` prefix i
 notation key list
 ```
 
-Use `notation certificate list` to confirm the certificate is stored in the trust store.
+Use `notation certificate list` to confirm whether the certificate is stored in the trust store.
 
 ```console
 notation cert list
