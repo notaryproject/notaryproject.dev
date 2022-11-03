@@ -94,65 +94,9 @@ localhost:5000/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda27
 
 In order to verify the container image, you need to configure the trust policy to specify trusted identities which sign the artifacts, and level of signature verification to use. See [trust policy spec](https://github.com/notaryproject/notaryproject/blob/main/trust-store-trust-policy-specification.md#trust-policy) to understand more about trust policy.
 
-The trust policy is a JSON document with the name `trustpolicy.json` stored in notation configuration directory.
+Create a json file named `trustpolicy.json` with the following content:
 
-For a Linux user, the directory is `$HOME/.config/notation/`.
-
-For a Window user, the directory is `C:/Users/AppData/Roaming/notation/`.
-
-For a Mac user, the directory is  `$HOME/Library/Application Support/notation/`
-
-Once the trust policy file is executed as below, it creates one trust policy named `wabbit-networks-images`. The trust policy with `registryScopes` set to `*` applies to all the artifacts in any registries. The level of signatureVerification is `strict`, which enforces a full validation. Any validation failure will fail the whole signature verification process. The trust store used for this policy is named `wabbit-networks.io` of type `ca`, which is created in previous step. See [trust policy spec](https://github.com/notaryproject/notaryproject/blob/main/trust-store-trust-policy-specification.md#trust-policy-properties) to fine tune the policies for specific security requirements.
-
-For linux user,
-
-```console
-cat <<EOF > "$HOME/.config/notation/trustpolicy.json"
-{
-    "version": "1.0",
-    "trustPolicies": [
-        {
-            "name": "wabbit-networks-images",
-            "registryScopes": [ "*" ],
-            "signatureVerification": {
-                "level" : "strict" 
-            },
-            "trustStores": [ "ca:wabbit-networks.io" ],
-            "trustedIdentities": [
-                "*"
-            ]
-        }
-    ]
-}
-EOF
-```
-
-For Mac user,
-
-```console
-cat <<EOF > "$HOME/Library/Application Support/notation/trustpolicy.json"
-{
-    "version": "1.0",
-    "trustPolicies": [
-        {
-            "name": "wabbit-networks-images",
-            "registryScopes": [ "*" ],
-            "signatureVerification": {
-                "level" : "strict" 
-            },
-            "trustStores": [ "ca:wabbit-networks.io" ],
-            "trustedIdentities": [
-                "*"
-            ]
-        }
-    ]
-}
-EOF
-```
-
-For Windows user, create a json file named `trustpolicy.json` with the following content, and store it under `C:/Users/AppData/Roaming/notation/`
-
-```text
+```json
 {
     "version": "1.0",
     "trustPolicies": [
@@ -170,6 +114,14 @@ For Windows user, create a json file named `trustpolicy.json` with the following
     ]
 }
 ```
+
+For a Linux user, store file `trustpolicy.json` under directory `$HOME/.config/notation/`.
+
+For a Mac user, store file `trustpolicy.json` under directory `$HOME/Library/Application Support/notation/`.
+
+For a Window user, store file `trustpolicy.json` under directory `C:\Users\<username>\AppData\Roaming\notation\`.
+
+Once the trust policy file is executed, it creates one trust policy named `wabbit-networks-images`. The trust policy with `registryScopes` set to `*` applies to all the artifacts in any registries. The level of signatureVerification is `strict`, which enforces a full validation. Any validation failure will fail the whole signature verification process. The trust store used for this policy is named `wabbit-networks.io` of type `ca`, which is created in previous step. See [trust policy spec](https://github.com/notaryproject/notaryproject/blob/main/trust-store-trust-policy-specification.md#trust-policy-properties) to fine tune the policies for specific security requirements.
 
 ## Verify the container image
 
