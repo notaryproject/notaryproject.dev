@@ -92,29 +92,83 @@ localhost:5000/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda27
 
 ## Create a trust policy
 
-In order to verify the container image, you need to configure the trust policy to specify trusted identities which sign the artifacts, and level of signature verification to use. The trust policy is a JSON document with the name `trustpolicy.json` under `$HOME/.config/notation/`.
+In order to verify the container image, you need to configure the trust policy to specify trusted identities which sign the artifacts, and level of signature verification to use. See [trust policy spec](https://github.com/notaryproject/notaryproject/blob/main/trust-store-trust-policy-specification.md#trust-policy) to understand more about trust policy.
 
-Once the trust policy file is executed as below, it creates one trust policy named `wabbit-networks-images`. This policy only applies to the repository `$REPO`. The level of signatureVerification is `strict`, which enforces a full validation. Any validation failure will fail the whole signature verification process. The trust store used for this policy is named `wabbit-networks.io` of type `ca`, which is created in previous step. Use `notation cert show` to get trust identity info from the subject field of the self-signed certificate.
+The trust policy is a JSON document with the name `trustpolicy.json` stored in notation configuration directory.
+
+For a Linux user, the directory is `$HOME/.config/notation/`.
+
+For a Window user, the directory is `C:/Users/AppData/Roaming/notation/`.
+
+For a Mac user, the directory is  `$HOME/Library/Application Support/notation/`
+
+Once the trust policy file is executed as below, it creates one trust policy named `wabbit-networks-images`. The trust policy with `registryScopes` set to `*` applies to all the artifacts in any registries. The level of signatureVerification is `strict`, which enforces a full validation. Any validation failure will fail the whole signature verification process. The trust store used for this policy is named `wabbit-networks.io` of type `ca`, which is created in previous step. See [trust policy spec](https://github.com/notaryproject/notaryproject/blob/main/trust-store-trust-policy-specification.md#trust-policy-properties) to fine tune the policies for specific security requirements.
+
+For linux user,
 
 ```console
-cat <<EOF > $HOME/.config/notation/trustpolicy.json
+cat <<EOF > "$HOME/.config/notation/trustpolicy.json"
 {
     "version": "1.0",
     "trustPolicies": [
         {
             "name": "wabbit-networks-images",
-            "registryScopes": [ "$REPO" ],
+            "registryScopes": [ "*" ],
             "signatureVerification": {
                 "level" : "strict" 
             },
             "trustStores": [ "ca:wabbit-networks.io" ],
             "trustedIdentities": [
-                "x509.subject: CN=wabbit-networks.io,O=Notary,L=Seattle,ST=WA,C=US"
+                "*"
             ]
         }
     ]
 }
 EOF
+```
+
+For Mac user,
+
+```console
+cat <<EOF > "$HOME/Library/Application Support/notation/trustpolicy.json"
+{
+    "version": "1.0",
+    "trustPolicies": [
+        {
+            "name": "wabbit-networks-images",
+            "registryScopes": [ "*" ],
+            "signatureVerification": {
+                "level" : "strict" 
+            },
+            "trustStores": [ "ca:wabbit-networks.io" ],
+            "trustedIdentities": [
+                "*"
+            ]
+        }
+    ]
+}
+EOF
+```
+
+For Windows user, create a json file named `trustpolicy.json` with the following content, and store it under `C:/Users/AppData/Roaming/notation/`
+
+```text
+{
+    "version": "1.0",
+    "trustPolicies": [
+        {
+            "name": "wabbit-networks-images",
+            "registryScopes": [ "*" ],
+            "signatureVerification": {
+                "level" : "strict" 
+            },
+            "trustStores": [ "ca:wabbit-networks.io" ],
+            "trustedIdentities": [
+                "*"
+            ]
+        }
+    ]
+}
 ```
 
 ## Verify the container image
