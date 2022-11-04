@@ -22,7 +22,7 @@ docker run -d -p 5000:5000 ghcr.io/oras-project/registry:v1.0.0-rc.2
 
 ## Add an image to the OCI-compatible registry
 
-For Linux users, the following commands build and push the `wabbit-networks/net-monitor` container image to your container registry.
+The following commands build and push the `wabbit-networks/net-monitor` container image to your container registry.
 
 ```console
 docker build -t localhost:5000/net-monitor:v1 https://github.com/wabbit-networks/net-monitor.git#main
