@@ -5,15 +5,15 @@ type: docs
 weight: 4
 ---
 
-To enable persisted configuration, simplifying the execution of the `notation` cli, the following configuration file will be available
+To enable persisted configuration, simplifying the execution of the `notation` CLI, the following configuration file will be available
 
-> Note: there will be a policy based configuration that will come at a later point.
+> Note: there will be a policy based configuration in Notation 0.12.0-Beta.1.
 
 ## Location
 
 The default location and configuration file is different in multiple OS environments as follows. You can Notation CLI or libraries to alternate locations through the `XDG_CONFIG_HOME` environment variable.
 
-> Note: You can find the details of Notation directory structure for system configuration in this [guide](directory-structure.md).
+> Note: You can find the details of Notation directory structure for system configuration in this [guide]({{< ref "/docs/tutorials/directory-structure" >}}).
 
 ### Linux
 
@@ -31,9 +31,9 @@ The default location and file will be stored at: `~/Users/exampleuser/Library/Ap
 
 | Property                  | Type     | Value                                                                                                                                                     |
 | ------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `verificationCerts.certs` | _array_  | collection of name/value pairs for a collection of public certs that are used for verification. These may be replaced with a future policy configuration. |
-| `cert.name`               | _string_ | a named reference to the certificate                                                                                                                      |
-| `cert.path`               | _string_ | a location by which the certificate can be found by the notation cli or notation libraries                                                                |
+| `credsStore` | _string_  | default trust store name. |
+| `credHelpers`  | _string_ | a registry host name address to trust store name map                  |
+| `signatureFormat`               | _string_ |  define the signature envelope format, support jws or cose  |
 | `signingKeys.default`     | _string_ | the signing key to be used when `notation sign` is called without `--name`                                                                                |
 | `signingKeys.keys`        | _array_  | a collection of name/value pairs of signing keys.                                                                                                         |
 | `key.name`                | _string_ | a named reference to the key                                                                                                                              |
@@ -47,17 +47,9 @@ See the a sample configuration in a Linux environment: `~/.config/notation/confi
 
 ```json
 {
-    "verificationCerts": {
-        "certs": [
-            {
-                "name": "wabbit-networks",
-                "path": "/home/demo/.config/notation/localkeys/wabbit-networks.crt"
-            },
-            {
-                "name": "import.acme-rockets",
-                "path": "/home/demo/.config/notation/localkeys/import.acme-rockets.crt"
-            }
-        ]
+    "credsStore": "pass",
+    "credHelpers": {
+    "registry.io": "pass"
     },
     "insecureRegistries": [
         "registry.wabbit-networks.io"

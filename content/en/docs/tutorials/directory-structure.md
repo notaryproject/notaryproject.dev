@@ -26,23 +26,12 @@ The directories for various components are classified into the following catagor
 | `NOTATION_BIN`     | Directory for executable binaries                                                   |
 | `NOTATION_LIBEXEC` | Directory for binaries not meant to be executed directly by users' shell or scripts |
 | `NOTATION_CONFIG`  | Directory for configurations                                                        |
-| `NOTATION_CACHE`   | Directory for user-specific cache                                                   |
 
 Although it is recommended to install `notation` with its plugins and default configurations at the system level, it is possible to install at the user level.
 
-On Unix systems, `notation` follows [Filesystem Hierarchy Standard][FHS] for system level directories and [XDG Base Directory Specification][XDG] for user level directories. On Windows, [Known Folders][KF] and [App Settings][AS] are followed equivalently. On Darwin, [macOS File System][macOS_FS] with [System Integrity Protection][SIP] is followed equivalently. If a file with the same name exists at the system level and the user level, the file at the user level takes over the priority.
+On Unix systems, `notation` follows [Filesystem Hierarchy Standard][FHS] for system level directories and [XDG Base Directory Specification][XDG] for user level directories. On Windows, [Known Folders][KF] and [App Settings][AS] are followed equivalently. On Darwin, [macOS File System][macOS_FS] with [System Integrity Protection][SIP] is followed equivalently. 
 
-### System Level
-
-Default directory paths for various operating systems at system level are specified as below.
-
-| Directory          | Unix                    | Windows                       | Darwin                                  |
-| ------------------ | ----------------------- | ----------------------------- | --------------------------------------- |
-| `NOTATION_BIN`     | `/usr/bin`              | `%ProgramFiles%/notation/bin` | `/usr/local/bin`                        |
-| `NOTATION_LIBEXEC` | `/usr/libexec/notation` | `%ProgramFiles%/notation`     | `/usr/local/lib/notation`               |
-| `NOTATION_CONFIG`  | `/etc/notation`         | `%ProgramData%/notation`      | `/Library/Application Support/notation` |
-
-`NOTATION_CACHE` is omitted since it is user specific.
+> Note: Default directory paths in Notation 0.12.0-beta.1 only supports user level.
 
 ### User Level
 
