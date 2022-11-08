@@ -223,15 +223,6 @@ C:.
 └── Users
     └── exampleuser
         └── AppData
-            ├── Local
-            │   └── notation
-            │       └── signatures
-            │           └── sha256
-            │               └── 05b3abf2579a5eb66403cd78be557fd860633a1fe2103c7642030defe32c657f
-            │                   └── sha256
-            │                       ├── 2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae.sig
-            │                       ├── b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9.sig
-            │                       └── fcde2b2edba56bf408601fb721fe9b5c338d10ee429ea04fae5511b68fbf8fb9.sig
             └── Roaming
                 └── notation
                     ├── config.json
