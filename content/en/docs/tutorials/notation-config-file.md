@@ -42,7 +42,7 @@ You can follow the example below to customize the Notation configuration in `con
 }
 ```
 
-This table exlains the properties in `config.json`. 
+This table explains the properties in `config.json`. 
 
 | Property | Type | Value |
 | --- | --- | ---|
@@ -73,7 +73,7 @@ The `signingkeys.json` will generated as the following example:
 }
 ```
 
-This table exlains the properties in `signingkeys.json`. 
+This table explains the properties in `signingkeys.json`. 
 
 | Property | Type | Value |
 | --- | --- | ---|

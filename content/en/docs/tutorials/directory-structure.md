@@ -146,21 +146,6 @@ Examples are shown on various operating systems where the user `exampleuser` ove
 
 ```
 /
-├── etc
-│   └── notation
-│       ├── config.json
-│       ├── trustpolicy.json
-│       └── truststore
-│           └── x509
-│               ├── ca
-│               │   ├── acme-rockets
-│               │   │   ├── cert1.pem
-│               │   │   └── cert2.pem
-│               │   └── wabbit-networks
-│               │       └── cert3.pem
-│               └── tsa
-│                   └── publicly-trusted-tsa
-│                       └── tsa-cert1.pem
 ├── home
 │   └── exampleuser
 │       └── .config
@@ -184,42 +169,12 @@ Examples are shown on various operating systems where the user `exampleuser` ove
 │                       └── tsa
 │                           └── publicly-trusted-tsa
 │                               └── tsa-cert2.pem
-└── usr
-    ├── bin
-    │   └── notation
-    └── libexec
-        └── notation
-            └── plugins
-                └── com.example.foo
-                    └── notation-com.example.foo
 ```
 
 ### Windows
 
 ```
 C:.
-├── Program Files
-│   └── notation
-│       ├── bin
-│       │   └── notation.exe
-│       └── plugins
-│           └── com.example.foo
-│               └── notation-com.example.foo.exe
-├── ProgramData
-│   └── notation
-│       ├── config.json
-│       ├── trustpolicy.json
-│       └── truststore
-│           └── x509
-│               ├── ca
-│               │   ├── acme-rockets
-│               │   │   ├── cert1.pem
-│               │   │   └── cert2.pem
-│               │   └── wabbit-networks
-│               │       └── cert3.pem
-│               └── tsa
-│                   └── publicly-trusted-tsa
-│                       └── tsa-cert1.pem
 └── Users
     └── exampleuser
         └── AppData
@@ -250,22 +205,6 @@ C:.
 
 ```
 /
-├── Library
-│   └── Application Support
-│       └── notation
-│           ├── config.json
-│           ├── trustpolicy.json
-│           └── truststore
-│               └── x509
-│                   ├── ca
-│                   │   ├── acme-rockets
-│                   │   │   ├── cert1.pem
-│                   │   │   └── cert2.pem
-│                   │   └── wabbit-networks
-│                   │       └── cert3.pem
-│                   └── tsa
-│                       └── publicly-trusted-tsa
-│                           └── tsa-cert1.pem
 ├── Users
 │   └── exampleuser
 │       └── Library
@@ -291,15 +230,6 @@ C:.
 │                              └── publicly-trusted-tsa
 │                                  └── tsa-cert2.pem
 │           
-└── usr
-    └── local
-        ├── bin
-        │   └── notation
-        └── lib
-            └── notation
-                └── plugins
-                    └── com.example.foo
-                        └── notation-com.example.foo
 ```
 
 [References]::
