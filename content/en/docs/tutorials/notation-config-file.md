@@ -15,15 +15,15 @@ The configuration file `config.json` location is different per operating system.
 
 ### Linux
 
-`config.json` should be mannually created and placed in `~/.config/notation/config.json`. 
+`config.json` should be manually created and placed in `~/.config/notation/config.json`. 
 
 ### Windows
 
-`config.json` should be mannually created and placed in in `C:/Users/exampleuser/AppData/Roaming/notation/config.json`.
+`config.json` should be manually created and placed in in `C:/Users/exampleuser/AppData/Roaming/notation/config.json`.
 
 ### Darwin 
 
-`config.json` should be mannually created and placed in in `~/Users/exampleuser/Library/Application Support/notation/config.json`.
+`config.json` should be manually created and placed in in `~/Users/exampleuser/Library/Application Support/notation/config.json`.
 
 ## Sample of config.json
 
