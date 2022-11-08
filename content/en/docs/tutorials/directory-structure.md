@@ -1,18 +1,17 @@
 ---
-title: "Notation Directory Structure for System Configration"
+title: "Notation directory structure for system configration"
 description: "How to configure the directory structure"
 type: docs
 weight: 4
 ---
 
-Notation CLI requires local file systems support for the following components across various platforms.
+Notation CLI requires local file systems support for the following components. They should be stored in different places per different operating system.
 
 - Notation binary
 - Plugins
 - Configurations
 - Trust stores
 - Trust policies
-- Signature caches
 - Signing key store
 
 This documentation specifies the recommended directory structure for those components.
@@ -41,9 +40,6 @@ Default directory paths for various operating systems at user level are specifie
 | ------------------ | --------------------------- | ------------------------- | ---------------------------------------- |
 | `NOTATION_LIBEXEC` | `$XDG_CONFIG_HOME/notation` | `%AppData%/notation`      | `~/Library/Application Support/notation` |
 | `NOTATION_CONFIG`  | `$XDG_CONFIG_HOME/notation` | `%AppData%/notation`      | `~/Library/Application Support/notation` |
-| `NOTATION_CACHE`   | `$XDG_CACHE_HOME/notation`  | `%LocalAppData%/notation` | `~/Library/Caches/notation`              |
-
-On Unix, `$XDG_CONFIG_HOME` is default to `~/.config` and `$XDG_CACHE_HOME` is default to `~/.cache` if XDG environment variables are empty.
 
 There is no default `NOTATION_BIN` path at user level since the `notation` binary can be put anywhere as long as it in the `PATH` environment variable. Common directories on Unix/Darwin are `~/bin` and `~/.local/bin` where manual `PATH` update by users may be required.
 
@@ -54,12 +50,7 @@ The overall directory structure for `notation` is summarized as follows.
 ```
 {NOTATION_BIN}
 └── notation
-{NOTATION_CACHE}
-└── signatures
-    └── {manifest-digest-algorithm}
-        └── {manifest-digest}
-            └── {signature-blob-digest-algorithm}
-                └── {signature-digest}.sig
+
 {NOTATION_CONFIG}
 ├── config.json
 ├── localkeys
@@ -129,25 +120,6 @@ The path of the [Trust Policy][TP] file is
 {NOTATION_CONFIG}/trustpolicy.json
 ```
 
-### Signature Caches
-
-The signatures are cached to optimize the network traffic. The path of cached signatures for a certain target manifest (e.g. an image manifest) follows the pattern below.
-
-```
-{NOTATION_CACHE}/signatures/{manifest-digest-algorithm}/{manifest-digest}/{signature-blob-digest-algorithm}/{signature-digest}.sig
-```
-
-or in a hierarchical view
-
-```
-{NOTATION_CACHE}
-└── signatures
-    └── {manifest-digest-algorithm}
-        └── {manifest-digest}
-            └── {signature-blob-digest-algorithm}
-                └── {signature-digest}.sig
-```
-
 ### Signing Key Store
 
 Developers sign artifacts using local private keys with associated certificate chain. The signing key information is tracked in a JSON file at
@@ -169,7 +141,7 @@ Since `signingkeys.json` takes references in absolute paths, it is not required 
 
 ## Examples
 
-Examples are shown on various platforms where the user `exampleuser` overrides the `notation` config and the trust policy.
+Examples are shown on various operating systems where the user `exampleuser` overrides the `notation` config and the trust policy.
 
 ### Unix
 
@@ -192,15 +164,6 @@ Examples are shown on various platforms where the user `exampleuser` overrides t
 │                       └── tsa-cert1.pem
 ├── home
 │   └── exampleuser
-│       ├── .cache
-│       │   └── notation
-│       │       └── signatures
-│       │           └── sha256
-│       │               └── 05b3abf2579a5eb66403cd78be557fd860633a1fe2103c7642030defe32c657f
-│       │                   └── sha256
-│       │                       ├── 2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae.sig
-│       │                       ├── b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9.sig
-│       │                       └── fcde2b2edba56bf408601fb721fe9b5c338d10ee429ea04fae5511b68fbf8fb9.sig
 │       └── .config
 │           └── notation
 │               ├── config.json
@@ -316,36 +279,28 @@ C:.
 ├── Users
 │   └── exampleuser
 │       └── Library
-│           ├── Application Support
-│           │   └── notation
-│           │       ├── config.json
-│           │       ├── localkeys
-│           │       │   ├── dev.crt
-│           │       │   ├── dev.pem
-│           │       │   ├── test.crt
-│           │       │   └── test.pem
-│           │       ├── plugins
-│           │       │   └── com.example.bar
-│           │       │       └── notation-com.example.bar
-│           │       ├── signingkeys.json
-│           │       ├── trustpolicy.json
-│           │       └── truststore
-│           │           └── x509
-│           │               ├── ca
-│           │               │   └── acme-rockets
-│           │               │       └── cert4.pem
-│           │               └── tsa
-│           │                   └── publicly-trusted-tsa
-│           │                       └── tsa-cert2.pem
-│           └── Caches
-│               └── notation
-│                   └── signatures
-│                       └── sha256
-│                           └── 05b3abf2579a5eb66403cd78be557fd860633a1fe2103c7642030defe32c657f
-│                               └── sha256
-│                                   ├── 2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae.sig
-│                                   ├── b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9.sig
-│                                   └── fcde2b2edba56bf408601fb721fe9b5c338d10ee429ea04fae5511b68fbf8fb9.sig
+│           └── Application Support
+│              └── notation
+│                  ├── config.json
+│                  ├── localkeys
+│                  │   ├── dev.crt
+│                  │   ├── dev.pem
+│                  │   ├── test.crt
+│                  │   └── test.pem
+│                  ├── plugins
+│                  │   └── com.example.bar
+│                  │       └── notation-com.example.bar
+│                  ├── signingkeys.json
+│                  ├── trustpolicy.json
+│                  └── truststore
+│                      └── x509
+│                          ├── ca
+│                          │   └── acme-rockets
+│                          │       └── cert4.pem
+│                          └── tsa
+│                              └── publicly-trusted-tsa
+│                                  └── tsa-cert2.pem
+│           
 └── usr
     └── local
         ├── bin
@@ -366,5 +321,5 @@ C:.
 [macOS_FS]: https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html#//apple_ref/doc/uid/TP40010672-CH2-SW14 "macOS File System"
 [SIP]: https://support.apple.com/HT204899 "System Integrity Protection"
 [Plugin]: https://github.com/notaryproject/notaryproject/blob/main/specs/plugin-extensibility.md "Notation Extensibility for Signing and Verification"
-[TS]: https://github.com/notaryproject/notaryproject/blob/main/trust-store-trust-policy-specification.md#trust-store "Trust Store"
+[TS]: https://github.com/notaryproject/notaryproject/blob/main/specs/trust-store-trust-policy.md#trust-store "Trust Store"
 [TP]: https://github.com/notaryproject/notaryproject/blob/main/trust-store-trust-policy-specification.md#trust-policy "Trust Policy"
