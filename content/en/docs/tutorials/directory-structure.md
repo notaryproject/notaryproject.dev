@@ -26,9 +26,8 @@ The directories for various components are classified into the following catagor
 | `NOTATION_LIBEXEC` | Directory for binaries not meant to be executed directly by users' shell or scripts |
 | `NOTATION_CONFIG`  | Directory for configurations                                                        |
 
-Although it is recommended to install `notation` with its plugins and default configurations at the system level, it is possible to install at the user level.
 
-On Unix systems, `notation` follows [Filesystem Hierarchy Standard][FHS] for system level directories and [XDG Base Directory Specification][XDG] for user level directories. On Windows, [Known Folders][KF] and [App Settings][AS] are followed equivalently. On Darwin, [macOS File System][macOS_FS] with [System Integrity Protection][SIP] is followed equivalently. 
+On Unix systems, `notation` follows [XDG Base Directory Specification][XDG] for user level directories. On Windows, [Known Folders][KF] and [App Settings][AS] are followed equivalently. On Darwin, [macOS File System][macOS_FS] with [System Integrity Protection][SIP] is followed equivalently. 
 
 > Note: Default directory paths in Notation 0.12.0-beta.1 only supports user level.
 
@@ -128,7 +127,7 @@ Developers sign artifacts using local private keys with associated certificate c
 {NOTATION_CONFIG}/signingkeys.json
 ```
 
-Since the signing key store is user-specific, the system level `{NOTATION_CONFIG}` is not recommended. Developers SHOULD consider safe places to store the passphrase-protected key and certificate pairs, or opt to remote signing.
+The signing key store is user-specific. Developers SHOULD consider safe places to store the passphrase-protected key and certificate pairs, or opt to remote signing.
 
 For testing purpose, the following directory structure is suggested.
 
