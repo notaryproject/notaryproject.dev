@@ -19,7 +19,7 @@ The configuration file `config.json` location is different per operating system.
 
 ### Windows
 
-`config.json` should be mannually created and placed in in `C:/Users/AppData/Roaming/notation/config.json`.
+`config.json` should be mannually created and placed in in `C:/Users/exampleuser/AppData/Roaming/notation/config.json`.
 
 ### Darwin 
 
