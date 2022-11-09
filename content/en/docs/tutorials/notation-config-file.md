@@ -1,6 +1,6 @@
 ---
 title: "Customize the Notation configuration file"
-description: "How to customize Notation configuration in differenct OS platforms"
+description: "How to customize Notation configuration in different OS platforms"
 type: docs
 weight: 4
 ---
