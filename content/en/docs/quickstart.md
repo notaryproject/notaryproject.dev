@@ -123,7 +123,7 @@ For a Mac user, store file `trustpolicy.json` under directory `$HOME/Library/App
 
 For a Window user, store file `trustpolicy.json` under directory `C:\Users\<username>\AppData\Roaming\notation\`.
 
-The above trust policy with the name 'wabbit-networks-images' has `registryScopes` set to `*`, which means it applies to all the artifacts of any registry. The `signatureVerification` is set to `strict` which means notation will perform all the validations and any failure in validation will lead to the failure of signature verification. This policy uses the `wabbit-networks.io` trust store of type `ca` which was created in the previous step. For more details please read [trust policy spec]({{< ref "/docs/concepts/trust-store-trust-policy-specification、#trust-policy-properties" >}}) to fine tune the policies for specific security requirements.
+The above trust policy with the name 'wabbit-networks-images' has `registryScopes` set to `*`, which means it applies to all the artifacts of any registry. The `signatureVerification` is set to `strict` which means notation will perform all the validations and any failure in validation will lead to the failure of signature verification. This policy uses the `wabbit-networks.io` trust store of type `ca` which was created in the previous step. For more details please read [trust-policy]({{< ref "/docs/concepts/trust-store-trust-policy-specification#trust-policy" >}}) to fine tune the policies for specific security requirements.
 
 For users want to enable trust policy for specific repositories, set the `registryScopes` as following
 
