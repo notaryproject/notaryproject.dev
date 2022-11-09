@@ -1,5 +1,5 @@
 ---
-title: "Notation directory structure for system configration"
+title: "Notation directory structure for system configuration"
 description: "How to configure the directory structure"
 type: docs
 weight: 4
