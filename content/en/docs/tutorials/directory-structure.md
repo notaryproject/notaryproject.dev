@@ -69,7 +69,7 @@ The overall directory structure for `notation` is summarized as follows.
 
 ### Notation Binary
 
-The path for the `notation` binary is
+The path for the `notation` binary is as follows.
 
 ```
 {NOTATION_BIN}/notation
@@ -97,7 +97,7 @@ On Windows, the `.exe` extension is required for executables.
 
 ### General Configuration
 
-The path of the general configuration file of the `notation` CLI is
+The path of the general configuration file of the `notation` CLI is as follows.
 
 ```
 {NOTATION_CONFIG}/config.json
@@ -105,7 +105,7 @@ The path of the general configuration file of the `notation` CLI is
 
 ### Trust Store
 
-The path of a certificate file in a [Trust Store][TS] follows the pattern of
+The path of a certificate file in a [Trust Store][TS] follows the pattern of below
 
 ```
 {NOTATION_CONFIG}/truststore/{trust-store-type}/{named-store}/{cert-file}
@@ -113,7 +113,7 @@ The path of a certificate file in a [Trust Store][TS] follows the pattern of
 
 ### Trust Policy
 
-The path of the [Trust Policy][TP] file is
+The path of the [Trust Policy][TP] file is as follows.
 
 ```
 {NOTATION_CONFIG}/trustpolicy.json
@@ -121,7 +121,7 @@ The path of the [Trust Policy][TP] file is
 
 ### Signing Key Store
 
-Developers sign artifacts using local private keys with associated certificate chain. The signing key information is tracked in a JSON file at
+Developers sign artifacts using local private keys with associated certificate chain. The signing key information is tracked in a JSON file at:
 
 ```
 {NOTATION_CONFIG}/signingkeys.json
@@ -146,29 +146,29 @@ Examples are shown on various operating systems where the user `exampleuser` ove
 
 ```
 /
-├── home
-│   └── exampleuser
-│       └── .config
-│           └── notation
-│               ├── config.json
-│               ├── localkeys
-│               │   ├── dev.crt
-│               │   ├── dev.pem
-│               │   ├── test.crt
-│               │   └── test.pem
-│               ├── plugins
-│               │   └── com.example.bar
-│               │       └── notation-com.example.bar
-│               ├── signingkeys.json
-│               ├── trustpolicy.json
-│               └── truststore
-│                   └── x509
-│                       ├── ca
-│                       │   └── acme-rockets
-│                       │       └── cert4.pem
-│                       └── tsa
-│                           └── publicly-trusted-tsa
-│                               └── tsa-cert2.pem
+└── home
+   └── exampleuser
+       └── .config
+           └── notation
+               ├── config.json
+               ├── localkeys
+               │   ├── dev.crt
+               │   ├── dev.pem
+               │   ├── test.crt
+               │   └── test.pem
+               ├── plugins
+               │   └── com.example.bar
+               │       └── notation-com.example.bar
+               ├── signingkeys.json
+               ├── trustpolicy.json
+               └── truststore
+                   └── x509
+                       ├── ca
+                       │   └── acme-rockets
+                       │       └── cert4.pem
+                       └── tsa
+                           └── publicly-trusted-tsa
+                               └── tsa-cert2.pem
 ```
 
 ### Windows
@@ -201,35 +201,35 @@ C:.
                                     └── tsa-cert2.pem
 ```
 
-### Darwin
+### Darwin / macOS
 
 ```
 /
-├── Users
-│   └── exampleuser
-│       └── Library
-│           └── Application Support
-│              └── notation
-│                  ├── config.json
-│                  ├── localkeys
-│                  │   ├── dev.crt
-│                  │   ├── dev.pem
-│                  │   ├── test.crt
-│                  │   └── test.pem
-│                  ├── plugins
-│                  │   └── com.example.bar
-│                  │       └── notation-com.example.bar
-│                  ├── signingkeys.json
-│                  ├── trustpolicy.json
-│                  └── truststore
-│                      └── x509
-│                          ├── ca
-│                          │   └── acme-rockets
-│                          │       └── cert4.pem
-│                          └── tsa
-│                              └── publicly-trusted-tsa
-│                                  └── tsa-cert2.pem
-│           
+└── Users
+   └── exampleuser
+       └── Library
+           └── Application Support
+              └── notation
+                  ├── config.json
+                  ├── localkeys
+                  │   ├── dev.crt
+                  │   ├── dev.pem
+                  │   ├── test.crt
+                  │   └── test.pem
+                  ├── plugins
+                  │   └── com.example.bar
+                  │       └── notation-com.example.bar
+                  ├── signingkeys.json
+                  ├── trustpolicy.json
+                  └── truststore
+                      └── x509
+                          ├── ca
+                          │   └── acme-rockets
+                          │       └── cert4.pem
+                          └── tsa
+                              └── publicly-trusted-tsa
+                                  └── tsa-cert2.pem
+           
 ```
 
 [References]::
