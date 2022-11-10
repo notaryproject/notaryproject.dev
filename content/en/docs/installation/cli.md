@@ -83,3 +83,10 @@ echo 'export PATH="$PATH:<EXAMPLE_PATH>/notary-cli/"' >> ~/.bashrc
 Expand the archive file and add `notation.exe` to `%ProgramFiles%/notation/bin`
 
 Alternatively, you can expand the archive file to a different directory and add it to your path.
+
+## Additional configuration
+
+For more on configuring your environment with `notation` see:
+
+- [Notation directory structure for system configuration]({{< ref "/docs/tutorials/directory-structure" >}})
+- [Customize the Notation configuration file]({{< ref "/docs/tutorials/notation-config-file" >}})
