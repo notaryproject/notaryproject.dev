@@ -296,7 +296,7 @@ func (s *pluginSigner) Sign(ctx context.Context, desc notation.Descriptor, opts 
 }
 ```
 
-Finally, Notation will package this signature into a signature envelope, and generate and pushes the signature manifest, through [`pushSignature`](https://github.com/notaryproject/notation/blob/v0.11.0-alpha.4/cmd/notation/push.go#L90):
+Finally, Notation will package this signature into a signature envelope, and generate and pushes the signature manifest, through [`pushSignature()`](https://github.com/notaryproject/notation/blob/v0.11.0-alpha.4/cmd/notation/push.go#L90):
 
 ```go
 func pushSignature(ctx context.Context, opts *SecureFlagOpts, ref string, sig []byte) (notation.Descriptor, error) {
