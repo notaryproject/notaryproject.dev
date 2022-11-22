@@ -9,7 +9,7 @@ draft: false
 
 [Notary project](https://notaryproject.dev/) is a set of tools that helps you sign, store, and verify OCI artifacts using OCI-conformant registries.
 
-[Notation]() is an implementation of the [Notary v2 specifications](https://github.com/notaryproject/notaryproject).
+[Notation](https://github.com/notaryproject/notation) is an implementation of the [Notary v2 specifications](https://github.com/notaryproject/notaryproject).
 As an implementation provides a CLI that adds signatures as standard items in the registry ecosystem, and can build a set of simple tooling for signing and verifying these signatures.
 
 Notary v2 provides for multiple signatures of an [OCI Artifact](https://github.com/opencontainers/artifacts) (including container images) to be persisted in an OCI conformant registry.
@@ -349,3 +349,4 @@ We're waiting to see a bump in the Notation Go library to [support](https://gith
 ORAS CLI [v0.16.0](https://github.com/oras-project/oras/releases/tag/v0.16.0) already leverages OCI artifacts, and that's why in this demonstration we picked a previous version, as we demonstrate ORAS Artifact-based signatures.
 
 See you soon with updates on OCI Artifact-based signatures!
+
