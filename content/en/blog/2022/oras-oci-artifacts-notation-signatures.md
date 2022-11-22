@@ -342,7 +342,7 @@ COSE is not a direct copy of the JOSE specification.  In the process of creating
 
 ## What's next
 
-It happened that ORAS worked to unify their artifact specification into a new OCI standard specification (Reference Types for image and distribution specs).
+It happened that ORAS worked to unify their artifact specification into a new OCI standard specification (Reference Types for [image](https://github.com/opencontainers/image-spec/pull/934) and [distribution](https://github.com/opencontainers/distribution-spec/pull/335) specs).
 
 We're waiting to see a bump in the Notation Go library to [support](https://github.com/notaryproject/notation-go/issues/136) the new Reference Type (and then Notation CLI) of the ORAS Go library (now release candidate [v2.0.0-rc.4](https://github.com/oras-project/oras-go/tree/v2.0.0-rc.4)).
 
