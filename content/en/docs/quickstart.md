@@ -12,9 +12,9 @@ Before you begin, you need:
 * Docker installed and running, such as [Docker desktop](https://www.docker.com/products/docker-desktop/).
 * [Notation CLI]({{< ref "/docs/installation/cli" >}}) installed and configured.
 
-## Create a OCI-compatible registry
+## Create an OCI-compatible registry
 
-Create and run an OCI-compatible registry on your development computer using Docker and the `oras-project/registry` contain image. The following command creates a registry that is accessible at `localhost:5000`.
+Create and run an OCI-compatible registry on your development computer using Docker and the [oras-project/registry](https://github.com/oras-project/distribution/pkgs/container/registry) container image. The following command creates a registry that is accessible at `localhost:5000`.
 
 ```console
 docker run -d -p 5000:5000 ghcr.io/oras-project/registry:v1.0.0-rc.2
@@ -22,7 +22,7 @@ docker run -d -p 5000:5000 ghcr.io/oras-project/registry:v1.0.0-rc.2
 
 ## Add an image to the OCI-compatible registry
 
-The following commands build and push the `wabbit-networks/net-monitor` container image to your container registry.
+The following commands build and push the [wabbit-networks/net-monitor](https://github.com/wabbit-networks/net-monitor#main) container image to your container registry.
 
 ```console
 docker build -t localhost:5000/net-monitor:v1 https://github.com/wabbit-networks/net-monitor.git#main
@@ -37,11 +37,11 @@ Use `notation list` to show any signatures associated with the container image y
 notation list $IMAGE
 ```
 
-Confirm there are no signatures showed in the output.
+Confirm there are no signatures shown in the output.
 
 ## Generate a test key and self-signed certificate
 
-Use `notation cert generate-test` to generate a test RSA key for signing artifacts, and a self-signed test certificate for verifying artifacts.
+Use `notation cert generate-test` to generate a test RSA key for signing artifacts, and a self-signed X.509 test certificate for verifying artifacts.
 
 **IMPORTANT**: Self-signed certificates should be used for development purposes only and should not be used in production environments.
 
@@ -71,13 +71,15 @@ Use `notation sign` to sign the container image.
 notation sign $IMAGE
 ```
 
-By default, the signature format is `JWS`. Use `--signature-format` to use `COSE` signature format.
+By default, the signature format is `JWS`. Use `--signature-format` to use [COSE](https://datatracker.ietf.org/doc/html/rfc8152/) signature format.
 
 ```console
 notation sign --signature-format cose $IMAGE
 ```
 
-Upon successful signing, the generated signature is pushed to the registry with the digest of the container image returned. Use `notation list` to show the signature associated with the container image.
+The generated signature is pushed to the registry and the digest of the container image returned.
+
+Use `notation list` to show the signature associated with the container image.
 
 ```console
 notation list $IMAGE
@@ -94,9 +96,11 @@ localhost:5000/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda27
 
 ## Create a trust policy
 
-In order to verify the container image, you need to configure the trust policy to specify trusted identities which sign the artifacts, and level of signature verification to use. See [trust policy spec]({{< ref "/docs/concepts/trust-store-trust-policy-specification#trust-policy" >}}) to understand more about trust policy.
+To verify the container image, configure the trust policy to specify trusted identities that sign the artifacts, and level of signature verification to use. For more detaisl, see [trust policy spec]({{< ref "/docs/concepts/trust-store-trust-policy-specification#trust-policy" >}}).
 
-Create a JSON file named `trustpolicy.json` with the following content:
+Create a `trustpolicy.json` with the following trust policy in the notation configuration directory.
+
+**NOTE:** For Linux, the notation configuration directory is `$HOME/.config/notation/`. For macOS, the notation configuration directory is `$HOME/Library/Application Support/notation/`. For Windows, the notation configuration folder is `C:\Users\<username>\AppData\Roaming\notation\`.
 
 ```json
 {
@@ -117,15 +121,9 @@ Create a JSON file named `trustpolicy.json` with the following content:
 }
 ```
 
-For a Linux user, store file `trustpolicy.json` under directory `$HOME/.config/notation/`.
+The above JSON creates a trust policy named `wabbit-networks-images`. The policy has `registryScopes` set to `*`, which applies the policy to all the artifacts of any registry. The `signatureVerification` is set to `strict`, which checks all validations and any failure will fail the signature verification. This policy uses the `wabbit-networks.io` trust store of type `ca` which was created in the previous step. For more details on trust policies, see [trust policy spec]({{< ref "/docs/concepts/trust-store-trust-policy-specification#trust-policy-properties" >}}).
 
-For a Mac user, store file `trustpolicy.json` under directory `$HOME/Library/Application Support/notation/`.
-
-For a Window user, store file `trustpolicy.json` under directory `C:\Users\<username>\AppData\Roaming\notation\`.
-
-The above trust policy with the name 'wabbit-networks-images' has `registryScopes` set to `*`, which means it applies to all the artifacts of any registry. The `signatureVerification` is set to `strict` which means notation will perform all the validations and any failure in validation will lead to the failure of signature verification. This policy uses the `wabbit-networks.io` trust store of type `ca` which was created in the previous step. For more details please read [trust policy spec]({{< ref "/docs/concepts/trust-store-trust-policy-specification#trust-policy-properties" >}}) to fine tune the policies for specific security requirements.
-
-For users want to enable trust policy for specific repositories, set the `registryScopes` as following
+To enable trust policy for specific registries, set the `registryScopes` to those specific registries. For example:
 
 ```json
 registryScopes": [ 
@@ -145,32 +143,30 @@ notation verify $IMAGE
 
 The digest of the supplied artifact is returned upon successful verification.
 
-## Reset
+## Cleanup
 
-To resetting the environment
+### Remove the notation configuration
 
-* Remove local keys, self-signed certificates and notation configurations
+To remove local keys, self-signed certificates, and notation configurations, remove the notation configuration directory.
   
-For linux user,
+For linux:
 
 ```console
 rm -r $HOME/.config/notation/
 ```
 
-For a Mac user
+For macOS:
 
 ```console
 rm -r $HOME/Library/Application Support/notation/
 ```
 
-For a Window user, delete the directory `C:\Users\<username>\AppData\Roaming\notation\`
+For Windows, delete the directory `C:\Users\<username>\AppData\Roaming\notation\`
 
-* Remove the local registry
+### Remove the registry
+
+To remove the registry running on your development computer:
 
 ```console
 docker rm -f $(docker ps -q)
 ```
-
-## What's Next
-
-Notation can do much more than what is discussed in the quick start. Learn more information from other sections of this site.
