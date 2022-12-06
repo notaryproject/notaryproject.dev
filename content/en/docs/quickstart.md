@@ -171,9 +171,7 @@ The digest of the supplied artifact is returned upon successful verification.
 
 ## Troubleshooting
 
-Use `--verbose` flag for `notation sign` or `notation verify` command to print out `Info`, `Warning` or `Error` logs.
-
-Use `--debug` flag for `notation sign` or `notation verify` command to print out `Debug` logs in addition to those enabled by `--verbose` flag.
+If you meet any issues using command `notation sign` or `notation verify`, you can add `--verbose` flag to print out `Info`, `Warning` or `Error` logs, or add `--debug` flag to print out `Debug` logs in addition to those enabled by `--verbose` flag.
 
 ## Cleanup
 
