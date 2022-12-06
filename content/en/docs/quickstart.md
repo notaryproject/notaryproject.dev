@@ -23,6 +23,17 @@ docker run -d -p 5000:5000 ghcr.io/oras-project/registry:v1.0.0-rc.3
 > NOTE:
 > Since v1.0.0-rc.1 release, by default, Notation stores signatures using OCI artifact Manifest, which is defined in [OCI Image spec v1.1.0](https://github.com/opencontainers/image-spec/tree/v1.1.0-rc2)). If you choose a different registry, make sure the registry is OCI Image spec v1.1.0 compliant.
 
+### Building OCI-compatible registry image from source
+
+In some cases, such as if your development computer is running an Apple silicon processor, you can download the source of the image for the OCI-compatible registry. The following example clones the repository, builds the image using `docker buildx`, and creates a registry that is available at `localhost:5000`.
+
+```console
+git clone https://github.com/oras-project/distribution.git
+cd distribution
+docker buildx build -t oras-project/registry:v1.0.0-rc.3 . 
+docker run -d -p 5000:5000 oras-project/registry:v1.0.0-rc.3
+```
+
 ## Add an image to the OCI-compatible registry
 
 The following commands build and push the [wabbit-networks/net-monitor](https://github.com/wabbit-networks/net-monitor#main) container image to your container registry.
@@ -32,7 +43,9 @@ docker build -t localhost:5000/net-monitor:v1 https://github.com/wabbit-networks
 docker push localhost:5000/net-monitor:v1
 ```
 
-Tags are mutable and a tag reference can point to a different container image than the one signed. Find out the digest value from the output of `docker push` command.
+Save the digest value of the image from the output of the `docker push` command.
+
+*Important*: Always use the digest value of an image when signing since they are immutable. Tag values are mutable and can reference a different container image than the original signed container image.
 
 An example output of `docker push`:
 
@@ -44,17 +57,18 @@ ded7a220bb05: Pushed
 v1: digest: sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a size: 942
 ```
 
-Use digest to identify the container image as `localhost:5000/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a`.
+In the above example, the reference to the container image using the digest value is `localhost:5000/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a`.
 
 > Note：
-> Tags can be used to reference the container image. In this example, you can use tag `v1` for reference. Notation commands will resolve the tag `v1` to digest `sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a` first. By validating the digest, you can make sure it is the right container image to reference.
+> If you use a tag value to sign an image, `notation` will determine the digest value of the current image associated and will use that digest to sign. Tags can be used to reference the container image.
 
 ## List the signatures associated with the container image
 
 Use `notation list` to show any signatures associated with the container image you built and pushed in the previous section.
 
 ```console
-notation list localhost:5000/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a
+IMAGE=localhost:5000/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a
+notation list $IMAGE
 ```
 
 Confirm there are no signatures shown in the output.
@@ -88,13 +102,13 @@ notation certificate list
 Use `notation sign` to sign the container image.
 
 ```console
-notation sign localhost:5000/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a
+notation sign $IMAGE
 ```
 
 By default, the signature format is `JWS`. Use `--signature-format` to use [COSE](https://datatracker.ietf.org/doc/html/rfc8152/) signature format.
 
 ```console
-notation sign --signature-format cose localhost:5000/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a
+notation sign --signature-format cose $IMAGE
 ```
 
 The generated signature is pushed to the registry and the digest of the container image returned.
@@ -102,13 +116,13 @@ The generated signature is pushed to the registry and the digest of the containe
 Use `notation list` to show the signature associated with the container image.
 
 ```console
-notation list localhost:5000/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a
+notation list $IMAGE
 ```
 
 Confirm there is one signature, for example:
 
 ```output
-$ notation list localhost:5000/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a
+$ notation list $IMAGE
 localhost:5000/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a
 └── application/vnd.cncf.notary.v2.signature
     └── sha256:ba3a68a28648ba18c51a479145fca60d96b43dc96c6ab22f412c89ac56a9038b
@@ -158,10 +172,16 @@ registryScopes": [
 Use `notation verify` to verify signatures associated with the container image.
 
 ```console
-notation verify localhost:5000/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a
+notation verify $IMAGE
 ```
 
 The digest of the supplied artifact is returned upon successful verification.
+
+## Troubleshooting
+
+Use `--verbose` flag for `notation sign` or `notation verify` command to print out `Info`, `Warning` or `Error` logs.
+
+Use `--debug` flag for `notation sign` or `notation verify` command to print out `Debug` logs in addition to those enabled by `--verbose` flag.
 
 ## Cleanup
 
