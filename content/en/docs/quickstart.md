@@ -60,15 +60,15 @@ v1: digest: sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff5
 In the above example, the reference to the container image using the digest value is `localhost:5000/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a`.
 
 > Note：
-> If you use a tag value to sign an image, `notation` will determine the digest value of the current image associated and will use that digest to sign. Tags can be used to reference the container image.
+> Notation will resolve the tag to digest automatically then sign it when you choose to sign with an image tag.
 
 ## List the signatures associated with the container image
 
-Use `notation list` to show any signatures associated with the container image you built and pushed in the previous section.
+`notation ls`
 
 ```console
 IMAGE=localhost:5000/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a
-notation list $IMAGE
+notation ls $IMAGE
 ```
 
 Confirm there are no signatures shown in the output.
