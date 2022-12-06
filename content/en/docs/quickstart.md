@@ -14,25 +14,17 @@ Before you begin, you need:
 
 ## Create an OCI-compatible registry
 
-Create and run an OCI-compatible registry on your development computer using Docker and the [oras-project/registry](https://github.com/oras-project/distribution/pkgs/container/registry) container image. The following command creates a registry that is accessible at `localhost:5000`.
+Create and run an OCI-compatible registry on your development computer using Docker and the [oras-project/registry](https://github.com/oras-project/distribution/pkgs/container/registry) container image.The following command creates a registry that is accessible at `localhost:5000`.
 
 ```console
 docker run -d -p 5000:5000 ghcr.io/oras-project/registry:v1.0.0-rc.3
 ```
 
 > NOTE:
-> Since v1.0.0-rc.1 release, by default, Notation stores signatures using OCI artifact Manifest, which is defined in [OCI Image spec v1.1.0](https://github.com/opencontainers/image-spec/tree/v1.1.0-rc2)). If you choose a different registry, make sure the registry is OCI Image spec v1.1.0 compliant.
-
-### Building OCI-compatible registry image from source
-
-In some cases, such as if your development computer is running an Apple silicon processor, you can download the source of the image for the OCI-compatible registry. The following example clones the repository, builds the image using `docker buildx`, and creates a registry that is available at `localhost:5000`.
-
-```console
-git clone https://github.com/oras-project/distribution.git
-cd distribution
-docker buildx build -t oras-project/registry:v1.0.0-rc.3 . 
-docker run -d -p 5000:5000 oras-project/registry:v1.0.0-rc.3
-```
+>
+> - The [oras-project/registry](https://github.com/oras-project/distribution/pkgs/container/registry) must be used for testing purpose only.
+>`
+> - Since `v1.0.0-rc.1` release, by default, Notation stores signatures using [OCI Artifact Manifest](https://github.com/opencontainers/image-spec/blob/v1.1.0-rc2/artifact.md), which is defined in [OCI Image spec v1.1.0](https://github.com/opencontainers/image-spec/tree/v1.1.0-rc2)). If you choose a different registry, make sure the registry is compatible with OCI Image spec v1.1.0.
 
 ## Add an image to the OCI-compatible registry
 
@@ -60,7 +52,7 @@ v1: digest: sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff5
 In the above example, the reference to the container image using the digest value is `localhost:5000/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a`.
 
 > Note：
-> If you use a tag value to sign an image, `notation` will determine the digest value of the current image associated and will use that digest to sign. Tags can be used to reference the container image.
+> Notation resolves the tag to the digest before signing if a tag is used to identify the container image.
 
 ## List the signatures associated with the container image
 
