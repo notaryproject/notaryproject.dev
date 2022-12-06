@@ -56,7 +56,7 @@ In the above example, the reference to the container image using the digest valu
 
 ## List the signatures associated with the container image
 
-`notation ls`
+Use `notation list` to show any signatures associated with the container image you built and pushed in the previous section.
 
 ```console
 IMAGE=localhost:5000/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a
