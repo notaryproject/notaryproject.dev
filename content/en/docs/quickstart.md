@@ -23,7 +23,7 @@ docker run -d -p 5000:5000 ghcr.io/oras-project/registry:v1.0.0-rc.3
 > NOTE:
 >
 > - The [oras-project/registry](https://github.com/oras-project/distribution/pkgs/container/registry) must be used for testing purpose only.
->`
+>
 > - Since `v1.0.0-rc.1` release, by default, Notation stores signatures using [OCI Artifact Manifest](https://github.com/opencontainers/image-spec/blob/v1.1.0-rc2/artifact.md), which is defined in [OCI Image spec v1.1.0](https://github.com/opencontainers/image-spec/tree/v1.1.0-rc2)). If you choose a different registry, make sure the registry is compatible with OCI Image spec v1.1.0.
 
 ## Add an image to the OCI-compatible registry
@@ -56,7 +56,7 @@ In the above example, the reference to the container image using the digest valu
 
 ## List the signatures associated with the container image
 
-Use `notation list` to show any signatures associated with the container image you built and pushed in the previous section.
+Use `notation ls` to show any signatures associated with the container image you built and pushed in the previous section.
 
 ```console
 IMAGE=localhost:5000/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a
@@ -67,26 +67,26 @@ Confirm there are no signatures shown in the output.
 
 ## Generate a test key and self-signed certificate
 
-Use `notation certificate generate-test` to generate a test RSA key for signing artifacts, and a self-signed X.509 test certificate for verifying artifacts.
+Use `notation cert generate-test` to generate a test RSA key for signing artifacts, and a self-signed X.509 test certificate for verifying artifacts.
 
 **IMPORTANT**: Self-signed certificates should be used for development purposes only and should not be used in production environments.
 
 The following command generates a test key and a self-signed X.509 certificate. With the `--default` flag, the test key is set as a default signing key. The self-signed X.509 certificate is added to a named trust store `wabbit-networks.io` of type `ca`.
 
 ```console
-notation certificate generate-test --default "wabbit-networks.io"
+notation cert generate-test --default "wabbit-networks.io"
 ```
 
-Use `notation key list` to confirm the signing key is correctly configured. Key name with a `*` prefix is the default key.
+Use `notation key ls` to confirm the signing key is correctly configured. Key name with a `*` prefix is the default key.
 
 ```console
-notation key list
+notation key ls
 ```
 
-Use `notation certificate list` to confirm the certificate is stored in the trust store.
+Use `notation cert ls` to confirm the certificate is stored in the trust store.
 
 ```console
-notation certificate list
+notation cert ls
 ```
 
 ## Sign the container image
@@ -105,16 +105,16 @@ notation sign --signature-format cose $IMAGE
 
 The generated signature is pushed to the registry and the digest of the container image returned.
 
-Use `notation list` to show the signature associated with the container image.
+Use `notation ls` to show the signature associated with the container image.
 
 ```console
-notation list $IMAGE
+notation ls $IMAGE
 ```
 
 Confirm there is one signature, for example:
 
 ```output
-$ notation list $IMAGE
+$ notation ls $IMAGE
 localhost:5000/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a
 └── application/vnd.cncf.notary.v2.signature
     └── sha256:ba3a68a28648ba18c51a479145fca60d96b43dc96c6ab22f412c89ac56a9038b
@@ -168,10 +168,6 @@ notation verify $IMAGE
 ```
 
 The digest of the supplied artifact is returned upon successful verification.
-
-## Troubleshooting
-
-If you meet any issues using command `notation sign` or `notation verify`, you can add `--verbose` flag to print out `Info`, `Warning` or `Error` logs, or add `--debug` flag to print out `Debug` logs in addition to those enabled by `--verbose` flag.
 
 ## Cleanup
 
