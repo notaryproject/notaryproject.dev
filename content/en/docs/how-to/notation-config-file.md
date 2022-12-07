@@ -11,7 +11,7 @@ This guide demonstrates how to customize the Notation system configuration in `c
 
 The configuration file `config.json` location is different per operating system. `signingkeys.json` will be generated and stored in the same directory with `config.json`. You can use the Notation CLI or libraries to alter locations through the `XDG_CONFIG_HOME` environment variable.
 
-> Note: You can find the details of Notation directory structure for system configuration in this [guide]({{< ref "/docs/tutorials/directory-structure" >}}).
+> Note: You can find the details of Notation directory structure for system configuration in this [guide]({{< ref "/docs/how-to/directory-structure" >}}).
 
 ### Linux
 
