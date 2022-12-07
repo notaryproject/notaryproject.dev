@@ -88,5 +88,5 @@ Alternatively, you can expand the archive file to a different directory and add 
 
 For more on configuring your environment with `notation` see:
 
-- [Notation directory structure for system configuration]({{< ref "/docs/tutorials/directory-structure" >}})
-- [Customize the Notation configuration file]({{< ref "/docs/tutorials/notation-config-file" >}})
+- [Notation directory structure for system configuration]({{< ref "/docs/how-to/directory-structure" >}})
+- [Customize the Notation configuration file]({{< ref "/docs/how-to/notation-config-file" >}})
