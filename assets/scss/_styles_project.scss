@@ -50,6 +50,15 @@
   }
 }
 
+.container {
+  max-width: 2000px;
+  padding: 0 3rem;
+}
+
+.navbar {
+  padding: 0.5rem 3rem;
+}
+
 .o-features__feature {
   display: inline-flex;
   flex-direction: column;
@@ -219,4 +228,25 @@
 
 .card-title {
   .fab::before, .fas::before { margin-right: .5rem; }
+}
+
+
+.flex {
+  display: flex;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.gap-md {
+  gap: 20px;
+}
+
+.is-align-items-center {
+  align-items: center;
+}
+
+.text-left {
+  text-align: left;
 }
