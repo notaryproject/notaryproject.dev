@@ -1,0 +1,22 @@
+.gap-md .flex {
+    gap: 50px;
+    margin: 0;
+}
+
+.get-started {
+    background: linear-gradient(84.89deg, #32BFFC -3.17%, #5350e2 97.59%);
+}
+
+.demo {
+    background: $notaryproject-light-grey;
+}
+
+.flex .button {
+    font-size: 1rem;
+    color: $white;
+    font-weight: $font-weight-bold;
+    border: none;
+    padding: 0.6em 1.5em;
+    border-radius: 39px;
+    cursor: pointer;
+}
