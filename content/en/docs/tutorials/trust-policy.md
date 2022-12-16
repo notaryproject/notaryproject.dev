@@ -5,11 +5,9 @@ type: docs
 weight: 1
 ---
 
+As part of the process to verify a container image with notary, you need to configure the trust policy to specify trusted identities that sign the artifacts, and the level of signature verification to use. For more details, see [trust policy spec]({{< ref "/docs/concepts/trust-store-trust-policy-specification#trust-policy" >}}).
 
-quick details on trust policy
-link to concepts doc
-
-To verify the container image, configure the trust policy to specify trusted identities that sign the artifacts, and level of signature verification to use. For more details, see [trust policy spec]({{< ref "/docs/concepts/trust-store-trust-policy-specification#trust-policy" >}}).
+This tutorial shows you how to create a trust policy with different trusted identities and levels of signature verification. 
 
 ## Create an example registry with an image
 
@@ -42,13 +40,17 @@ In the above example, the digest value of the image is *sha256:11111111111111111
 
 ## Create example certificates and sign the image
 
-Use `notation cert generate-test` to generate three example certificates and trust stores for signing the image.
+Use `notation cert generate-test` to generate three example certificates and trust stores for signing the image. 
 
 ```console
-notation cert generate-test valid-example --default
-notation cert generate-test expired-example --default
-notation cert generate-test missing-example --default
+notation cert generate-test valid-example
+notation cert generate-test expired-example
+notation cert generate-test missing-example
 ```
+
+- The *valid-example* certificate and trust store will be used to sign the image with a valid signature.
+- The *expired-example* certificate and trust store will be used to sign the image with an expired signature.
+- The *missing-example* certificate and trust store will not be used to sign the image, but will be used to demonstrate the trust policy.
 
 Use `notation ls` to list the current signatures for your image. The following example sets the value of *$IMAGE* to the name of the image and its digest value.
 
@@ -61,7 +63,7 @@ notation ls $IMAGE
 
 Confirm there are no signatures listed.
 
-Use `notation sign` to sign the image with three different signatures.
+Use `notation sign` to sign the image with two different signatures.
 
 ```console
 notation sign $IMAGE -k valid-example 
@@ -103,7 +105,7 @@ Create a `trustpolicy.json` with the following trust policy in the notation conf
 }
 ```
 
-The above example has a verification level of *strict* and uses the *strict-example* trust store.
+The above example has a verification level of *strict* and uses the *valid-example* trust store.
 
 ## Verify image signatures using the trust policy
 
