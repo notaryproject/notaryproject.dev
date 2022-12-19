@@ -70,7 +70,7 @@ notation sign $IMAGE -k valid-example
 notation sign $IMAGE --expiry 30s -k expired-example
 ```
 
-Use `notation ls` to confirm there are three signatures.
+Use `notation ls` to confirm there are two signatures.
 
 ```console
 notation ls $IMAGE
@@ -219,7 +219,7 @@ Update the trust store to use the *audit* verification level.
             "signatureVerification": {
                 "level" : "audit" 
             },
-            "trustStores": [ "ca:audit-example2" ],
+            "trustStores": [ "ca:missing-example" ],
             "trustedIdentities": [
                 "*"
             ]
@@ -228,7 +228,7 @@ Update the trust store to use the *audit* verification level.
 }
 ```
 
-Use `notation verify` to verify the image using the *audit* verification level and *audit-example2* trust store and confirm it succeeds while logging the missing certificate.
+Use `notation verify` to verify the image using the *audit* verification level and *missing-example* trust store and confirm it succeeds while logging the missing certificate.
 
 ```console
 $ notation verify $IMAGE
