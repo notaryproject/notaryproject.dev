@@ -242,4 +242,4 @@ C:.
 [SIP]: https://support.apple.com/HT204899 "System Integrity Protection"
 [Plugin]: https://github.com/notaryproject/notaryproject/blob/main/specs/plugin-extensibility.md "Notation Extensibility for Signing and Verification"
 [TS]: https://github.com/notaryproject/notaryproject/blob/main/specs/trust-store-trust-policy.md#trust-store "Trust Store"
-[TP]: https://github.com/notaryproject/notaryproject/blob/main/trust-store-trust-policy-specification.md#trust-policy "Trust Policy"
+[TP]: https://github.com/notaryproject/notaryproject/blob/main/specs/trust-store-trust-policy.md#trust-policy "Trust Policy"
