@@ -152,7 +152,7 @@ params:
         icon: fab fa-github
   # [params.logos]
   hero: >-
-    https://github.com/cncf/artwork/raw/master/projects/notary/horizontal/white/notary-horizontal-white.png
+    https://github.com/cncf/artwork/raw/master/projects/notary/horizontal/black/notary-horizontal-black.png
 
 mediaTypes:
   text/netlify: {}
