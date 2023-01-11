@@ -1,13 +1,13 @@
 ---
 title: "Registry Support"
-description: "Describe how notation works against with various registries"
+description: "Describe how Notation works against various registries"
 type: docs
 weight: 2
 ---
 
 ## Overview
 
-Notation aims for enabling customers to sign and verify arbitrary artifacts stored in a wide range of registries. This document describes how notation works against various registries that implements OCI specification partially or completely.
+Notation aims for enabling customers to sign and verify arbitrary artifacts stored in a wide range of registries. This document describes how Notation works against various registries that implements OCI specification partially or completely.
 
 ## Artifact references support
 
@@ -37,6 +37,6 @@ Today, not all the registries support artifact references, which are defined in 
 
 For registries that support artifact references, and manifest support is `OCI artifact manifest`, Notation stores the signature using `OCi artifact manifest` by default.
 
-For registries that support artifact references, and manifest support is `OCI image manifest`, user SHOULD explicitly pass a flag `--use-image-manifest` to `notation sign` command, so that notation stores the signature using `OCI image manifest` in the registry.
+For registries that support artifact references, and manifest support is `OCI image manifest`, user SHOULD explicitly pass a flag `--use-image-manifest` to `notation sign` command, so that Notation stores the signature using `OCI image manifest` in the registry.
 
 For registries that don't support artifact references, Notation support will come in the future release.
