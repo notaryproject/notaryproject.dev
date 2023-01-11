@@ -1,11 +1,11 @@
 /* notaryproject-docsy full file override: we're not tracking changes to the docsy base file. */
 
-$notaryproject-grey: #fff;
+$notaryproject-grey: #363636;
 $notaryproject-light-grey: lighten($notaryproject-grey, 10%);
 $notaryproject-dark-grey: darken($notaryproject-grey, 20%);
 
-$primary: $notaryproject-grey;
-$secondary: $notaryproject-dark-grey;
+$primary: #fff;
+$secondary: $notaryproject-light-grey;
 
 $enable-rounded: false;
 
