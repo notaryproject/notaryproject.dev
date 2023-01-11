@@ -20,7 +20,7 @@ localhost:5000/net-monitor@sha256:3d403e0e2381245e44579568f470f4fe068fdd076bda7c
     └── sha256:066b0b748a9fb73d2ce17dfb68f3cafe42dbbaa4ba62d8b02ffb5da4909c2b2d
 ```
 
-Today, not all the registries support artifact references, which are defined in [OCI image spec v1.1](https://github.com/opencontainers/image-spec/blob/v1.1.0-rc2/spec.md) and [OCI  distribution specification v1.1](https://github.com/opencontainers/distribution-spec/blob/v1.1.0-rc1/spec.md). The table below lists the artifact references support status and manifest support of various registries.
+Today, not all the registries support artifact references, which are defined in [OCI image spec v1.1](https://github.com/opencontainers/image-spec/blob/v1.1.0-rc2/spec.md) and [OCI  distribution specification v1.1](https://github.com/opencontainers/distribution-spec/blob/v1.1.0-rc1/spec.md). The table below lists the artifact references support status and manifest support of various registries. The registries are sorted alphabetically.
 
 | Registry                    | Artifact references support | Manifest support           |
 | --------------------------- | --------------------------- | -------------------------- |
