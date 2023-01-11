@@ -339,10 +339,6 @@
   background-repeat: no-repeat;
 }
 
-.container-fluid {
-  padding-left: 0;
-  padding-right: 0;
-}
 
 section:nth-of-type(2) {
   padding-top: 0px !important;
@@ -350,8 +346,6 @@ section:nth-of-type(2) {
 }
 
 .horizontalCard {
-  padding: 2em 2em;
-  max-width: 800px;
   background: #FFFFFF;
   box-shadow: 0px 7px 30px rgba(0, 0, 0, 0.2);
 }
@@ -367,4 +361,15 @@ section:nth-of-type(2) {
 .broken-line {
   width: 50px;
   border-top: 3px dashed blue;
+}
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  margin: 0;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
 }
