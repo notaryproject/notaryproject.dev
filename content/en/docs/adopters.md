@@ -1,6 +1,6 @@
 ---
 title: "Notation Adopters"
-description: "Organizations below all are using Notation in production."
+description: "List the known adopters who use Notation in production or integrate Notation into their products and services."
 type: docs
 weight: 9
 ---
