@@ -1,14 +1,10 @@
-.gap-md .flex {
-    gap: 50px;
-    margin: 0;
-}
-
 .get-started {
     background: linear-gradient(84.89deg, #32BFFC -3.17%, #5350e2 97.59%);
 }
 
 .demo {
     background: $notaryproject-light-grey;
+    padding: 0.6em 2.7em !important;
 }
 
 .flex .button {
