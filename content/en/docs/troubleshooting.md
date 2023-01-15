@@ -66,13 +66,21 @@ SHA1 Thumbprint: xxx
 
 Pay attention to the `Subject` info in the output. If this certificate is used to verify the signature, you need to add the `Subject` info into `trustedIdentities`.
 
-## I configured trust policy, but I still get the error "Error: signature verification failed: artifact "localhost:5000/net-monitor@sha256:xxx" has no applicable trust policy"
+## I have configured trust policy, but I still get the error 'Error: signature verification failed: artifact "localhost:5000/net-monitor@sha256:xxx" has no applicable trust policy'
 
 This error indicates that the `registryScopes` property is not correctly configured. This property contains a list of repository URIs, where the artifacts are stored. The repository URI is in format `${registry-name}/${namespace}/${repository-name}`. For example, if the artifact to be verified is `registry.acme-rockets.io/software/net-monitor@sha256:xxx`, then the value for `registryScopes` should be `registry.acme-rockets.io/software/net-monitor`, the following values are wrong
 
 - `registry.acme-rockets.io`
 - `registry.acme-rockets.io/software`
 
-## TODO: trust policy and payload.json encoding issues
+## When I verify an artifact, I get the error 'Error: malformed trustpolicy.json file'
 
-## TODO: signing key
+This is normally an encoding problem of `trustpolicy.json` file. Notation expects `utf-8 without BOM` or `ascii` encoding for `trustpolicy.json` file.
+
+For Windows user, Windows PowerShell (version before v6) uses the Unicode UTF-16LE encoding by default, and `utf-8 without BOM` is not supported. If you are building `trustpolicy.json` file in Windows PowerShell (before v6), make sure you change the encoding to `ascii`.
+
+## When I verify an artifact, I get the error 'Failed to unmarshal the payload content in the signature blob to envelope.Payload'
+
+This is normally an encoding problem of payload content in the signature envelope. Notary v2 signatures could be produced by different tools per [signature specification](https://github.com/notaryproject/notaryproject/blob/v1.0.0-rc.1/specs/signature-specification.md). The payload content is a `JSON` document defined in the signature specification, and the encoding should be `utf-8 without BOM` or `ascii`.
+
+For Windows user, Windows PowerShell (version before v6) uses the Unicode UTF-16LE encoding by default, and `utf-8 without BOM` is not supported. If you are building payload content in Windows PowerShell (before v6), make sure you change the encoding to `ascii`.
