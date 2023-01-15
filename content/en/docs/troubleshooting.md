@@ -29,18 +29,50 @@ Users need to configure trust policies before verifying artifacts. The trust pol
 
 For Linux, the notation configuration directory is `${HOME}/.config/notation/`. For macOS, the notation configuration directory is `${HOME}/Library/Application Support/notation/`. For Windows, the notation configuration folder is `%AppData%\Roaming\notation\`.
 
-Using CLI command to configure trust policies is planned in Notation future release. Before that, users can refer to this [guide](https://github.com/notaryproject/notation/blob/v1.0.0-rc.1/specs/commandline/verify.md#configure-trust-policy) to configure trust policies manually.
+Using CLI command to configure trust policies is planned in Notation future release. Before that, you can refer to this [guide](https://github.com/notaryproject/notation/blob/v1.0.0-rc.1/specs/commandline/verify.md#configure-trust-policy) to configure trust policies manually.
 
 ## When I verify an artifact, I get the error 'ERRO authenticity validation failed. Failure reason: error while loading the trust store, "$HOME/.config/notation/truststore/x509/ca/mytruststore" does not exist'
 
-This error indicates the trust store doesn't exist or the trust store name is not correct. Trust store typically contains a set of certificate files, where the trust identities are retrieved to verify signatures. Normally users use command `notation cert add` to add trust stores.
+This error indicates the trust store doesn't exist or the trust store name is not correct. Trust store typically contains a set of certificate files, where the trust identities are retrieved to verify signatures. Normally you use command `notation cert add` to add trust stores.
 
-Based on the error log, the type of trust store is `ca`, and the trust store name is `mytruststore`. First, users can use `notation cert list` to list all the certificate files. Second, users can check whether the type of store `ca` and store name `mytruststore` are in the list with the right certificate file stored.
+Based on the error log, the type of trust store is `ca`, and the trust store name is `mytruststore`. First, you can use `notation cert list` to list all the certificate files. Second, you can check whether the type of store `ca` and store name `mytruststore` are in the list with the right certificate file stored.
 
-## TODO: wrong certificate is used
+## When I verify an artifact, I get the error 'ERRO authenticity validation failed. Failure reason: signature is not produced by a trusted signer'
+
+Assuming the trust store and trust policy are configured correctly, this error means that the signature is signed by an unknown identity, which should not be trusted. So the verification should fail. On the other hand, Notation detects the problematic artifact. Users should not use this artifact.
+
+Follow the following steps to make sure the trust store and trust policy are configured correctly:
+
+1. Find the trust policy that you are using
+2. Check the `trustStores` property, and make sure the value is correct.
+3. Check the `trustedIdentities` property, and make sure the value is correct. If the value is `"*"`, it means all the certificates stored in the trust stored are trusted, then you need to make sure the certificates are correctly added in the trust stores configured in `trustStores`. If the value is like `"x509.subject: CN=example.io,O=Notary,L=Seattle,ST=WA,C=US"`, then you need to make sure it is the identity that produces the signature. You can use command `notation cert show` to show the details of the certificate. For example:
+
+```shell
+notation cert show --type ca --store mytruststore mycertificate.crt
+```
+
+An example of output:
+
+```text
+Certificate details
+--------------------------------------------------------------------------------
+Issuer: CN=example.io,O=Notary,L=Seattle,ST=WA,C=US
+Subject: CN=example.io,O=Notary,L=Seattle,ST=WA,C=US
+Valid from: 2023-01-15 07:55:01 +0000 UTC
+Valid to: 2023-01-16 07:55:01 +0000 UTC
+IsCA: false
+SHA1 Thumbprint: xxx
+```
+
+Pay attention to the `Subject` info in the output. If this certificate is used to verify the signature, you need to add the `Subject` info into `trustedIdentities`.
+
+## I configured trust policy, but I still get the error "Error: signature verification failed: artifact "localhost:5000/net-monitor@sha256:xxx" has no applicable trust policy"
+
+This error indicates that the `registryScopes` property is not correctly configured. This property contains a list of repository URIs, where the artifacts are stored. The repository URI is in format `${registry-name}/${namespace}/${repository-name}`. For example, if the artifact to be verified is `registry.acme-rockets.io/software/net-monitor@sha256:xxx`, then the value for `registryScopes` should be `registry.acme-rockets.io/software/net-monitor`, the following values are wrong
+
+- `registry.acme-rockets.io`
+- `registry.acme-rockets.io/software`
 
 ## TODO: trust policy and payload.json encoding issues
-
-## TODO: registry scope is wrongly configured
 
 ## TODO: signing key
