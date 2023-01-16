@@ -285,7 +285,9 @@
 }
 
 .img-container-md {
-  width: 250px;
+  max-width: 250px;
+  min-width: auto;
+  min-height: auto;
   height: 150px;
 }
 
