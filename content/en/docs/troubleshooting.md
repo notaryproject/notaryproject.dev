@@ -39,13 +39,13 @@ Based on the error log, the type of trust store is `ca`, and the trust store nam
 
 ## When I verify an artifact, I get the error 'ERRO authenticity validation failed. Failure reason: signature is not produced by a trusted signer'
 
-Assuming the trust store and trust policy are configured correctly, this error means that the signature is signed by an unknown identity, which should not be trusted. So the verification should fail. On the other hand, Notation detects the problematic artifact. Users should not use this artifact.
+Assuming the trust store and trust policy are configured correctly, this error indicates that the signature is signed by an unknown identity, which should not be trusted. The verification should fail. On the other hand, Notation detects the problematic signature. Users should not use the artifact.
 
-Follow the following steps to make sure the trust store and trust policy are configured correctly:
+Follow the steps to make sure the trust store and trust policy are configured correctly:
 
-1. Find the trust policy that you are using
-2. Check the `trustStores` property, and make sure the value is correct.
-3. Check the `trustedIdentities` property, and make sure the value is correct. If the value is `"*"`, it means all the certificates stored in the trust stored are trusted, then you need to make sure the certificates are correctly added in the trust stores configured in `trustStores`. If the value is like `"x509.subject: CN=example.io,O=Notary,L=Seattle,ST=WA,C=US"`, then you need to make sure it is the identity that produces the signature. You can use command `notation cert show` to show the details of the certificate. For example:
+1. Confirm the trust policy that you are using if you have multiple trust policies in `trustpolicy.json` file.
+2. Check the `trustStores` property, and make sure the value is correctly configured.
+3. Check the `trustedIdentities` property, and make sure the value is correctly configured. If the value is `"*"`, it means all the certificates stored in the trust stored (configured in `trustStores`) are trusted, then you need to make sure the certificates in the trust stores can be used to verify the signatures. If the value is in the format of x509 subject info, like `"x509.subject: CN=example.io,O=Notary,L=Seattle,ST=WA,C=US"`, then you need to make sure it is the identity that produces the signature. You can use command `notation cert show` to show the details of the certificate in the trust store. For example:
 
 ```shell
 notation cert show --type ca --store mytruststore mycertificate.crt
@@ -64,11 +64,13 @@ IsCA: false
 SHA1 Thumbprint: xxx
 ```
 
-Pay attention to the `Subject` info in the output. If this certificate is used to verify the signature, you need to add the `Subject` info into `trustedIdentities`.
+Check the `Subject` info in the output. If it is the identity that signs the artifact, you need to add the `Subject` info into `trustedIdentities`.
 
 ## I have configured trust policy, but I still get the error 'Error: signature verification failed: artifact "localhost:5000/net-monitor@sha256:xxx" has no applicable trust policy'
 
-This error indicates that the `registryScopes` property is not correctly configured. This property contains a list of repository URIs, where the artifacts are stored. The repository URI is in format `${registry-name}/${namespace}/${repository-name}`. For example, if the artifact to be verified is `registry.acme-rockets.io/software/net-monitor@sha256:xxx`, then the value for `registryScopes` should be `registry.acme-rockets.io/software/net-monitor`, the following values are wrong
+This error indicates that the `registryScopes` property is not correctly configured. This property contains a list of repository URIs, where the artifacts are stored. You need to make sure the signing artifact is stored in one of the listed repositories. If not, you need to add the missing repository URI in `registryScopes`, or you can add a new trust policy for the missing repository.
+
+The repository URI is in the format of `${registry-name}/${namespace}/${repository-name}`. For example, if the artifact to be verified is `registry.acme-rockets.io/software/net-monitor@sha256:xxx`, then the value for `registryScopes` should be `registry.acme-rockets.io/software/net-monitor`, the following values are wrong
 
 - `registry.acme-rockets.io`
 - `registry.acme-rockets.io/software`
@@ -77,10 +79,10 @@ This error indicates that the `registryScopes` property is not correctly configu
 
 This is normally an encoding problem of `trustpolicy.json` file. Notation expects `utf-8 without BOM` or `ascii` encoding for `trustpolicy.json` file.
 
-For Windows user, Windows PowerShell (version before v6) uses the Unicode UTF-16LE encoding by default, and `utf-8 without BOM` is not supported. If you are building `trustpolicy.json` file in Windows PowerShell (before v6), make sure you change the encoding to `ascii`.
+For Windows user, Windows PowerShell (prior to v6) uses the Unicode `UTF-16LE` encoding by default, and `utf-8 without BOM` is not supported. If you are building `trustpolicy.json` file in Windows PowerShell (prior to v6), make sure you change the file encoding to `ascii`.
 
 ## When I verify an artifact, I get the error 'Failed to unmarshal the payload content in the signature blob to envelope.Payload'
 
 This is normally an encoding problem of payload content in the signature envelope. Notary v2 signatures could be produced by different tools per [signature specification](https://github.com/notaryproject/notaryproject/blob/v1.0.0-rc.1/specs/signature-specification.md). The payload content is a `JSON` document defined in the signature specification, and the encoding should be `utf-8 without BOM` or `ascii`.
 
-For Windows user, Windows PowerShell (version before v6) uses the Unicode UTF-16LE encoding by default, and `utf-8 without BOM` is not supported. If you are building payload content in Windows PowerShell (before v6), make sure you change the encoding to `ascii`.
+For Windows user, Windows PowerShell (prior to v6) uses the Unicode `UTF-16LE` encoding by default, and `utf-8 without BOM` is not supported. If you are building payload content in Windows PowerShell (prior to v6), make sure you change the payload content encoding to `ascii`.
