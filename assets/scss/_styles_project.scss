@@ -364,7 +364,7 @@ section:nth-of-type(2) {
 .horizontalCard {
   background: #FFFFFF;
   box-shadow: 0px 7px 30px rgba(0, 0, 0, 0.2);
-  padding: 1.2em 1.8rem;
+  padding: 1.4em 1.8rem;
   font-size: 1.1rem;
 }
 
@@ -407,4 +407,14 @@ section:nth-of-type(2) {
   -webkit-text-fill-color: transparent; 
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
+}
+
+.font-size-md {
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+
+.font-size-sm {
+  font-size: 1rem;
+  font-weight: 200;
 }
