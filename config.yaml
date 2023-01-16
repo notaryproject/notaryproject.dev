@@ -34,7 +34,6 @@ imaging:
 
 languages:
   en:
-    title: Notary Project
     description: >-
       The Notary project comprises a server and a client for running and
       interacting with trusted collections.
