@@ -128,6 +128,17 @@ params:
     readingtime:
       enable: false
 
+  # Navbar config
+  navbar:
+    logos:
+      github:
+        url: https://github.com/notaryproject/notaryproject
+      twitter:
+        url: https://mobile.twitter.com/NotaryProject
+      slack:
+        url: https://app.slack.com/client/T08PSQ7BQ/CQUH8U287/
+    
+
   # Footer Links
   links:
     # End user relevant links. These will show up on left side of footer and in the community page if you have one.

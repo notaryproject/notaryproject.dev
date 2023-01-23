@@ -1,7 +1,10 @@
 {{/* notaryproject-docsy file override */ -}}
 <footer class="footer bg-dark flex space-between is-align-items-center is-mobile-responsive">
   <div class="img-container-sm">
-    <img src="logo-dark.png" alt="notary project logo">
+    <a href="{{ .Site.Home.RelPermalink }}">
+      {{ $image := resources.Get "icons/logo-dark.png" }}
+      <img src="{{ $image.RelPermalink }}" alt="notary logo">
+    </a>
   </div>
   <div class="row text-center text-white small">
     <div class="col-12 text-center py-2 order-sm-2">

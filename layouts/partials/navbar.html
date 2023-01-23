@@ -21,19 +21,21 @@
 			{{ end }}
             <div class="flex gap-md nav-item mr-4 mb-2 mb-lg-0">
                 <div class="img-container-xxsm">
-                    <a class="nav-link" href="https://github.com/notaryproject/notaryproject">
-                        <img src="github-logo.png" alt="github logo">
-                    </a>
-                </div>
-
-                <div class="img-container-xxsm">
-                    <a class="nav-link" href="https://mobile.twitter.com/NotaryProject">
-                        <img src="twitter-logo.png" alt="github logo">
+                    <a class="nav-link" href="{{ .Site.Params.navbar.logos.github.url }}">
+                        {{ $image := resources.Get "icons/github-logo.png" }}
+                        <img src="{{ $image.RelPermalink }}" alt="github logo">
                     </a>
                 </div>
                 <div class="img-container-xxsm">
-                    <a class="nav-link" href="https://app.slack.com/client/T08PSQ7BQ/CQUH8U287/">
-                        <img src="slack-logo.png" alt="slack logo">
+                    <a class="nav-link" href="{{ .Site.Params.navbar.logos.twitter.url }}">
+                        {{ $image := resources.Get "icons/twitter-logo.png" }}
+                        <img src="{{ $image.RelPermalink }}" alt="twitter logo">
+                    </a>
+                </div>
+                <div class="img-container-xxsm">
+                    <a class="nav-link" href="{{ .Site.Params.navbar.logos.slack.url }}">
+                        {{ $image := resources.Get "icons/slack-logo.png" }}
+                        <img src="{{ $image.RelPermalink }}" alt="slack logo">
                     </a>
                 </div>
             </div>
