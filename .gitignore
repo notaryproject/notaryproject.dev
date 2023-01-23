@@ -1,6 +1,7 @@
 # npm assets
 node_modules/
 package-lock.json
+.DS_Store
 
 # Hugo-generated assets
 /public
