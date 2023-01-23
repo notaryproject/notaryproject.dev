@@ -370,6 +370,10 @@
   margin: 30px 0px;
 }
 
+.margin-sm-top-bottom {
+  margin: 15px 0px;
+}
+
 .margin-lg-top {
   margin-top: 60px;
 }
@@ -533,4 +537,18 @@ section:nth-of-type(2) {
 .title {
   font-size: 1.8em;
   font-weight: 600;
+}
+
+.btn-secondary {
+  font-size: small;
+  background: none;
+  color: blue;
+  padding: 7px;
+}
+
+.tag {
+  background: #D8D5D5;
+  border-radius: 20px;
+  font-size: 15px;
+  padding: 5px 20px;
 }
