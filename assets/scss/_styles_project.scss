@@ -312,6 +312,11 @@
   height: 100px;
 }
 
+.img-container-xxsm {
+  width: 40px;
+  height: 40px;
+}
+
 .img-long {
   width: 100%;
   height: 500px;
@@ -321,7 +326,7 @@
   }
 }
 
-.img-container-sm > img, .img-container-md > img, .img-container-xsm  > img, .img-long > img, .img-long > iframe {
+.img-container-sm > img, .img-container-xxsm > a > img, .img-container-md > img, .img-container-xsm  > img, .img-long > img, .img-long > iframe {
     width: 100%;
     height: 100%;
     object-fit: contain;

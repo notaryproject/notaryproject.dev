@@ -1,6 +1,6 @@
 ---
 title: Notary project documentation
-linkTitle: Docs
+linkTitle: Documentation
 menu:
   main: {weight: -60}
 simple_list: false

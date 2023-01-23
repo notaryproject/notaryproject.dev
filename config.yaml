@@ -168,12 +168,9 @@ outputs:
 # Site menu (partial -- also see pages with 'menu' in front matter)
 menu:
   main:
-    - name: Specifications
+    - name: Resources
       url: https://github.com/notaryproject/notaryproject
       weight: -50
     - name: Roadmap
       url: https://github.com/notaryproject/roadmap
       weight: -20
-    - name: Notary (historic docs)
-      url: https://github.com/notaryproject/notary/tree/master/docs
-      weight: -10
