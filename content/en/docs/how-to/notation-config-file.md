@@ -5,7 +5,7 @@ type: docs
 weight: 4
 ---
 
-This guide demonstrates how to customize the Notation system configuration in `config.json` and signing key in `signingkeys.json` respectively. By default, you don't need to create or modify them since Notation has default system settings and signing key configuration unless you want to customize them. 
+This guide demonstrates how to customize the Notation system configuration in `config.json` and signing key in `signingkeys.json` respectively. By default, you don't need to create or modify them since Notation has default system settings and signing key configuration unless you want to customize them.
 
 ## Location
 
@@ -15,7 +15,7 @@ The configuration file `config.json` location is different per operating system.
 
 ### Linux
 
-`config.json` should be manually created and placed in `~/.config/notation/config.json`. 
+`config.json` should be manually created and placed in `~/.config/notation/config.json`.
 
 ### Windows
 
@@ -42,7 +42,7 @@ You can follow the example below to customize the Notation configuration in `con
 }
 ```
 
-This table explains the properties in `config.json`. 
+This table explains the properties in `config.json`.
 
 | Property | Type | Value |
 | --- | --- | ---|
@@ -53,7 +53,7 @@ This table explains the properties in `config.json`.
 
 ## Sample of signingkeys.json
 
-The `signingkeys.json` will generated as the following example:
+Users only needs to interact with `notation key` command, which will generate/update this `signingkeys.json` file. An example of generated `signingkeys.json` is shown below.
 
 ```json
 {
@@ -61,8 +61,8 @@ The `signingkeys.json` will generated as the following example:
     "keys": [
         {
             "name": "wabbit-networks",
-            "keyPath": "/home/demo/.config/notation/localkeys/wabbit-networks.key",
-            "certPath": "/home/demo/.config/notation/localkeys/wabbit-networks.crt"
+            "id": "some-remote-key-id",
+            "pluginName": "io.cncf.notary.v2.some.plugin"
         },
         {
             "name": "import.acme-rockets",
@@ -73,13 +73,14 @@ The `signingkeys.json` will generated as the following example:
 }
 ```
 
-This table explains the properties in `signingkeys.json`. 
+This table explains the properties in `signingkeys.json`.
 
 | Property | Type | Value |
 | --- | --- | ---|
-| `signingKeys.default` | _string_ | the signing key to be used when `notation sign` is called without `--name`   |
-| `signingKeys.keys` | _array_  | a collection of name/value pairs of signing keys.   |
-| `key.name` | _string_ | a named reference to the key      |
-| `key.keyPath` | _string_ | a location by which the key can be found by the notation cli or notation libraries   |
-| `key.certPath`| _string_ | a location by which the paired certificate can be found by the notation cli or notation libraries |
-
+| `signingKeys.default` | _string_ | signing key to be used when `notation sign` is called without `--name`   |
+| `signingKeys.keys` | _array_  | collection of signing keys   |
+| `key.name` | _string_ | named reference to a key      |
+| `key.id` | _string_ | identifier of remote key      |
+| `key.pluginName` | _string_ | name of plugin that should be used for signing      |
+| `key.keyPath` | _string_ | location by which the key can be found by the notation cli or notation libraries   |
+| `key.certPath`| _string_ | location by which the paired certificate can be found by the notation cli or notation libraries |
