@@ -578,3 +578,13 @@ section:nth-of-type(2) {
   background-color: #000 !important;
   color: white;
 }
+
+.news {
+  padding: 2px;
+  width: 100%;
+  position: fixed;
+  height: 32px;
+  z-index: 100;
+  background-color: #32BFFC;
+  color: #fff;
+}
