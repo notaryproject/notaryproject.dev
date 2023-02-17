@@ -38,19 +38,10 @@ title: Notary Project
       <img src="aws_logo.svg" alt="AWS logo">
     </div>
     <div class="img-container-sm is-centered">
-      <img src="aqua_logo.svg" alt="Aqua logo">
-    </div>
-    <div class="img-container-sm is-centered">
-      <img src="cisco_logo.svg" alt="Cisco logo">
-    </div>
-    <div class="img-container-sm is-centered">
       <img src="cncf_logo.svg" alt="CNCF logo">
     </div>
     <div class="img-container-sm is-centered">
       <img src="docker_logo.svg" alt="Docker logo">
-    </div>
-    <div class="img-container-sm is-centered">
-      <img src="falco_logo.svg" alt="Falco logo">
     </div>
     <div class="img-container-sm is-centered">
       <img src="microsoft_logo.svg" alt="Microsoft logo">
@@ -63,7 +54,7 @@ title: Notary Project
 <section class="bg-container text-centered">
   <div class="text-container">
     <h1 class="title">Scenarios we fit and problems we solve for</h1>
-    <p class="font-size-md">Notary is a specification for signing and verifying OCI artifacts and storing them as OCI artifacts using OCI-conformant registries.</p>
+    <p class="font-size-md">Signing and validating software artifacts, ensure they have not been tampered with and provide security policies to determine which validated artifacts are allowed to be used in your systems</p>
   </div>
   <div class="flex max-width is-centered is-align-items-center gap-md is-mobile-responsive-reverse">
     <div class="fullwidth">
@@ -104,25 +95,24 @@ title: Notary Project
 {{% blocks/lead color="white" %}}
 <section class="feature-container">
   <div class="feature-text-container text-center">
-    <h1 class="title">What makes Notary unique</h1>
-    <p class="width-60 is-centered font-size-md">Lorem Ipsum is simply dummy text of the printing and <br/> typesetting industry. Lorem Ipsum has been the industry's standard<br/>
-    dummy text ever since the 1500s, when an unknown printer took a galley</p>
+    <h1 class="title">Why Notary v2 is unique</h1>
+    <p class="width-60 is-centered font-size-md">Notary v2 is aiming to provide enterprise-grade solutions and cross-industry standards for securing software supply chain</p>
   </div>
   <div class="feature-cards flex is-list width-80 is-mobile-responsive">
     <div class="card">
       <div class="order-number is-digit">01</div>
       <div class="feature-title">
-        <h1 class="text-left">Easy to use and extensible</h1>
+        <h1 class="text-left">Cryptographic Signing</h1>
       </div>
       <div class="feature-description text-left">
         <div class="description is-bullets">
           <ul>
-            <li>Web Development</li>
-            <li>SaaS Platform Development</li>
-            <li>Full Stack Development</li>
+            <li>Support COSE and JWS signature format</li>
+            <li>Not only images, it allows to sign and verify any software artifacts</li>
+            <li>Built on standard PKI</li>
+            <li>Support online and air-gapped signing scenario</li>
           </ul>
         </div>
-        <p class="description block">We create innovative solutions to solve customer problems and giving you more control over product.</p>
       </div>
     </div>
     <div class="card">
@@ -131,28 +121,44 @@ title: Notary Project
         <h1 class="text-left">Fine-grained security policy</h1>
       </div>
       <div class="feature-description text-left">
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-        <p class="description block">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+
+<div class="description is-bullets">
+  <ul>
+    <li>Able to custom trust policy and determine if a signed artifact is considered authentic</li>
+    <li>Ensure artifacts are signed with trusted identities and from trusted registry</li>
+    <li>Improve system integrity and authenticity</li>
+  </ul>
       </div>
     </div>
     <div class="card">
       <div class="order-number is-digit">03</div>
       <div class="feature-title">
-        <h1 class="text-left">Multi-registry support</h1>
+        <h1 class="text-left">Easy to use and extensible</h1>
       </div>
       <div class="feature-description text-left">
-        <p>Designing success through creative web design for your business to be the best.</p>
-        <p class="description block">Improving customer engagement with enhanced user experience.</p>
+        <div class="description is-bullets">
+          <ul>
+            <li>Automating signing and verification into a few simple CLI commands</li>
+            <li>Pluggable design allows you to develop plugins and ecosystem integration
+            </li>
+            <li>Provides SDK which allows you to develop your own client</li>
+          </ul>
+        </div> 
       </div>
     </div>
     <div class="card">
       <div class="order-number is-digit">04</div>
       <div class="feature-title">
-        <h1 class="text-left">PKI-based infrastructure</h1>
+        <h1 class="text-left">Multi-registry support</h1>
       </div>
       <div class="feature-description text-left">
-        <p>Develop your MVP with our experts who help create a solution that solves customer problems.</p>
-        <p class="description block">We fill in the technology gaps for you.</p>
+        <div class="description is-bullets">
+          <ul>
+            <li> It supports push and store signatures alongside the artifacts in OCI registries, such as Docker Hub, ACR, Zot registry, etc.</li>
+            <li>Portable and immutable, you can copy an artifact with its signature across registries
+            </li>
+          </ul>
+              </div>
       </div>
     </div>
     <div class="card">
@@ -163,12 +169,11 @@ title: Notary Project
       <div class="feature-description text-left">
         <div class="description is-bullets">
           <ul>
-            <li>Microsoft Azure</li>
-            <li>Amazon Web Services</li>
-            <li>Google Cloud Platform</li>
+            <li>100% open source, built and improved by the active communitye</li>
+            <li>100+ contributors in total, from multiple organizations </li>
+            <li>Fast iteration cadence and open community governance</li>
           </ul>
         </div>
-        <p class="description block">Accessibility made easy with cloud computing, offering cost minimization and supporting digital development.</p>
       </div>
     </div>
   </div>
@@ -177,50 +182,32 @@ title: Notary Project
 
 {{% blocks/lead color="white" %}}
 <h1 class="title">Adopted and trusted by</h1>
-<p class="width-60 is-centered font-size-md">Lorem Ipsum is simply dummy text of the printing and
-  typesetting industry. Lorem Ipsum has been the industry's standard
-  dummy text ever since the 1500s, when an unknown printer took a galley
-  of type and scrambled it to make a type specimen
-  book. It has survived not only five centuries,</p>
+<p class="width-60 is-centered font-size-md">Industry-leading enterprises and organizations are using Notary v2 for research, production, and integration with security products. If you are using Notary v2, please share you case with us</p>
 
   <div class="flex gap-md width-80 is-centered font-size-sm margin-md-top is-mobile-responsive">
     <div class="horizontalCard flex gap-lg is-align-items-center">
       <div class="img-container-md">
-        <img src="aqua_logo.svg" alt="Aqua logo">
+        <img src="aws_logo.svg" alt="Aqua logo">
       </div>
       <div class="text-container text-left ">
-        <p>Monday.com is a cloud-based
-          Work OS that allows teams to
-          quickly construct workflow
-          apps to manage their
-          processes, projects,
-          and daily tasks.</p>
+        <p>AWS Signer team is using and 
+          contributing to Notation, building the cryptographic signing services for customers</p>
       </div>
     </div>
     <div class="horizontalCard flex gap-lg space-between is-align-items-center">
       <div class="img-container-md">
-        <img src="aqua_logo.svg" alt="Aqua logo">
+        <img src="microsoft_logo.svg" alt="Aqua logo">
       </div>
       <div class="text-container text-left ">
-        <p>Monday.com is a cloud-based
-          Work OS that allows teams to
-          quickly construct workflow
-          apps to manage their
-          processes, projects,
-          and daily tasks.</p>
+        <p>Notation is widely adopted by multiple Microsoft teams and services, such as  Windows container team, AKS team, Azure Code Signing service, Ratify, etc.</p>
       </div>
     </div>
     <div class="horizontalCard flex gap-lg space-between is-align-items-center">
       <div class="img-container-md">
-        <img src="aqua_logo.svg" alt="Aqua logo">
+        <img src="docker_logo.svg" alt="Aqua logo">
       </div>
       <div class="text-container text-left ">
-        <p>Monday.com is a cloud-based
-          Work OS that allows teams to
-          quickly construct workflow
-          apps to manage their
-          processes, projects,
-          and daily tasks.</p>
+        <p>Docker Hub supports signing container images with Notation and storing signatures and other supply chain artifacts</p>
       </div>
     </div>
   </div>
