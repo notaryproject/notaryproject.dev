@@ -271,6 +271,18 @@
   justify-content: space-between;
 }
 
+.space-around {
+  justify-content: space-around;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-self-end {
+  justify-self: end;
+}
+
 .gap-md {
   gap: 20px;
 }
@@ -289,6 +301,10 @@
 
 .text-left {
   text-align: left;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .text-centered {
@@ -594,6 +610,6 @@ section:nth-of-type(2) {
   position: fixed;
   height: 32px;
   z-index: 100;
-  background-color: #32BFFC;
+  background: linear-gradient(84.89deg, #32BFFC -3.17%, #5350e2 97.59%);
   color: #fff;
 }
