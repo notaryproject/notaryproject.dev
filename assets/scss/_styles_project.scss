@@ -250,6 +250,10 @@
   color: rgb(93, 93, 239);
 }
 
+.navbar {
+  margin-top: 20px;
+}
+
 .card-title {
   .fab::before, .fas::before { margin-right: .5rem; }
 }
@@ -311,6 +315,11 @@
 .img-container-xxsm {
   width: 40px;
   height: 40px;
+}
+
+.img-container-xxxsm {
+  width: 25px;
+  height: 25px;
 }
 
 .img-long {
@@ -503,7 +512,7 @@ section:nth-of-type(2) {
   background-repeat: repeat;
   background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; 
+  -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
 }

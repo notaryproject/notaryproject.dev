@@ -1,12 +1,5 @@
 {{ $cover := .HasShortcode "blocks/cover" }}
-<section class="news is-medium">
-	<div class="has-text-centered">
-	  <div class="container">
-		<p class="is-size-5 is-size-5-mobile">
-		  <span><img src="rocket-icon.svg" alt="star icon"></span>Notation v1.0.0-RC.2 is available, download it now or star us on GitHub<span><img src="star-icon.svg" alt="star icon"></span>
-		</p>
-	</div>
-</section>
+{{ partial "banner.html" . }}
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark {{ if $cover}} td-navbar-cover {{ end }}flex-column flex-md-row td-navbar">
         <a class="navbar-brand" href="{{ .Site.Home.RelPermalink }}">
 		<span class="navbar-logo">{{ if .Site.Params.ui.navbar_logo }}{{ with resources.Get "icons/logo.svg" }}{{ ( . | minify).Content | safeHTML }}{{ end }}{{ end }}</span>
