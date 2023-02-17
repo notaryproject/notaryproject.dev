@@ -1,11 +1,19 @@
 <section class="news is-medium flex justify-center">
   <p class="is-size-5 is-size-5-mobile">
-    <span
-      ><img src="rocket-icon.svg" class="img-container-xxxsm" alt="star icon"
+    <span>
+      {{ $rocketIcon := resources.Get "icons/rocket-icon.svg" }}
+      <img
+        src="{{ $rocketIcon.RelPermalink }}"
+        class="img-container-xxxsm"
+        alt="star icon"
     /></span>
     Notation v1.0.0-RC.2 is available, download it now or star us on GitHub
-    <span
-      ><img src="star-icon.svg" class="img-container-xxxsm" alt="star icon"
+    <span>
+      {{ $starIcon := resources.Get "icons/star-icon.svg" }}
+      <img
+        src="{{ $starIcon.RelPermalink }}"
+        class="img-container-xxxsm"
+        alt="star icon"
     /></span>
   </p>
 </section>
