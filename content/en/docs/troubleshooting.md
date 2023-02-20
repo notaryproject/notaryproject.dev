@@ -31,13 +31,13 @@ For Linux, the notation configuration directory is `${HOME}/.config/notation/`. 
 
 Using CLI command to configure trust policies is planned in Notation future release. Before that, you can refer to this [guide](https://github.com/notaryproject/notation/blob/v1.0.0-rc.1/specs/commandline/verify.md#configure-trust-policy) to configure trust policies manually.
 
-## When I verify an artifact, I get the error 'ERRO authenticity validation failed. Failure reason: error while loading the trust store, "$HOME/.config/notation/truststore/x509/ca/mytruststore" does not exist'
+## When I verify an artifact, I get the error '"$HOME/.config/notation/truststore/x509/ca/mytruststore" does not exist'
 
 This error indicates the trust store doesn't exist or the trust store name is not correct. Trust store typically contains a set of certificate files, where the trust identities are retrieved to verify signatures. Normally you use command `notation cert add` to add trust stores.
 
 Based on the error log, the type of trust store is `ca`, and the trust store name is `mytruststore`. First, you can use `notation cert list` to list all the certificate files. Second, you can check whether the type of store `ca` and store name `mytruststore` are in the list with the right certificate file stored.
 
-## When I verify an artifact, I get the error 'ERRO authenticity validation failed. Failure reason: signature is not produced by a trusted signer'
+## When I verify an artifact, I get the error 'signature is not produced by a trusted signer'
 
 Assuming the trust store and trust policy are configured correctly, this error indicates that the signature is signed by an unknown identity, which should not be trusted. The verification should fail. On the other hand, Notation detects the problematic signature. Users should not use the artifact.
 
@@ -66,7 +66,7 @@ SHA1 Thumbprint: xxx
 
 Check the `Subject` info in the output. If it is the identity that signs the artifact, you need to add the `Subject` info into `trustedIdentities`.
 
-## I have configured trust policy, but I still get the error 'Error: signature verification failed: artifact "localhost:5000/net-monitor@sha256:xxx" has no applicable trust policy'
+## I have configured trust policy, but I still get the error 'no applicable trust policy'
 
 This error indicates that the `registryScopes` property is not correctly configured. This property contains a list of repository URIs, where the artifacts are stored. You need to make sure the signing artifact is stored in one of the listed repositories. If not, you need to add the missing repository URI in `registryScopes`, or you can add a new trust policy for the missing repository.
 
@@ -75,7 +75,7 @@ The repository URI is in the format of `${registry-name}/${namespace}/${reposito
 - `registry.acme-rockets.io`
 - `registry.acme-rockets.io/software`
 
-## When I verify an artifact, I get the error 'Error: malformed trustpolicy.json file'
+## When I verify an artifact, I get the error 'malformed trustpolicy.json file'
 
 This is normally an encoding problem of `trustpolicy.json` file. Notation expects `utf-8 without BOM` or `ascii` encoding for `trustpolicy.json` file.
 
