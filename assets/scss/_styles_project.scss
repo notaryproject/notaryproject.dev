@@ -339,11 +339,17 @@
 
 .img-long {
   width: 100%;
-  height: 500px;
+  height: 400px;
+  
   @include media-breakpoint-down(md) {
     width: 96%;
-    height: 400px;
+    height: 300px;
   }
+
+  @media (max-width: 1300px) {
+    width: 90%;
+    height: 300px;
+   }
 }
 
 .img-container-sm > img, .img-container-xxsm > a > img, .img-container-md > img, .img-container-xsm  > img, .img-long > img, .img-long > iframe {
@@ -591,6 +597,10 @@ section:nth-of-type(2) {
 
   @include media-breakpoint-down(md) {
     font-size: 1.3em;
+  }
+
+  @media (max-width: 1300px) {
+    font-size: 1.4em;
   }
 }
 
