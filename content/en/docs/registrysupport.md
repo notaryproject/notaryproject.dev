@@ -25,7 +25,7 @@ Today, not all the registries support artifact references, which are defined in 
 | Registry                    | Artifact references support | Manifest support           |
 | --------------------------- | --------------------------- | -------------------------- |
 | Azure Container Registry    | Yes                         | OCI artifact manifest      |
-| Docker Hub                  | Yes                         | OCI artifact manifest      |
+| Docker Hub                  | No                          | OCI image manifest        |
 | Elastic Container Registry  | No                          | N/A                        |
 | GitHub Container Registry   | Yes                         | OCI image manifest         |
 | Google Artifact Registry    | Yes                         | OCI image manifest         |
@@ -37,6 +37,6 @@ Today, not all the registries support artifact references, which are defined in 
 
 For registries that support artifact references, and manifest support is `OCI artifact manifest`, Notation stores the signature using `OCi artifact manifest` by default.
 
-For registries that support artifact references, and manifest support is `OCI image manifest`, user SHOULD explicitly pass a flag `--image-spec v1.1-image` to `notation sign` command, so that Notation stores the signature using `OCI image manifest` in the registry.
+For registries that support artifact references, and manifest support is `OCI image manifest`, user SHOULD explicitly pass a flag `--signature-manifest image` to `notation sign` command, so that Notation stores the signature using `OCI image manifest` in the registry.
 
 For registries that don't support artifact references, Notation support will come in the future release.
