@@ -407,6 +407,12 @@
   width: 70%;
 }
 
+.width-70-tablet {
+  @media (max-width: 1524px) {
+    width: 70%;
+  }
+}
+
 .width-80 {
   width: 80%;
 }
