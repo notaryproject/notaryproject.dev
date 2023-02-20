@@ -334,6 +334,16 @@
 .img-container-xxsm {
   width: 40px;
   height: 40px;
+
+  @include media-breakpoint-down(md) {
+    width: 25px;
+    height: 25px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 .img-container-xxxsm {
@@ -565,6 +575,12 @@ section:nth-of-type(2) {
   }
 }
 
+.is-size-3-mobile {
+  @include media-breakpoint-down(sm) {
+    font-size: 0.8rem;
+  }
+}
+
 .font-size-sm {
   font-size: 1rem;
   font-weight: 200;
@@ -639,6 +655,10 @@ section:nth-of-type(2) {
   z-index: 100;
   background: linear-gradient(84.89deg, #32BFFC -3.17%, #5350e2 97.59%);
   color: #fff;
+
+  @include media-breakpoint-down(sm) {
+    margin-top: -20px;
+  }
 }
 
 .banner-link {
