@@ -320,6 +320,16 @@
   height: 100px;
 }
 
+.img-container-mdl {
+  width: 190px;
+  height: 120px;
+}
+
+.img-container-smd {
+  width: 70px;
+  height: 70px;
+}
+
 .img-container-md {
   max-width: 250px;
   width: 100%;
@@ -366,7 +376,7 @@
    }
 }
 
-.img-container-sm > img, .img-container-xxsm > a > img, .img-container-md > img, .img-container-xsm  > img, .img-long > img, .img-long > iframe {
+.img-container-sm > img, .img-container-mdl > img, .img-container-smd > img, .img-container-xxsm > img, .img-container-xxsm > a > img, .img-container-md > img, .img-container-xsm  > img, .img-long > img, .img-long > iframe {
     width: 100%;
     height: 100%;
     object-fit: contain;
