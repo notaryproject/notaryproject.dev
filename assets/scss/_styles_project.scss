@@ -226,6 +226,10 @@
   background-color: white;
 }
 
+.td-default main > section:first-of-type {
+  padding-top: 80px;
+}
+
 .navbar-dark .navbar-nav .show > .nav-link, .navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .nav-link.active {
   color: rgb(110, 101, 101);
 }
