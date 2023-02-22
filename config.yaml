@@ -33,7 +33,6 @@ imaging:
 
 languages:
   en:
-    title: Notary Project
     description: >-
       The Notary project comprises a server and a client for running and
       interacting with trusted collections.
@@ -128,6 +127,16 @@ params:
     readingtime:
       enable: false
 
+  # Navbar config
+  navbar:
+    logos:
+      github:
+        url: https://github.com/notaryproject/notaryproject
+      twitter:
+        url: https://mobile.twitter.com/NotaryProject
+      slack:
+        url: https://app.slack.com/client/T08PSQ7BQ/CQUH8U287/
+
   # Footer Links
   links:
     # End user relevant links. These will show up on left side of footer and in the community page if you have one.
@@ -151,7 +160,7 @@ params:
         icon: fab fa-github
   # [params.logos]
   hero: >-
-    https://github.com/cncf/artwork/raw/master/projects/notary/horizontal/white/notary-horizontal-white.png
+    https://github.com/cncf/artwork/raw/master/projects/notary/horizontal/black/notary-horizontal-black.png
 
 mediaTypes:
   text/netlify: {}
@@ -168,12 +177,9 @@ outputs:
 # Site menu (partial -- also see pages with 'menu' in front matter)
 menu:
   main:
-    - name: Specifications
-      url: https://github.com/notaryproject/notaryproject
+    - name: Blog
+      url: ./blog/
       weight: -50
     - name: Roadmap
       url: https://github.com/notaryproject/roadmap
       weight: -20
-    - name: Notary (historic docs)
-      url: https://github.com/notaryproject/notary/tree/master/docs
-      weight: -10

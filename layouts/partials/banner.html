@@ -1,0 +1,19 @@
+<section class="news is-medium flex justify-center">
+  <p class="is-size-3-mobile">
+    <span>
+      {{ $rocketIcon := resources.Get "icons/rocket-icon.svg" }}
+      <img
+        src="{{ $rocketIcon.RelPermalink }}"
+        class="img-container-xxxsm"
+        alt="star icon"
+    /></span>
+    Notation v1.0.0-RC.2 is available, <a href="https://github.com/notaryproject/notation/releases/tag/v1.0.0-rc.2" class="banner-link">download it now</a> or <a href="https://github.com/notaryproject/notaryproject" class="banner-link">star us on GitHub</a>
+    <span>
+      {{ $starIcon := resources.Get "icons/star-icon.svg" }}
+      <img
+        src="{{ $starIcon.RelPermalink }}"
+        class="img-container-xxxsm"
+        alt="star icon"
+    /></span>
+  </p>
+</section>
