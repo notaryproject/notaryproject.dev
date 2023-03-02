@@ -1,5 +1,5 @@
 ---
-title: Notation v1.0.0-RC.2 is available, a big step closer to the stable v1 release!
+title: Notation v1.0.0-RC.2 is available!
 author:  "Notation Release Team"
 date: 2023-02-27
 draft: false
@@ -54,13 +54,13 @@ KEY                         VALUE
 io.wabbit-networks.buildId  123
 ```
 
-In addition, storing signatures in the registry using OCI image manifest was added into RC.3, you can use a flag `--signature-format image` to explicitly specify uploading image manifest to a registry when signing an artifact.
+In addition, storing signatures in the registry using OCI image manifest was added into RC.2, you can use a flag `--signature-format image` to explicitly specify uploading image manifest to a registry when signing an artifact. This brings backward compatibility which enables Notation work with the registries that do not support OCI Spec v1.1 yet.
 
 Last but not least, `--debug` and `--verbose` flags were added to all CLI commands, providing debug and troubleshooting capability for Notation CLI.
 
 ### Ecosystem integration
 
-[Ratify](https://github.com/deislabs/ratify) is a verification engine for Kubernetes which enables verification of artifact security metadata and admits for deployment only those that comply with policies you create. It integrated Notation-go v1.0.0-rc.2 which allows you to verify a container image signed by Notation.
+[Ratify](https://github.com/deislabs/ratify) is a verification engine for Kubernetes which enables verification of artifact security metadata and admits for deployment only those that comply with policies you create. Ratify v1.0.0 RC.1 integrated Notation-go v1.0.0-rc.2 which allows you to verify a container image signed by Notation.
 
 [Zot registry](http://zotregistry.io/) also integrates notation-go and supports storing signatures associated with the artifact. See this [demo](https://github.com/project-zot/zot/tree/main/demos#notation) for details.
 
@@ -74,20 +74,20 @@ As the second RC release for v1.0.0, we aim to deliver a production-ready securi
 
 We would like to specially thank the Notation maintainers, contributors, and the broader Notation community for helping us throughout the release process with timely feedback, reviews, community testing and for all your support to help ensure a timely release. Sending credits to the following contributors who made great contributions to RC.2.
 
-@toddysm
-@priteshbandi
-@byronchien
-@mintbomb27
-@FeynmanZhou
-@JeyJeyGao
-@patrickzheng200
-@yizha1
-@vaninrao10
-@iamjesh
-@zr-msft
-@thisisobate
-@iamsamirzon
-@shizhMSFT
+- [@byronchien](https://github.com/byronchien)
+- [@FeynmanZhou](https://github.com/FeynmanZhou)
+- [@iamjesh](https://github.com/iamjesh)
+- [@iamsamirzon](https://github.com/iamsamirzon)
+- [@JeyJeyGao](https://github.com/JeyJeyGao)
+- [@priteshbandi](https://github.com/priteshbandi)
+- [@mintbomb27](https://github.com/mintbomb27)
+- [@patrickzheng200](https://github.com/patrickzheng200)
+- [@shizhMSFT](https://github.com/shizhMSFT)
+- [@toddysm](https://github.com/toddysm)
+- [@thisisobate](https://github.com/thisisobate)
+- [@vaninrao10](https://github.com/vaninrao10)
+- [@yizha1](https://github.com/yizha1)
+- [@zr-msft](https://github.com/zr-msft)
 
 ## Download and give it a try
 
