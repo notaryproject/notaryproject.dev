@@ -5,7 +5,7 @@ type: docs
 weight: 1
 ---
 
-**IMPORTANT:** This article as well as the rest of this documentation describes the Notary v2 project and refers to it as *Notary*. Any discussion Notary v1 will refer to it as *Notary v1*. For some additional context on *Notary v2* and *Notary v1*, see [Community Collaboration on Notary v2](https://www.docker.com/blog/community-collaboration-on-notary-v2/) and the [Notary v1 documentation](https://github.com/notaryproject/notary/tree/master/docs).
+**IMPORTANT:** This article as well as the rest of this documentation describes the latest status of Notary Project and refers to it as The Notary Project. For documentation of older versions and implementations, please refer to the [previous Notary documentation](https://github.com/notaryproject/notary/tree/master/docs).
 
 ## Project Status
 
