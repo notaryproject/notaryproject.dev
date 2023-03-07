@@ -9,7 +9,12 @@ The Notary v2 project maintainers are pleased to announce the release of Notatio
 
 ## What's new
 
-This release adds enhancements including inspecting signatures associated with signed artifacts, storing signatures in the registry using OCI image manifest, adding user-defined metadata to signature payload, and more!  
+This release adds the following significant enhancements:
+
+- Inspecting signatures associated with signed artifacts
+- Storing signatures in the registry using OCI image manifest
+- Added user-defined metadata to signature payload
+- Add `--debug` and `--verbose` flags for troubleshooting
 
 ### Improved usability and troubleshooting capability
 
@@ -54,7 +59,7 @@ KEY                         VALUE
 io.wabbit-networks.buildId  123
 ```
 
-In addition, storing signatures in the registry using OCI image manifest was added into RC.2, you can use a flag `--signature-format image` to explicitly specify uploading image manifest to a registry when signing an artifact. This brings backward compatibility which enables Notation work with the registries that do not support OCI Spec v1.1 yet.
+In addition, storing signatures in the registry using OCI image manifest was added into RC.2, you can use a flag `--signature-manifest image` to explicitly specify uploading image manifest to a registry when signing an artifact. This brings backward compatibility which enables Notation work with the registries that do not support OCI Spec v1.1 yet.
 
 Last but not least, `--debug` and `--verbose` flags were added to all CLI commands, providing debug and troubleshooting capability for Notation CLI.
 
