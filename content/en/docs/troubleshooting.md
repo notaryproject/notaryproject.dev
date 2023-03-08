@@ -11,7 +11,7 @@ weight: 7
 
 ## Enabling notation CLI commands logging
 
-Printing log messages for debugging the problems can be enabled using the `--debug` or `-d` flag. Using the `--verbose` or `-v` flag to set verbosity level will be enough for most cases.
+Printing log messages for debugging the problems can be enabled using the `--debug` or `-d` flag. Using the `--verbose` or `-v` flag to enable verbose logging will be enough for most cases.
 
 For example:
 
@@ -29,7 +29,7 @@ Users need to configure trust policies before verifying artifacts. The trust pol
 
 For Linux, the notation configuration directory is `${HOME}/.config/notation/`. For macOS, the notation configuration directory is `${HOME}/Library/Application Support/notation/`. For Windows, the notation configuration folder is `%AppData%\Roaming\notation\`.
 
-Using CLI command to configure trust policies is planned in Notation future release. Before that, you can refer to this [guide](https://github.com/notaryproject/notation/blob/v1.0.0-rc.1/specs/commandline/verify.md#configure-trust-policy) to configure trust policies manually.
+Using CLI command to configure trust policies is planned in Notation future release. Before that, you can refer to this [guide](https://notaryproject.dev/docs/tutorials/trust-policy/) to configure trust policies manually.
 
 ## When I verify an artifact, I get the error '"$HOME/.config/notation/truststore/x509/ca/mytruststore" does not exist'
 
@@ -83,6 +83,6 @@ For Windows user, Windows PowerShell (prior to v6) uses the Unicode `UTF-16LE` e
 
 ## When I verify an artifact, I get the error 'Failed to unmarshal the payload content in the signature blob to envelope.Payload'
 
-This is normally an encoding problem of payload content in the signature envelope. Notary v2 signatures could be produced by different tools per [signature specification](https://github.com/notaryproject/notaryproject/blob/v1.0.0-rc.1/specs/signature-specification.md). The payload content is a `JSON` document defined in the signature specification, and the encoding should be `utf-8 without BOM` or `ascii`.
+This is normally an encoding problem of payload content in the signature envelope. Notary v2 signatures could be produced by different tools per [signature specification](https://github.com/notaryproject/notaryproject/blob/v1.0.0-rc.2/specs/signature-specification.md). The payload content is a `JSON` document defined in the signature specification, and the encoding should be `utf-8 without BOM` or `ascii`.
 
 For Windows user, Windows PowerShell (prior to v6) uses the Unicode `UTF-16LE` encoding by default, and `utf-8 without BOM` is not supported. If you are building payload content in Windows PowerShell (prior to v6), make sure you change the payload content encoding to `ascii`.
