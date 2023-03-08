@@ -19,7 +19,7 @@ Before you begin, you need:
 Create and run an OCI-compatible registry on your development computer using Docker and the [oras-project/registry](https://github.com/oras-project/distribution/pkgs/container/registry) container image. The following command creates a registry that is accessible at `localhost:5000`.
 
 ```console
-docker run -d -p 5000:5000 ghcr.io/oras-project/registry:v1.0.0-rc.3
+docker run -d -p 5000:5000 ghcr.io/oras-project/registry:v1.0.0-rc.4
 ```
 
 **NOTE:** For Apple silicon, add the `--platform linux/arm64` parameter.
