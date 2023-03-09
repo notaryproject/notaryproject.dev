@@ -5,21 +5,17 @@ date: 2023-03-08
 draft: false
 ---
 
-The Notation maintainers are pleased to announce the release of Notation v1.0.0-RC.3, including Notation CLI v1.0.0-rc.3. This blog walks you through the major updates of this release.
+The Notation maintainers are pleased to announce the release of Notation CLI v1.0.0-RC.3. This blog walks you through the major updates of this release.
 
 ## What's new
 
-This release introduces a breaking change to Notation:
+This release introduces a breaking change to Notation. The default type of signature manifest is changed to image manifest. The flag `--signature-manifest` for `notation sign` command is experimental for users to store signatures using artifact manifest.
 
-- The default type of signature manifest is changed to image manifest. The flag `--signature-manifest` for `notation sign` command is experimental for users to store signatures using artifact manifest.
-
-Signing experience is continuously improved in this release:
-
-- Supports new flags for signing artifacts using on-demand keys
+Signing experience is continuously improved in this release by introducing new flags for signing artifacts using on-demand keys.
 
 ### About signature manifest
 
-The signature is stored associated with signed artifacts in the OCI Distribution conformant registry. Since this release, the default type of signature manifest is changed from artifact manifest to [image manifest](https://github.com/opencontainers/image-spec/blob/v1.1.0-rc2/manifest.md). The signatures of the artifacts signed by previous releases of Notation (v1.0.0-RC.1 and v1.0.0-RC.2) can still be validated using the new release.
+The signature is stored associated with signed artifacts in the OCI conformant registry. Since this release, the default type of signature manifest is changed from artifact manifest to [image manifest](https://github.com/opencontainers/image-spec/blob/v1.1.0-rc2/manifest.md). The signatures of the artifacts signed by previous releases of Notation (v1.0.0-RC.1 and v1.0.0-RC.2) can still be validated using the new release.
 
 Users can still store signatures using artifact manifest by using an experimental flag `--signature-manifest`, for example:
 
@@ -46,7 +42,7 @@ This release introduces a new experience of signing artifacts using on-demand ke
    notation sign --id <key_id> --plugin <KMS_plugin> localhost:5000/net-monitor@sha256:xxx
    ```
 
-The experience is simplified for the scenario that the key is used only for one time. There is no need to add the key for later usage by `notation key add` command.
+This experience reduces the number of configuration steps required to setup signing. Users do not have to do the "notation key add" to start signing.
 
 ## Credits
 
