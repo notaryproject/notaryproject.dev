@@ -9,9 +9,9 @@ The Notation maintainers are pleased to announce the release of Notation CLI v1.
 
 ## What's new
 
-This release introduces a breaking change to Notation. The default type of signature manifest is changed to image manifest. The flag `--signature-manifest` for `notation sign` command is experimental for users to store signatures using artifact manifest.
+This release introduces a change to how signatures are stored in the registries to align with the OCI direction to use image manifest. The default type of signature manifest is changed to image manifest. The flag `--signature-manifest` for `notation sign` command is experimental for users who want to store signatures using artifact manifest. This change does not impact the validation of signatures.
 
-Signing experience is continuously improved in this release by introducing new flags for signing artifacts using on-demand keys.
+Signing experience is continuously improved in this release. Less configuration steps were required before users run `notation sign` command.
 
 ### About signature manifest
 
@@ -42,7 +42,7 @@ This release introduces a new experience of signing artifacts using on-demand ke
    notation sign --id <key_id> --plugin <KMS_plugin> localhost:5000/net-monitor@sha256:xxx
    ```
 
-This experience reduces the number of configuration steps required to setup signing. Users do not have to do the "notation key add" to start signing.
+The signing key is passed to the `notation sign` command directly. This experience reduces the number of configuration steps required to setup signing.
 
 ## Credits
 
