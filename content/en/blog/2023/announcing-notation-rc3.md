@@ -42,7 +42,7 @@ This release introduces a new experience of signing artifacts using on-demand ke
    notation sign --id <key_id> --plugin <KMS_plugin> localhost:5000/net-monitor@sha256:xxx
    ```
 
-The signing key is passed to the `notation sign` command directly. This experience reduces the number of configuration steps required to setup signing.
+Now users can pass the signing key to the `notation sign` command directly. This experience reduces the number of configuration steps required to setup signing.
 
 ## Credits
 
