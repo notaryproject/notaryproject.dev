@@ -1,7 +1,6 @@
 ---
 title: The Notary Project completes fuzzing security audit
 author:  "Adam Korczynski, Feynman Zhou"
-reviewer: "Shiwei Zhang, Pritesh Bandi, Vaninrao"
 date: 2023-03-17
 draft: false
 ---
