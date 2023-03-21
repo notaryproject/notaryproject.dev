@@ -1,13 +1,13 @@
 ---
 title: The Notary Project completes fuzzing security audit
-author:  "Adam Korczynski, Feynman Zhou"
+author:  "Adam Korczynski, David Korczynski, and Feynman Zhou"
 date: 2023-03-17
 draft: false
 ---
 
 > Reviewed by Pritesh Bandi, Samir Kakkar, Shiwei Zhang, Toddy Mladenov, Vani Rao, Yi Zha
 
-The Notary Project is happy to announce the completion of the fuzzing audit of Notation libraries. The audit was carried out by Ada Logics and is part of [an initiative by the CNCF](https://www.cncf.io/blog/2022/06/28/improving-security-by-fuzzing-the-cncf-landscape/) to bring fuzzing to the CNCF landscape. The audit spanned several months in late 2022 and early 2023 and resulted in 20 fuzzers written for 3 Notary sub-projects and 2 issues found, one of which was security-critical. 
+The Notary Project is happy to announce the completion of its fuzzing security audit. The audit was carried out by Ada Logics and is part of [an initiative by the CNCF](https://www.cncf.io/blog/2022/06/28/improving-security-by-fuzzing-the-cncf-landscape/) to bring fuzzing to the CNCF landscape. The audit spanned several months in late 2022 and early 2023 and resulted in 20 fuzzers written for 3 Notary sub-projects and 2 issues found, one of which was security-critical. 
 
 The full report from the audit is available [here](https://github.com/notaryproject/notaryproject/tree/main/security/reports/fuzzing/ADA-fuzzing-audit-22-23.pdf). 
 
@@ -26,6 +26,8 @@ Notation-go and Notation-core are sub-projects for the Notary project which is a
 ## Fuzzing the Notary Project
 
 Fuzzing is a way of testing software, whereby pseudo-random data is passed to a target API with the goal of detecting bugs and security issues. The pseudo-random data is created by a fuzzing engine that over time will generate test cases that uncover more of the code base. This type of fuzzing is called “coverage-guided fuzzing” and has been effective in finding bugs in software projects implemented in both memory-safe and memory-unsafe languages. This includes several other CNCF-hosted projects; Most recently, a security issue was found in containerd during [its fuzzing audit](https://www.cncf.io/blog/2023/03/02/containerd-completes-fuzzing-audit/). 
+
+There are several reasons why it's important to fuzz your software and we'll try to list some of the primary ones. First, due to empirical evidence where fuzzing is a proven technique for finding bugs and has found tens of thousands of bugs in security-critical software. Second, fuzzers find bugs that static analysis and manual auditing miss. This is because fuzzers rely on instrumenting and executing the code under analysis, which enables the fuzzers to have a different perspective than other analysis techniques and monitor deeper in the code, including third party dependencies. For example, a high severity bug in Istio [CVE-2022-23645](https://github.com/istio/istio/security/advisories/GHSA-856q-xv3c-7f2f) was due to a fairly unintuitive [behaviour](https://adalogics.com/blog/fuzzing-istio-cve-CVE-2022-23635) that static and manual analysis are very unlikely to find. Third, fuzzing is intuitive in the sense that it's closely related to unit- and integration-testing which makes it fit well with the developers workflow. Fourth, fuzzing is part of the secure development lifecycle for leading tech companies and has been for more than a decade.
 
 A critical component of a robust fuzzing suite is making sure that the fuzzers run continuously. The auditors of the Notary Projects fuzzing audit integrated Notary, Notation-go, and Notation-core-go into [OSS-Fuzz](https://github.com/google/oss-fuzz). OSS-Fuzz is an open-source project run by Google, which runs the fuzzers of critical open-source projects at scale with excessive computing, thus achieving much higher runtime results than developers would see when running the fuzzers locally. OSS-Fuzz is a critical piece of open-source fuzzing infrastructure and many other CNCF projects are integrated including Kubernetes, Helm, containerd, Argo, Flux, Envoy, Fluent-bit, and others. 
 
