@@ -169,28 +169,10 @@ The digest of the supplied artifact is returned upon successful verification.
 
 ## Cleanup
 
-### Remove the notation configuration
-
-To remove local keys, self-signed certificates, and notation configurations, remove the notation configuration directory.
-  
-For linux:
-
-```console
-rm -r ${HOME}/.config/notation/
-```
-
-For macOS:
-
-```console
-rm -r ${HOME}/Library/Application Support/notation/
-```
-
-For Windows, delete the directory `%USERPROFILE%\AppData\Roaming\notation\`
-
-### Remove the registry
-
-To remove the registry running on your development computer:
+To remove the sample registry running on your development computer:
 
 ```console
 docker rm -f $(docker ps -q)
 ```
+
+To reset your `notation` configuration, remove the notation configuration directory. For more details, see [Remove the configuration files]({{< ref "/docs/installation/uninstall" >}}).
