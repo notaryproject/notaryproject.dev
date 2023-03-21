@@ -13,15 +13,15 @@ The full report from the audit is available [here](https://github.com/notaryproj
 
 ## About the Notary Project
 
-The Notary Project is an open standard and tooling for signing and verifying artifacts and safeguarding the software delivery security from development to deployment and ensuring integrity. It was started at Docker in 2015 and powers [Docker content trust](https://docs.docker.com/engine/security/trust/) which is the docker trust set of commands. With the Notary Project, users can assign trust to data and verify the integrity of the signed data. Notary is an implementation of The Update Framework (TUF) and is used in many enterprise-grade cloud solutions.
+The Notary Project is an open standard and tooling for signing and verifying artifacts and safeguarding the software delivery security and ensuring integrity. It was started at Docker in 2015 and powers [Docker content trust](https://docs.docker.com/engine/security/trust/) which is the `docker trust` set of commands. With the Notary Project, users can assign trust to data and verify the integrity of the signed data. 
 
-The Notary Project was accepted into the CNCF in October 2017 and is hosted as an incubating project. Contributors are from organizations including Microsoft, AWS, Docker, and independent individuals. The fuzzing audit was limited to the following sub-projects:
+The Notary Project was accepted into the CNCF in October 2017 and is hosted as an incubating project. Contributors are from organizations including Microsoft, AWS, Docker, and independent individuals. Notation-go and Notation-core-go are sub-projects of the Notary Project. The implementation is an effort to build a signing framework to be used with every container image registry, allowing signatures to easily be associated and distributed with images.
+
+The fuzzing audit was limited to the following sub-projects:
 
 - [Notary](https://github.com/notaryproject/notary): A server and a client for running and interacting with trusted collections. 
 - [Notation-go](https://github.com/notaryproject/notation-go): a collection of libraries for supporting signing, verifying OCI artifacts. Based on the Notary standard. 
 - [Notation-core-go](https://github.com/notaryproject/notation-core-go): Crypto library for signature envelope, and signature format specific implementation.
-
-Notation-go and Notation-core are sub-projects for the Notary project which is an effort to build a signing framework to be used in every container image registry, and where signatures are easily distributed with images, [which are features that were missing in Notary](https://www.docker.com/blog/notary-v2-project-update/). 
 
 ## Fuzzing the Notary Project
 
