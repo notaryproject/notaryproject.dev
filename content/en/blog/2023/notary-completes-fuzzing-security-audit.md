@@ -17,7 +17,7 @@ The Notary Project is an open standard and tooling for signing and verifying art
 
 The Notary Project was accepted into the CNCF in October 2017 and is hosted as an incubating project. Contributors are both independent individuals and from organizations including Microsoft, AWS, and Docker. Notation-go and Notation-core-go are sub-projects of the Notary Project. The implementation is an effort to build a signing framework to be used with OCI v1.1 compliant registry, allowing signatures to easily be associated and distributed with images.
 
-The fuzzing audit was limited to the following sub-projects:
+The fuzzing audit was performed on all three active code sub-projects listed below:
 
 - [Notary](https://github.com/notaryproject/notary): A server and a client for running and interacting with trusted collections. 
 - [Notation-go](https://github.com/notaryproject/notation-go): a collection of libraries for supporting signing, verifying OCI artifacts. Based on the Notary standard. 
