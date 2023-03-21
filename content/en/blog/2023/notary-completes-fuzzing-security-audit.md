@@ -15,7 +15,7 @@ The full report from the audit is available [here](https://github.com/notaryproj
 
 The Notary Project is an open standard and tooling for signing and verifying artifacts and safeguarding their distribution. It was started at Docker in 2015 and powers [Docker Content Trust](https://docs.docker.com/engine/security/trust/) which is the `docker trust` set of commands. With the Notary Project, users can assign trust to data and verify the integrity of the signed data. 
 
-The Notary Project was accepted into the CNCF in October 2017 and is hosted as an incubating project. Contributors are from organizations including Microsoft, AWS, Docker, and independent individuals. Notation-go and Notation-core-go are sub-projects of the Notary Project. The implementation is an effort to build a signing framework to be used with every container image registry, allowing signatures to easily be associated and distributed with images.
+The Notary Project was accepted into the CNCF in October 2017 and is hosted as an incubating project. Contributors are both independent individuals and from organizations including Microsoft, AWS, and Docker. Notation-go and Notation-core-go are sub-projects of the Notary Project. The implementation is an effort to build a signing framework to be used with OCI v1.1 compliant registry, allowing signatures to easily be associated and distributed with images.
 
 The fuzzing audit was limited to the following sub-projects:
 
@@ -37,7 +37,7 @@ Once the auditors had integrated the three Notation projects into OSS-Fuzz, they
 
 The fuzzing audit found two issues both of which had their root cause in 3rd-party dependencies. One of the issues was found to be a memory-exhaustion vulnerability in Notation-go and was assigned CVE-2023-25656. The vulnerability could be triggered by a specifically malicious security policy containing the char sequence =#. The issue has been fixed in Notation v1.0.0-rc.3 and later by denying any policy that contains that char sequence. The vulnerability has been disclosed in [GHSA-87x9-7grx-m28v](https://github.com/notaryproject/notation-go/security/advisories/GHSA-87x9-7grx-m28v).
 
-The second found issue was a slice bounds out of range panic, which was a functional bug and not a security issue. It has been fixed at the completion of the fuzzing audit.
+The second found issue was a slice bounds out of range panic, which was a functional bug and not a security issue. This bug has been fixed in notation-go.
 
 ## Contributing
 
