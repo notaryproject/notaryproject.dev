@@ -7,13 +7,13 @@ draft: false
 
 > Reviewed by Pritesh Bandi, Samir Kakkar, Shiwei Zhang, Toddy Mladenov, Vani Rao, Yi Zha
 
-The Notary Project is happy to announce the completion of its fuzzing security audit. The audit was carried out by Ada Logics and is part of [an initiative by the CNCF](https://www.cncf.io/blog/2022/06/28/improving-security-by-fuzzing-the-cncf-landscape/) to bring fuzzing to the CNCF landscape. The audit spanned several months in late 2022 and early 2023 and resulted in 20 fuzzers written for 3 Notary sub-projects and 2 issues found, one of which was security-critical. 
+The Notary Project is happy to announce the completion of its fuzzing security audit. The audit was carried out by Ada Logics and is part of [an initiative by the CNCF](https://www.cncf.io/blog/2022/06/28/improving-security-by-fuzzing-the-cncf-landscape/) to bring fuzzing to the CNCF landscape. The audit spanned several months in late 2022 and early 2023 and resulted in 20 fuzzers written for 3 Notary sub-projects and 2 issues being identified and addressed including a critical security fix.
 
 The full report from the audit is available [here](https://github.com/notaryproject/notaryproject/tree/main/security/reports/fuzzing/ADA-fuzzing-audit-22-23.pdf). 
 
 ## About the Notary Project
 
-The Notary Project is an open standard and tooling for signing and verifying artifacts and safeguarding the software delivery security. It was started at Docker in 2015 and powers [Docker Content Trust](https://docs.docker.com/engine/security/trust/) which is the `docker trust` set of commands. With the Notary Project, users can assign trust to data and verify the integrity of the signed data. 
+The Notary Project is an open standard and tooling for signing and verifying artifacts and safeguarding their distribution. It was started at Docker in 2015 and powers [Docker Content Trust](https://docs.docker.com/engine/security/trust/) which is the `docker trust` set of commands. With the Notary Project, users can assign trust to data and verify the integrity of the signed data. 
 
 The Notary Project was accepted into the CNCF in October 2017 and is hosted as an incubating project. Contributors are from organizations including Microsoft, AWS, Docker, and independent individuals. Notation-go and Notation-core-go are sub-projects of the Notary Project. The implementation is an effort to build a signing framework to be used with every container image registry, allowing signatures to easily be associated and distributed with images.
 
