@@ -13,7 +13,7 @@ The full report from the audit is available [here](https://github.com/notaryproj
 
 ## About the Notary Project
 
-The Notary Project is an open standard and tooling for signing and verifying artifacts and safeguarding their distribution. It was started at Docker in 2015 and powers [Docker Content Trust](https://docs.docker.com/engine/security/trust/) which is the `docker trust` set of commands. With the Notary Project, users can assign trust to data and verify the integrity of the signed data. 
+The Notary Project is an open standard and tooling for signing and verifying artifacts and safeguarding their distribution. It was started at Docker in 2015 and powers [Docker Content Trust](https://docs.docker.com/engine/security/trust/) which is the `docker trust` set of commands. With the Notary Project, users can attest to the trustworthiness of data and verify the integrity of the signed data. 
 
 The Notary Project was accepted into the CNCF in October 2017 and is hosted as an incubating project. Contributors are both independent individuals and from organizations including Microsoft, AWS, and Docker. Notation-go and Notation-core-go are sub-projects of the Notary Project. The implementation is an effort to build a signing framework to be used with OCI v1.1 compliant registry, allowing signatures to easily be associated and distributed with images.
 
