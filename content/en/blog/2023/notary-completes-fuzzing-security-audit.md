@@ -37,7 +37,7 @@ Once the auditors had integrated the three Notation projects into OSS-Fuzz, they
 
 The fuzzing audit found two issues both of which had their root cause in 3rd-party dependencies. One of the issues was found to be a memory-exhaustion vulnerability in Notation-go and was assigned CVE-2023-25656. The vulnerability could be triggered by a specifically malicious security policy containing the char sequence =#. The issue has been fixed in Notation v1.0.0-rc.3 and later by denying any policy that contains that char sequence. The vulnerability has been disclosed in [GHSA-87x9-7grx-m28v](https://github.com/notaryproject/notation-go/security/advisories/GHSA-87x9-7grx-m28v).
 
-The second found issue was a slice bounds out of range panic, which was a functional bug and not a security issue. This bug has been fixed in notation-go.
+The second found issue was a slice bounds out of range panic, which was a functional bug and not a security issue.  The root cause was in a 3rd-party dependency and the crash is recoverable. This issue has been fixed in notation-go v1.0.0-RC.3.
 
 ## Contributing
 
