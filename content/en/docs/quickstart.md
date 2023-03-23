@@ -14,7 +14,7 @@ Before you begin, you need:
 
 ## Create an OCI-compatible registry
 
-**WARNING:** The following example creates a registry with [oras-project/registry](https://github.com/oras-project/distribution/pkgs/container/registry). This registry should only be used for development purposes. When using other registries, ensure the registry is compatible with OCI Image specification v1.1.0. Starting with `v1.0.0-rc.1` of `notation`, by default, signatures are stored using [OCI Image Manifest](https://github.com/opencontainers/image-spec/blob/v1.1.0-rc2/manifest.md).
+**WARNING:** The following example creates a registry with [oras-project/registry](https://github.com/oras-project/distribution/pkgs/container/registry). This registry should only be used for development purposes. When using other registries, ensure the registry is compatible with OCI Image specification v1.1.0. Starting from Notation-v1.0.0-RC.3, signatures are stored using [OCI Image Manifest](https://github.com/opencontainers/image-spec/blob/v1.1.0-rc2/manifest.md) by default.
 
 > Note: If you want to use another OCI registry, make sure you have configured [Docker Credential Store](https://docs.docker.com/engine/reference/commandline/login/#credentials-store) before authenticate with the registry. See [Notation Credential Store](https://github.com/notaryproject/notation/blob/main/specs/registry-auth.md#credential-store) for details.
 
