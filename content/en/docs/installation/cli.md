@@ -138,7 +138,7 @@ Alternatively, you can expand the archive file to a different directory and add 
 
 ## Additional configuration
 
-For more on configuring your environment with `notation` see:
+**IMPORTANT:** `notation` automatically creates the `NOTATION_CONFIG` directory if it does not exist. For more on the `NOTATION_CONFIG` directory and configuring your environment with `notation` see:
 
 - [Notation directory structure for system configuration]({{< ref "/docs/concepts/directory-structure" >}})
 - [Customize the Notation configuration file]({{< ref "/docs/how-to/notation-config-file" >}})
