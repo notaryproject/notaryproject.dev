@@ -65,10 +65,10 @@ echo 'export PATH="$PATH:<EXAMPLE_PATH>/notary-cli/"' >> ~/.bashrc
 
 Download the latest stable release of the notation CLI binary for macOS and checksum file, then verify the integrity of the download.
 
-Set the `NOTATION_VERSION` environment variable to the version of notation you want to download. The latest version is `1.0.0-rc.2`.
+Set the `NOTATION_VERSION` environment variable to the version of notation you want to download. The latest version is `1.0.0-rc.3`.
 
 ```console
-export NOTATION_VERSION=1.0.0-rc.2
+export NOTATION_VERSION=1.0.0-rc.3
 ```
 
 For Apple Silicon processors:
@@ -121,8 +121,8 @@ echo 'export PATH="$PATH:<EXAMPLE_PATH>/notary-cli/"' >> ~/.zshrc
 
 Download the latest stable release of the notation CLI binary for Windows and checksum file:
 
-* [notation_1.0.0-rc.3_windows_amd64.zip](https://github.com/notaryproject/notation/releases/download/v1.0.0-rc.2/notation_1.0.0-rc.3_windows_amd64.zip)
-* [notation_1.0.0-rc.3_checksums.txt](https://github.com/notaryproject/notation/releases/download/v1.0.0-rc.2/notation_1.0.0-rc.3_checksums.txt)
+* [notation_1.0.0-rc.3_windows_amd64.zip](https://github.com/notaryproject/notation/releases/download/v1.0.0-rc.3/notation_1.0.0-rc.3_windows_amd64.zip)
+* [notation_1.0.0-rc.3_checksums.txt](https://github.com/notaryproject/notation/releases/download/v1.0.0-rc.3/notation_1.0.0-rc.3_checksums.txt)
 
 Use the [Get-FileHash](https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-7.3) command in powershell to generate the hash of the archive file.
 
