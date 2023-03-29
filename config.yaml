@@ -3,6 +3,9 @@ enableRobotsTxt: true
 
 theme: [docsy]
 
+# Title of the project
+title: Notary Project
+
 # Will give values to .Lastmod etc.
 enableGitInfo: true
 
