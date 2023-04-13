@@ -25,3 +25,45 @@ Delete the `NOTATION_LIBEXEC` directory to remove the additional binaries, inclu
 **IMPORTANT:** `notation` automatically creates the `NOTATION_CONFIG` directory if it does not exist. If you remove the `NOTATION_CONFIG` directory, `notation` will recreate the directory the next time you run a command.
 
 Delete the `NOTATION_CONFIG` directory to remove the configuration files.
+
+## Remove the test key and self-signed certificate
+
+You can generate a sample test key and self-signed certificate using `notation cert generate-test`. For example:
+
+```console
+notation cert generate-test --default "wabbit-networks.io"
+```
+
+At this time, that key and self-signed certificate files can't be removed using `notation key delete` and `notation cert delete`. To remove this key and self-signed certificate files, remove the key from the signing list and certificate from the trust store using `notation key delete` and `notation cert delete`, then manually delete the key and certificate files.
+
+Use `notation key ls` to show the location of the key and certificate files. For example:
+
+```console
+notation key ls
+NAME                   KEY PATH                                           CERTIFICATE PATH                                 ID   PLUGIN NAME
+* wabbit-networks.io   NOTATION_CONFIG/localkeys/wabbit-networks.io.key   NOTATION_CONFIG/localkeys/wabbit-networks.io.crt
+```
+
+Use `notation key delete` to remove the key from the signing list. For example:
+
+```console
+notation key delete wabbit-networks.io
+```
+
+Remove the key file using the path from `notation key ls`. For example:
+
+```console
+rm NOTATION_CONFIG/localkeys/wabbit-networks.io.key
+```
+
+Use `notation cert delete` to remove the certificate reference from the trust store. For example:
+
+```console
+notation cert delete --type ca --store wabbit-networks.io wabbit-networks.io.crt
+```
+
+Remove the certificate file using the path from `notation key ls`. For example to remove certificate file in BASH:
+
+```console
+rm NOTATION_CONFIG/localkeys/wabbit-networks.io.crt
+```
