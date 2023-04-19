@@ -54,11 +54,11 @@ Expand the archive file directly into `/usr/bin/`:
 tar xvzf <ARCHIVE_FILE> -C /usr/bin/ notation
 ```
 
-Alternatively, you can expand the archive file to a different directory and add it to your path. For example, the following command expands the archive file to `<EXAMPLE_PATH>/notary-cli/` and adds it to your path using the `PATH` variable in `~/.bashrc`.
+Alternatively, you can expand the archive file to a different directory and add it to your path. For example, the following command expands the archive file to `<EXAMPLE_PATH>/notation-cli/` and adds it to your path using the `PATH` variable in `~/.bashrc`.
 
 ```console
 tar xvzf <ARCHIVE_FILE> -C <EXAMPLE_PATH>/notation-cli/ notation
-echo 'export PATH="$PATH:<EXAMPLE_PATH>/notary-cli/"' >> ~/.bashrc
+echo 'export PATH="$PATH:<EXAMPLE_PATH>/notation-cli/"' >> ~/.bashrc
 ```
 
 ## Download and install the CLI for macOS
@@ -110,11 +110,11 @@ Expand the archive file directly into `/usr/local/bin`:
 sudo tar xvzf <ARCHIVE_FILE> -C /usr/local/bin/ notation
 ```
 
-Alternatively, you can expand the archive file to a different directory and add it to your path. For example, the following command expands the archive file to `<EXAMPLE_PATH>/notary-cli/` and adds it to your path using the `PATH` variable in `~/.zshhrc`.
+Alternatively, you can expand the archive file to a different directory and add it to your path. For example, the following command expands the archive file to `<EXAMPLE_PATH>/notation-cli/` and adds it to your path using the `PATH` variable in `~/.zshhrc`.
 
 ```console
 tar xvzf <ARCHIVE_FILE> -C <EXAMPLE_PATH>/notation-cli/ notation
-echo 'export PATH="$PATH:<EXAMPLE_PATH>/notary-cli/"' >> ~/.zshrc
+echo 'export PATH="$PATH:<EXAMPLE_PATH>/notation-cli/"' >> ~/.zshrc
 ```
 
 ## Download and install the CLI for Windows
