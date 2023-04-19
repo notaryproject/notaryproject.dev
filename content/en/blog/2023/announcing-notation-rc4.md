@@ -69,7 +69,8 @@ Typically, images are pushed to registries before they are signed. However, if t
 export NOTATION_EXPERIMENTAL=1
 # Create oci image layout as tarball file
 docker buildx build . -f Dockerfile -o type=oci,dest=hello-world.tar -t hello-world:v1
-# Extract tarball to a directory named hello-world, so that the signatures can be associated with the image
+# Extract tarball to a directory named hello-world, 
+# so that the signatures can be associated with the image
 tar -xf ./hello-world.tar -C hello-world
 # Sign OCI image layout
 notation sign --oci-layout ./hello-world:v1
