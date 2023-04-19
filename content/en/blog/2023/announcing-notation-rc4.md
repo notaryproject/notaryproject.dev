@@ -78,7 +78,7 @@ notation sign --oci-layout ./hello-world:v1
 notation list --oci-layout ./hello-world:v1
 ```
 
-After signing OCI image layout successfully, you can use tools like [oras](https://oras.land/) to push OCI image layout including signatures to remote registries.
+After signing OCI image layout successfully, you can use tools like [oras](https://oras.land/) to push OCI image layout including signatures from local to remote registries.
 
 ```shell
 # Use oras CLI to push OCI image layout to remote registries
