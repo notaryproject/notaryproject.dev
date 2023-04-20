@@ -14,9 +14,9 @@ Before you begin, you need:
 
 ## Create an OCI-compatible registry
 
-> **Warning** The following example creates a registry with [oras-project/registry](https://github.com/oras-project/distribution/pkgs/container/registry). This registry should only be used for development purposes. Refer to [registries are compatible with Notary]({{< ref "/docs/faq" >}}) for more alternatives.
+> **Warning:** The following example creates a registry with [oras-project/registry](https://github.com/oras-project/distribution/pkgs/container/registry). This registry should only be used for development purposes. Refer to [registries are compatible with Notary]({{< ref "/docs/faq#what-registries-are-compatible-with-notary" >}}) for more alternatives.
 
-> **Note** See [Authenticate with OCI-compliant registries]({{< ref "/docs/how-to/registry-authentication" >}}) when you log in to another OCI registry. 
+> **Note:** See [Authenticate with OCI-compliant registries]({{< ref "/docs/how-to/registry-authentication" >}}) when you log in to another OCI registry. 
 
 Create and run an OCI-compatible registry on your development computer using Docker and the [oras-project/registry](https://github.com/oras-project/distribution/pkgs/container/registry) container image. The following command creates a registry that is accessible at `localhost:5000`.
 
@@ -24,7 +24,7 @@ Create and run an OCI-compatible registry on your development computer using Doc
 docker run -d -p 5000:5000 ghcr.io/oras-project/registry:v1.0.0-rc.4
 ```
 
-> **Note** For Apple silicon, add the `--platform linux/arm64` parameter.
+> **Note:** For Apple silicon, add the `--platform linux/arm64` parameter.
 
 ## Add an image to the OCI-compatible registry
 
@@ -51,8 +51,7 @@ v1: digest: sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff5
 
 In the above example, the reference to the container image using the digest value is `localhost:5000/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a`.
 
-> Note：
-> Notation resolves the tag to the digest before signing if a tag is used to identify the container image.
+> **Note:** Notation resolves the tag to the digest before signing if a tag is used to identify the container image.
 
 ## List the signatures associated with the container image
 
@@ -126,7 +125,7 @@ To verify the container image, configure the trust policy to specify trusted ide
 
 Create a `trustpolicy.json` with the following trust policy in the notation configuration directory.
 
-**NOTE:** For Linux, the notation configuration directory is `${HOME}/.config/notation/`. For macOS, the notation configuration directory is `${HOME}/Library/Application Support/notation/`. For Windows, the notation configuration folder is `%USERPROFILE%\AppData\Roaming\notation\`.
+> **Note:** For Linux, the notation configuration directory is `${HOME}/.config/notation/`. For macOS, the notation configuration directory is `${HOME}/Library/Application Support/notation/`. For Windows, the notation configuration folder is `%USERPROFILE%\AppData\Roaming\notation\`.
 
 ```json
 {
