@@ -14,11 +14,9 @@ Before you begin, you need:
 
 ## Create an OCI-compatible registry
 
-**WARNING:** The following example creates a registry with [oras-project/registry](https://github.com/oras-project/distribution/pkgs/container/registry). This registry should only be used for development purposes. When using other registries, ensure the registry is compatible with OCI Image specification v1.1.0. Starting from Notation-v1.0.0-RC.3, signatures are stored using [OCI Image Manifest](https://github.com/opencontainers/image-spec/blob/v1.1.0-rc2/manifest.md) by default.
+> **Warning** The following example creates a registry with [oras-project/registry](https://github.com/oras-project/distribution/pkgs/container/registry). This registry should only be used for development purposes. Refer to [registries are compatible with Notary]({{< ref "/docs/faq" >}}) for more alternatives.
 
-> Note: 
-> - You can use flag `--username` and `--password` with `notation login` when you log in to another OCI registry. 
-> - If Notation couldn't get the credential store, you can check if you have configured [Docker Credential Store](https://docs.docker.com/engine/reference/commandline/login/#credentials-store). See [Notation Credential Store](https://github.com/notaryproject/notation/blob/main/specs/registry-auth.md#credential-store) for details.
+> **Note** See [Authenticate with OCI-compliant registries]({{< ref "/docs/how-to/registry-authentication" >}}) when you log in to another OCI registry. 
 
 Create and run an OCI-compatible registry on your development computer using Docker and the [oras-project/registry](https://github.com/oras-project/distribution/pkgs/container/registry) container image. The following command creates a registry that is accessible at `localhost:5000`.
 
@@ -26,7 +24,7 @@ Create and run an OCI-compatible registry on your development computer using Doc
 docker run -d -p 5000:5000 ghcr.io/oras-project/registry:v1.0.0-rc.4
 ```
 
-> Note: For Apple silicon, add the `--platform linux/arm64` parameter.
+> **Note** For Apple silicon, add the `--platform linux/arm64` parameter.
 
 ## Add an image to the OCI-compatible registry
 
