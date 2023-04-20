@@ -14,7 +14,7 @@ Before you begin, you need:
 
 ## Create an OCI-compatible registry
 
-**WARNING:** The following example creates a registry with [oras-project/registry](https://github.com/oras-project/distribution/pkgs/container/registry). This registry should only be used for development purposes. When using other registries, ensure the registry is compatible with OCI Image specification v1.1.0. Starting with `v1.0.0-rc.1` of `notation`, by default, signatures are stored using [OCI Artifact Manifest](https://github.com/opencontainers/image-spec/blob/v1.1.0-rc2/artifact.md), which is defined in [OCI Image spec v1.1.0](https://github.com/opencontainers/image-spec/tree/v1.1.0-rc2)).
+**WARNING:** The following example creates a registry with [oras-project/registry](https://github.com/oras-project/distribution/pkgs/container/registry). This registry should only be used for development purposes. When using other registries, ensure the registry is compatible with OCI Image specification v1.1.0. Starting with `v1.0.0-rc.3` of `notation`, by default, signatures are stored using [OCI image manifest](https://github.com/opencontainers/image-spec/blob/v1.1.0-rc2/manifest.md).
 
 Create and run an OCI-compatible registry on your development computer using Docker and the [oras-project/registry](https://github.com/oras-project/distribution/pkgs/container/registry) container image. The following command creates a registry that is accessible at `localhost:5000`.
 
@@ -122,11 +122,10 @@ localhost:5000/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda27
 
 To verify the container image, configure the trust policy to specify trusted identities that sign the artifacts, and level of signature verification to use. For more details, see [trust policy spec]({{< ref "/docs/concepts/trust-store-trust-policy-specification#trust-policy" >}}).
 
-Create a `trustpolicy.json` with the following trust policy in the notation configuration directory.
+Create a json file with the following trust policy, for example:
 
-**NOTE:** For Linux, the notation configuration directory is `${HOME}/.config/notation/`. For macOS, the notation configuration directory is `${HOME}/Library/Application Support/notation/`. For Windows, the notation configuration folder is `%USERPROFILE%\AppData\Roaming\notation\`.
-
-```json
+```shell
+cat <<EOF > ./my_policy.json
 {
     "version": "1.0",
     "trustPolicies": [
@@ -143,6 +142,19 @@ Create a `trustpolicy.json` with the following trust policy in the notation conf
         }
     ]
 }
+EOF
+```
+
+Use `notation policy import` to import the trust policy configuration from a JSON file, for example:
+
+```shell
+notation policy import ./my_policy.json
+```
+
+Use `notation policy show` to view the applied policy configuration, for example:
+
+```shell
+notation policy show
 ```
 
 The above JSON creates a trust policy named `wabbit-networks-images`. The policy has `registryScopes` set to `*`, which applies the policy to all the artifacts of any registry. The `signatureVerification` is set to `strict`, which checks all validations and any failure will fail the signature verification. This policy uses the `wabbit-networks.io` trust store of type `ca` which was created in the previous step. For more details on trust policies, see [trust policy spec]({{< ref "/docs/concepts/trust-store-trust-policy-specification#trust-policy-properties" >}}).
