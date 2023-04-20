@@ -11,13 +11,21 @@ The Notation maintainers are pleased to announce the release of Notation CLI v1.
 
 This release adds the following significant enhancements:
 
-- Validate Certificate revocation with OSCP
+- Validate Certificate revocation with OCSP
 - Support experimental features
 - Introduce new CLI command `notation policy` for managing trust policy configuration
 - Support OCI distribution referrers API
 - Introduce experimental feature of signing and verifying images as OCI image layout
 
-### Validate Certificate revocation with OSCP
+### Validate Certificate revocation with OCSP
+
+OCSP stands for Online Certificate Status Protocol. It is a protocol used to check the revocation status of digital certificates. When a certificate is revoked, it means that it is no longer valid and should not be trusted. To enforce validating certificate revocation, the verification level of trust policy configuration should be set to `strict` as following. Once this is done, the CLI command `notation verify` can be used to validate the signatures including checking certificate revocation status with OCSP.
+
+```json
+"signatureVerification": {
+    "level" : "strict" 
+}
+```
 
 ### Support experimental features
 
