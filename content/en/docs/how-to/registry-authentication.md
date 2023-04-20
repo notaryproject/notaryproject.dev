@@ -30,7 +30,7 @@ export NOTATION_PASSWORD="YOUR_REGISTRY_PASSWORD"
 
 Then you will be able to interact with the registry and sign artifacts using Notation.
 
-For security reasons, you would better remove this environment variables when you log out from the registry.
+For security reasons, you would better remove the existing environment variables after you log out from the registry.
 
 ```console
 unset NOTATION_USERNAME
