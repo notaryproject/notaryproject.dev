@@ -62,9 +62,7 @@ Confirm there are no signatures shown in the output.
 
 ## Generate a test key and self-signed certificate
 
-Use `notation cert generate-test` to generate a test RSA key for signing artifacts, and a self-signed X.509 test certificate for verifying artifacts.
-
-**IMPORTANT**: Self-signed certificates should be used for development purposes only and should not be used in production environments.
+Use `notation cert generate-test` to generate a test RSA key for signing artifacts, and a self-signed X.509 test certificate for verifying artifacts. Please note the self-signed certificate should be used for testing or development purposes only.
 
 The following command generates a test key and a self-signed X.509 certificate. With the `--default` flag, the test key is set as a default signing key. The self-signed X.509 certificate is added to a named trust store `wabbit-networks.io` of type `ca`.
 
