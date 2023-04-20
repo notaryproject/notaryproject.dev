@@ -5,7 +5,7 @@ date: 2023-04-21
 draft: false
 ---
 
-The Notation maintainers are pleased to announce the release of Notation CLI v1.0.0-rc.4, notation-go v1.0.0-rc.4, and notation-core-go v1.0.0-rc.3. This blog walks you through the major updates of this release.
+The Notation maintainers are pleased to announce the releases of Notation CLI v1.0.0-rc.4, notation-go v1.0.0-rc.4, and notation-core-go v1.0.0-rc.3. This blog walks you through the major updates of this release.
 
 ## What's new
 
