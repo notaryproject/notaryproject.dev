@@ -17,31 +17,31 @@ To authenticate to an OCI-compliant registry, use the `notation login` command w
 notation login -u <username> -p <password> <registry>
 ```
 
-> **Note:** If `notation login` is failing, you may need to configure [Docker Credential Store](https://github.com/notaryproject/notation/blob/main/specs/registry-auth.md#credential-store) for your environment or configure environment variables as below.
+> **Note:** If `notation login` is failing, you may need to configure [Docker Credential Store](https://github.com/notaryproject/notation/blob/main/specs/registry-auth.md#credential-store) for your environment or configure environment variables as detailed in the *Configure Docker Credential Store for Linux* section.
 
 ## Configure environment variables to authenticate to an OCI-compliant registry
 
-You can set environment variables to authenticate to an OCI-compliant registry.
+Set the `NOTATION_USERNAME` and `NOTATION_PASSWORD` environment variables to authenticate to an OCI-compliant registry.
 
 ```console
 export NOTATION_USERNAME="YOUR_REGISTRY_USERNAME"
 export NOTATION_PASSWORD="YOUR_REGISTRY_PASSWORD"
 ```
 
-Then you will be able to interact with the registry and sign artifacts using Notation.
+After the environment variables are set, you can use `notation login` without specifying a username or password.
 
-For security reasons, you would better remove the existing environment variables after you log out from the registry.
+For security reasons, unset the environment variables after you log out from the registry. For example:
 
 ```console
 unset NOTATION_USERNAME
-NOTATION_PASSWORD
+unset NOTATION_PASSWORD
 ```
 
-## Configure Docker Credential Store
+## Configure Docker Credential Store for Linux
 
-As local credentials may be required to access the remote registries, they need to be stored and accessed securely. To achieve maximum security, credential helpers are preferred so that credentials are stored in the system key chain with better protection. 
+As a security best practice, you should use a credential helper with a system keychain when using local credentials to access remote repositories.
 
-To achieve maximum compatibility with existing systems, [Docker Credential Helpers](https://github.com/docker/docker-credential-helpers) and its [protocol](https://docs.docker.com/engine/reference/commandline/login/#credential-helper-protocol) are adopted as the credential helpers for Notation. Currently, it requires manual installation and configuration in Linux by following the steps below. This configuration will be simplified in Notation v1.0.0 with [oras-credential-go](https://github.com/oras-project/oras-credentials-go/discussions/18) support.
+`notation` uses [Docker Credential Helpers](https://github.com/docker/docker-credential-helpers) and its [protocol](https://docs.docker.com/engine/reference/commandline/login/#credential-helper-protocol) as the credential helpers. Currently, using Docker Credential Helpers requires manual installation and configuration in Linux by following the steps below. This configuration will be simplified in Notation v1.0.0.
 
 Install [Docker credential helper](https://github.com/docker/docker-credential-helpers) pass.
 
@@ -51,7 +51,9 @@ curl -Lo ~/bin/docker-credential-pass "https://github.com/docker/docker-credenti
 chmod +x ~/bin/docker-credential-pass
 ```
 
-Configure GPG key for encryption. If you have a GPP key already, run `gpg --edit-key` to trust your key.
+Generate and configure GPG key for encryption. 
+
+> **NOTE:** If you have a GPP key already, run `gpg --edit-key` to trust your key instead.
 
 ```console
 gpg --full-generate-key
