@@ -117,11 +117,10 @@ localhost:5000/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda27
 
 To verify the container image, configure the trust policy to specify trusted identities that sign the artifacts, and level of signature verification to use. For more details, see [trust policy spec]({{< ref "/docs/concepts/trust-store-trust-policy-specification#trust-policy" >}}).
 
-Create a `trustpolicy.json` with the following trust policy in the notation configuration directory.
+Create a JSON file with the following trust policy, for example:
 
-> **Note:** For Linux, the notation configuration directory is `${HOME}/.config/notation/`. For macOS, the notation configuration directory is `${HOME}/Library/Application Support/notation/`. For Windows, the notation configuration folder is `%USERPROFILE%\AppData\Roaming\notation\`.
-
-```json
+```shell
+cat <<EOF > ./my_policy.json
 {
     "version": "1.0",
     "trustPolicies": [
@@ -138,9 +137,22 @@ Create a `trustpolicy.json` with the following trust policy in the notation conf
         }
     ]
 }
+EOF
 ```
 
-The above JSON creates a trust policy named `wabbit-networks-images`. The policy has `registryScopes` set to `*`, which applies the policy to all the artifacts of any registry. The `signatureVerification` is set to `strict`, which checks all validations and any failure will fail the signature verification. This policy uses the `wabbit-networks.io` trust store of type `ca` which was created in the previous step. For more details on trust policies, see [trust policy spec]({{< ref "/docs/concepts/trust-store-trust-policy-specification#trust-policy-properties" >}}).
+Use `notation policy import` to import the trust policy configuration from a JSON file. For example:
+
+```shell
+notation policy import ./my_policy.json
+```
+
+Use `notation policy show` to view the applied policy configuration. For example:
+
+```shell
+notation policy show
+```
+
+The above JSON creates a trust policy named `wabbit-networks-images`. The policy has `registryScopes` set to `*`, which applies the policy to all the artifacts of any registry. The `signatureVerification` is set to `strict`, which checks all validations and any failure will fail the signature verification. This policy uses the `wabbit-networks.io` trust store of type `ca` which was created in the previous step. For more details on trust policies, see [trust policy spec]({{< ref "https://github.com/notaryproject/notaryproject/blob/main/specs/trust-store-trust-policy.md#trust-policy" >}}).
 
 To enable trust policy for specific repositories, set the `registryScopes` to those specific repositories. For example:
 
