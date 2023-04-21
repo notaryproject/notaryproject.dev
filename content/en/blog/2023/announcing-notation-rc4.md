@@ -11,13 +11,13 @@ The Notation maintainers are pleased to announce the releases of Notation CLI v1
 
 This release adds the following significant enhancements:
 
-- Validate Certificate revocation with OCSP
-- Support experimental features
-- Introduce new CLI command `notation policy` for managing trust policy configuration
+- Support validating certificate revocation with [Online Certificate Status Protocol](https://en.wikipedia.org/wiki/Online_Certificate_Status_Protocol) (OCSP)
+- Introduce switch `NOTATION_EXPERIMENTAL=1` to enable experimental features
+- Introduce new CLI command `notation policy` to simplify trust policy configuration
 - Support OCI distribution referrers API
-- Introduce experimental feature of signing and verifying images as OCI image layout
+- Introduce signing and verifying with [OCI image layout](https://github.com/opencontainers/image-spec/blob/v1.0/image-layout.md) as experimental feature
 
-### Validate Certificate revocation with OCSP
+### Support validating Certificate revocation with OCSP
 
 OCSP stands for Online Certificate Status Protocol. It is a protocol used to check the revocation status of digital certificates. When a certificate is revoked, it means that it is no longer valid and should not be trusted. To enforce validating certificate revocation, the verification level of trust policy configuration should be set to `strict` as following. Once this is done, the CLI command `notation verify` can be used to validate the signatures including checking certificate revocation status with OCSP.
 
@@ -27,7 +27,7 @@ OCSP stands for Online Certificate Status Protocol. It is a protocol used to che
 }
 ```
 
-### Support experimental features
+### Introduce switch `NOTATION_EXPERIMENTAL=1` to enable experimental features
 
 Experimental features are intended for testing and evaluation purposes only and should not be used in production environments. You can now enable experimental features in Notation CLI by setting the `NOTATION_EXPERIMENTAL` environment variable to `1`. Here's an example of how to set the environment variable in Linux or macOS:
 
@@ -46,14 +46,14 @@ Once you've set the environment variable, you can use Notation with experimental
 - Store signatures using artifact manifest (Require Registry support)
 - Signing and verifying images as OCI image layout
 
-### Use notation policy command to manage trust policy configuration
+### Introduce new CLI command `notation policy` to simplify trust policy configuration
 
 To simplify the user experience of managing trust policy configuration, we have introduced two new commands in the v1.0.0-rc.4 release: `notation policy import` and `notation policy show`.
 
 Previously, users had to follow several steps to configure trust policy configuration in a JSON file, save the file with a specific name, ensure the file encoding was utf-8, and put the file in a specific directory that varied across different operating systems. With the `notation policy import` command, users can now import trust policy configuration directly from the JSON file after completing the first step above. Additionally, a health check is performed on the trust policy configuration during import to avoid configuration issues that may arise later. For example:
 
 ```shell
-notation policy import mypolicy.json
+notation policy import my_policy.json
 ```
 
 The `notation policy show` command allows users to easily view trust policy configuration and redirect the output to a file for sharing, updating, or other purposes. For example:
@@ -68,7 +68,7 @@ We will be introducing more commands in future releases. Stay tuned for updates 
 
 The Referrers API is a new feature added in [OCI distribution spec v1.1-rc.1](https://github.com/opencontainers/distribution-spec/blob/v1.1.0-rc1/spec.md#listing-referrers), which allows clients to fetch a list of referrers in an efficient and clean manner. In the context of Notation, referrers are signatures that refer to the container image. Since this release, Notation verifies whether the Referrers API is available in the registry when pushing signatures into the registry. If the Referrers API is not available, Notation follows the [fallback procedure](https://github.com/opencontainers/distribution-spec/blob/v1.1.0-rc1/spec.md#unavailable-referrers-api) and updates the image index pushed to a tag described by the referrers tag schema.
 
-### Sign and verify images as OCI image layout
+### Introduce signing and verifying with OCI image layout as experimental feature
 
 Typically, images are pushed to registries before they are signed. However, if the registries are compromised, the images you signed could already be tampered with. These images could pass signature verification and be deployed in the production environment. To address this issue, we have introduced an experimental feature that allows users to sign images before pushing them to registries. This is especially valuable if the registries are not within your trust boundaries. The OCI image layout is a standard defined in the [OCI image spec 1.0](https://github.com/opencontainers/image-spec/blob/v1.0/image-layout.md). It is essentially a directory structure that contains files and folders that refer to an OCI image. Here's a glimpse of the experience on Linux, and we will release a tutorial for this feature soon.
 
