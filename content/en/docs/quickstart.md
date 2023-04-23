@@ -14,15 +14,15 @@ Before you begin, you need:
 
 ## Create an OCI-compatible registry
 
-> **Warning:** The following example creates a registry with [oras-project/registry](https://github.com/oras-project/distribution/pkgs/container/registry). This registry should only be used for testing or development purposes. Refer to [registries are compatible with Notary]({{< ref "/docs/faq#what-registries-are-compatible-with-notary" >}}) for more alternatives. See [Authenticate with OCI-compliant registries]({{< ref "/docs/how-to/registry-authentication" >}}) when you log in to another OCI registry. 
-
-Create and run an OCI-compatible registry on your development computer using Docker and the [oras-project/registry](https://github.com/oras-project/distribution/pkgs/container/registry) container image. The following command creates a registry that is accessible at `localhost:5000`.
+Create and run an OCI-compatible registry on your development computer using the [distribution/distribution](https://github.com/distribution/distribution) image. The following command creates a registry that is accessible at `localhost:5000`. 
 
 ```console
-docker run -d -p 5000:5000 ghcr.io/oras-project/registry:v1.0.0-rc.4
+docker run -d -p 5000:5000 registry
 ```
 
 > **Note:** For Apple silicon, add the `--platform linux/arm64` parameter.
+
+If you want to use Notation with other registries, refer to [registries are compatible with Notary]({{< ref "/docs/faq#what-registries-are-compatible-with-notary" >}}) for more alternatives. See [Authenticate with OCI-compliant registries]({{< ref "/docs/how-to/registry-authentication" >}}) when you log in to another OCI registry.
 
 ## Add an image to the OCI-compatible registry
 
@@ -120,7 +120,7 @@ To verify the container image, configure the trust policy to specify trusted ide
 Create a JSON file with the following trust policy, for example:
 
 ```shell
-cat <<EOF > ./my_policy.json
+cat <<EOF > ./trustpolicy.json
 {
     "version": "1.0",
     "trustPolicies": [
@@ -157,7 +157,7 @@ The above JSON creates a trust policy named `wabbit-networks-images`. The policy
 To enable trust policy for specific repositories, set the `registryScopes` to those specific repositories. For example:
 
 ```json
-registryScopes": [ 
+"registryScopes": [ 
     "localhost:5000/net-monitor",
     "localhost:5000/nginx",
     "localhost:5000/hello-world"
