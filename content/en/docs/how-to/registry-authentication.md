@@ -7,7 +7,7 @@ weight: 1
 
 You can use `notation` to authenticate to an OCI-compliant registry. This is useful for pushing and pulling signed artifacts, as well as inspecting artifacts in registries that do not offer public access.
 
-> **Important** Currently, `notation` relies on Docker Credential Store for authentication, which is included in Docker Desktop. It requires additional configuration if you using Notation in Linux. For more information, see [Docker Credential Store](https://github.com/notaryproject/notation/blob/main/specs/registry-auth.md#credential-store).
+> **Important** Currently, `notation` relies on [Docker Credential Store](https://docs.docker.com/engine/reference/commandline/login/#credentials-store) for authentication. Notation requires additional configuration for Docker credential helper if you are using Notation in Linux. 
 
 ## Use `notation login` to authenticate to an OCI-compliant registry
 
@@ -17,18 +17,18 @@ To authenticate to an OCI-compliant registry, use the `notation login` command w
 notation login -u <username> -p <password> <registry>
 ```
 
-> **Note:** If `notation login` is failing, you may need to configure [Docker Credential Store](https://github.com/notaryproject/notation/blob/main/specs/registry-auth.md#credential-store) for your environment or configure environment variables as detailed in the *Configure Docker Credential Store for Linux* section.
+> **Note:** If `notation login` is failing, you may need to configure environment variables as detailed in the *Configure environment variables to authenticate to an OCI-compliant registry* section, or configure [Docker Credential Store](https://docs.docker.com/engine/reference/commandline/login/#credentials-store) as detailed in the *Configure Docker Credential Store for Linux* section.
 
 ## Configure environment variables to authenticate to an OCI-compliant registry
 
 Set the `NOTATION_USERNAME` and `NOTATION_PASSWORD` environment variables to authenticate to an OCI-compliant registry.
 
-```console
+```bash
 export NOTATION_USERNAME="YOUR_REGISTRY_USERNAME"
 export NOTATION_PASSWORD="YOUR_REGISTRY_PASSWORD"
 ```
 
-After the environment variables are set, you can use `notation login` without specifying a username or password.
+After the environment variables are set, you can use Notation with your registry without `notation login`.
 
 For security reasons, unset the environment variables after you log out from the registry. For example:
 
@@ -45,7 +45,7 @@ As a security best practice, you should use a credential helper with a system ke
 
 Install [Docker credential helper](https://github.com/docker/docker-credential-helpers) pass.
 
-```console
+```bash
 mkdir -p ~/bin
 curl -Lo ~/bin/docker-credential-pass "https://github.com/docker/docker-credential-helpers/releases/download/v0.7.0/docker-credential-pass-v0.7.0.linux-amd64"
 chmod +x ~/bin/docker-credential-pass
@@ -67,7 +67,7 @@ sudo apt install pass -y
 pass init $your_email
 ```
 
-Configure Docker credential store in `/.docker/config.json`.
+Configure Docker credential store in `~/.docker/config.json`.
 
 ```
 mkdir -p ~/.docker
@@ -78,7 +78,7 @@ chmod 600 ~/.docker/config.json
 Use `notation login` to authenticate to an OCI-compliant registry.
 
 ```console
-notation login -u <username> -p <password> <registry>
+notation login -u <username> <registry>
 ```
 
 ## Use `notation logout` to log out of an OCI-compliant registry
