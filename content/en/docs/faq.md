@@ -36,7 +36,7 @@ The client implementation can use the aforementioned `mediaType` to parse the si
 **Q: How will Notary support multiple payload formats?**
 
 **A:** The Signature envelope MUST have a versioning mechanism to support multiple payload formats.
-For [JWS JSON serialization]({{< ref "/docs/concepts/signature-envelope-jws" >}}) signature envelope, versioning is achieved by the `cty` field in ProtectedHeaders.
+For [JWS JSON serialization](https://github.com/notaryproject/notaryproject/blob/main/specs/signature-envelope-jws.md) signature envelope, versioning is achieved by the `cty` field in ProtectedHeaders.
 
 
 ## Signature scheme

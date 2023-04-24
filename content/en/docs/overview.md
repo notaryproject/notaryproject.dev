@@ -34,7 +34,7 @@ Notary aims to solve the intra and cross registry signing & validating scenarios
 
 Notary [kicked off in December of 2019][notaryv2-kickoff] with a [broad range of attendees][kickoff-attendees].
 The effort defined success goals, including adoption by all major vendors & projects, enabling content to be signed and flow within and across [OCI distribution-spec conformant][oci-distribution-conformance] registries.
-Throughout 2020, the group agreed upon a set of [Notary requirements]({{< ref "/docs/concepts/requirements" >}}) and [scenarios][nv2-scenarios] enabling spec and design conversations to be grounded in a set of [goals]({{< ref "/docs/concepts/requirements" >}}) and [non-goals][non-requirements].
+Throughout 2020, the group agreed upon a set of [Notary requirements](https://github.com/notaryproject/notaryproject/blob/main/requirements/requirements.md) and [scenarios][nv2-scenarios] enabling spec and design conversations to be grounded in a set of [goals](https://github.com/notaryproject/notaryproject/blob/main/requirements/requirements.md) and [non-goals][non-requirements].
 Prototypes, based on the requirements have started, focusing on the primary areas on innovations.
 
 ## Top Areas of Focus
@@ -50,7 +50,7 @@ A Notary signature would attest to the digest of an artifact, associating it wit
 An artifact must be capable of being pushed to a registry, with a signature being added independently from the artifact.
 This enables the originating author of the content to sign the artifact, and subsequent entities to add additional signatures, attesting to its validity as they determine.
 
-The Notary workflow ([outlined in Scenario #0]({{< ref "/docs/concepts/scenarios#scenario-0-build-publish-consume-enforce-policy-deploy" >}}))
+The Notary workflow ([outlined in Scenario #0](https://github.com/notaryproject/notaryproject/blob/main/requirements/scenarios.md#scenario-0-build-publish-consume-enforce-policy-deploy)
 Docker Hub may endorse Wabbit Networks software, providing an aggregator certification by adding a Docker Hub signature.
 This would allow customers like ACME Rockets to not necessarily know of small vendors like Wabbit Networks, but allow the ACME Rockets engineering team to pull Docker Certified content.
 As ACME Rockets imports the content, scans and validates it meets their requirements, they add an additional ACME Rockets signature, which must exist for any production usage within the ACME Rockets environment.
@@ -119,14 +119,14 @@ Meeting notes are captured on [hackmd.io](https://hackmd.io/_vrqBGAOSUC_VWvFzWru
 [kickoff-attendees]:            https://github.com/notaryproject/meeting-notes/blob/main/meeting-notes-2019.md#attendees
 [moby]:                         https://github.com/moby
 [notaryv2-kickoff]:             https://github.com/notaryproject/meeting-notes/blob/main/meeting-notes-2019.md#notary-v2-kickoff-meeting
-[non-requirements]:             {{< ref "/docs/concepts/requirements#non-goals" >}}
+[non-requirements]:             https://github.com/notaryproject/notaryproject/blob/main/requirements/requirements.md#non-goals
 [nv2-notes]:                    https://hackmd.io/_vrqBGAOSUC_VWvFzWruZw
-[nv2-scenarios]:                {{< ref "/docs/concepts/scenarios" >}}
+[nv2-scenarios]:                https://github.com/notaryproject/notaryproject/blob/main/requirements/scenarios.md
 [nv2-signature-spec]:           https://github.com/notaryproject/nv2/tree/prototype-1/docs/signature
-[nv2-threat-model]:             {{< ref "/docs/concepts/threatmodel" >}}
+[nv2-threat-model]:             https://github.com/notaryproject/notaryproject/blob/main/threatmodel.md
 [nv2-key-management]:           https://github.com/notaryproject/requirements/pull/38/
 [nv2-distribution-spec]:        https://github.com/opencontainers/artifacts/pull/29
-[nv2-definitions]:              {{< ref "/docs/concepts/definitions-terms" >}}
+[nv2-definitions]:              https://github.com/notaryproject/notaryproject/blob/main/requirements/definitions-terms.md
 [oci-artifacts]:                https://github.com/opencontainers/artifacts
 [oci-artifact-manifest]:        https://github.com/opencontainers/artifacts/pull/29
 [oci-distribution-spec]:        https://github.com/opencontainers/distribution-spec

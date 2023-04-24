@@ -14,13 +14,13 @@ Before you begin, you need:
 
 ## Create an OCI-compatible registry
 
-Create and run an OCI-compatible registry on your development computer using the [distribution/distribution](https://github.com/distribution/distribution) image. The following command creates a registry that is accessible at `localhost:5000`. 
+Create and run an OCI-compatible registry on your development computer using the [distribution/distribution](https://github.com/distribution/distribution) image. The following command creates a registry that is accessible at `localhost:5001`. 
 
 ```console
-docker run -d -p 5000:5000 registry
+docker run -d -p 5001:5000 registry
 ```
 
-> **Note:** For Apple silicon, add the `--platform linux/arm64` parameter.
+> **Note:** If the host port 5001 is already in use, you can use another host port. 
 
 If you want to use Notation with other registries, refer to [registries are compatible with Notary]({{< ref "/docs/faq#what-registries-are-compatible-with-notary" >}}) for more alternatives. See [Authenticate with OCI-compliant registries]({{< ref "/docs/how-to/registry-authentication" >}}) when you log in to another OCI registry.
 
@@ -29,8 +29,8 @@ If you want to use Notation with other registries, refer to [registries are comp
 The following commands build and push the [wabbit-networks/net-monitor](https://github.com/wabbit-networks/net-monitor#main) container image to your container registry.
 
 ```console
-docker build -t localhost:5000/net-monitor:v1 https://github.com/wabbit-networks/net-monitor.git#main
-docker push localhost:5000/net-monitor:v1
+docker build -t localhost:5001/net-monitor:v1 https://github.com/wabbit-networks/net-monitor.git#main
+docker push localhost:5001/net-monitor:v1
 ```
 
 Save the digest value of the image from the output of the `docker push` command.
@@ -40,21 +40,21 @@ Save the digest value of the image from the output of the `docker push` command.
 An example output of `docker push`:
 
 ```output
-The push refers to repository [localhost:5000/net-monitor]
+The push refers to repository [localhost:5001/net-monitor]
 2556c54bfdf3: Pushed
 fb6ca4f9c8d3: Pushed
 ded7a220bb05: Pushed
 v1: digest: sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a size: 942
 ```
 
-In the above example, the reference to the container image using the digest value is `localhost:5000/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a`.
+In the above example, the reference to the container image using the digest value is `localhost:5001/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a`.
 
 ## List the signatures associated with the container image
 
 Use `notation ls` to show any signatures associated with the container image you built and pushed in the previous section.
 
 ```console
-IMAGE=localhost:5000/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a
+IMAGE=localhost:5001/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a
 notation ls $IMAGE
 ```
 
@@ -108,7 +108,7 @@ Confirm there is one signature, for example:
 
 ```output
 $ notation ls $IMAGE
-localhost:5000/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a
+localhost:5001/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a
 └── application/vnd.cncf.notary.v2.signature
     └── sha256:ba3a68a28648ba18c51a479145fca60d96b43dc96c6ab22f412c89ac56a9038b
 ```
@@ -143,7 +143,7 @@ EOF
 Use `notation policy import` to import the trust policy configuration from a JSON file. For example:
 
 ```shell
-notation policy import ./my_policy.json
+notation policy import ./trustpolicy.json
 ```
 
 Use `notation policy show` to view the applied policy configuration. For example:
@@ -158,9 +158,9 @@ To enable trust policy for specific repositories, set the `registryScopes` to th
 
 ```json
 "registryScopes": [ 
-    "localhost:5000/net-monitor",
-    "localhost:5000/nginx",
-    "localhost:5000/hello-world"
+    "localhost:5001/net-monitor",
+    "localhost:5001/nginx",
+    "localhost:5001/hello-world"
 ]
 ```
 
