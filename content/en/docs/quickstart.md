@@ -37,10 +37,6 @@ docker push localhost:5001/net-monitor:v1
 
 Save the digest value of the image from the output of the `docker push` command.
 
-{{% alert title="Warning" color="warning" %}}
-Always use the digest value of an image when signing since they are immutable. Tag values are mutable and can reference a different container image than the original signed container image.
-{{% /alert %}}
-
 An example output of `docker push`:
 
 ```output
@@ -54,7 +50,7 @@ v1: digest: sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff5
 In the above example, the reference to the container image using the digest value is `localhost:5000/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a`.
 
 {{% alert title="Note" color="primary" %}}
-Notation resolves the tag to the digest before signing if a tag is used to identify the container image.
+Notation resolves the tag to the digest before signing if a tag is used to identify the container image. Always reference and use the image digest instead of a tag since digest is immutable. 
 {{% /alert %}}
 
 ## List the signatures associated with the container image
