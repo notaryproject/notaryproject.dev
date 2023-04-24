@@ -1,19 +1,13 @@
 <section class="news is-medium flex justify-center">
-  <p class="is-size-3-mobile">
-    <span>
-      {{ $rocketIcon := resources.Get "icons/rocket-icon.svg" }}
-      <img
+    <p class="is-size-3-mobile">
+      <a href="https://github.com/notaryproject/notation/releases/tag/v1.0.0-rc.3" class="banner-link">Notation v1.0.0-RC.3 is available</a>
+      <span>
+        {{ $rocketIcon := resources.Get "icons/rocket-icon.svg" }}
+        <img
         src="{{ $rocketIcon.RelPermalink }}"
         class="img-container-xxxsm"
         alt="star icon"
-    /></span>
-    Notation v1.0.0-RC.3 is available, <a href="https://github.com/notaryproject/notation/releases/tag/v1.0.0-rc.3" class="banner-link">download it now</a> or <a href="https://github.com/notaryproject/notaryproject" class="banner-link">star us on GitHub</a>
-    <span>
-      {{ $starIcon := resources.Get "icons/star-icon.svg" }}
-      <img
-        src="{{ $starIcon.RelPermalink }}"
-        class="img-container-xxxsm"
-        alt="star icon"
-    /></span>
+        /></span>
+        <b>Notation is currently in the release candidate phase. Some missing features, documentation, and instability are expected until GA.</b>
   </p>
 </section>
