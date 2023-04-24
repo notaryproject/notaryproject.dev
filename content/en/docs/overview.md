@@ -5,7 +5,9 @@ type: docs
 weight: 1
 ---
 
-**IMPORTANT:** This article as well as the rest of this documentation describes the latest status of Notary Project and refers to it as The Notary Project. For documentation of older versions and implementations, please refer to the [previous Notary documentation](https://github.com/notaryproject/notary/tree/master/docs).
+{{% alert title="Important" color="info" %}}
+This article as well as the rest of this documentation describes the latest status of Notary Project and refers to it as The Notary Project. For documentation of older versions and implementations, please refer to the [previous Notary documentation](https://github.com/notaryproject/notary/tree/master/docs).
+{{% /alert %}}
 
 ## Project Status
 

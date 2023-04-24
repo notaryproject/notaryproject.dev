@@ -20,7 +20,9 @@ Create and run an OCI-compatible registry on your development computer using the
 docker run -d -p 5001:5000 registry
 ```
 
-> **Note:** If the host port 5001 is already in use, you can use another host port. 
+{{% alert title="Note" color="primary" %}}
+If the host port 5001 is already in use, you can use another host port. 
+{{% /alert %}}
 
 If you want to use Notation with other registries, refer to [registries are compatible with Notary]({{< ref "/docs/faq#what-registries-are-compatible-with-notary" >}}) for more alternatives. See [Authenticate with OCI-compliant registries]({{< ref "/docs/how-to/registry-authentication" >}}) when you log in to another OCI registry.
 
@@ -35,7 +37,9 @@ docker push localhost:5001/net-monitor:v1
 
 Save the digest value of the image from the output of the `docker push` command.
 
-*Important*: Always use the digest value of an image when signing since they are immutable. Tag values are mutable and can reference a different container image than the original signed container image.
+{{% alert title="Warning" color="warning" %}}
+Always use the digest value of an image when signing since they are immutable. Tag values are mutable and can reference a different container image than the original signed container image.
+{{% /alert %}}
 
 An example output of `docker push`:
 
@@ -47,7 +51,11 @@ ded7a220bb05: Pushed
 v1: digest: sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a size: 942
 ```
 
-In the above example, the reference to the container image using the digest value is `localhost:5001/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a`.
+In the above example, the reference to the container image using the digest value is `localhost:5000/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a`.
+
+{{% alert title="Note" color="primary" %}}
+Notation resolves the tag to the digest before signing if a tag is used to identify the container image.
+{{% /alert %}}
 
 ## List the signatures associated with the container image
 
