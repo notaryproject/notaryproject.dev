@@ -7,7 +7,9 @@ weight: 1
 
 You can use `notation` to authenticate to an OCI-compliant registry. This is useful for pushing and pulling signed artifacts, as well as inspecting artifacts in registries that do not offer public access.
 
-> **Important** Currently, `notation` relies on [Docker Credential Store](https://docs.docker.com/engine/reference/commandline/login/#credentials-store) for authentication. Notation requires additional configuration for Docker credential helper if you are using Notation in Linux. 
+{{% alert title="Important" color="info" %}}
+Currently, `notation` relies on [Docker Credential Store](https://docs.docker.com/engine/reference/commandline/login/#credentials-store) for authentication. Notation requires additional configuration for Docker credential helper if you are using Notation in Linux.
+{{% /alert %}}
 
 ## Use `notation login` to authenticate to an OCI-compliant registry
 
@@ -17,7 +19,9 @@ To authenticate to an OCI-compliant registry, use the `notation login` command w
 notation login -u <username> -p <password> <registry>
 ```
 
-> **Note:** If `notation login` is failing, you may need to configure environment variables as detailed in the *Configure environment variables to authenticate to an OCI-compliant registry* section, or configure [Docker Credential Store](https://docs.docker.com/engine/reference/commandline/login/#credentials-store) as detailed in the *Configure Docker Credential Store for Linux* section.
+{{% alert title="Note" color="primary" %}}
+If `notation login` is failing, you may need to configure environment variables as detailed in the [Configure environment variables to authenticate to an OCI-compliant registry](#configure-environment-variables-to-authenticate-to-an-oci-compliant-registry) section, or configure [Docker Credential Store](https://docs.docker.com/engine/reference/commandline/login/#credentials-store) as detailed in the [Configure Docker Credential Store for Linux](#configure-docker-credential-store-for-linux) section.
+{{% /alert %}}
 
 ## Configure environment variables to authenticate to an OCI-compliant registry
 
@@ -53,7 +57,9 @@ chmod +x ~/bin/docker-credential-pass
 
 Generate and configure GPG key for encryption. 
 
-> **NOTE:** If you have a GPP key already, run `gpg --edit-key` to trust your key instead.
+{{% alert title="Note" color="primary" %}}
+If you have a GPP key already, run `gpg --edit-key` to trust your key instead.
+{{% /alert %}}
 
 ```console
 gpg --full-generate-key

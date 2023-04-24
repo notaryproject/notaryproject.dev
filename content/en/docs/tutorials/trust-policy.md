@@ -11,13 +11,17 @@ This tutorial shows you how to create a trust policy with different trusted iden
 
 ## Create an example registry with an image
 
-**WARNING:** The following example creates a registry with [oras-project/registry](https://github.com/oras-project/distribution/pkgs/container/registry). This registry should only be used for development purposes. When using other registries, ensure the registry is compatible with OCI Image specification v1.1.0. Starting with `v1.0.0-rc.1` of `notation`, by default, signatures are stored using [OCI Artifact Manifest](https://github.com/opencontainers/image-spec/blob/v1.1.0-rc2/artifact.md), which is defined in [OCI Image spec v1.1.0](https://github.com/opencontainers/image-spec/tree/v1.1.0-rc2)).
+{{% alert title="Warning" color="warning" %}}
+The following example creates a registry with [oras-project/registry](https://github.com/oras-project/distribution/pkgs/container/registry). This registry should only be used for development purposes. When using other registries, ensure the registry is compatible with OCI Image specification v1.1.0. Starting with `v1.0.0-rc.1` of `notation`, by default, signatures are stored using [OCI Artifact Manifest](https://github.com/opencontainers/image-spec/blob/v1.1.0-rc2/artifact.md), which is defined in [OCI Image spec v1.1.0](https://github.com/opencontainers/image-spec/tree/v1.1.0-rc2)).
+{{% /alert %}}
 
 ```console
 docker run -d -p 5000:5000 ghcr.io/oras-project/registry:v1.0.0-rc.3
 ```
 
-**NOTE:** For Apple silicon, add the `--platform linux/arm64` parameter.
+{{% alert title="Note" color="primary" %}}
+For Apple silicon, add the `--platform linux/arm64` parameter.
+{{% /alert %}}
 
 Use `docker buildx build` and `docker push` to build and push a sample image to your registry.
 
@@ -54,7 +58,9 @@ notation cert generate-test missing-example
 
 Use `notation ls` to list the current signatures for your image. The following example sets the value of *$IMAGE* to the name of the image and its digest value.
 
-**IMPORTANT**: Always use the digest value of an image when signing since they are immutable. Tag values are mutable and can reference a different container image than the original signed container image.
+{{% alert title="Warning" color="warning" %}}
+Always use the digest value of an image when signing since they are immutable. Tag values are mutable and can reference a different container image than the original signed container image.
+{{% /alert %}}
 
 ```console
 IMAGE=localhost:5000/net-monitor@sha256:1111111111111111111111111111111111111111111111111111111111111111
@@ -84,7 +90,9 @@ localhost:5000/net-monitor@sha256:1111111111111111111111111111111111111111111111
 
 Create a `trustpolicy.json` with the following trust policy in the notation configuration directory.
 
-**NOTE:** For Linux, the notation configuration directory is `${HOME}/.config/notation/`. For macOS, the notation configuration directory is `${HOME}/Library/Application\ Support/notation/`. For Windows, the notation configuration folder is `%USERPROFILE%\AppData\Roaming\notation\`.
+{{% alert title="Note" color="primary" %}}
+For Linux, the notation configuration directory is `${HOME}/.config/notation/`. For macOS, the notation configuration directory is `${HOME}/Library/Application\ Support/notation/`. For Windows, the notation configuration folder is `%USERPROFILE%\AppData\Roaming\notation\`.
+{{% /alert %}}
 
 ```json
 {
