@@ -14,7 +14,7 @@
     ```console
     npm install
     ```
-    **NOTE:** By default, this is done on the `origin/main` branch. This step must be performed on a branch based from `origin` before you start creating new branches based on `upstream/main`. If you skip this step, the submodules will fail to install correctly.
+    > **Note** By default, this is done on the `origin/main` branch. This step must be performed on a branch based from `origin` before you start creating new branches based on `upstream/main`. If you skip this step, the submodules will fail to install correctly.
 
 ## Build or serve the site
 
