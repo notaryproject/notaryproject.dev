@@ -11,7 +11,7 @@ The Notation maintainers are pleased to announce the releases of Notation CLI v1
 
 This release adds the following significant enhancements:
 
-- Support validating certificate revocation with [Online Certificate Status Protocol](https://en.wikipedia.org/wiki/Online_Certificate_Status_Protocol) (OCSP)
+- Support validating certificate revocation with [Online Certificate Status Protocol](https://datatracker.ietf.org/doc/html/rfc6960) (OCSP)
 - Introduce switch `NOTATION_EXPERIMENTAL=1` to enable experimental features
 - Introduce new CLI command `notation policy` to simplify trust policy configuration
 - Support OCI distribution referrers API
