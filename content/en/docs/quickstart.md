@@ -14,10 +14,10 @@ Before you begin, you need:
 
 ## Create an OCI-compatible registry
 
-Create and run an OCI-compatible registry on your development computer using the [distribution/distribution](https://github.com/distribution/distribution) image. The following command creates a registry that is accessible at `localhost:5001`. 
+Create and run an OCI-compatible registry on your development computer using the [distribution/distribution](https://github.com/distribution/distribution) with the [image deletion](https://docs.docker.com/registry/spec/api/#deleting-an-image) enabled. The following command creates a registry that is accessible at `localhost:5001`. 
 
 ```console
-docker run -d -p 5001:5000 registry
+docker run -d -p 5001:5000 -e REGISTRY_STORAGE_DELETE_ENABLED=true registry
 ```
 
 {{% alert title="Note" color="primary" %}}
