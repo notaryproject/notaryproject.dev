@@ -109,15 +109,20 @@ Please give it a try and let us know your feedback. We will continue to iterate 
 We would like to specially thank the Notation maintainers, contributors, and the broader Notation community for helping us throughout the release process with timely feedback, reviews, community testing and for all your support to help ensure a timely release. Sending credits to the following contributors who made great contributions to Notation RC.4.
 
 - [@FeynmanZhou](https://github.com/FeynmanZhou)
+- [@gokarnm](https://github.com/gokarnm)
+- [@iamsamirzon](https://github.com/iamsamirzon)
 - [@JeyJeyGao](https://github.com/JeyJeyGao)
 - [@kody-kimberl](https://github.com/kody-kimberl)
 - [@ningziwen](https://github.com/ningziwen)
 - [@priteshbandi](https://github.com/priteshbandi)
 - [@patrickzheng200](https://github.com/patrickzheng200)
 - [@qweeah](https://github.com/qweeah)
+- [@rgnote](https://github.com/rgnote)
 - [@shizhMSFT](https://github.com/shizhMSFT)
+- [@toddysm](https://github.com/toddysm)
 - [@vaninrao10](https://github.com/vaninrao10)
 - [@yizha1](https://github.com/yizha1)
+- [@zr-msft](https://github.com/zr-msft)
 
 ## Download and give it a try
 
