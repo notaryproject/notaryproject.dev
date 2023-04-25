@@ -84,6 +84,8 @@ tar -xf ./hello-world.tar -C hello-world
 notation sign --oci-layout ./hello-world:v1
 # List signatures
 notation list --oci-layout ./hello-world:v1
+# Configure trust policy scope "local/hello-world" and verify signatures stored in OCI layout directory
+notation verify --oci-layout ./hello-world:v1 --scope "local/hello-world"
 ```
 
 After signing OCI image layout successfully, you can use tools like [oras](https://oras.land/) to push OCI image layout including signatures from local to remote registries.
