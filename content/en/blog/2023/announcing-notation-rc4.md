@@ -14,8 +14,8 @@ This release adds the following significant enhancements:
 - Support validating certificate revocation with [Online Certificate Status Protocol](https://datatracker.ietf.org/doc/html/rfc6960) (OCSP)
 - Introduce switch `NOTATION_EXPERIMENTAL=1` to enable experimental features
 - Introduce new CLI command `notation policy` to simplify trust policy configuration
-- Support OCI distribution referrers API
-- Introduce signing, listing and verification with [OCI image layout](https://github.com/opencontainers/image-spec/blob/v1.0/image-layout.md) as experimental feature
+- Support [OCI distribution referrers API](https://github.com/opencontainers/distribution-spec/blob/v1.1.0-rc1/spec.md#listing-referrers)
+- Introduce signing, listing and verification with [OCI image layout](https://github.com/opencontainers/image-spec/blob/v1.0/image-layout.md) for signing images before they are pushed in a registry as an experimental feature
 
 ### Support validating Certificate revocation with OCSP
 
@@ -68,7 +68,7 @@ We will be introducing more commands in future releases. Stay tuned for updates 
 
 The Referrers API is a new feature added in [OCI distribution spec v1.1-rc.1](https://github.com/opencontainers/distribution-spec/blob/v1.1.0-rc1/spec.md#listing-referrers), which allows clients to fetch a list of referrers in an efficient and clean manner. In the context of Notation, referrers are signatures that refer to the container image. Since this release, Notation verifies whether the Referrers API is available in the registry when pushing signatures into the registry. If the Referrers API is not available, Notation follows the [fallback procedure](https://github.com/opencontainers/distribution-spec/blob/v1.1.0-rc1/spec.md#unavailable-referrers-api) and updates the image index pushed to a tag described by the referrers tag schema.
 
-### Introduce signing, listing and verification with OCI image layout as experimental feature
+### Introduce signing, listing and verification with OCI image layout as an experimental feature
 
 Typically, images are pushed to registries before they are signed. However, if the registries are compromised, the images you signed could already be tampered with. These images could pass signature verification and be deployed in the production environment. To address this issue, we have introduced an experimental feature that allows users to sign images before pushing them to registries. This is especially valuable if the registries are not within your trust boundaries. The OCI image layout is a standard defined in the [OCI image spec 1.0](https://github.com/opencontainers/image-spec/blob/v1.0/image-layout.md). It is essentially a directory structure that contains files and folders that refer to an OCI image. Here's a glimpse of the experience on Linux, and we will release a tutorial for this feature soon.
 
