@@ -35,22 +35,17 @@ docker build -t localhost:5001/net-monitor:v1 https://github.com/wabbit-networks
 docker push localhost:5001/net-monitor:v1
 ```
 
-Save the digest value of the image from the output of the `docker push` command.
+Get the digest value of the *localhost:5001/net-monitor:v1* image using `docker inspect`. For example:
 
-An example output of `docker push`:
-
-```output
-The push refers to repository [localhost:5001/net-monitor]
-2556c54bfdf3: Pushed
-fb6ca4f9c8d3: Pushed
-ded7a220bb05: Pushed
-v1: digest: sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a size: 942
+```console
+docker inspect localhost:5001/net-monitor:v1 -f '{{ .Id }}'
+sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a
 ```
 
-In the above example, the reference to the container image using the digest value is `localhost:5000/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a`.
+In the above example, the digest value is `sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a`. The reference to the container image using the digest value is `localhost:5000/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a`.
 
 {{% alert title="Note" color="primary" %}}
-Notation resolves the tag to the digest before signing if a tag is used to identify the container image. Always reference and use the image digest instead of a tag since digest is immutable. 
+Notation resolves the tag to the digest before signing if a tag is used to identify the container image. Always reference and use the image digest instead of a tag since digest is immutable.
 {{% /alert %}}
 
 ## List the signatures associated with the container image
