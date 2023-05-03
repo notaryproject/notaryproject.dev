@@ -3,9 +3,6 @@ enableRobotsTxt: true
 
 theme: [docsy]
 
-# Title of the project
-title: Notary Project
-
 # Will give values to .Lastmod etc.
 enableGitInfo: true
 
@@ -36,6 +33,7 @@ imaging:
 
 languages:
   en:
+    title: Notary | Signing and verifying artifacts. Safeguarding the software delivery security from development to deployment.
     description: >-
       The Notary project comprises a server and a client for running and
       interacting with trusted collections.
