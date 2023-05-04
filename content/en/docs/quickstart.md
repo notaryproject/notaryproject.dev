@@ -17,7 +17,7 @@ Before you begin, you need:
 Create and run an OCI-compatible registry on your development computer using the [distribution/distribution](https://github.com/distribution/distribution) with the [image deletion](https://docs.docker.com/registry/spec/api/#deleting-an-image) enabled. The following command creates a registry that is accessible at `localhost:5001`. 
 
 ```console
-docker run -d -p 5001:5000 -e REGISTRY_STORAGE_DELETE_ENABLED=true registry
+docker run -d -p 5001:5000 -e REGISTRY_STORAGE_DELETE_ENABLED=true --name registry registry
 ```
 
 {{% alert title="Note" color="primary" %}}
@@ -178,7 +178,7 @@ The digest of the supplied artifact is returned upon successful verification.
 To remove the sample registry running on your development computer:
 
 ```console
-docker rm -f $(docker ps -q)
+docker rm -f registry
 ```
 
 To reset your `notation` configuration, remove the notation configuration directory. For more details, see [Remove the configuration files]({{< ref "/docs/installation/uninstall" >}}).
