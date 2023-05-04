@@ -2,17 +2,17 @@
 title: Install the notation CLI
 description: Install the notation CLI on Linux, macOS, and Windows
 weight: 1
+cliVer : 1.0.0-rc.4 
 ---
-
 
 ## Download and install the CLI for Linux
 
 Download the latest stable release of the notation CLI binary for macOS and checksum file, then verify the integrity of the download.
 
-Set the `NOTATION_VERSION` environment variable to the version of notation you want to download. The latest version is `1.0.0-rc.4`.
+Set the `NOTATION_VERSION` environment variable to the version of notation you want to download. The latest version is `{{< param cliVer >}}`.
 
 ```console
-export NOTATION_VERSION=1.0.0-rc.4
+export NOTATION_VERSION={{< param cliVer >}}
 ```
 
 For ARM processors:
@@ -31,19 +31,19 @@ curl -LO https://github.com/notaryproject/notation/releases/download/v$NOTATION_
 shasum --check notation_$NOTATION_VERSION\_checksums.txt
 ```
 
-Confirm the `shasum` command succeeds for the archive file you downloaded. For example, the following shows a successful checksum verification for the `notation_1.0.0-rc.4_linux_arm64.tar.gz` archive file:
+Confirm the `shasum` command succeeds for the archive file you downloaded. For example, the following shows a successful checksum verification for the `notation_{{< param cliVer >}}_linux_arm64.tar.gz` archive file:
 
 ```console
 ...
-shasum: notation_1.0.0-rc.4_windows_amd64.zip: No such file or directory
-notation_1.0.0-rc.4_windows_amd64.zip: FAILED open or read
-shasum: notation_1.0.0-rc.4_linux_amd64.tar.gz: No such file or directory
-notation_1.0.0-rc.4_linux_amd64.tar.gz: FAILED open or read
-notation_1.0.0-rc.4_linux_arm64.tar.gz: OK
-shasum: notation_1.0.0-rc.4_darwin_amd64.tar.gz: No such file or directory
-notation_1.0.0-rc.4_darwin_amd64.tar.gz: FAILED open or read
-shasum: notation_1.0.0-rc.4_darwin_arm64.tar.gz: No such file or directory
-notation_1.0.0-rc.4_darwin_arm64.tar.gz: FAILED open or read
+shasum: notation_{{< param cliVer >}}_windows_amd64.zip: No such file or directory
+notation_{{< param cliVer >}}_windows_amd64.zip: FAILED open or read
+shasum: notation_{{< param cliVer >}}_linux_amd64.tar.gz: No such file or directory
+notation_{{< param cliVer >}}_linux_amd64.tar.gz: FAILED open or read
+notation_{{< param cliVer >}}_linux_arm64.tar.gz: OK
+shasum: notation_{{< param cliVer >}}_darwin_amd64.tar.gz: No such file or directory
+notation_{{< param cliVer >}}_darwin_amd64.tar.gz: FAILED open or read
+shasum: notation_{{< param cliVer >}}_darwin_arm64.tar.gz: No such file or directory
+notation_{{< param cliVer >}}_darwin_arm64.tar.gz: FAILED open or read
 shasum: WARNING: 4 listed files could not be read
 ...
 ```
@@ -65,10 +65,10 @@ echo 'export PATH="$PATH:<EXAMPLE_PATH>/notation-cli/"' >> ~/.bashrc
 
 Download the latest stable release of the notation CLI binary for macOS and checksum file, then verify the integrity of the download.
 
-Set the `NOTATION_VERSION` environment variable to the version of notation you want to download. The latest version is `1.0.0-rc.4`.
+Set the `NOTATION_VERSION` environment variable to the version of notation you want to download. The latest version is `{{< param cliVer >}}`.
 
 ```console
-export NOTATION_VERSION=1.0.0-rc.4
+export NOTATION_VERSION={{< param cliVer >}}
 ```
 
 For Apple Silicon processors:
@@ -87,19 +87,19 @@ curl -LO https://github.com/notaryproject/notation/releases/download/v$NOTATION_
 shasum --check notation_$NOTATION_VERSION\_checksums.txt
 ```
 
-Confirm the `shasum` command succeeds for the archive file you downloaded. For example, the following shows a successful checksum verification for the `notation_1.0.0-rc.4_darwin_amd64.tar.gz` archive file:
+Confirm the `shasum` command succeeds for the archive file you downloaded. For example, the following shows a successful checksum verification for the `notation_{{< param cliVer >}}_darwin_amd64.tar.gz` archive file:
 
 ```console
 ...
-shasum: notation_1.0.0-rc.4_windows_amd64.zip: No such file or directory
-notation_1.0.0-rc.4_windows_amd64.zip: FAILED open or read
-shasum: notation_1.0.0-rc.4_linux_amd64.tar.gz: No such file or directory
-notation_1.0.0-rc.4_linux_amd64.tar.gz: FAILED open or read
-shasum: notation_1.0.0-rc.4_linux_arm64.tar.gz: No such file or directory
-notation_1.0.0-rc.4_linux_arm64.tar.gz: FAILED open or read
-notation_1.0.0-rc.4_darwin_amd64.tar.gz: OK
-shasum: notation_1.0.0-rc.4_darwin_arm64.tar.gz: No such file or directory
-notation_1.0.0-rc.4_darwin_arm64.tar.gz: FAILED open or read
+shasum: notation_{{< param cliVer >}}_windows_amd64.zip: No such file or directory
+notation_{{< param cliVer >}}_windows_amd64.zip: FAILED open or read
+shasum: notation_{{< param cliVer >}}_linux_amd64.tar.gz: No such file or directory
+notation_{{< param cliVer >}}_linux_amd64.tar.gz: FAILED open or read
+shasum: notation_{{< param cliVer >}}_linux_arm64.tar.gz: No such file or directory
+notation_{{< param cliVer >}}_linux_arm64.tar.gz: FAILED open or read
+notation_{{< param cliVer >}}_darwin_amd64.tar.gz: OK
+shasum: notation_{{< param cliVer >}}_darwin_arm64.tar.gz: No such file or directory
+notation_{{< param cliVer >}}_darwin_arm64.tar.gz: FAILED open or read
 shasum: WARNING: 4 listed files could not be read
 ...
 ```
@@ -121,13 +121,13 @@ echo 'export PATH="$PATH:<EXAMPLE_PATH>/notation-cli/"' >> ~/.zshrc
 
 Download the latest stable release of the notation CLI binary for Windows and checksum file:
 
-* [notation_1.0.0-rc.4_windows_amd64.zip](https://github.com/notaryproject/notation/releases/download/v1.0.0-rc.4/notation_1.0.0-rc.4_windows_amd64.zip)
-* [notation_1.0.0-rc.4_checksums.txt](https://github.com/notaryproject/notation/releases/download/v1.0.0-rc.4/notation_1.0.0-rc.4_checksums.txt)
+* [notation_{{< param cliVer >}}_windows_amd64.zip](https://github.com/notaryproject/notation/releases/download/v{{< param cliVer >}}/notation_{{< param cliVer >}}_windows_amd64.zip)
+* [notation_{{< param cliVer >}}_checksums.txt](https://github.com/notaryproject/notation/releases/download/v{{< param cliVer >}}/notation_{{< param cliVer >}}_checksums.txt)
 
 Use the [Get-FileHash](https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-7.3) command in powershell to generate the hash of the archive file.
 
-```powershell
-(Get-FileHash .\notation_1.0.0-rc.4_windows_amd64.zip).Hash
+```console
+(Get-FileHash .\notation_{{< param cliVer >}}_windows_amd64.zip).Hash
 ```
 
 Compare the results of the command with the value in the checksum file. The two values should match.
