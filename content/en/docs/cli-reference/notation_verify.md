@@ -11,27 +11,27 @@ Verify OCI artifacts
 Prerequisite: added a certificate into trust store and created a trust policy.
 
 Example - Verify a signature on an OCI artifact identified by a digest:
-```
+```shell
 notation verify <registry>/<repository>@<digest>
 ```
 
 Example - Verify a signature on an OCI artifact identified by a tag  (Notation will resolve tag to digest):
-```
+```shell
 notation verify <registry>/<repository>:<tag>
 ```
 
 Example - [Experimental] Verify a signature on an OCI artifact referenced in an OCI layout using trust policy statement specified by scope.
-```
+```shell
 notation verify --oci-layout <registry>/<repository>@<digest> --scope <trust_policy_scope>
 ```
 
 Example - [Experimental] Verify a signature on an OCI artifact identified by a tag and referenced in an OCI layout using trust policy statement specified by scope.
-```  
+```shell
 notation verify --oci-layout <registry>/<repository>:<tag> --scope <trust_policy_scope>
 ```
 
 General usage:
-```
+```shell
 notation verify [reference] [flags]
 ```
 

@@ -9,27 +9,27 @@ List certificates in the trust store.
 List certificates in the trust store
 
 Example - List all certificate files stored in the trust store
-```  
+```shell
 notation cert ls
 ```
 
 Example - List all certificate files of trust store "acme-rockets"
-```
+```shell
 notation cert ls --store "acme-rockets"
 ```
 
 Example - List all certificate files from trust store of type "ca"
-```  
+```shell
 notation cert ls --type ca
 ```
 
 Example - List all certificate files from trust store "wabbit-networks" of type "signingAuthority"
-```
+```shell
 notation cert ls --type signingAuthority --store "wabbit-networks"
 ```
 
 General usage:
-```
+```shell
 notation certificate list [flags]
 ```
 

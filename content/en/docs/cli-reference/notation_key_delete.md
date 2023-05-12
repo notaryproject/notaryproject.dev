@@ -5,7 +5,7 @@ title: notation key delete
 Delete key from signing key list
 
 General usage:
-```
+```shell
 notation key delete [flags] <key_name>...
 ```
 
