@@ -1,0 +1,37 @@
+<h2 class="title">News & Blogs</h2>
+<div class="gap-lg is-centered width-70 is-mobile-responsive flex">
+  {{ range $index, $page := (where .Site.RegularPages "Section" "blog" | first 2) }} {{ if eq $index 0 }}
+  <div class="verticalCard flex-30">
+    <div class="img-container-md fullwidth is-centered">
+      <img src="notary-fuzz.png" alt="Notary fuzz test" />
+    </div>
+    <h3><b>{{ .Title }}</b></h3>
+    <div class="gap-md is-align-items-center margin-sm-top-bottom flex">
+      <h5>{{ .Date.Format "January 2, 2006" }}</h5>
+      <div class="tag">Blogs</div>
+    </div>
+    <p class="font-size-sm">{{ .Plain | safeHTML | truncate 50 }}</p>
+    <a href="{{ .RelPermalink }}">
+      <button class="btn-secondary">Learn more</button>
+    </a>
+  </div>
+  {{ else }}
+  <div class="flex-70">
+    <div class="horizontalCard gap-md is-align-items-center is-mobile-responsive flex">
+      <div class="img-container-lg flex-30">
+        <img src="logo.svg" alt="notary logo" />
+      </div>
+      <div class="text-container flex-70 text-centered-mobile text-left">
+        <h3><b>{{ .Title }}</b></h3>
+        <div class="gap-md is-align-items-center margin-sm-top-bottom flex">
+          <h5>{{ .Date.Format "January 2, 2006" }}</h5>
+          <div class="tag">Blog</div>
+        </div>
+        <a href="{{ .RelPermalink }}">
+          <button class="btn-secondary">Learn more</button>
+        </a>
+      </div>
+    </div>
+  </div>
+  {{ end }} {{ end }}
+</div>
