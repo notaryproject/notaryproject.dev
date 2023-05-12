@@ -3,6 +3,7 @@ title: Announcing Notary v2 alpha 1
 author:  "[Steve Lasker](https://github.com/stevelasker), Microsoft Azure"
 date: 2021-10-26
 draft: false
+image: "logo.svg"
 ---
 
 Notary v1, otherwise known as Docker Content Trust, was released at at a time when there was one primary registry: Docker Hub. A lot has changed since then, some design choices around Trust on First Use (TOFU), key management, and a lack of content promotion within and across registries have become limiting factors for Docker Content Trust and Notary v1.

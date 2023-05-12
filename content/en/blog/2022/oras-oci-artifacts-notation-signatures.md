@@ -3,6 +3,7 @@ title: Notation signatures as ORAS and OCI artifacts
 author:  "[maxgio92](https://github.com/maxgio92), Clastix"
 date: 2022-11-21
 draft: false
+image: "logo.svg"
 ---
 
 ## Notary and Notation
