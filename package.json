@@ -17,9 +17,12 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.3.1",
-    "hugo-extended": "^0.83.1",
-    "netlify-cli": "^3.39.4",
+    "hugo-extended": "^0.111.3",
+    "netlify-cli": "^15.0.2",
     "postcss": "^8.3.5",
     "postcss-cli": "^8.3.1"
+  },
+  "dependencies": {
+    "bulma": "^0.9.4"
   }
 }
