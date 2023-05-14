@@ -594,6 +594,7 @@ section:nth-of-type(2) {
 .is-size-3-mobile {
   @include media-breakpoint-down(sm) {
     font-size: 0.8rem;
+    text-align: justify;
   }
 }
 
@@ -664,16 +665,18 @@ section:nth-of-type(2) {
 }
 
 .news {
-  padding: 2px;
+  padding: 1px;
   width: 100%;
   position: fixed;
   height: 32px;
   z-index: 100;
   background: linear-gradient(84.89deg, #32BFFC -3.17%, #5350e2 97.59%);
   color: #fff;
-
+  margin-bottom: 40px;
+  font-size: 15px;
   @include media-breakpoint-down(sm) {
     margin-top: -20px;
+    height: 72px;
   }
 }
 
