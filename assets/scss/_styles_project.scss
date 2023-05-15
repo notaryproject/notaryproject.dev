@@ -140,6 +140,7 @@
 // overrides the docsy styling.
 .navbar-brand > .text-uppercase {
   text-transform: initial !important;
+  margin-top: 20px;
 }
 
 
@@ -359,6 +360,7 @@
 .img-container-xxxsm {
   width: 25px;
   height: 25px;
+  margin-top: 4px;
 }
 
 .img-long {
@@ -677,7 +679,21 @@ section:nth-of-type(2) {
   }
 }
 
+.contr-div{
+  display:flex ;
+  background: linear-gradient(84.89deg,#32BFFC -3.17%,#5350e2 97.59%);
+  justify-content: center;
+}
+
 .banner-link {
   text-decoration: underline;
   color: #fff;
+  color:rgb(255, 255, 255); 
+  margin-top: 4px;
+}
+
+.contr-para{
+  display: inlide-block; 
+  color:rgb(255, 255, 255);
+   margin-top: 4px;
 }
