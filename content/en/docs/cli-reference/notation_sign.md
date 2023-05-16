@@ -11,52 +11,52 @@ Sign artifacts
 Note: a signing key must be specified. This can be done temporarily by specifying a key ID, or a new key can be configured using the command "notation key add"
 
 Example - Sign an OCI artifact using the default signing key, with the default JWS envelope, and use OCI image manifest to store the signature:
-```
+```shell
 notation sign <registry>/<repository>@<digest>
 ```
 
 Example - Sign an OCI artifact using the default signing key, with the COSE envelope:
-```
+```shell
 notation sign --signature-format cose <registry>/<repository>@<digest> 
 ```
 
 Example - Sign an OCI artifact with a specified plugin and signing key stored in KMS 
-```
+```shell
 notation sign --plugin <plugin_name> --id <remote_key_id> <registry>/<repository>@<digest>
 ```
 
 Example - Sign an OCI artifact using a specified key
-```
+```shell
 notation sign --key <key_name> <registry>/<repository>@<digest>
 ```
 
 Example - Sign an OCI artifact identified by a tag (Notation will resolve tag to digest)
-```
+```shell
 notation sign <registry>/<repository>:<tag>
 ```
 
 Example - Sign an OCI artifact stored in a registry and specify the signature expiry duration, for example 24 hours
-```
+```shell
 notation sign --expiry 24h <registry>/<repository>@<digest>
 ```
 
 Example - [Experimental] Sign an OCI artifact referenced in an OCI layout
-```
+```shell
 notation sign --oci-layout "<oci_layout_path>@<digest>"
 ```
 
 Example - [Experimental] Sign an OCI artifact identified by a tag and referenced in an OCI layout
-```
+```shell
 notation sign --oci-layout "<oci_layout_path>:<tag>"
 ```
 
 Example - [Experimental] Sign an OCI artifact and use OCI artifact manifest to store the signature:
-```
+```shell
 notation sign --signature-manifest artifact <registry>/<repository>@<digest>
 ```
 
 General usage:
-```
+```shell
 notation sign [flags] <reference>
 ```
 

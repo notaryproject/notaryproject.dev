@@ -73,13 +73,13 @@ The overall directory structure for `notation` is summarized as follows.
 
 The path for the `notation` binary is as follows.
 
-```
+```console
 {NOTATION_BIN}/notation
 ```
 
 On Windows, the `.exe` extension is required for executables.
 
-```
+```console
 {NOTATION_BIN}/notation.exe
 ```
 
@@ -87,13 +87,13 @@ On Windows, the `.exe` extension is required for executables.
 
 [Plugins][Plugin] are binaries not meant to be executed directly by users' shell or scripts. The path of a plugin follows the pattern below.
 
-```
+```console
 {NOTATION_LIBEXEC}/plugins/{plugin-name}/notation-{plugin-name}
 ```
 
 On Windows, the `.exe` extension is required for executables.
 
-```
+```console
 {NOTATION_LIBEXEC}/plugins/{plugin-name}/notation-{plugin-name}.exe
 ```
 
@@ -101,7 +101,7 @@ On Windows, the `.exe` extension is required for executables.
 
 The path of the general configuration file of the `notation` CLI is as follows.
 
-```
+```console
 {NOTATION_CONFIG}/config.json
 ```
 
@@ -109,7 +109,7 @@ The path of the general configuration file of the `notation` CLI is as follows.
 
 The path of a certificate file in a [Trust Store][TS] follows the pattern of below
 
-```
+```console
 {NOTATION_CONFIG}/truststore/{trust-store-type}/{named-store}/{cert-file}
 ```
 
@@ -117,7 +117,7 @@ The path of a certificate file in a [Trust Store][TS] follows the pattern of bel
 
 The path of the [Trust Policy][TP] file is as follows.
 
-```
+```console
 {NOTATION_CONFIG}/trustpolicy.json
 ```
 
@@ -125,7 +125,7 @@ The path of the [Trust Policy][TP] file is as follows.
 
 Developers sign artifacts using local private keys with associated certificate chain. The signing key information is tracked in a JSON file at:
 
-```
+```console
 {NOTATION_CONFIG}/signingkeys.json
 ```
 
@@ -133,7 +133,7 @@ The signing key store is user-specific. Developers SHOULD consider safe places t
 
 For testing purpose, the following directory structure is suggested.
 
-```
+```console
 {NOTATION_CONFIG}/localkeys/{key-name}.crt
 {NOTATION_CONFIG}/localkeys/{key-name}.pem
 ```
