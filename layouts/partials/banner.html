@@ -1,7 +1,12 @@
 <div class="contr-div" >
   
   <a href="https://github.com/notaryproject/notation/releases/tag/v1.0.0-rc.4" class="banner-link">Notation v1.0.0-RC.4 is available</a>
-     <span><img src="/notaryproject.dev/assets/icons/rocket-icon.svg" class="img-container-xxxsm" alt="star icon"></span>
+     <span>{{ $rocketIcon := resources.Get "icons/rocket-icon.svg" }}
+      <img
+      src="{{ $rocketIcon.RelPermalink }}"
+      class="img-container-xxxsm"
+      alt="star icon"
+      /></span>
      <p class="contr-para">Notation is currently in the release candidate phase. Some missing features, documentation, and instability are expected until GA.</p>
      
  </div>
