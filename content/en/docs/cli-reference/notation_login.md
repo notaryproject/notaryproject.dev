@@ -9,17 +9,17 @@ Login to registry
 Log in to an OCI registry
 
 Example - Login with provided username and password:
-```
+```shell
 notation login -u <user> -p <password> registry.example.com
 ```
 
 Example - Login using $NOTATION_USERNAME $NOTATION_PASSWORD variables:
-```	
+```shell
 notation login registry.example.com
 ```
 
 General usage:
-```
+```shell
 notation login [flags] <server>
 ```
 

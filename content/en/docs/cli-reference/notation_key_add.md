@@ -5,7 +5,7 @@ title: notation key add
 Add key to signing key list
 
 General usage:
-```
+```shell
 notation key add --plugin <plugin_name> [flags] <key_name>
 ```
 

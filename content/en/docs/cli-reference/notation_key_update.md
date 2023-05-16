@@ -4,7 +4,7 @@ title: notation key update
 
 Update key in signing key list
 
-```
+```shell
 notation key update [flags] <key_name>
 ```
 

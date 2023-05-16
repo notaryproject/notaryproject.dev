@@ -5,7 +5,7 @@ title: notation logout
 Log out from the logged in registries
 
 General usage:
-```
+```shell
 notation logout [flags] <server>
 ```
 

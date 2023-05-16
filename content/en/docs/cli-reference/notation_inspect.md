@@ -9,22 +9,22 @@ Inspect all signatures associated with the signed artifact
 Inspect all signatures associated with the signed artifact.
 
 Example - Inspect signatures on an OCI artifact identified by a digest:
-```
+```shell
 notation inspect <registry>/<repository>@<digest>
 ```
 
 Example - Inspect signatures on an OCI artifact identified by a tag  (Notation will resolve tag to digest):
-```
+```shell
 notation inspect <registry>/<repository>:<tag>
 ```
 
 Example - Inspect signatures on an OCI artifact identified by a digest and output as json:
-```
+```shell
 notation inspect --output json <registry>/<repository>@<digest>
 ```
 
 General usage:
-```
+```shell
 notation inspect [reference] [flags]
 ```
 

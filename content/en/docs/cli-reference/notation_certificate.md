@@ -10,6 +10,6 @@ Manage certificates in trust store for signature verification.
 
 ### Options
 
-```
+```console
   -h, --help   help for certificate
 ```

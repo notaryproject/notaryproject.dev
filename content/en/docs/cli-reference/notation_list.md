@@ -9,7 +9,7 @@ List signatures of the signed artifact
 List all the signatures associated with signed artifact
 
 General usage:
-```
+```shell
 notation list [flags] <reference>
 ```
 
