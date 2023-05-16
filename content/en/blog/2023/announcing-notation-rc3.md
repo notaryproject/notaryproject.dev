@@ -3,7 +3,6 @@ title: Notation v1.0.0-RC.3 is available!
 author:  "Notation Release Team"
 date: 2023-03-08
 draft: false
-image: "logo.svg"
 ---
 
 The Notation maintainers are pleased to announce the release of Notation CLI v1.0.0-RC.3. This blog walks you through the major updates of this release.

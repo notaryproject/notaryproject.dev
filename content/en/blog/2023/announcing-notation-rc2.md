@@ -3,7 +3,6 @@ title: Notation v1.0.0-RC.2 is available!
 author:  "Notation Release Team"
 date: 2023-02-27
 draft: false
-image: "logo.svg"
 ---
 
 The Notary v2 project maintainers are pleased to announce the release of Notation v1.0.0-RC.2, including Notation CLI, Notation-go, and Notation-core-go library. This is the first Notation release of 2023. This blog walks you through the major updates of this release.
