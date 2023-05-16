@@ -1,38 +1,43 @@
 <h2 class="title">News & Blogs</h2>
 <div class="gap-lg is-centered width-70 is-mobile-responsive flex">
-  {{ range $index, $page := (where .Site.RegularPages "Section" "blog" | first 2) }} {{ if ne $index 1 }}
   <div class="verticalCard flex-30">
+    {{- $blogList := where .Site.RegularPages "Section" "blog" }} {{ $firstBlog
+    := index $blogList 0 -}}
+    <!-- Check if the first blog item exists -->
+    {{- if $firstBlog -}}
     <div class="img-container-md fullwidth is-centered">
-      <img src="{{ .Site.BaseURL }}/{{ .Params.image }}" alt="Notary fuzz test" />
+      <img src="{{ $firstBlog.Params.image }}" alt="Notary fuzz test" />
     </div>
-    <h3><b>{{ .Title }}</b></h3>
+    <h3><b>{{ $firstBlog.Title }}</b></h3>
     <div class="gap-md is-align-items-center margin-sm-top-bottom flex">
-      <h5>{{ .Date.Format "January 2, 2006" }}</h5>
+      <h5>{{ $firstBlog.Date.Format "January 2, 2006" }}</h5>
       <div class="tag">Blog</div>
     </div>
-    <p class="font-size-sm">{{ .Plain | safeHTML | truncate 50 }}</p>
-    <a href="{{ .RelPermalink }}">
+    <p class="font-size-sm">{{ $firstBlog.Plain | safeHTML | truncate 200 }}</p>
+    <a href="{{ $firstBlog.RelPermalink }}">
       <button class="btn-secondary">Learn more</button>
     </a>
+    {{- end -}}
   </div>
-  {{ else }}
-  <div class="flex-70">
-    <div class="horizontalCard gap-md is-align-items-center is-mobile-responsive flex">
+  <div class="flex-70 blog-groups gap-lg">
+    {{ range $index, $blog := $blogList | first 4 -}} {{- if ne $index 0 -}}
+    <div
+      class="horizontalCard gap-md is-align-items-center is-mobile-responsive flex"
+    >
       <div class="img-container-lg flex-30">
-        <img src="{{ .Site.BaseURL }}/{{ .Params.image }}" alt="notary logo" />
+        <img src="{{ $blog.Params.image }}" alt="notary logo" />
       </div>
       <div class="text-container flex-70 text-centered-mobile text-left">
-        <h3><b>{{ .Title }}</b></h3>
+        <h3><b>{{ $blog.Title }}</b></h3>
         <div class="gap-md is-align-items-center margin-sm-top-bottom flex">
-          <h5>{{ .Date.Format "January 2, 2006" }}</h5>
+          <h5>{{ $blog.Date.Format "January 2, 2006" }}</h5>
           <div class="tag">Blog</div>
         </div>
-        <p class="font-size-sm">{{ .Plain | safeHTML | truncate 70 }}</p>
-        <a href="{{ .RelPermalink }}">
+        <a href="{{ $blog.RelPermalink }}">
           <button class="btn-secondary">Learn more</button>
         </a>
       </div>
     </div>
+    {{- end -}} {{- end -}}
   </div>
-  {{ end }} {{ end }}
 </div>

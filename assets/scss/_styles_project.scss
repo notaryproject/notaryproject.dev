@@ -320,6 +320,11 @@
   height: 100px;
 }
 
+.blog-groups {
+  display: flex;
+  flex-direction: column;
+}
+
 .img-container-mdl {
   width: 190px;
   height: 120px;
@@ -487,6 +492,7 @@ section:nth-of-type(2) {
   box-shadow: 0px 7px 30px rgba(0, 0, 0, 0.2);
   padding: 1.4em 1.8rem;
   font-size: 1.1rem;
+  width: 100%;
 }
 
 .verticalCard {
