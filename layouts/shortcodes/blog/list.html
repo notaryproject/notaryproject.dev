@@ -33,12 +33,13 @@
 
     <div class="flex-70 blog-groups gap-lg">
       {{- range $index, $blog := $blogList | first 4 -}} {{- if ne $index 0 -}}
-      {{- $image := "" -}} {{- if $blog.Params.image -}} {{- $image =
-      $blog.Params.image -}} {{- else -}} {{- $image = "logo.svg" -}} {{- end
-      -}}
+      {{- $image := "" -}} {{- $imageAlt := "" -}} {{- if $blog.Params.image -}}
+      {{- $image = $blog.Params.image -}} {{- $imageAlt = $blog.Params.imageAlt
+      -}} {{- else -}} {{- $image = "logo.svg" -}} {{- $imageAlt = "notary logo"
+      -}} {{- end -}}
       <div class="horizontalCard">
-        <div class="img-container-lg flex-30">
-          <img src="{{ $image }}" alt="notary logo" />
+        <div class="img-container-md flex-30">
+          <img src="{{ $image }}" alt="{{ $imageAlt }}" />
         </div>
         <div class="text-container-blog flex-70 text-left">
           <h3>{{ $blog.Title }}</h3>
