@@ -123,3 +123,7 @@ Use `notation list` and `notation verify` to list and verify the image signature
 notation list localhost:5001/hello-world:v1
 notation verify localhost:5001/hello-world:v1
 ```
+
+## OCI-compliant registries
+
+For a full list of OCI-compliant registries compatible with `notation`, see [OCI-compliant registries]({{< ref "/docs/faq#what-registries-are-compatible-with-notary" >}}).
