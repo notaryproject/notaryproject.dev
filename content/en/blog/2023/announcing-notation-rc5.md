@@ -41,7 +41,7 @@ Please note that users need to add this experimental flag `--allow-referrers-api
 
 ## Credits
 
-We would like to specially thank the Notation maintainers, contributors, and the broader Notation community for helping us throughout the release process with timely feedback, reviews, community testing and for all your support to help ensure a timely release. Sending credits to the following contributors who made great contributions to RC.5.
+We would like to specially thank the Notary maintainers, contributors, and the broader Notary community for helping us throughout the release process with timely feedback, reviews, testing, and support to help ensure a timely release. Sending credits to the following contributors who made great contributions to v1.0.0-RC.5.
 
 - [@FeynmanZhou](https://github.com/FeynmanZhou)
 - [@iamsamirzon](https://github.com/iamsamirzon)
