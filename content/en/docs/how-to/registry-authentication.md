@@ -94,3 +94,7 @@ To log out of an OCI-compliant registry, use the `notation logout` command with 
 ```console
 notation logout <registry>
 ```
+
+## OCI-compliant registries
+
+For a full list of OCI-compliant registries compatible with `notation`, see [OCI-compliant registries]({{< ref "/docs/faq#what-registries-are-compatible-with-notary" >}}).
