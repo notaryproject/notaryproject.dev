@@ -9,11 +9,11 @@ The Notation maintainers are pleased to announce v1.0.0-RC.5 for [notation](http
 
 ## Major updates in notation and notation-go
 
-Notation is a CLI tool to sign and verify OCI artifacts. The v1.0.0-RC.5 changes include but not limited to the following items. See the [v1.0.0-RC.5  release notes](https://github.com/notaryproject/notation-go/releases/tag/v1.0.0-rc.5) for details.
+Notation is a CLI tool to sign and verify OCI artifacts. The v1.0.0-RC.5 changes include but not limited to the following items. See the [v1.0.0-RC.5 release notes](https://github.com/notaryproject/notation-go/releases/tag/v1.0.0-rc.5) for details.
 
 * Improve output message when there is no signature associated
-* Comply with the [OCI Distribution Spec 1.1.0-RC.2](https://github.com/opencontainers/distribution-spec/releases/tag/v1.1.0-rc2) and [OCI image-spec v1.1.0-rc.3](https://github.com/opencontainers/image-spec/releases/tag/v1.1.0-rc.3)
-* Use SHA2 instead of insecure SHA1 for certificate thumbprint in `notation inspect`
+* Compatible with the [OCI Distribution Spec 1.1.0-RC.2](https://github.com/opencontainers/distribution-spec/releases/tag/v1.1.0-rc2) and [OCI image-spec v1.1.0-rc.3](https://github.com/opencontainers/image-spec/releases/tag/v1.1.0-rc.3)
+* Use SHA256 instead of insecure SHA1 for certificate thumbprint in `notation inspect`
 * Bump github.com/opencontainers/image-spec from 1.1.0-rc2 to 1.1.0-rc.3
 
 Notation-go is a collection of Golang libraries to support signing and verifying OCI artifacts. It is based on Notary standard. Notation-go v1.0.0-RC.5 removes OCI artifact manifest type from [Sign](https://pkg.go.dev/github.com/notaryproject/notation-go@main#Sign) function.
