@@ -4,13 +4,18 @@ description: "Troubleshooting common problems with Notary"
 type: docs
 weight: 7
 ---
+<style>
+  #header1 {
+    font-size:28px;
+  }
+</style>
 
 {{% alert title="Important" color="primary" %}}
 To suggest a troubleshooting item, [create a pull request PR with your suggested item](https://github.com/notaryproject/notaryproject.dev/edit/main/content/en/docs/troubleshooting.md)
 {{% /alert %}}
 
 
-## How do I troubleshoot issues with signatures?
+## How do I troubleshoot issues with signatures? {#header1}
 
 Inspect the descriptor of a remote artifact sent for signing using  `oras manifest fetch`. For example:
 
@@ -76,7 +81,7 @@ The output contains all the certificate information used for signing the artifac
 The output also contains details about the artifact that was signed, such as the digest. You can use this information to confirm the correct artifact was signed.
 
 
-## Enabling notation CLI commands logging
+## Enabling notation CLI commands logging {#header1}
 
 Enabling a more detailed logging using `--verbose` can help troubleshoot issues with the notation CLI. Using `--verbose` or `-v` gives more detailed output for the notation CLI commands that can be used for troubleshooting.
 
@@ -88,11 +93,11 @@ notation verify --verbose localhost:5000/net-monitor@sha256:sha256:xxx
 
 In addition, there is `--debug`, which is intended for developers to debug the notation CLI. It is not recommended to use `--debug` for end-user troubleshooting.
 
-## When I verify an artifact, I get the error 'Error: open $HOME/.config/notation/trustpolicy.json: no such file or directory'
+## When I verify an artifact, I get the error 'Error: open $HOME/.config/notation/trustpolicy.json: no such file or directory' {#header1}
 
 This error is likely related to trust policy configuration. Verify you have a trust policy set up before you attempt to verify an artifact. For more details, see [Manage trust policies]({{< ref "/docs/how-to/manage-trust-policy" >}}
 
-## When I verify an artifact, I get the error '"$HOME/.config/notation/truststore/x509/ca/mytruststore" does not exist'
+## When I verify an artifact, I get the error '"$HOME/.config/notation/truststore/x509/ca/mytruststore" does not exist' {#header1}
 
 This error indicates the trust store doesn't exist or the trust store name is not correct. Trust store typically contains a set of certificate files, where the trust identities are retrieved to verify signatures. You can use `notation cert add` to add trust stores.
 
@@ -106,7 +111,7 @@ If `ca` and `mytruststore` are not in the list, use `notation cert add` to add t
 notation cert add --type ca --store mytruststore mycertfile.crt
 ```
 
-## When I verify an artifact, I get the error 'signature is not produced by a trusted signer'
+## When I verify an artifact, I get the error 'signature is not produced by a trusted signer' {#header1}
 
 Assuming the trust store and trust policy are configured correctly, this is a verification failure and that artifact should not be used.
 
@@ -141,7 +146,7 @@ SHA1 Thumbprint: xxx
 
 Check the `Subject` info in the output. If it is the identity that signs the artifact, you need to add the `Subject` info into `trustedIdentities`.
 
-## I have configured trust policy, but I still get the error 'no applicable trust policy'
+## I have configured trust policy, but I still get the error 'no applicable trust policy' {#header1}
 
 This error indicates that the `registryScopes` property is not correctly configured. This property contains a list of repository URIs, where the artifacts are stored. Verify the signing artifact is stored in one of the listed repositories. If not, add the missing repository URI in `registryScopes`, or you can add a new trust policy for the missing repository.
 
@@ -156,13 +161,13 @@ The following values are not correct:
 Wildcards are not supported in `registryScopes` property. Each repository URI should be listed explicitly.
 {{% /alert %}}
 
-## When I verify an artifact, I get the error 'malformed trustpolicy.json file'
+## When I verify an artifact, I get the error 'malformed trustpolicy.json file' {#header1}
 
 This is usually an encoding problem of `trustpolicy.json` file. Notation expects `utf-8 without BOM` or `ascii` encoding for `trustpolicy.json` file.
 
 Windows PowerShell (prior to v6) uses the Unicode `UTF-16LE` encoding by default, and `utf-8 without BOM` is not supported. If you are building `trustpolicy.json` file in Windows PowerShell (prior to v6), make sure you change the file encoding to `ascii`.
 
-## When I verify an artifact, I get the error 'Failed to unmarshal the payload content in the signature blob to envelope.Payload'
+## When I verify an artifact, I get the error 'Failed to unmarshal the payload content in the signature blob to envelope.Payload' {#header1}
 
 This is usually an encoding problem of payload content in the signature envelope. Notary signatures can be produced by different tools per [signature specification](https://github.com/notaryproject/notaryproject/blob/v1.0.0-rc.2/specs/signature-specification.md). The payload content is a `JSON` document defined in the signature specification, and the encoding should be `utf-8 without BOM` or `ascii`.
 
