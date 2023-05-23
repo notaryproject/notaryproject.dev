@@ -69,6 +69,10 @@ The following command generates a test key and a self-signed X.509 certificate. 
 notation cert generate-test --default "wabbit-networks.io"
 ```
 
+{{% alert title="Note" color="primary" %}}
+At this time, test key and self-signed certificate files created using `notation cert generate-test` can't be removed using only `notation key delete` and `notation cert delete`. For more details on fully removing the test key and self-signed certificate files, see [Remove the test key and self-signed certificate]({{< ref "/docs/installation/uninstall#remove-the-test-key-and-self-signed-certificate" >}}).
+{{% /alert %}}
+
 Use `notation key ls` to confirm the signing key is correctly configured. Key name with a `*` prefix is the default key.
 
 ```console
