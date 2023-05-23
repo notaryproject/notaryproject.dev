@@ -6,7 +6,9 @@ The [notaryproject.dev][] website, which contains information about the Notary P
 
 ## Cloud build of the [notaryproject.dev][] website
 
-Visit [https://gitpod.io/#https://github.com/notaryproject/notaryproject.dev](https://gitpod.io/#https://github.com/notaryproject/notaryproject.dev) to launch a [Gitpod.io](https://gitpod.io) IDE that will allow you to build, preview and make changes to this repo.
+Visit to launch a [Gitpod.io](https://gitpod.io) IDE that will allow you to build, preview and make changes to this repo.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/notaryproject/notaryproject.dev)
 
 ## Contributing to the [notaryproject.dev][] website
 For more details, see [CONTRIBUTING](CONTRIBUTING.md)
