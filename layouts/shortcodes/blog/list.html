@@ -1,6 +1,6 @@
 <section class="blogs-section">
   <h2 class="title">News & Blogs</h2>
-  <div class="gap-lg is-centered width-70 is-mobile-responsive flex">
+  <div class="gap-lg is-centered width-90 is-mobile-responsive flex">
     {{- $blogList := where .Site.RegularPages "Section" "blog" -}} {{-
     $firstBlog := index $blogList 0 -}}
     <!-- Check if the first blog item exists -->
@@ -21,7 +21,7 @@
         </div>
         <div class="flex flex-col gap-md">
           <p class="font-size-sm blog-color blog-content">
-            {{ $firstBlog.Plain | safeHTML | truncate 150 }}
+            {{ $firstBlog.Plain | safeHTML | truncate 100 }}
           </p>
           <a href="{{ $firstBlog.RelPermalink }}">
             <button class="btn-secondary">Learn more</button>

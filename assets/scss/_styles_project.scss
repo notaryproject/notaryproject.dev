@@ -431,6 +431,9 @@
 .width-70 {
   width: 70%;
 }
+.width-90 {
+  width: 90%;
+}
 
 .width-70-tablet {
   @media (max-width: 1524px) {
@@ -541,15 +544,18 @@ section:nth-of-type(2) {
   }
 }
 
+
 .horizontalCard {
-  background: #ffffff;
-  box-shadow: 0px 7px 30px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  box-shadow: 0 7px 30px rgba(0,0,0,.2);
   padding: 1.4em 1.8rem;
   font-size: 1.1rem;
-  width: 100%;
+}
+
+.blogs-section .horizontalCard {
   display: flex;
   align-items: center;
-  gap: 60px;
+  gap: 50px;
 
   @include media-breakpoint-down(md) {
     gap: 30px;
@@ -559,6 +565,13 @@ section:nth-of-type(2) {
 }
 
 .verticalCard {
+  background: #ffffff;
+  box-shadow: 0px 7px 30px rgba(0, 0, 0, 0.2);
+  padding: 1.5em 2.7rem;
+  padding-bottom: 3.6rem;
+}
+
+.blogs-section .verticalCard {
   background: #ffffff;
   box-shadow: 0px 7px 30px rgba(0, 0, 0, 0.2);
   padding: 1.5em 2.7rem;
@@ -578,6 +591,13 @@ section:nth-of-type(2) {
     flex-direction: column;
     align-items: center;
     max-width: 100%;
+  }
+}
+
+.blogs-section .verticalCard .img-container-md {
+
+  @include media-breakpoint-down(md){
+    height: fit-content;
   }
 }
 
