@@ -1,0 +1,125 @@
+{{ define "main" }}
+<!-- video template -->
+
+<link rel="stylesheet" href="{{ "/css/videos.css" | relURL }}">
+
+<div class="main">
+  <div class="video-title">Videos</div>
+
+  <div class="row">
+    {{ range where .Data.Pages "Section" "videos" }}
+
+    <div class="video-page">
+      <div class="block">
+        <div
+          class="accordion-item-header"
+          style="display: flex; cursor: pointer"
+        >
+          <style>
+            .accordion-item-header::after {
+              content: "\002B";
+              font-size: 2rem;
+              position: absolute;
+              right: 200px;
+            }
+            .accordion-item-header.active::after {
+              content: "\2212";
+            }
+
+            .accordion-item-body {
+              max-height: 0;
+              overflow: hidden;
+              transition: max-height 0.2s ease-out;
+            }
+            .accordion-item-body-content {
+              padding: 2rem;
+            }
+            .video-info {
+              font-size: 17px;
+              color: #838383;
+            }
+
+            .watch-button {
+              padding: 7px 15px;
+              background: #0074ff;
+              border-radius: 25px;
+              color: #fff;
+              border: none;
+              cursor: pointer;
+            }
+
+            .watch-button span {
+              height: 18px;
+              margin-left: 10px;
+              margin-bottom: 3px;
+              width: 0;
+              overflow: hidden;
+              transition: width 0.5s;
+              display: inline-block;
+            }
+
+            .watch-button:hover span {
+              width: 25px;
+            }
+
+            #after-click-bt {
+              display: none;
+            }
+          </style>
+          <div class="youtube-embed" style="flex: 1; padding: 30px 10px 0 50px">
+            <iframe
+              width="90%"
+              height="270"
+              src="{{ .Params.yt_embed }}"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              style="border-radius: 20px"
+            ></iframe>
+          </div>
+          <div class="content" style="flex: 1; padding: 30px 50px 0 10px">
+            <h2
+              style="
+                text-align: left;
+                margin-bottom: 1rem;
+                font-size: 38px;
+                font-weight: 600;
+              "
+            >
+              {{ .Params.title}}
+            </h2>
+            <div class="description-container1">
+              <p
+                class="description1 original-content"
+                style="
+                  text-align: left;
+                  color: #8f8f8f;
+                  font-size: 19px;
+                  font-weight: 300;
+                "
+              >
+                {{ .Params.description}}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="accordion-item-body"
+          style="font-size: 21px; color: #4d4d4d"
+        >
+          <div class="accordion-item-body-content" style="padding: 2rem">
+            {{ .Params.expanded_description}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{ end }}
+
+    <script src='{{ "/js/video-script.js" | relURL }}'></script>
+  </div>
+</div>
+
+{{ end }}

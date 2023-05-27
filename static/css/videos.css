@@ -1,0 +1,75 @@
+.main {
+  height: 2500px;
+  padding: 60px;
+  padding-top: 200px;
+}
+
+.row {
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  margin-top: 100px;
+  bottom: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.video-title {
+  width: 209px;
+  height: 53px;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 43.5805px;
+  line-height: 53px;
+
+  color: #1a1a1a;
+}
+
+.description {
+  text-align: left;
+  color: #8f8f8f;
+  font-size: 19px;
+  font-weight: 300;
+}
+
+.description-container1 {
+  text-align: left;
+  color: #8f8f8f;
+  font-size: 19px;
+  font-weight: 300;
+}
+
+.video-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+.block {
+  width: 90%;
+  max-width: 1350px;
+  min-height: 350px;
+  margin-bottom: 1rem;
+  background: #ffffff;
+  background-color: #ffffff;
+  box-shadow: 0px 5px 45px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.block.active {
+  background-color: red; /* Background color when active */
+}
+
+.video-info {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17.0449px;
+  color: #838383;
+}
