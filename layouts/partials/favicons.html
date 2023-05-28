@@ -1,3 +1,21 @@
 {{/* notaryproject-docsy file override */ -}}
 {{/* FIXME: add support for more icons; see docsy base file for details. */ -}}
-<link rel="shortcut icon" href="{{ "favicon.png" | relURL }}">
+
+<link rel="icon" id="faviconTag" type="image/svg+xml" href="{{ "favicon-light.svg" | relURL }}">
+
+<script>
+  const faviconTag = document.getElementById("faviconTag");
+  const isDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+  const changeFavicon = () => {
+    if (isDark.matches) {
+      faviconTag.href = "{{ "favicon-light.svg" | relURL }}"
+    } else {
+      faviconTag.href = "{{ "favicon-dark.svg" | relURL }}"
+    }
+  };
+
+  changeFavicon();
+
+  setInterval(changeFavicon, 1000);
+</script>
