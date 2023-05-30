@@ -5,9 +5,9 @@ date: 2023-05-28
 draft: false
 ---
 
-The Notation maintainers are pleased to announce the releases of [Notation CLI](https://github.com/notaryproject/notation) v1.0.0-rc.7, [notation-go library](https://github.com/notaryproject/notation-go) v1.0.0-rc.6, and [notation-core-go library](https://github.com/notaryproject/notation-go) v1.0.0-rc.4. This blog walks you through the updates in this release.
+The Notation maintainers are pleased to announce the release of Notation v1.0.0-RC.7, including [Notation CLI](https://github.com/notaryproject/notation) v1.0.0-rc.7, [notation-go library](https://github.com/notaryproject/notation-go) v1.0.0-rc.6, and [notation-core-go library](https://github.com/notaryproject/notation-go) v1.0.0-rc.4. This blog walks you through the updates in this release.
 
-NOTE: Both Notation CLI v1.0.0-rc.7 and v1.0.0-rc.6 have the same functionalities. However, v1.0.0-rc.7 included an additional fix for an E2E test case.
+> NOTE: Both Notation CLI v1.0.0-rc.7 and v1.0.0-rc.6 have the same functionalities. However, v1.0.0-rc.7 included an additional fix for an E2E test case.
 
 ## What's new
 
@@ -44,7 +44,7 @@ The original flag `--plain-http` and its description did not emphasize that it i
 
 ## Credits
 
-We would like to specially thank the Notary maintainers, contributors, and the broader Notary community for helping us throughout the release process with timely feedback, reviews, and testing and for all your support to help ensure a timely release. Sending credits to the following contributors who made great contributions to Notation RC.7.
+We would like to specially thank the Notary maintainers, contributors, and the broader Notary community for helping us throughout the release process with timely feedback, reviews, and testing and for all your support to help ensure a timely release. Sending credits to the following contributors who made great contributions to Notation v1.0.0-RC.7.
 
 - [@FeynmanZhou](https://github.com/FeynmanZhou)
 - [@gokarnm](https://github.com/gokarnm)
