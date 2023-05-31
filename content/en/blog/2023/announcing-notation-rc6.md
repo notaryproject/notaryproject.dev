@@ -5,7 +5,7 @@ date: 2023-05-28
 draft: false
 ---
 
-The Notation maintainers are pleased to announce the release of Notation v1.0.0-RC.7, including [Notation CLI](https://github.com/notaryproject/notation) v1.0.0-rc.7, [notation-go library](https://github.com/notaryproject/notation-go) v1.0.0-rc.6, and [notation-core-go library](https://github.com/notaryproject/notation-go) v1.0.0-rc.4. This blog walks you through the updates in this release.
+The Notation maintainers are pleased to announce the release of Notation v1.0.0-RC.7, including [Notation CLI v1.0.0-rc.7](https://github.com/notaryproject/notation/releases/tag/v1.0.0-rc.7), [notation-go library v1.0.0-rc.6](https://github.com/notaryproject/notation-go/releases/tag/v1.0.0-rc.6), and [notation-core-go library v1.0.0-rc.4](https://github.com/notaryproject/notation-core-go/releases/tag/v1.0.0-rc.4). This blog walks you through the updates in this release.
 
 > NOTE: Both Notation CLI v1.0.0-rc.7 and v1.0.0-rc.6 have the same functionalities. However, v1.0.0-rc.7 included an additional fix for an E2E test case.
 
@@ -13,7 +13,7 @@ The Notation maintainers are pleased to announce the release of Notation v1.0.0-
 
 This release adds the following major changes:
 
-- Fix security advisories
+- Security advisory fixes
 - Notation commands support reading Docker credentials if the [credentials store](https://docs.docker.com/engine/reference/commandline/login/#configure-the-credentials-store) is not configured
 - Renamed `--plain-http` to `--insecure-registry`, which should be used only for testing
 
@@ -25,11 +25,11 @@ Other changes:
 
 ### Notation commands support reading docker credentials if credentials store is not installed
 
-Users are required to provide credentials to authenticate with OCI-compliant registries. As a security best practice, it is highly recommended that users configure a credentials store to securely store their credentials, especially in production environments. However, there may be cases where a credentials store is not configured, such as in a test environment. If the credentials store is not present, Docker stores the credentials in the config files by default, see [reference](https://docs.docker.com/engine/reference/commandline/login/#default-behavior). With the release of Notation v1.0.0-RC.6, notation commands now support reading credentials from the Docker config file if a credentials store is not installed. If users have successfully logged in using `docker login`, they can use the `notation sign` command to sign container images directly without the need to use `notation login` first. The same solution applies to other commands `notation verify`, `notation ls`, and `notation inspect`. For example,
+Users may provide credentials to authenticate with OCI-compliant registries. As a security best practice, it is highly recommended that users configure a credentials store to securely store their credentials, especially in production environments. However, there may be cases where a credentials store is not configured, such as in a test environment. If the credentials store is not present, Docker stores the credentials in the config files by default, see [reference](https://docs.docker.com/engine/reference/commandline/login/#default-behavior). With the release of Notation v1.0.0-RC.7, notation commands now support reading credentials from the Docker config file if a credentials store is not installed. If users have successfully logged in using `docker login`, they can use the `notation sign` command to sign container images directly without the need to use `notation login` first. The same solution applies to other commands `notation verify`, `notation ls`, and `notation inspect`. For example,
 
 ```console
 # credentials store is not installed
-docker login <Registry>
+docker login <registry>
 notation sign --key <key_name> <image>
 notation ls <image>
 notation inspect <image>
