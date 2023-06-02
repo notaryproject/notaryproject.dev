@@ -42,6 +42,18 @@ If credentials store is present, users can use either `docker login` or `notatio
 
 The original flag `--plain-http` and its description did not emphasize that it is an insecure way to connect to the registry, and it should only be used for testing purposes. With updated description and the name changed to `--insecure-registry`, it is now more intuitive and emphasized for users to understand the usage of this flag. Other than the name change, there is no difference between the two flags.
 
+## Known issue
+
+An issue was reported on this version that `notation login/logout` commands failed to detect credentials store, which is actually present and used by Docker CLI. See [details](https://github.com/notaryproject/notation/issues/696). This issue doesn't impact other notation commands, so if you have successfully logged in registries using Docker CLI, you can continue to use other Notation commands, for example, `notation sign`. If you want to fix the issue for `notation login/logout`, the workaround is to manually create or update `config.json` file with correct credentials store configuration, and store this file under notation [configuration directory](https://notaryproject.dev/docs/concepts/directory-structure/#general-configuration). For example:
+
+```jsonc
+{
+        "credsStore": "desktop.exe"
+}
+```
+
+In above example, `desktop.exe` is the Docker credential store installed in Windows.
+
 ## Credits
 
 We would like to specially thank the Notary maintainers, contributors, and the broader Notary community for helping us throughout the release process with timely feedback, reviews, and testing and for all your support to help ensure a timely release. Sending credits to the following contributors who made great contributions to Notation v1.0.0-RC.7.
