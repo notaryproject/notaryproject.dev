@@ -5,6 +5,10 @@ type: docs
 weight: 2
 ---
 
+{{% alert title="Playground" color="info" %}}
+You can also follow this guide on online remote cloud interactive playground on killercoda: https://killercoda.com/notaryproject/scenario/notation
+{{% /alert %}}
+
 ## Prerequisites
 
 Before you begin, you need:
