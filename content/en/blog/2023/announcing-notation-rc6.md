@@ -7,28 +7,27 @@ draft: false
 
 The Notation maintainers are pleased to announce the release of Notation v1.0.0-RC.7, including [Notation CLI v1.0.0-rc.7](https://github.com/notaryproject/notation/releases/tag/v1.0.0-rc.7), [notation-go library v1.0.0-rc.6](https://github.com/notaryproject/notation-go/releases/tag/v1.0.0-rc.6), and [notation-core-go library v1.0.0-rc.4](https://github.com/notaryproject/notation-core-go/releases/tag/v1.0.0-rc.4). This blog walks you through the updates in this release.
 
-> NOTE: Both Notation CLI v1.0.0-rc.7 and v1.0.0-rc.6 have the same functionalities. However, v1.0.0-rc.7 included an additional fix for an E2E test case.
+> NOTE: Both Notation CLI v1.0.0-rc.7 and v1.0.0-rc.6 have the same functionalities. However, v1.0.0-rc.7 included an additional [fix](https://github.com/notaryproject/notation/pull/690) for an E2E test case.
 
 ## What's new
 
 This release adds the following major changes:
 
 - Security advisory fixes
-- Notation commands support reading Docker credentials if the [credentials store](https://docs.docker.com/engine/reference/commandline/login/#configure-the-credentials-store) is not configured
-- Renamed `--plain-http` to `--insecure-registry`, which should be used only for testing
-
-Other changes:
-
+- Notation commands support reading Docker credentials if the [credentials store](https://docs.docker.com/engine/reference/commandline/login/#configure-the-credentials-store) is not present
+- Renamed `--plain-http` to `--insecure-registry` to guide that it should only for testing
 - Improved error messages
 - Bug fixes
 - Updated dependencies
 
-### Notation commands support reading docker credentials if credentials store is not installed
+### Notation commands support reading Docker credentials if credentials store is not present
 
-Users may provide credentials to authenticate with OCI-compliant registries. As a security best practice, it is highly recommended that users configure a credentials store to securely store their credentials, especially in production environments. However, there may be cases where a credentials store is not configured, such as in a test environment. If the credentials store is not present, Docker stores the credentials in the config files by default, see [reference](https://docs.docker.com/engine/reference/commandline/login/#default-behavior). With the release of Notation v1.0.0-RC.7, notation commands now support reading credentials from the Docker config file if a credentials store is not installed. If users have successfully logged in using `docker login`, they can use the `notation sign` command to sign container images directly without the need to use `notation login` first. The same solution applies to other commands `notation verify`, `notation ls`, and `notation inspect`. For example,
+Security best practices recommend that users configure a credentials store to securely manage credentials, especially in production environments. Notation commands use the following order to find credentials to authenticate with registries. Notation commands first look for credentials in its Notation’s config file, if absent Notation looks for credentials in docker config file, and if even that is not present, Notation uses the operating system default. This way, for users who do not configure explicit credentials in Notation, a successful `docker login`, will enable them to run `notation sign/verify/list/inspect` commands without the need to complete notation login first.
+
+However, there may be cases where no credentials store is present, such as in a test environment. If no credentials store is present, Docker stores the credentials in the config files by default, see [reference](https://docs.docker.com/engine/reference/commandline/login/#default-behavior). Starting with Notation v1.0.0-RC.7, notation commands support reading credentials from the Docker config file if no credentials store is present. This way, a successful `docker login`, will enable users to run `notation sign/verify/list/inspect` commands without the need to complete `notation login` first. For example,
 
 ```console
-# credentials store is not installed
+# No credentials store is present
 docker login <registry>
 notation sign --key <key_name> <image>
 notation ls <image>
@@ -36,15 +35,13 @@ notation inspect <image>
 notation verify <image>
 ```
 
-If credentials store is present, users can use either `docker login` or `notation login` for authentication with registries. See the [guide](https://notaryproject.dev/docs/how-to/registry-authentication/) for other authentication methods.
-
 ### Flag `--plain-http` was renamed to `--insecure-registry`
 
 The original flag `--plain-http` and its description did not emphasize that it is an insecure way to connect to the registry, and it should only be used for testing purposes. With updated description and the name changed to `--insecure-registry`, it is now more intuitive and emphasized for users to understand the usage of this flag. Other than the name change, there is no difference between the two flags.
 
 ## Known issue
 
-An issue was reported on this version that `notation login/logout` commands failed to detect credentials store, which is actually present and used by Docker CLI. See [details](https://github.com/notaryproject/notation/issues/696). This issue doesn't impact other notation commands, so if you have successfully logged in registries using Docker CLI, you can continue to use other Notation commands, for example, `notation sign`. If you want to fix the issue for `notation login/logout`, the workaround is to manually create or update `config.json` file with correct credentials store configuration, and store this file under notation [configuration directory](https://notaryproject.dev/docs/concepts/directory-structure/#general-configuration). For example:
+An issue was reported on this version that `notation login/logout` commands failed to detect credentials store, which is actually present and used by Docker CLI. See [details](https://github.com/notaryproject/notation/issues/696). This issue doesn't impact other notation commands, so if you have successfully logged in registries using `docker login`, you can continue to use other Notation commands, for example, `notation sign`. If you want to fix the issue for `notation login/logout`, the workaround is to manually create or update `config.json` file with correct credentials store configuration, and store this file under notation [configuration directory](https://notaryproject.dev/docs/concepts/directory-structure/#general-configuration). For example:
 
 ```jsonc
 {
