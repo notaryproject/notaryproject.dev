@@ -1,0 +1,88 @@
+{{ define "main" }} <link rel="stylesheet" href="{{ "/css/videos-styles.css" |
+relURL }}">
+
+<div class="main">
+  <div class="video-title">Videos</div>
+  <div class="search">
+    <input type="text" id="search-input" placeholder="Search..." />
+  </div>
+
+  <div class="row">
+    {{ range where .Data.Pages "Section" "videos" }}
+
+    <div class="video-page">
+      <div class="block">
+        <div id="header" class="accordion-item-header">
+          <style>
+            .accordion-item-header::after {
+              content: "\002B";
+              font-size: 2rem;
+              margin-left: auto;
+              margin-right: 4rem;
+              cursor: pointer;
+            }
+            .accordion-item-header.active::after {
+              content: "\2212";
+              cursor: pointer;
+            }
+
+            .content-1 {
+              display: none;
+            }
+
+            .accordion-item-body {
+              max-height: 0;
+              overflow: hidden;
+              transition: max-height 0.3s ease-out;
+            }
+          </style>
+          <div class="youtube-embed">
+            <iframe
+              src="{{ .Params.yt_embed }}"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              style="border-radius: 20px; width: 90%; height: 270px"
+            ></iframe>
+          </div>
+          <div class="content">
+            <div class="main-title">{{ .Params.title}}</div>
+            <div class="description-container1">
+              <p class="description1 original-content">
+                {{ .Params.description}} <a class="read-more-link">Read more</a>
+              </p>
+            </div>
+            <div class="content-1">
+              <p class="video-info" style="font-weight: 500">
+                {{ .Params.duration}} • {{ .Params.views}} • {{ .Params.dates}}
+              </p>
+
+              <button
+                class="watch-button"
+                onclick="window.open('{{ .Params.yt_url}}', '_blank')"
+              >
+                Watch now<span>&#10230;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="accordion-item-body"
+          style="font-size: 21px; color: #4d4d4d"
+        >
+          <div class="accordion-item-body-content">
+            {{ .Params.expanded_description}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{ end }}
+
+    <script src='{{ "/js/video-logic.js" | relURL }}'></script>
+  </div>
+</div>
+
+{{ end }}
