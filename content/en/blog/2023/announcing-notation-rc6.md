@@ -13,7 +13,7 @@ The Notation maintainers are pleased to announce the release of Notation v1.0.0-
 
 This release adds the following major changes:
 
-- Security advisory fixes
+- Security advisory fixes: CVE-2023-33957, CVE-2023-33958, CVE-2023-33959
 - Notation commands support reading Docker credentials if the [credentials store](https://docs.docker.com/engine/reference/commandline/login/#configure-the-credentials-store) is not present
 - Renamed `--plain-http` to `--insecure-registry` to guide that it should only for testing
 - Improved error messages
