@@ -1,4 +1,5 @@
 /* notaryproject-docsy full file override: we're not tracking changes to the docsy file of the same name. */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
 
 .td-home {
   h1 {
@@ -142,13 +143,11 @@
   text-transform: initial !important;
 }
 
-
 // Layout
 .l-container--padded {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
-
 
 // DOCS
 
@@ -186,7 +185,9 @@
     height: 5rem;
   }
 
-  & #td-content__toc.collapse:not(.show) + #td-content__toc-link-expanded::before,
+  &
+    #td-content__toc.collapse:not(.show)
+    + #td-content__toc-link-expanded::before,
   & #toc-contents.collapse:not(.show) + #td-content__toc-link-expanded::before {
     content: "…";
   }
@@ -213,13 +214,14 @@
 // from https://fontawesome.com/v5.15/icons/external-link-alt?style=solid
 
 .td-content a[href^="http://"]:after,
-.td-content a[href^="https://"]:after {
-  font-family: 'Font Awesome\ 5 Free';
+.td-content a[href^="https://"]:after
+{
+  font-family: "Font Awesome\ 5 Free";
   content: "\f35d";
   position: relative;
   bottom: 1px;
   padding: 0 3px;
-  font-size: .7rem;
+  font-size: 0.7rem;
 }
 
 .td-overlay--dark::after {
@@ -230,11 +232,15 @@
   padding-top: 80px;
 }
 
-.navbar-dark .navbar-nav .show > .nav-link, .navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .nav-link.active {
+.navbar-dark .navbar-nav .show > .nav-link,
+.navbar-dark .navbar-nav .active > .nav-link,
+.navbar-dark .navbar-nav .nav-link.show,
+.navbar-dark .navbar-nav .nav-link.active {
   color: rgb(110, 101, 101);
 }
 
-.navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
   color: rgb(32, 32, 228);
 }
 
@@ -243,7 +249,7 @@
 }
 
 .td-navbar-cover .nav-link {
-     text-shadow:none;
+  text-shadow: none;
 }
 
 .navbar-dark .navbar-brand {
@@ -259,9 +265,11 @@
 }
 
 .card-title {
-  .fab::before, .fas::before { margin-right: .5rem; }
+  .fab::before,
+  .fas::before {
+    margin-right: 0.5rem;
+  }
 }
-
 
 .flex {
   display: flex;
@@ -269,6 +277,10 @@
 
 .flex-1 {
   flex: 1;
+}
+
+.flex-col {
+  flex-direction: column;
 }
 
 .space-between {
@@ -300,7 +312,7 @@
 }
 
 .is-align-items-start {
-  align-items:flex-start;
+  align-items: flex-start;
 }
 
 .text-left {
@@ -318,6 +330,11 @@
 .img-container-sm {
   width: 150px;
   height: 100px;
+}
+
+.blog-groups {
+  display: flex;
+  flex-direction: column;
 }
 
 .img-container-mdl {
@@ -364,7 +381,7 @@
 .img-long {
   width: 100%;
   height: 400px;
-  
+
   @include media-breakpoint-down(md) {
     width: 96%;
     height: 300px;
@@ -373,13 +390,21 @@
   @media (max-width: 1300px) {
     width: 90%;
     height: 300px;
-   }
+  }
 }
 
-.img-container-sm > img, .img-container-mdl > img, .img-container-smd > img, .img-container-xxsm > img, .img-container-xxsm > a > img, .img-container-md > img, .img-container-xsm  > img, .img-long > img, .img-long > iframe {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+.img-container-sm > img,
+.img-container-mdl > img,
+.img-container-smd > img,
+.img-container-xxsm > img,
+.img-container-xxsm > a > img,
+.img-container-md > img,
+.img-container-xsm > img,
+.img-long > img,
+.img-long > iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .fullwidth {
@@ -405,6 +430,9 @@
 
 .width-70 {
   width: 70%;
+}
+.width-90 {
+  width: 90%;
 }
 
 .width-70-tablet {
@@ -446,7 +474,7 @@
 }
 
 .content {
-  width: 70%
+  width: 70%;
 }
 
 .bg-container {
@@ -459,6 +487,26 @@
   }
 }
 
+.text-container-blog {
+  @include media-breakpoint-down(md) {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: 0 auto;
+  }
+}
+.text-container-blog > h3 {
+  margin-bottom: 17px;
+  font-weight: 700;
+
+  @include media-breakpoint-down(md) {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    max-width: 480px;
+  }
+}
+
 .text-container > .title {
   padding: 0 40px;
 }
@@ -467,7 +515,6 @@
   font-size: 1rem;
   color: $notaryproject-light-grey;
 }
-
 
 section:nth-of-type(2) {
   padding-top: 0px !important;
@@ -482,18 +529,76 @@ section:nth-of-type(2) {
   }
 }
 
+.blogs-section {
+  font-family: "Montserrat", sans-serif;
+}
+
+.blog-color {
+  color: #595959;
+}
+
+.blog-content {
+  @include media-breakpoint-down(md) {
+    width: 100%;
+    max-width: 450px;
+  }
+}
+
+
 .horizontalCard {
-  background: #FFFFFF;
-  box-shadow: 0px 7px 30px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  box-shadow: 0 7px 30px rgba(0,0,0,.2);
   padding: 1.4em 1.8rem;
   font-size: 1.1rem;
 }
 
+.blogs-section .horizontalCard {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+
+  @include media-breakpoint-down(md) {
+    gap: 30px;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 .verticalCard {
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px 7px 30px rgba(0, 0, 0, 0.2);
   padding: 1.5em 2.7rem;
   padding-bottom: 3.6rem;
+}
+
+.blogs-section .verticalCard {
+  background: #ffffff;
+  box-shadow: 0px 7px 30px rgba(0, 0, 0, 0.2);
+  padding: 1.5em 2.7rem;
+  padding-bottom: 3.6rem;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 29px;
+  width: 100%;
+  gap: 30px;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+
+  @include media-breakpoint-down(md) {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+  }
+}
+
+.blogs-section .verticalCard .img-container-md {
+
+  @include media-breakpoint-down(md){
+    height: fit-content;
+  }
 }
 
 .flex-30 {
@@ -520,7 +625,6 @@ section:nth-of-type(2) {
   margin-right: 0;
 }
 
-
 /* Feature Card Component */
 .feature-container {
   padding: 0 !important;
@@ -546,7 +650,7 @@ section:nth-of-type(2) {
 
 .feature-card {
   position: relative;
-  background-color: #0074FF;
+  background-color: #0074ff;
   color: $white;
   width: 100%;
   padding: 0 1em 1em;
@@ -572,7 +676,7 @@ section:nth-of-type(2) {
 }
 
 .text-blue-gradient {
-  background-image: linear-gradient(180deg, #32CCFC 0%, #4240B9 100%);
+  background-image: linear-gradient(180deg, #32ccfc 0%, #4240b9 100%);
   background-size: 100%;
   background-repeat: repeat;
   background-clip: text;
@@ -648,7 +752,7 @@ section:nth-of-type(2) {
 }
 
 .tag {
-  background: #D8D5D5;
+  background: #d8d5d5;
   border-radius: 20px;
   font-size: 15px;
   padding: 5px 20px;
@@ -669,7 +773,7 @@ section:nth-of-type(2) {
   position: fixed;
   height: 32px;
   z-index: 100;
-  background: linear-gradient(84.89deg, #32BFFC -3.17%, #5350e2 97.59%);
+  background: linear-gradient(84.89deg, #32bffc -3.17%, #5350e2 97.59%);
   color: #fff;
 
   @include media-breakpoint-down(sm) {
