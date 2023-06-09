@@ -139,6 +139,47 @@ SHA1 Thumbprint: xxx
 
 Check the `Subject` info in the output. If it is the identity that signs the artifact, you need to add the `Subject` info into `trustedIdentities`.
 
+## When I verify an artifact, I get the error 'signature verification failed for all the signatures associated with ${IMAGE}'
+
+This is an expected error message when all the signatures associated with `${IMAGE}` are not trusted. If all signatures are trusted, it may be one of the following issues:
+
+- Not having a trust store configured or the trust store is not configured correctly.
+- Trust store is not readable or the certificates stored in the trust store are not readable
+- No certificates were stored in trust store
+
+Rerun the verify command with `--verbose` to get more details.
+
+The following example shows the trust store `mystore` has not be configured correctly or can't be found:
+
+```console
+$ notation verify $IMAGE --verbose
+...
+ERRO authenticity validation failed. Failure reason: error while loading the trust store, "/home/USER/.config/notation/truststore/x509/ca/mystore" does not exist
+WARN Signature sha256:11223344556677889900aabbccddeeff11223344556677889900aabbccddeeff failed verification with error: error while loading the trust store, "/home/USER/.config/notation/truststore/x509/ca/mystore" does not exist
+Error: signature verification failed for all the signatures associated with localhost:5001/net-monitor@sha256:000999888777666555444333222111fffeeedddcccbbbbaaa000999888777666
+```
+
+The following example shows the certificate `mystore.crt` in the `mystore` trust store could not be accessed:
+
+```console
+notation verify --v $IMAGE
+...
+ERRO authenticity validation failed. Failure reason: error while loading the trust store, error while reading certificates from "/home/USER/.config/notation/truststore/x509/ca/mystore/mystore.crt": open "/home/USER/.config/notation/truststore/x509/ca/mystore/mystore.crt": permission denied
+WARN Signature sha256:11223344556677889900aabbccddeeff11223344556677889900aabbccddeeff failed verification with error: error while loading the trust store, error while reading certificates from "/home/USER/.config/notation/truststore/x509/ca/mystore/mystore.crt": open /home/USER/.config/notation/truststore/x509/ca/mystore/mystore.crt: permission denied
+Error: signature verification failed for all the signatures associated with localhost:5001/net-monitor@sha256:000999888777666555444333222111fffeeedddcccbbbbaaa000999888777666
+```
+
+The following example shows that there are no certificates in the `mystore` trust store.
+
+```console
+$ notation verify $IMAGE --verbose
+...
+ERRO authenticity validation failed. Failure reason: error while loading the trust store, trust store "/home/USER/.config/notation/truststore/x509/ca/mystore" has no x509 certificates
+WARN Signature sha256:11223344556677889900aabbccddeeff11223344556677889900aabbccddeeff failed verification with error: error while loading the trust store, trust store "/home/USER/.config/notation/truststore/x509/ca/mystore" has no x509 certificates
+Error: signature verification failed for all the signatures associated with localhost:5001/net-monitor@sha256:000999888777666555444333222111fffeeedddcccbbbbaaa000999888777666
+```
+
+
 ## I have configured trust policy, but I still get the error 'no applicable trust policy'
 
 This error indicates that the `registryScopes` property is not correctly configured. This property contains a list of repository URIs, where the artifacts are stored. Verify the signing artifact is stored in one of the listed repositories. If not, add the missing repository URI in `registryScopes`, or you can add a new trust policy for the missing repository.
