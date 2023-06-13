@@ -41,9 +41,12 @@ docker push localhost:5001/net-monitor:v1
 
 Get the digest value of the *localhost:5001/net-monitor:v1* image using `docker inspect`. For example:
 
-```console
+```
 docker inspect --format='{{index .RepoDigests 0}}' localhost:5001/net-monitor:v1
-sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a
+```
+Output:
+```console
+localhost:5001/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a
 ```
 
 In the above example, the digest value is `sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a`. The reference to the container image using the digest value is `localhost:5000/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a`.
