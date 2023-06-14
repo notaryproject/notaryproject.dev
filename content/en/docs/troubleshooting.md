@@ -20,7 +20,7 @@ $ oras manifest fetch --descriptor REGISTRY/IMAGE:TAG
 
 Confirm the details, such as the *mediaType* and *digest* match the details of the artifact sent for signing.
 
-Inspect the signatures of a remote artifact using `notation inspect` with the registry name, image and the digest value for the artifact. For example:
+Inspect the signatures of a remote artifact using `notation inspect` with the registry name, image and digest value for the artifact. For example:
 
 ```console
 $ notation inspect localhost:5001/net-monitor@sha256:cae906b84806687f02272d00a7000ff31a6be6281bb72f16bdef2fcd67d41786
