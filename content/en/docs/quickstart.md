@@ -5,6 +5,10 @@ type: docs
 weight: 2
 ---
 
+{{% alert title="Playground" color="info" %}}
+You can also follow this guide on online remote cloud interactive playground on killercoda: https://killercoda.com/notaryproject/scenario/notation
+{{% /alert %}}
+
 ## Prerequisites
 
 Before you begin, you need:
@@ -24,7 +28,7 @@ docker run -d -p 5001:5000 -e REGISTRY_STORAGE_DELETE_ENABLED=true --name regist
 If the host port 5001 is already in use, you can use another host port. 
 {{% /alert %}}
 
-If you want to use Notation with other registries, refer to [registries are compatible with Notary]({{< ref "/docs/faq#what-registries-are-compatible-with-notary" >}}) for more alternatives. See [Authenticate with OCI-compliant registries]({{< ref "/docs/how-to/registry-authentication" >}}) when you log in to another OCI registry.
+If you want to use Notation with other registries, refer to [which registries are compatible with Notary]({{< ref "/docs/faq#what-registries-are-compatible-with-notary" >}}) for more alternatives. See [Authenticate with OCI-compliant registries]({{< ref "/docs/how-to/registry-authentication" >}}) when you log in to another OCI registry.
 
 ## Add an image to the OCI-compatible registry
 
