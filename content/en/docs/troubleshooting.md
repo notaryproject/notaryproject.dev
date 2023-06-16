@@ -93,7 +93,7 @@ This error is likely related to trust policy configuration. Verify you have a tr
 
 This error indicates the trust store doesn't exist or the trust store name is not correct. Trust store typically contains a set of certificate files, where the trust identities are retrieved to verify signatures. You can use `notation cert add` to add trust stores.
 
-The above error shows that the type of trust store is `ca`, and the trust store name is `mytruststore`. 
+The above error shows that the type of trust store is `ca`, and the trust store name is `mytruststore`.  Aside `ca` trust store type, X.509 also supports other types of trust stores such as, the `x509/signingAuthority` and  `x509/tsa`. For more details,  please refer to the [trust store and trust policy specification](https://github.com/notaryproject/notaryproject/blob/v1.0.0-rc.2/specs/trust-store-trust-policy.md#trust-store-and-trust-policy-specification)
 
 To verify `ca` and `mytruststore` exist, use `notation cert list`, then confirm whether the type of store `ca` and store name `mytruststore` are in the list with the right certificate file stored.
 
