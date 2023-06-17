@@ -12,91 +12,89 @@ To suggest a troubleshooting item, [create a pull request PR with your suggested
 
 ## How do I troubleshoot issues with signatures?
 
-Inspect the descriptor of a remote artifact sent for signing using  `oras manifest fetch`. For example:
+`oras manifest fetch` fetches information about an image; such as mediatype, config, layers, and annotations. By using the `--descriptor` flag, you can fetch only the descriptor of an artifact. Inspect the descriptor of a remote artifact sent for signing using `oras manifest fetch --descriptor`. For example: 
 
 ```console
-$ oras manifest fetch --descriptor IMAGE:TAG
+$ oras manifest fetch --descriptor REGISTRY/IMAGE:TAG
 {"mediaType":"...","digest":"sha256:...","size":...}
 ```
 
 Confirm the details, such as the *mediaType* and *digest* match the details of the artifact sent for signing.
 
-Inspect the signatures of a remote artifact using `notation inspect` with the digest value for the artifact. For example:
+Inspect the signatures of a remote artifact using `notation inspect` with the registry name, image and the digest value for the artifact. For example:
 
 ```console
-$ notation inspect IMAGE@sha256:111222333444555666777888999000aaaabbbbcccddddeeeeffff00011122233
+$ notation inspect localhost:5001/net-monitor@sha256:cae906b84806687f02272d00a7000ff31a6be6281bb72f16bdef2fcd67d41786
 
 Inspecting all signatures for signed artifact
-IMAGE@sha256:111222333444555666777888999000aaaabbbbcccddddeeeeffff00011122233
+localhost:5001/net-monitor@sha256:cae906b84806687f02272d00a7000ff31a6be6281bb72f16bdef2fcd67d41786
 └── application/vnd.cncf.notary.signature
-    ├── sha256:febdbbf995cb87d48d9e0b9bd39095145a3f253b0d724e3c7a6457eb22a0a793
+    ├── sha256:1bf07b33089e65e9e83a780c7f405ba36aa4ef2b2fb031535cc6e89042ac0a0f
     │   ├── media type: application/jose+json
     │   ├── signature algorithm: RSASSA-PSS-SHA-256
     │   ├── signed attributes
     │   │   ├── signingScheme: notary.x509
-    │   │   ├── signingTime: Fri Apr 28 10:05:17 2023
-    │   │   └── expiry: Mon Jan  1 00:00:00 0001
+    │   │   └── signingTime: Sun Jun 11 19:56:47 2023
     │   ├── user defined attributes
     │   │   └── (empty)
     │   ├── unsigned attributes
     │   │   └── signingAgent: Notation/1.0.0
     │   ├── certificates
-    │   │   └── SHA1 fingerprint: ee0201aff38dbd0305672501db781c953a3f2151
+    │   │   └── SHA256 fingerprint: 3f32321edede5df5bb02e88749217ef10c6c4ce8a5d62bb2136257a0ade6e832
     │   │       ├── issued to: CN=wabbit-networks.io,O=Notary,L=Seattle,ST=WA,C=US
     │   │       ├── issued by: CN=wabbit-networks.io,O=Notary,L=Seattle,ST=WA,C=US
-    │   │       └── expiry: Sat Apr 29 15:05:03 2023
+    │   │       └── expiry: Mon Jun 12 18:56:09 2023
     │   └── signed artifact
-    │       ├── media type: application/vnd.oci.image.index.v1+json
-    │       ├── digest: sha256:111222333444555666777888999000aaaabbbbcccddddeeeeffff00011122233
-    │       └── size: 855
-    └── sha256:dce2af55117bc6981e749aa8cf17b52f2747839bb252d4dba75ad429a55cb286
+    │       ├── media type: application/vnd.docker.distribution.manifest.v2+json
+    │       ├── digest: sha256:cae906b84806687f02272d00a7000ff31a6be6281bb72f16bdef2fcd67d41786
+    │       └── size: 942
+    └── sha256:e503cadaa2ffee0272acc8ec1dcb4f737a7245b01491e86b9a382ca3fed88297
         ├── media type: application/cose
         ├── signature algorithm: RSASSA-PSS-SHA-256
         ├── signed attributes
         │   ├── signingScheme: notary.x509
-        │   ├── signingTime: Fri Apr 28 10:05:32 2023
-        │   └── expiry: Mon Jan  1 00:00:00 0001
+        │   └── signingTime: Sun Jun 11 19:57:14 2023
         ├── user defined attributes
         │   └── (empty)
         ├── unsigned attributes
         │   └── signingAgent: Notation/1.0.0
         ├── certificates
-        │   └── SHA1 fingerprint: ee0201aff38dbd0305672501db781c953a3f2151
+        │   └── SHA256 fingerprint: 3f32321edede5df5bb02e88749217ef10c6c4ce8a5d62bb2136257a0ade6e832
         │       ├── issued to: CN=wabbit-networks.io,O=Notary,L=Seattle,ST=WA,C=US
         │       ├── issued by: CN=wabbit-networks.io,O=Notary,L=Seattle,ST=WA,C=US
-        │       └── expiry: Sat Apr 29 15:05:03 2023
+        │       └── expiry: Mon Jun 12 18:56:09 2023
         └── signed artifact
-            ├── media type: application/vnd.oci.image.index.v1+json
-            ├── digest: sha256:111222333444555666777888999000aaaabbbbcccddddeeeeffff00011122233
-            └── size: 855
+            ├── media type: application/vnd.docker.distribution.manifest.v2+json
+            ├── digest: sha256:cae906b84806687f02272d00a7000ff31a6be6281bb72f16bdef2fcd67d41786
+            └── size: 942
 ```
 
 The output contains all the certificate information used for signing the artifact. You can use this information to validate the signing certificates and certificate chain.
 
-The output also contains details about the artifact that was signed, such as the digest. You can use this information to confirm the correct artifact was signed.
+The output also contains details about the artifact that was signed, such as the digest. You can use this information to confirm that the correct artifact was signed.
 
 
 ## Enabling notation CLI commands logging
 
-Enabling a more detailed logging using `--verbose` can help troubleshoot issues with the notation CLI. Using `--verbose` or `-v` gives more detailed output for the notation CLI commands that can be used for troubleshooting.
+To troubleshoot issues with the notation CLI, you can use the `--verbose` or `-v` flag for more detailed logging. Using the `--verbose` flag gives more detailed information about the notation CLI command. This is useful in identifying and resolving issues effectively. 
 
-When running a notation CLI command, use the `--verbose` flag to enable verbose logging. For example:
+Use the `--verbose` flag to enable verbose logging when running a notation CLI command. For example:
 
 ```shell
-notation verify --verbose localhost:5000/net-monitor@sha256:sha256:xxx
+notation verify --verbose localhost:5000/net-monitor@sha256:xxx
 ```
 
 In addition, there is `--debug`, which is intended for developers to debug the notation CLI. It is not recommended to use `--debug` for end-user troubleshooting.
 
 ## When I verify an artifact, I get the error 'Error: open $HOME/.config/notation/trustpolicy.json: no such file or directory'
 
-This error is likely related to trust policy configuration. Verify you have a trust policy set up before you attempt to verify an artifact. For more details, see [Manage trust policies]({{< ref "/docs/how-to/manage-trust-policy" >}}
+This error is likely related to trust policy configuration. Verify you have a trust policy set up before you attempt to verify an artifact. For more details, see [Manage trust policies]({{< ref "/docs/how-to/manage-trust-policy" >}})
 
 ## When I verify an artifact, I get the error '"$HOME/.config/notation/truststore/x509/ca/mytruststore" does not exist'
 
 This error indicates the trust store doesn't exist or the trust store name is not correct. Trust store typically contains a set of certificate files, where the trust identities are retrieved to verify signatures. You can use `notation cert add` to add trust stores.
 
-The above error shows the type of trust store is `ca`, and the trust store name is `mytruststore`. 
+The above error shows that the type of trust store is `ca`, and the trust store name is `mytruststore`. Aside `ca` trust store type, X.509 also supports other types of trust stores such as, the `x509/signingAuthority` and  `x509/tsa`. For more details,  please refer to the [trust store and trust policy specification](https://github.com/notaryproject/notaryproject/blob/v1.0.0-rc.2/specs/trust-store-trust-policy.md#trust-store-and-trust-policy-specification)
 
 To verify `ca` and `mytruststore` exist, use `notation cert list`, then confirm whether the type of store `ca` and store name `mytruststore` are in the list with the right certificate file stored.
 
