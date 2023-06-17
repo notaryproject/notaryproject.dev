@@ -81,13 +81,13 @@ params:
   # This menu appears only if you have at least one [params.versions] set.
   # version_menu: Versions
   # versions:
-    # latest: v2
-    # all:
-      # - v2
-      # - v1
-    # deprecation_warning: |-
-      # the documentation is no longer actively maintained.
-      # The page that you are viewing is the last archived version.
+  # latest: v2
+  # all:
+  # - v2
+  # - v1
+  # deprecation_warning: |-
+  # the documentation is no longer actively maintained.
+  # The page that you are viewing is the last archived version.
 
   # User interface configuration
   ui:
@@ -113,11 +113,11 @@ params:
     feedback:
       enable: true
       # The responses that the user sees after clicking "yes" (the page was helpful) or "no" (the page was not helpful).
-      'yes': >-
+      "yes": >-
         Glad to hear it! Please <a
         href="https://github.com/notaryproject/notaryproject.dev/issues/new">tell us how we
         can improve</a>.
-      'no': >-
+      "no": >-
         Sorry to hear that. Please <a
         href="https://github.com/notaryproject/notaryproject.dev/issues/new">tell us how we
         can improve</a>.
@@ -184,3 +184,6 @@ menu:
     - name: Roadmap
       url: https://github.com/notaryproject/roadmap
       weight: -20
+    - name: Security
+      url: ./security-audit/
+      weight: -50
