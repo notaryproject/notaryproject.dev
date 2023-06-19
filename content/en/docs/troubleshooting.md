@@ -12,16 +12,16 @@ To suggest a troubleshooting item, [create a pull request PR with your suggested
 
 ## How do I troubleshoot issues with signatures?
 
-`oras manifest fetch` fetches information about an image; such as mediatype, config, layers, and annotations. By using the `--descriptor` flag, you can fetch only the descriptor of an artifact. Inspect the descriptor of a remote artifact sent for signing using `oras manifest fetch --descriptor`. For example: 
+`oras manifest fetch` fetches information about an artifact; such as mediatype, config, layers, and annotations. By using the `--descriptor` flag, you can fetch only the descriptor of an artifact. Inspect the descriptor of a remote artifact sent for signing using `oras manifest fetch --descriptor`. For example: 
 
 ```console
-$ oras manifest fetch --descriptor REGISTRY/IMAGE:TAG
+$ oras manifest fetch --descriptor IMAGE:TAG
 {"mediaType":"...","digest":"sha256:...","size":...}
 ```
 
 Confirm the details, such as the *mediaType* and *digest* match the details of the artifact sent for signing.
 
-Inspect the signatures of a remote artifact using `notation inspect` with the registry name, image and the digest value for the artifact. For example:
+Inspect the signatures of a remote artifact using `notation inspect` with the digest value for the artifact. For example:
 
 ```console
 $ notation inspect localhost:5001/net-monitor@sha256:cae906b84806687f02272d00a7000ff31a6be6281bb72f16bdef2fcd67d41786
