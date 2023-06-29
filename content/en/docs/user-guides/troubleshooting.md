@@ -73,6 +73,7 @@ The output contains all the certificate information used for signing the artifac
 
 The output also contains details about the artifact that was signed, such as the digest. You can use this information to confirm that the correct artifact was signed.
 
+For more information about signatures and their components, see [the Notary signature specification](https://github.com/notaryproject/notaryproject/blob/v1.0.0/specs/signature-specification.md).
 
 ## Enabling notation CLI commands logging
 
