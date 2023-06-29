@@ -112,7 +112,7 @@ Specifically, this error indicates that the artifact is signed by an unknown ide
 
 To confirm the trust store and trust policy are configured correctly:
 
-1. If you have multiple trust policies in `trustpolicy.json` file, confirm you are using the correct trust policy for this artifact by running `notation verify IMAGE -v`. Enabling the `-v` flag provides you with more information about the trust policy used for verifying the artifact.
+1. If you have multiple trust policies in `trustpolicy.json` file, confirm you are using the correct trust policy for this artifact by running `notation policy show`. This will display information about the trust policy used for verifying the artifact.
 2. Check the `trustStores` property and confirm the value is correctly configured.
 3. Check the `trustedIdentities` property and confirm the value is correctly configured. 
   - If the value is `"*"`, it means all the certificates stored in the trust stored (configured in `trustStores`) are trusted.  then you need to make sure the certificates in the trust stores can be used to verify the signatures. 
@@ -162,6 +162,6 @@ Windows PowerShell (prior to v6) uses the Unicode `UTF-16LE` encoding by default
 
 ## When I verify an artifact, I get the error 'Failed to unmarshal the payload content in the signature blob to envelope.Payload'
 
-This is usually an encoding problem of payload content in the signature envelope. Notation signatures can be produced by different tools per [signature specification](https://github.com/notaryproject/notaryproject/blob/v1.0.0-rc.2/specs/signature-specification.md). The payload content is a `JSON` document defined in the signature specification, and the encoding should be `utf-8 without BOM` or `ascii`.
+This is usually an encoding problem of payload content in the signature envelope. Notary Project signatures can be produced by different tools per [signature specification](https://github.com/notaryproject/notaryproject/blob/v1.0.0-rc.2/specs/signature-specification.md). The payload content is a `JSON` document defined in the signature specification, and the encoding should be `utf-8 without BOM` or `ascii`.
 
 Windows PowerShell (prior to v6) uses the Unicode `UTF-16LE` encoding by default, and `utf-8 without BOM` is not supported. If you are building payload content in Windows PowerShell (prior to v6), make sure you change the payload content encoding to `ascii`.
