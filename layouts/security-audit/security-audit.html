@@ -1,0 +1,376 @@
+{{ define "main" }}
+
+<div class="main-component">
+  <style>
+    .main-component {
+      padding: 60px;
+      padding-top: 200px;
+      padding-bottom: 200px;
+    }
+
+    .security-title {
+      width: 362px;
+      height: 53px;
+
+      font-style: normal;
+      font-weight: 700;
+      font-size: 43.5805px;
+      line-height: 53px;
+
+      color: #1a1a1a;
+    }
+
+    .sub-title {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+
+      font-style: normal;
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 30px;
+      padding-top: 15px;
+
+      color: #747474;
+    }
+
+    .audits {
+      padding-top: 50px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .a-main {
+      padding-top: 30px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .year {
+      width: 157px;
+      height: 40px;
+
+      font-style: normal;
+      font-weight: 600;
+      font-size: 32.92px;
+      line-height: 40px;
+
+      color: #1a1a1a;
+    }
+
+    .year-p {
+      width: 157px;
+      height: 40px;
+
+      font-style: normal;
+      font-weight: 600;
+      font-size: 32.92px;
+      line-height: 40px;
+      padding-top: 20px;
+
+      color: #1a1a1a;
+    }
+
+    .s-block {
+      width: 100%;
+      max-width: 1480px;
+      height: auto;
+      margin-top: 15px;
+      cursor: pointer;
+
+      background: #f6fcff;
+      border: 0.5px solid #0074ff;
+      backdrop-filter: blur(5px);
+      border-radius: 15px;
+
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .s-block:hover {
+      background-color: #f8f8f8;
+    }
+
+    .col {
+      display: flex;
+      flex-direction: row;
+      margin: 20px 50px;
+    }
+
+    .doc-img {
+      width: 190px;
+    }
+
+    .s-content {
+      flex-grow: 1;
+    }
+
+    .s-title {
+      width: 556px;
+      height: 30px;
+
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 30px;
+      text-decoration-line: underline;
+
+      color: #000000;
+    }
+
+    .s-title:hover {
+      text-decoration-line: none;
+    }
+
+    .s-description {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+      padding-top: 10px;
+
+      color: #7d7d7d;
+    }
+
+    .ada-img {
+      width: 50%;
+    }
+
+    /* Mobile view */
+    @media only screen and (max-width: 767px) {
+      .main-component {
+        padding: 15px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+
+      .security-title {
+        width: 130px;
+        height: 17px;
+
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14.06px;
+        line-height: 17px;
+
+        color: #1a1a1a;
+      }
+
+      .sub-title {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+
+        font-style: normal;
+        font-weight: 500;
+        font-size: 8px;
+        line-height: 10px;
+        padding-top: 15px;
+
+        color: #747474;
+      }
+
+      .year {
+        width: 37px;
+        height: 15px;
+
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+
+        color: #1a1a1a;
+      }
+
+      .year-p {
+        width: 37px;
+        height: 15px;
+
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+
+        color: #1a1a1a;
+      }
+
+      .s-block {
+        width: 100%;
+        max-width: 360px;
+        height: auto;
+        margin-top: 15px;
+        cursor: pointer;
+
+        background: #f6fcff;
+        border: 0.01px solid #0074ff;
+        backdrop-filter: blur(5px);
+        border-radius: 3.4px;
+
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      .s-block:hover {
+        background-color: #f8f8f8;
+      }
+
+      .audits {
+        padding-top: 15px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .a-main {
+        padding-top: 13px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .col {
+        display: flex;
+        flex-direction: row;
+        margin: 3px 5px;
+      }
+
+      .doc-img {
+        flex-grow: 1;
+        width: 40px;
+        margin-right: 10px;
+      }
+
+      .s-content {
+        flex-grow: 1;
+      }
+
+      .s-title {
+        width: 100%;
+        height: 8px;
+
+        font-style: normal;
+        font-weight: 500;
+        font-size: 6.2593px;
+        line-height: 8px;
+        text-decoration-line: underline;
+
+        color: #000000;
+      }
+
+      .s-title:hover {
+        text-decoration-line: none;
+      }
+
+      .s-description {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+
+        font-style: normal;
+        font-weight: 400;
+        font-size: 4.25633px;
+        line-height: 5px;
+        padding-top: 3px;
+
+        color: #7d7d7d;
+      }
+
+      .ada-img {
+        width: 100%;
+      }
+    }
+  </style>
+  <div class="security-title">Security Audit</div>
+  <div class="sub-title">
+    Welcome to the Security Audit Reports page. Here, you will find a collection
+    of publicly available security audit reports.
+  </div>
+
+  <div class="audits">
+    <div class="year">2023</div>
+    {{ range where .Data.Pages "Section" "security-audit" }}
+    <a href="{{ .Params.slink }}" class="a-main" target="_blank">
+      <div class="s-block">
+        <div class="col">
+          <div class="doc-img">
+            {{ $image := resources.Get .Params.image }}
+            <img src="{{ $image.RelPermalink }}" alt="" class="ada-img" />
+          </div>
+          <div class="s-content">
+            <div class="s-title">{{ .Params.stitle }}</div>
+            <div class="s-description">{{ .Params.sdescription}}</div>
+          </div>
+        </div>
+      </div>
+      {{end}}
+    </a>
+
+    <div class="year-p">2018</div>
+    <a
+      href="https://github.com/notaryproject/notary/blob/master/docs/resources/cure53_tuf_notary_audit_2018_08_07.pdf"
+      class="a-main"
+      target="_blank"
+    >
+      <div class="s-block">
+        <div class="col">
+          <div class="doc-img">
+            {{ $image := resources.Get "images/cure53.png" }}
+            <img src="{{ $image.RelPermalink }}" alt="" class="ada-img" />
+          </div>
+          <div class="s-content">
+            <div class="s-title">
+              August 7, 2018 by Cure53 covering TUF and Notary
+            </div>
+            <div class="s-description">
+              This report documents the findings of a security assessment
+              targeting the TUF/Notary software compound. The project, which
+              comprised a source code audit and a classic penetration test, was
+              carried out by Cure53 in 2018 and yielded only four
+              securityrelevant findings.
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <div class="year-p">2015</div>
+    <a
+      href="https://github.com/notaryproject/notary/blob/master/docs/resources/ncc_docker_notary_audit_2015_07_31.pdf"
+      class="a-main"
+      target="_blank"
+    >
+      <div class="s-block">
+        <div class="col">
+          <div class="doc-img">
+            {{ $image := resources.Get "images/ncc.png" }}
+            <img src="{{ $image.RelPermalink }}" alt="" class="ada-img" />
+          </div>
+          <div class="s-content">
+            <div class="s-title">
+              July 31, 2015 by NCC covering TUF and Notary
+            </div>
+            <div class="s-description">
+              This report documents the findings of a security assessment
+              targeting the TUF/Notary software compound. The project, which
+              comprised a source code audit and a classic penetration test, was
+              carried out by Cure53 in 2018 and yielded only four
+              securityrelevant findings.
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+{{end}}

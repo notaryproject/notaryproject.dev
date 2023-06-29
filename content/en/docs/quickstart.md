@@ -5,6 +5,10 @@ type: docs
 weight: 2
 ---
 
+{{% alert title="Playground" color="info" %}}
+You can also follow this guide on online remote cloud interactive playground on killercoda: https://killercoda.com/notaryproject/scenario/notation
+{{% /alert %}}
+
 ## Prerequisites
 
 Before you begin, you need:
@@ -38,7 +42,10 @@ docker push localhost:5001/net-monitor:v1
 Get the digest value of the *localhost:5001/net-monitor:v1* image using `docker inspect`. For example:
 
 ```console
-docker inspect localhost:5001/net-monitor:v1 -f '{{ .Id }}'
+docker inspect --format='{{index .RepoDigests 0}}' localhost:5001/net-monitor:v1
+```
+Output:
+```console
 sha256:073b75987e95b89f187a89809f08a32033972bb63cda279db8a9ca16b7ff555a
 ```
 
