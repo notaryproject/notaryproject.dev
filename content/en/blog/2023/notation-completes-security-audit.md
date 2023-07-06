@@ -1,8 +1,11 @@
-# Announcing results of Notation security audit 2023
+---
+title: Announcing results of Notation security audit 2023
+author:  "Notation team"
+date: 2023-07-06
+draft: false
+---
 
-In early 2023, Notary Project, under the guidance of CNCF began work with Ada Logics to perform the first security audit of Notation libraries and Notation CLI, a reference implementation of the latest Notary Project specifications. Ada Logics discovered seven issues and they had been triaged and resolved by Notary Project maintainers. 
-
-This blog post summarizes the overall findings and notes a few things learnt from the security audit, which was preceded by a related but independent Audit.
+In early 2023, Notary Project, under the guidance of CNCF began work with Ada Logics to perform the first security audit of Notation libraries and Notation CLI, a reference implementation of the latest Notary Project specifications. Ada Logics discovered seven issues and they had been triaged and resolved by Notary Project maintainers. This blog post summarizes the overall findings and notes a few things learnt from the security audit result.
  
 We are very grateful to Cloud Native Computing Foundation for funding this work and helping drive this effort, to OSTIF for arranging the audit, and to Ada Logics for actually conducting the audit and releasing the audit report.
  
@@ -17,7 +20,6 @@ Ada Logics identified seven issues of varying severity - one high, two moderate,
 * Cleartext Storage of Sensitive Information in an Environment Variable, ADA-NOT-23-5, fixed by how to authenticate to OCI registries documentation.
 * Insufficient Verification of Fetched Artifact Descriptor, ADA-NOT-23-6, aka CVE-2023-33959, fixed in RC-6
 * Denial of Service from Resource Exhaustion in `notation inspect`, ADA-NOT-23-7, fixed in RC-6
-
  
 ### Details by category of Findings
  
@@ -55,7 +57,6 @@ The Notary Project announced the completion of its fuzzing security audit in Mar
 Supply chain Levels for Software Artifacts (SLSA) is a check-list of standards and controls to prevent tampering, improve integrity, and secure software packages and infrastructure. It is organized into a series of levels that provide increasing integrity guarantees.
 
 Notation has not generated provenance artifacts in release process yet. The Notary maintainers has a plan to generate the provenance artifacts for Notation to ensure the origins of the project.
-
 
 ### Conclusion
  
