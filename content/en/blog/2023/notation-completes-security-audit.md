@@ -47,10 +47,10 @@ The Notary Project announced the completion of its fuzzing security audit in Mar
 
 Supply chain Levels for Software Artifacts (SLSA) is a check-list of standards and controls to prevent tampering, improve integrity, and secure software packages and infrastructure. It is organized into a series of levels that provide increasing integrity guarantees.
 
-Notation has not generated provenance artifacts in release process yet. The Notary maintainers has a plan to generate the provenance artifacts for Notation to ensure the origins of the project.
+Notation has not generated provenance artifacts in release process yet. The Notary Project maintainers has a plan to generate the provenance artifacts for Notation to ensure the origins of the project.
 
 ### Conclusion
  
 The Notary Project maintainers owe a huge thanks to the CNCF, OSTIF, and Ada Logics for sponsoring, facilitating, and conducting this security audit. Aside from their observations above, the auditors note that Notation  follows a high level of industry standards in dealing with security.
 
-If you have questions about the audit report, reach out to Notary Project maintainers in the [#notary-project](https://cloud-native.slack.com/messages/notary-v2/) channel in the [CNCF](https://slack.cncf.io/) Slack workspace. If you find any security vulnerability, plese use the GitHub Security Vulnerability Disclosure process for each one of the Notary Project repositories by following this [guide](https://github.com/notaryproject/.github/blob/main/SECURITY.md#reporting-a-vulnerability).
+If you have questions about the audit report, reach out to Notary Project maintainers in the [#notary-project](https://cloud-native.slack.com/messages/notary-project/) channel of the [CNCF](https://slack.cncf.io/) Slack workspace. If you find any security vulnerability, please use the GitHub Security Vulnerability Disclosure process for each one of the Notary Project repositories by following this [guide](https://github.com/notaryproject/.github/blob/main/SECURITY.md#reporting-a-vulnerability).
