@@ -88,7 +88,7 @@ In addition, there is `--debug`, which is intended for developers to debug the n
 
 ## When I verify an artifact, I get the error 'Error: open $HOME/.config/notation/trustpolicy.json: no such file or directory'
 
-This error is likely related to trust policy configuration. Verify you have a trust policy set up before you attempt to verify an artifact. For more details, see [Manage trust policies]({{< ref "/docs/how-to/manage-trust-policy" >}})
+This error is likely related to trust policy configuration. Verify you have a trust policy set up before you attempt to verify an artifact. For more details, see [Manage trust policies]({{< ref "/docs/notation/how-to/manage-trust-policy" >}})
 
 ## When I verify an artifact, I get the error '"$HOME/.config/notation/truststore/x509/ca/mytruststore" does not exist'
 

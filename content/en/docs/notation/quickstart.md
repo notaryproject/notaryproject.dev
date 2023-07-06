@@ -14,7 +14,7 @@ You can also follow this guide on online remote cloud interactive playground on 
 Before you begin, you need:
 
 * Docker installed and running, such as [Docker desktop](https://www.docker.com/products/docker-desktop/).
-* [Notation CLI]({{< ref "/docs/installation/cli" >}}) installed and configured.
+* [Notation CLI]({{< ref "/docs/notation/installation/cli" >}}) installed and configured.
 
 ## Create an OCI-compatible registry
 
@@ -28,7 +28,7 @@ docker run -d -p 5001:5000 -e REGISTRY_STORAGE_DELETE_ENABLED=true --name regist
 If the host port 5001 is already in use, you can use another host port. 
 {{% /alert %}}
 
-If you want to use Notation with other registries, refer to [which registries are compatible with Notary]({{< ref "/docs/faq#what-registries-are-compatible-with-notary" >}}) for more alternatives. See [Authenticate with OCI-compliant registries]({{< ref "/docs/how-to/registry-authentication" >}}) when you log in to another OCI registry.
+If you want to use Notation with other registries, refer to [which registries are compatible with Notary]({{< ref "/docs/faq#what-registries-are-compatible-with-notary" >}}) for more alternatives. See [Authenticate with OCI-compliant registries]({{< ref "/docs/notation/how-to/registry-authentication" >}}) when you log in to another OCI registry.
 
 ## Add an image to the OCI-compatible registry
 
@@ -77,7 +77,7 @@ notation cert generate-test --default "wabbit-networks.io"
 ```
 
 {{% alert title="Note" color="primary" %}}
-At this time, test key and self-signed certificate files created using `notation cert generate-test` can't be removed using only `notation key delete` and `notation cert delete`. For more details on fully removing the test key and self-signed certificate files, see [Remove the test key and self-signed certificate]({{< ref "/docs/installation/uninstall#remove-the-test-key-and-self-signed-certificate" >}}).
+At this time, test key and self-signed certificate files created using `notation cert generate-test` can't be removed using only `notation key delete` and `notation cert delete`. For more details on fully removing the test key and self-signed certificate files, see [Remove the test key and self-signed certificate]({{< ref "/docs/notation/installation/uninstall#remove-the-test-key-and-self-signed-certificate" >}}).
 {{% /alert %}}
 
 Use `notation key ls` to confirm the signing key is correctly configured. Key name with a `*` prefix is the default key.
@@ -192,4 +192,4 @@ To remove the sample registry running on your development computer:
 docker rm -f registry
 ```
 
-To reset your `notation` configuration, remove the notation configuration directory. For more details, see [Remove the configuration files]({{< ref "/docs/installation/uninstall" >}}).
+To reset your `notation` configuration, remove the notation configuration directory. For more details, see [Remove the configuration files]({{< ref "/docs/notation/installation/uninstall" >}}).

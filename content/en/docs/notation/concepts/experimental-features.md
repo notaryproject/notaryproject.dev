@@ -9,7 +9,7 @@ Starting in version `v1.0.0-rc.4`, Notation began introducing experimental featu
 
 Currently, Notation has the following experimental features:
 
-- [Signing, listing and verifying images as OCI image layout]({{< ref "/docs/how-to/oci-image-layout" >}})
+- [Signing, listing and verifying images as OCI image layout]({{< ref "/docs/notation/how-to/oci-image-layout" >}})
 - Store signatures using artifact manifest (requires registry support). Deprecated in `v1.0.0-rc.5`.
 - Use [Referrers API](https://github.com/opencontainers/distribution-spec/blob/v1.1.0-rc2/spec.md#enabling-the-referrers-api)
 

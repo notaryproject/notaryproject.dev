@@ -144,5 +144,5 @@ Alternatively, you can expand the archive file to a different directory and add 
 
 For more on the `NOTATION_CONFIG` directory and configuring your environment with `notation` see:
 
-- [Notation directory structure for system configuration]({{< ref "/docs/concepts/directory-structure" >}})
-- [Customize the Notation configuration file]({{< ref "/docs/how-to/notation-config-file" >}})
+- [Notation directory structure for system configuration]({{< ref "/docs/notation/concepts/directory-structure" >}})
+- [Customize the Notation configuration file]({{< ref "/docs/notation/how-to/notation-config-file" >}})

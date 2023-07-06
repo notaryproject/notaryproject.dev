@@ -5,7 +5,7 @@ type: docs
 weight: 2
 ---
 
-By default, `notation` configures and manages a trust policy in the [configuration directory]({{< ref "/docs/concepts/directory-structure" >}}). You can directly change the trust policy file in that directory to manage your trust policies. 
+By default, `notation` configures and manages a trust policy in the [configuration directory]({{< ref "/docs/notation/concepts/directory-structure" >}}). You can directly change the trust policy file in that directory to manage your trust policies. 
 
 Alternatively, you can manage trust policies using the `notation policy import` and `notation policy show` commands. These commands have the following benefits over directly editing the default trust policy file:
 

@@ -19,7 +19,7 @@ By default, `notation` uses a credentials store during the following operations:
 - Delete credentials from the credentials store when you log out of a registry
  
 You have three options for configuring a credentials store:
-1. Use the [`notation` config.json file]({{< ref "/docs/concepts/directory-structure" >}}).
+1. Use the [`notation` config.json file]({{< ref "/docs/notation/concepts/directory-structure" >}}).
 1. Use the Docker configuration file, which is located at `~/.docker/config.json`.
 1. Use the default credentials store for your operating system.
 
@@ -31,7 +31,7 @@ If you have Docker installed on your system and used `docker login` to authentic
 Docker also implements a fallback mechanism for storing your credentials. If no credentials store is available, Docker will store your credentials as base64 encoded values in the Docker configuration file. This is not secure and is not recommended for production environments. For more details, see [`docker login` default behavior](https://docs.docker.com/engine/reference/commandline/login/#default-behavior).
 {{% /alert %}}
 
-To configure a credentials store in the `notation` configuration file, add a `credStore` to the [`notation` config.json file]({{< ref "/docs/concepts/directory-structure" >}}). The following example shows `osxkeychain` as the configured credentials store.
+To configure a credentials store in the `notation` configuration file, add a `credStore` to the [`notation` config.json file]({{< ref "/docs/notation/concepts/directory-structure" >}}). The following example shows `osxkeychain` as the configured credentials store.
 
 ```json
 {
@@ -79,7 +79,7 @@ unset NOTATION_PASSWORD
 Storing credentials in `config.json` is not secure for storing sensitive data such as usernames and passwords and should not be used in a production environment.
 {{% /alert %}}
 
-You can configure the [`notation` config.json file]({{< ref "/docs/concepts/directory-structure" >}}) to store the credentials for your OCI-compliant registry as base64 encoded values. For example:
+You can configure the [`notation` config.json file]({{< ref "/docs/notation/concepts/directory-structure" >}}) to store the credentials for your OCI-compliant registry as base64 encoded values. For example:
 
 ```json
 {
