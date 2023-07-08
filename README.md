@@ -13,7 +13,7 @@
 ## Introduction
 [**Checkout Notary Project's website!**](https://notaryproject.dev/)
 
-The Notary project enables multiple signatures of an [OCI Artifact](https://github.com/opencontainers/artifacts), such as container images, to be stored in an [OCI-compliant](https://github.com/opencontainers/oci-conformance) registry. It consists of various components, including requirements, scenarios, CLI tools, and libraries that implement these requirements.
+The Notary Project enables signatures for  [OCI Artifacts](https://github.com/opencontainers/artifacts), such as container images, to be stored in an [OCI-compliant](https://github.com/opencontainers/oci-conformance) registry. It consists of various components, including requirements, scenarios, CLI tools, and libraries that implement these requirements.
 
 This website serves as a comprehensive resource for information and documentation on Notary. Whether you're new to Notary or an experienced user, this is your go-to hub for all things related to Notary.
 
