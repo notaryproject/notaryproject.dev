@@ -1,259 +1,939 @@
----
 # TODO(chalin): drop the `title` field once Hugo is fixed to use the site title
-title: Notary Project
-# features:
-#  - title: Simple interface
-#    description: Read and write values using standard HTTP tools, such as curl
-#    icon: interface.svg
-#  - title: Key-value storage
-#    description: Store data in hierarchically organized directories, as in a standard filesystem
-#    icon: kv.svg
-#  - title: Watch for changes
-#    description: Watch specific keys or directories for changes and react to changes in values
-#    icon: watch.svg
----
+title: Notary Project # features: # - title: Simple interface # description:
+Read and write values using standard HTTP tools, such as curl # icon:
+interface.svg # - title: Key-value storage # description: Store data in
+hierarchically organized directories, as in a standard filesystem # icon: kv.svg
+# - title: Watch for changes # description: Watch specific keys or directories
+for changes and react to changes in values # icon: watch.svg ---
 
-{{< blocks/cover image_anchor="top" height="max" color="black" >}}
+<style>
+  #main-hero {
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 80px;
+    background: linear-gradient(180deg, #0074ff 0%, #2758ff 100%);
+    padding-top: 30px;
+    padding-bottom: 250px;
+    height: 900px;
+    z-index: 1;
+  }
+
+  .title {
+    color: #fff !important;
+    font-size: 35px !important;
+    line-height: 50px !important;
+    text-align: left !important;
+  }
+
+  .subtitle {
+    font-size: 23px;
+    line-height: 35px;
+    color: #fff;
+    font-weight: 300;
+  }
+
+  #yt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #yt-video {
+    max-width: 600px;
+    height: 320px;
+    border-radius: 15px;
+  }
+
+  .gs-bt {
+    width: 150px;
+    height: 50px;
+    border-radius: 30.781px;
+    background: #26265b;
+    color: #fff;
+
+    font-weight: 600;
+    border: none;
+  }
+
+  .gt-bt {
+    width: 150px;
+    height: 50px;
+    border-radius: 30.781px;
+    background: #ffffff;
+    color: #000;
+
+    font-weight: 600;
+    border: none;
+  }
+
+  .wf-block {
+    width: 80%;
+    height: 660px;
+    border-radius: 50px;
+    background: #fff;
+    box-shadow: 0px 4px 50px 0px rgba(0, 0, 0, 0.15);
+    padding: 65px;
+
+    margin: 0 auto;
+    margin-top: -200px;
+  }
+
+  .contributors {
+    margin-top: 30px;
+  }
+
+  .contributors-t {
+    color: #1a1a1a;
+    text-align: center;
+
+    margin-top: 250px;
+    margin-bottom: 80px;
+    font-size: 33px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .b-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 90px;
+
+    border-radius: 14.14px;
+    border: 0.6px solid #0074ff;
+    background: #e9f3ff;
+    backdrop-filter: blur(2px);
+  }
+
+  .img-aws {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .img-aws img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .img-cncf {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .img-cncf img {
+    width: 130px;
+    height: 130px;
+  }
+
+  .img-doc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .img-doc img {
+    width: 130px;
+    height: 130px;
+  }
+
+  .img-msft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .img-msft img {
+    width: 130px;
+    height: 130px;
+  }
+
+  .title-at {
+    color: #1a1a1a;
+    text-align: center;
+
+    margin-top: 100px;
+    margin-bottom: 80px;
+    font-size: 33px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  #desc-at {
+    display: flex;
+    width: 80%;
+
+    color: #595959;
+    text-align: center;
+    justify-content: center;
+
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  #at-blocks {
+    margin-top: 100px;
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+
+  #s-block {
+    display: flex;
+    flex-direction: column;
+    width: 298.742px;
+    height: 350px;
+
+    border-radius: 15px;
+    border: 1.282px solid #0074ff;
+    background: #d9eaff;
+    box-shadow: 3.418604612350464px 5.127906799316406px 29.05813980102539px 0px
+      rgba(0, 0, 0, 0.1);
+  }
+
+  .desc-at-block {
+    color: #595959;
+    text-align: center;
+    font-size: 18px !important;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .img-container-md {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+  }
+
+  .img-container-md img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .img-container-md-msft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 130px;
+  }
+
+  .img-container-md-msft img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .container {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+
+  .sn-cont {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .sn-hd {
+    color: #1a1a1a;
+    text-align: center;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 30px !important;
+  }
+
+  .sn-desc {
+    color: rgba(26, 26, 26, 0.8);
+    text-align: center;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 36px;
+  }
+
+  .sn-workflow {
+    width: 100%;
+  }
+
+  .sn-img {
+    width: 1000px;
+  }
+
+  .sn-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding-top: 50px;
+  }
+
+  .sn-f-s {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .sn-feat {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .feat-img {
+    width: 55px;
+    height: 55px;
+    border-radius: 14.138px;
+    border: 1px solid #1763ff;
+    background: #d9eaff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    margin-left: 40px;
+  }
+
+  .in-feat-img {
+    width: 65%;
+  }
+
+  .feat-cont {
+    height: 100px;
+  }
+
+  .feat-cont-h {
+    color: #1a1a1a;
+
+    font-size: 17.5px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 3px !important;
+    margin-top: 3px;
+  }
+
+  .feat-cont-d {
+    color: #1a1a1a;
+
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .un-n {
+    padding-top: 230px !important;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-bottom: 0 !important;
+  }
+
+  .u-cont-h {
+    color: #1a1a1a;
+    text-align: center;
+    font-size: 33px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 30px !important;
+  }
+
+  .u-cont-d {
+    padding-left: 90px;
+    padding-right: 90px;
+    color: #595959;
+    text-align: center;
+    font-size: 27px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .u-features {
+    margin-top: 120px !important;
+  }
+
+  .u-features h4 {
+    font-family: monospace;
+  }
+
+  /* .u-f-cont-5 {
+    margin-top: -100px !important;
+  } */
+
+  .m-blog {
+    background: #0670ff !important;
+    padding: 280px;
+  }
+
+  .blog-1-cont {
+    width: 392px;
+    height: 538px;
+    border-radius: 25px;
+    background: #e7f0ff;
+  }
+
+  .b-blogs-container {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .b-blogs {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .b-blogs > div {
+    display: inline-block;
+    margin-right: 20px;
+    white-space: normal;
+    vertical-align: top;
+  }
+
+  .b-blogs-container::-webkit-scrollbar {
+    width: 2px !important;
+    background-color: rgba(255, 255, 255, 0.37);
+  }
+
+  .b-blogs-container::-webkit-scrollbar-thumb {
+    background-color: #ebebeb;
+    border-radius: 10px;
+  }
+
+  .b-blogs-container::-webkit-scrollbar-thumb:hover {
+    background-color: #ffffff;
+  }
+
+  .u-container-1 {
+    margin-top: 40px;
+  }
+
+  .u-container-2,
+  .u-container-3,
+  .u-container-4 {
+    margin-top: -40px;
+  }
+
+  .u-container-5 {
+    margin-top: -20px;
+  }
+
+  .u-container-1,
+  .u-container-2,
+  .u-container-3,
+  .u-container-4,
+  .u-container-5 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .u-h-1,
+  .u-h-2,
+  .u-h-3,
+  .u-h-4,
+  .u-h-5 {
+    color: #1a1a1a;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: left;
+    margin-left: 60px;
+  }
+
+  .u-d-1,
+  .u-d-2,
+  .u-d-3,
+  .u-d-4,
+  .u-d-5 {
+    color: #808080;
+
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: left !important;
+  }
+
+  .u-f-cont-1,
+  .u-f-cont-2,
+  .u-f-cont-3,
+  .u-f-cont-4,
+  .u-f-cont-5 {
+    display: flex;
+    justify-content: left;
+  }
+
+  .u-f-img-1,
+  .u-f-img-2,
+  .u-f-img-3,
+  .u-f-img-4,
+  .u-f-img-5 {
+    width: 420px;
+  }
+
+  .us-img-1,
+  .us-img-2,
+  .us-img-3,
+  .us-img-4,
+  .us-img-5 {
+    width: 100%;
+  }
+
+  #crypt-btn,
+  #security-btn,
+  #ext-btn,
+  #multi-btn,
+  #comm-btn {
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #0074ff;
+    background: #e9f3ff;
+    font-size: 13.5px;
+    font-weight: 600;
+    margin-right: 10px;
+  }
+
+  #crypt-btn:focus,
+  #security-btn:focus,
+  #ext-btn:focus,
+  #multi-btn:focus,
+  #comm-btn:focus {
+    background-color: #d0e6ff;
+  }
+
+  .b-title {
+    color: #1a1a1a;
+    text-align: center;
+    font-size: 33px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .blogs-section {
+    margin-top: -270px !important;
+  }
+
+  .main-ad {
+    margin-top: -160px !important;
+  }
+
+  .container {
+    padding-top: 0 !important;
+  }
+
+  #a-blogs {
+    margin-top: 100px !important;
+  }
+
+  /* @media only screen and (max-width: 767px) {
+    #at-blocks {
+      margin-top: 0px;
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  } */
+</style>
+
+<!-- {{< blocks/cover image_anchor="top" height="max" color="black" >}} -->
 <section
-  class="gap-lg width-80 fullwidth-mobile is-centered is-align-items-center margin-top-mobile is-mobile-responsive-reverse fullwidth-tablet flex"
+  class="flex gap-lg width-80 fullwidth-mobile is-centered is-align-items-center margin-top-mobile is-mobile-responsive-reverse fullwidth-tablet"
+  id="main-hero"
 >
-  <div class="text-centered-mobile text-left">
+  <div class="text-left text-centered-mobile" id="conts">
     <h4 class="title">
-      Standards-based spec and tooling
-      <span class="text-blue-gradient">for securing software supply chains</span>
+      Standards-based spec and tooling for securing software supply chains
     </h4>
     <p class="subtitle">
-      Signing and verifying artifacts. Safeguarding the software delivery security from development to deployment.
+      Signing and verifying artifacts. Safeguarding the software delivery
+      security from development to deployment.
     </p>
-    <div class="gap-md margin-lg-top text-centered-mobile flex">
+    <div class="flex gap-md margin-lg-top text-centered-mobile">
       <a href="https://notaryproject.dev/docs/quickstart/">
-        <button class="button is-medium is-dark get-started">Get started</button>
+        <button class="gs-bt">Get started</button>
       </a>
-      <a href="https://killercoda.com/notaryproject/scenario/notation" target="_blank" rel="noopener noreferrer">
-        <button class="button is-medium is-dark demo">Try it
-          <span></span>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" style="height: 1rem;">
-          <path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd" />
-          <path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd" />
-        </svg>
-        </button>
+      <a href="https://github.com/notaryproject/notation">
+        <button class="gt-bt">GitHub</button>
       </a>
     </div>
   </div>
-  <div class="img-long is-hidden-mobile">
-    <iframe src="https://www.youtube.com/embed/ZMNUazoGwdk" frameborder="0"></iframe>
+  <div class="img-long is-hidden-mobile" id="yt">
+    <iframe
+      src="https://www.youtube.com/embed/ZMNUazoGwdk"
+      frameborder="0"
+      id="yt-video"
+    ></iframe>
   </div>
 </section>
-<section>
-  <p><b>Contributed by the community, in collaboration with</b></p>
-  <div class="width-80 is-centered space-between is-align-items-center is-mobile-responsive text-centered-mobile flex">
-    <div class="img-container-smd is-centered">
-      <img src="aws_logo.svg" alt="AWS logo" />
-    </div>
-    <div class="img-container-mdl is-centered">
-      <img src="cncf_logo.svg" alt="CNCF logo" />
-    </div>
-    <div class="img-container-sm is-centered">
-      <img src="docker_logo.svg" alt="Docker logo" />
-    </div>
-    <div class="img-container-sm is-centered">
-      <img src="microsoft_logo.svg" alt="Microsoft logo" />
-    </div>
-  </div>
-  <hr class="broken-line" />
-</section>
-{{< /blocks/cover >}}
 
-<section class="bg-container text-centered">
-  <div class="text-container">
-    <h1 class="title">Scenarios we fit and problems we solve for</h1>
-    <p class="width-60 is-centered font-size-md">
-      Signing and validating software artifacts, ensure they have not been tampered with and provide security policies
-      to determine which validated artifacts are allowed to be used in your systems
+<!-- {{< /blocks/cover >}} -->
+<div class="wf-block">
+  <div class="sn-cont">
+    <h1 class="sn-hd">Scenarios we fit and problems we solve for</h1>
+    <p class="sn-desc">
+      Sign and validate software artifacts to ensure integrity, prevent
+      tampering, and enforce security policies for approved artifacts in your
+      systems.
     </p>
   </div>
-  <div class="max-width width-70-tablet is-centered is-align-items-center gap-md is-mobile-responsive-reverse flex">
-    <div class="fullwidth">
-      <div class="margin-md-top-bottom is-align-items-center gap-md flex">
-        <div class="img-container-xsm">
-          <img src="sc_logo1.svg" alt="" />
+  <div class="sn-container">
+    <div class="sn-feat">
+      <div class="sn-f-s">
+        <div class="feat-img">
+          <img src="sn1.png" alt="" class="in-feat-img" />
         </div>
-        <div class="content text-left">
-          <h4 class="is-5">Secure containers and K8s</h4>
-          <p>For Developers</p>
-        </div>
-      </div>
-      <div class="margin-md-top-bottom is-align-items-center gap-md flex">
-        <div class="img-container-xsm">
-          <img src="sc_logo2.svg" alt="" />
-        </div>
-        <div class="content text-left">
-          <h4 class="is-5">DevSecOps</h4>
-          <p>For DevOps engineers</p>
+        <div class="feat-cont">
+          <h4 class="feat-cont-h">Secure containers and K8s</h4>
+          <p class="feat-cont-d">For Developers</p>
         </div>
       </div>
-      <div class="margin-md-top-bottom is-align-items-center gap-md flex">
-        <div class="img-container-xsm">
-          <img src="sc_logo3.svg" alt="" />
+
+      <div class="sn-f-s">
+        <div class="feat-img">
+          <img src="sn2.png" alt="" class="in-feat-img" />
         </div>
-        <div class="content text-left">
-          <h4 class="is-5">Auditing and Compliance</h4>
-          <p>For Security Operators</p>
+        <div class="feat-cont">
+          <h4 class="feat-cont-h">DevSecOps</h4>
+          <p class="feat-cont-d">For DevOps Engineer</p>
+        </div>
+      </div>
+
+      <div class="sn-f-s">
+        <div class="feat-img">
+          <img src="sn3.png" alt="" class="in-feat-img" />
+        </div>
+        <div class="feat-cont">
+          <h4 class="feat-cont-h">Auditing and Compliances</h4>
+          <p class="feat-cont-d">For Security Operator</p>
         </div>
       </div>
     </div>
-    <div class="img-long is-hidden-mobile">
-      <img src="notary_scenarios.svg" alt="" />
+    <div class="sn-img">
+      <img src="workflow1.png" alt="notary logo" class="sn-workflow" />
+    </div>
+  </div>
+</div>
+
+<!-- Contributed By Community -->
+<section class="contributors">
+  <p class="contributors-t">
+    Contributed by the community, in collaboration <br />with
+  </p>
+  <div
+    class="width-70 is-centered flex space-between is-align-items-center is-mobile-responsive text-centered-mobile"
+  >
+    <div class="b-box">
+      <div class="img-aws">
+        <img src="aws_logo.svg" alt="AWS logo" />
+      </div>
+    </div>
+    <div class="b-box">
+      <div class="img-cncf">
+        <img src="cncf_logo.svg" alt="CNCF logo" />
+      </div>
+    </div>
+    <div class="b-box">
+      <div class="img-doc">
+        <img src="docker_logo.svg" alt="Docker logo" />
+      </div>
+    </div>
+    <div class="b-box">
+      <div class="img-msft">
+        <img src="microsoft_logo.svg" alt="Microsoft logo" />
+      </div>
     </div>
   </div>
 </section>
 
 {{% blocks/lead color="white" %}}
-<section class="feature-container">
-  <div class="feature-text-container text-center">
-    <h1 class="title">Why the Notary Project is unique</h1>
-    <p class="width-60 is-centered font-size-md">
-      The Notary Project is aiming to provide enterprise-grade solutions and cross-industry standards for securing
-      software supply chain
+
+<section class="un-n">
+  <div class="u-cont">
+    <h4 class="u-cont-h">Why Notary is unique?</h4>
+    <p class="u-cont-d">
+      Notary is aiming to provide enterprise-grade solutions and cross-industry
+      standards for securing software supply chain
     </p>
   </div>
-  <div class="feature-cards is-list width-80 is-mobile-responsive fullwidth-tablet flex">
-    <div class="feature-card">
-      <div class="order-number is-digit">01</div>
-      <div class="feature-title">
-        <h1 class="text-left">Cryptographic Signing</h1>
+
+  <div class="u-features">
+    <button id="crypt-btn">Cryptographic Signing</button>
+    <button id="security-btn">Security Policy</button>
+    <button id="ext-btn">Extensibility</button>
+    <button id="multi-btn">Multi-registry</button>
+    <button id="comm-btn">Community-driven</button>
+
+    <div class="u-container-1">
+      <div class="u-f-cont-1">
+        <h4 class="u-h-1">Cryptographic Signing</h4>
+        <p class="u-d-1">
+          We support COSE and JWS signatures for secure authentication, enabling
+          versatile signing and verification of software artifacts. Built on
+          standard PKI, our system ensures reliable and compatible cryptographic
+          operations, accommodating online and air-gapped signing scenarios for
+          diverse requirements.
+        </p>
       </div>
-      <div class="feature-description text-left">
-        <div class="description is-bullets">
-          <ul>
-            <li>Support COSE and JWS signature format</li>
-            <li>Not only images, it allows to sign and verify any software artifacts</li>
-            <li>Built on standard PKI</li>
-            <li>Support online and air-gapped signing scenario</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="feature-card">
-      <div class="order-number is-digit">02</div>
-      <div class="feature-title">
-        <h1 class="text-left">Fine-grained security policy</h1>
-      </div>
-      <div class="feature-description text-left">
-        <div class="description is-bullets">
-          <ul>
-            <li>Able to custom trust policy and determine if a signed artifact is considered authentic</li>
-            <li>Ensure artifacts are signed with trusted identities and from trusted registry</li>
-            <li>Improve system integrity and authenticity</li>
-          </ul>
-        </div>
+      <div class="u-f-img-1">
+        <img src="feature1.png" alt="" class="us-img-1" />
       </div>
     </div>
-    <div class="feature-card">
-      <div class="order-number is-digit">03</div>
-      <div class="feature-title">
-        <h1 class="text-left">Easy to use and extensible</h1>
+
+    <div class="u-container-2">
+      <div class="u-f-cont-2">
+        <h4 class="u-h-2">Security Policy</h4>
+        <p class="u-d-2">
+          We offer the ability to customize trust policies, allowing users to
+          determine the authenticity of signed artifacts. We ensure that all
+          artifacts are signed with trusted identities and originate from
+          trusted registries, enhancing system integrity and authenticity.
+        </p>
       </div>
-      <div class="feature-description text-left">
-        <div class="description is-bullets">
-          <ul>
-            <li>Automating signing and verification into a few simple CLI commands</li>
-            <li>Pluggable design allows you to develop plugins and ecosystem integration</li>
-            <li>Provides SDK which allows you to develop your own client</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="feature-card">
-      <div class="order-number is-digit">04</div>
-      <div class="feature-title">
-        <h1 class="text-left">Multi-registry support</h1>
-      </div>
-      <div class="feature-description text-left">
-        <div class="description is-bullets">
-          <ul>
-            <li>
-              It supports push and store signatures alongside the artifacts in OCI registries, such as Docker Hub, ACR,
-              Zot registry, etc.
-            </li>
-            <li>Portable and immutable, you can copy an artifact with its signature across registries</li>
-          </ul>
-        </div>
+      <div class="u-f-img-2">
+        <img src="feature2.png" alt="" class="us-img-2" />
       </div>
     </div>
-    <div class="feature-card">
-      <div class="order-number is-digit">05</div>
-      <div class="feature-title">
-        <h1 class="text-left">
-          Community- <br />
-          driven
-        </h1>
+
+    <div class="u-container-3">
+      <div class="u-f-cont-3">
+        <h4 class="u-h-3">Extensibility</h4>
+        <p class="u-d-3">
+          Our system provides extensibility options that allow users to
+          customize and adapt the platform according to their specific needs.
+          With a flexible architecture and robust APIs, you can integrate and
+          extend functionalities to meet your requirements effectively.
+        </p>
       </div>
-      <div class="feature-description text-left">
-        <div class="description is-bullets">
-          <ul>
-            <li>100% open source, built and improved by the active community</li>
-            <li>100+ contributors in total, from multiple organizations</li>
-            <li>Fast iteration cadence and open community governance</li>
-          </ul>
-        </div>
+      <div class="u-f-img-3">
+        <img src="feature1.png" alt="" class="us-img-3" />
+      </div>
+    </div>
+
+    <div class="u-container-4">
+      <div class="u-f-cont-4">
+        <h4 class="u-h-4">Multi-registry</h4>
+        <p class="u-d-4">
+          We support multiple registries, enabling you to manage and organize
+          artifacts across different repositories. Our platform provides
+          seamless integration and synchronization capabilities, allowing you to
+          efficiently work with artifacts from various sources.
+        </p>
+      </div>
+      <div class="u-f-img-4">
+        <img src="feature2.png" alt="" class="us-img-4" />
+      </div>
+    </div>
+
+    <div class="u-container-5">
+      <div class="u-f-cont-5">
+        <h4 class="u-h-5">Community-driven</h4>
+        <p class="u-d-5">
+          Our platform is community-driven, with active participation and
+          collaboration from developers worldwide. Join our vibrant community to
+          share knowledge, contribute to the ecosystem, and benefit from
+          collective expertise to drive innovation and growth.
+        </p>
+      </div>
+      <div class="u-f-img-5">
+        <img src="feature1.png" alt="" class="us-img-5" />
       </div>
     </div>
   </div>
 </section>
-{{% /blocks/lead %}} {{% blocks/lead color="white" %}}
-<h1 class="title">Adopted and trusted by</h1>
-<p class="width-60 is-centered font-size-md">
-  Industry-leading enterprises and organizations are using the Notary Project for research, production, and integration
-  with security products. If you are using the Notary Project, please share your case with us
-</p>
 
-<div class="gap-md width-80 is-centered font-size-sm margin-md-top is-mobile-responsive fullwidth-tablet flex">
-  <div class="horizontalCard gap-md is-align-items-center flex">
-    <div class="img-container-md">
-      <img src="aws_logo.svg" alt="Aqua logo" />
+{{% /blocks/lead %}} {{% blocks/lead color="white" %}} {{< blog/list >}} {{%
+/blocks/lead %}} {{% blocks/lead color="white" %}}
+<!-- Blogs -->
+
+<div class="main-ad">
+  <h1 class="title-at">Adopted and trusted by</h1>
+  <p class="width-60 is-centered font-size-md" id="desc-at">
+    Industry-leading enterprises and organizations are using the Notary Project
+    for research, production, and integration with security products. If you are
+    using the Notary Project, please share your case with us
+  </p>
+  <div
+    class="flex gap-md width-80 is-centered font-size-sm margin-md-top is-mobile-responsive fullwidth-tablet"
+    id="at-blocks"
+  >
+    <div class="horizontalCard flex gap-md is-align-items-center" id="s-block">
+      <div class="img-container-md">
+        <img src="aws_logo.svg" alt="Aqua logo" />
+      </div>
+      <div class="text-container text-left">
+        <p class="desc-at-block">
+          AWS team is using and contributing to Notation, building the
+          cryptographic signing services for customers
+        </p>
+      </div>
     </div>
-    <div class="text-container text-left">
-      <p>AWS team is using and contributing to Notation, building the cryptographic signing services for customers</p>
+    <div
+      class="horizontalCard flex gap-md space-between is-align-items-center"
+      id="s-block"
+    >
+      <div class="img-container-md-msft">
+        <img src="microsoft_logo.svg" alt="Aqua logo" />
+      </div>
+      <div class="text-container text-left">
+        <p class="desc-at-block">
+          Notation used across Microsoft teams and services (e.g., Windows
+          container, AKS, Azure Code Signing, Ratify).
+        </p>
+      </div>
     </div>
-  </div>
-  <div class="horizontalCard gap-md space-between is-align-items-center flex">
-    <div class="img-container-md">
-      <img src="microsoft_logo.svg" alt="Aqua logo" />
+    <div
+      class="horizontalCard flex gap-md space-between is-align-items-center"
+      id="s-block"
+    >
+      <div class="img-container-md">
+        <img src="zot.svg" alt="Zot logo" />
+      </div>
+      <div class="text-container text-left">
+        <p class="desc-at-block">
+          Zot registry supports store Notation signature as OCI artifacts
+        </p>
+      </div>
     </div>
-    <div class="text-container text-left">
-      <p>
-        Notation is widely adopted by multiple Microsoft teams and services, such as Windows container team, AKS team,
-        Azure Code Signing service, Ratify, etc.
-      </p>
-    </div>
-  </div>
-  <div class="horizontalCard gap-md space-between is-align-items-center box flex">
-    <div class="img-container-md">
-      <img src="zot.svg" alt="Zot logo" />
-    </div>
-    <div class="text-container text-left">
-      <p>Zot registry supports store Notation signature as OCI artifacts</p>
-    </div>
-  </div>
-  <div class="horizontalCard gap-md space-between is-align-items-center flex">
-    <div class="img-container-md">
-      <img src="docker_logo.svg" alt="Aqua logo" />
-    </div>
-    <div class="text-container text-left">
-      <p>
-        Docker Hub supports signing container images with Notation and storing signatures and other supply chain
-        artifacts
-      </p>
+    <div
+      class="horizontalCard flex gap-md space-between is-align-items-center"
+      id="s-block"
+    >
+      <div class="img-container-md">
+        <img src="docker_logo.svg" alt="Aqua logo" />
+      </div>
+      <div class="text-container text-left">
+        <p class="desc-at-block">
+          Docker Hub supports signing container images with Notation and storing
+          signatures and other supply chain artifacts
+        </p>
+      </div>
     </div>
   </div>
 </div>
-{{% /blocks/lead %}} {{% blocks/lead color="white" %}}
-{{< blog/list >}}
-
 {{% /blocks/lead %}}
+
 <div class="container">
   <!-- {{< home/features >}} -->
   <!-- {{< home/used-by >}} -->
   {{< home/cncf >}}
 </div>
+
+<script>
+  const cryptBtn = document.getElementById("crypt-btn");
+  const securityBtn = document.getElementById("security-btn");
+  const extBtn = document.getElementById("ext-btn");
+  const multiBtn = document.getElementById("multi-btn");
+  const commBtn = document.getElementById("comm-btn");
+
+  const cont1 = document.querySelector(".u-f-cont-1");
+  const cont2 = document.querySelector(".u-f-cont-2");
+  const cont3 = document.querySelector(".u-f-cont-3");
+  const cont4 = document.querySelector(".u-f-cont-4");
+  const cont5 = document.querySelector(".u-f-cont-5");
+
+  const img1 = document.querySelector(".u-f-img-1");
+  const img2 = document.querySelector(".u-f-img-2");
+  const img3 = document.querySelector(".u-f-img-3");
+  const img4 = document.querySelector(".u-f-img-4");
+  const img5 = document.querySelector(".u-f-img-5");
+
+  // Show the default content (u-f-cont-1) and hide the default images (u-f-img-2, u-f-img-3, u-f-img-4, u-f-img-5)
+  cont1.style.display = "block";
+  cont2.style.display = "none";
+  cont3.style.display = "none";
+  cont4.style.display = "none";
+  cont5.style.display = "none";
+
+  img2.style.display = "none";
+  img3.style.display = "none";
+  img4.style.display = "none";
+  img5.style.display = "none";
+
+  // Add event listeners to the buttons
+  cryptBtn.addEventListener("click", () => {
+    // Show the Cryptographic Signing content (u-f-cont-1), hide other contents, show the Cryptographic Signing image (u-f-img-1), hide other images
+    cont1.style.display = "block";
+    cont2.style.display = "none";
+    cont3.style.display = "none";
+    cont4.style.display = "none";
+    cont5.style.display = "none";
+
+    img1.style.display = "block";
+    img2.style.display = "none";
+    img3.style.display = "none";
+    img4.style.display = "none";
+    img5.style.display = "none";
+  });
+
+  securityBtn.addEventListener("click", () => {
+    // Show the Security Policy content (u-f-cont-2), hide other contents, show the Security Policy image (u-f-img-2), hide other images
+    cont1.style.display = "none";
+    cont2.style.display = "block";
+    cont3.style.display = "none";
+    cont4.style.display = "none";
+    cont5.style.display = "none";
+
+    img1.style.display = "none";
+    img2.style.display = "block";
+    img3.style.display = "none";
+    img4.style.display = "none";
+    img5.style.display = "none";
+  });
+
+  extBtn.addEventListener("click", () => {
+    // Show the Extensibility content (u-f-cont-3), hide other contents, show the Extensibility image (u-f-img-3), hide other images
+    cont1.style.display = "none";
+    cont2.style.display = "none";
+    cont3.style.display = "block";
+    cont4.style.display = "none";
+    cont5.style.display = "none";
+
+    img1.style.display = "none";
+    img2.style.display = "none";
+    img3.style.display = "block";
+    img4.style.display = "none";
+    img5.style.display = "none";
+  });
+
+  multiBtn.addEventListener("click", () => {
+    // Show the Multi-registry content (u-f-cont-4), hide other contents, show the Multi-registry image (u-f-img-4), hide other images
+    cont1.style.display = "none";
+    cont2.style.display = "none";
+    cont3.style.display = "none";
+    cont4.style.display = "block";
+    cont5.style.display = "none";
+
+    img1.style.display = "none";
+    img2.style.display = "none";
+    img3.style.display = "none";
+    img4.style.display = "block";
+    img5.style.display = "none";
+  });
+
+  commBtn.addEventListener("click", () => {
+    // Show the Community-driven content (u-f-cont-5), hide other contents, show the Community-driven image (u-f-img-5), hide other images
+    cont1.style.display = "none";
+    cont2.style.display = "none";
+    cont3.style.display = "none";
+    cont4.style.display = "none";
+    cont5.style.display = "block";
+
+    img1.style.display = "none";
+    img2.style.display = "none";
+    img3.style.display = "none";
+    img4.style.display = "none";
+    img5.style.display = "block";
+  });
+</script>

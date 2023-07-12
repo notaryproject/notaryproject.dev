@@ -1,22 +1,305 @@
 {{/* notaryproject-docsy file override */ -}}
-<footer class="footer bg-dark flex space-between is-align-items-center is-mobile-responsive">
-  <div class="img-container-sm">
-    <a href="{{ .Site.Home.RelPermalink }}">
-      {{ $image := resources.Get "icons/logo-dark.png" }}
-      <img src="{{ $image.RelPermalink }}" alt="notary logo">
-    </a>
+
+<style>
+  .m-footer {
+    width: 100% !important;
+    height: 9000px !important;
+    padding-bottom: 660px !important;
+  }
+
+  footer {
+    width: 100% !important;
+    height: 9000px !important;
+    padding-bottom: 660px !important;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 70px;
+    background: #202020;
+    text-align: left;
+    gap: 50px;
+  }
+
+  .footer-list-doc,
+  .footer-list-blog,
+  .footer-list-com {
+    flex: 1;
+    max-width: 25%;
+    padding-top: 20px;
+    padding-left: 60px;
+  }
+
+  .footer-list-doc h4,
+  .footer-list-blog h4,
+  .footer-list-com h4 {
+    color: #fff;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 30px;
+  }
+
+  .footer-list-doc ul,
+  .footer-list-blog ul,
+  .footer-list-com ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-list-doc li,
+  .footer-list-blog li,
+  .footer-list-com li {
+    margin-bottom: 10px;
+  }
+
+  .footer-list-doc li a,
+  .footer-list-blog li a,
+  .footer-list-com li a {
+    color: #b5b5b5;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration: none;
+  }
+
+  .footer-list-doc li a:hover,
+  .footer-list-blog li a:hover,
+  .footer-list-com li a:hover {
+    color: #c2c2c2;
+  }
+
+  .f-line {
+    width: 100%;
+    height: 2px;
+    background: #545454;
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+
+  .f-logo {
+    width: 130px;
+  }
+
+  .f-cr {
+    color: #969696;
+    text-align: right;
+    font-size: 12.567px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 40px;
+  }
+
+  .f-legals {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+  }
+
+  .f-terms {
+    padding-left: 150px;
+    margin-right: 30px;
+  }
+
+  .links-row {
+    display: flex;
+  }
+
+  .f-text {
+    color: #c8c8c8;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-decoration: none;
+    padding-right: 30px;
+  }
+
+  .f-text:hover {
+    color: #c2c2c2;
+  }
+
+  .f-l-logos {
+    display: flex;
+    flex-direction: row;
+    margin-left: 150px;
+    margin-right: 30px;
+  }
+
+  .sphere {
+    margin-right: 10px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 0.4px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sphere:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .f-twt {
+    width: 100%;
+  }
+
+  .f-twt-l {
+    width: 17px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .f-l-block {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  /* @media only screen and (max-width: 767px) {
+    .f-l-block {
+      display: none;
+    }
+  } */
+</style>
+
+<footer class="m-footer">
+  <div class="footer-list-doc">
+    <h4>Document</h4>
+    <ul>
+      <li><a href="docs/overview/">Project Overview</a></li>
+      <li><a href="docs/quickstart/">Quickstart</a></li>
+      <li><a href="docs/installation/">Installation Guides</a></li>
+      <li><a href="docs/tutorials/">Tutorials</a></li>
+      <li><a href="docs/how-to/">How-to guides</a></li>
+      <li><a href="docs/concepts/">Concepts</a></li>
+      <li><a href="docs/troubleshooting/">Troubleshooting</a></li>
+      <li><a href="docs/faq/">FAQs</a></li>
+    </ul>
   </div>
-  <div class="row text-center text-white small">
-    <div class="col-12 text-center py-2 order-sm-2">
-      <a href="https://www.linuxfoundation.org/terms" target="_blank" rel="noopener">Terms</a> |
-      <a href="https://www.linuxfoundation.org/privacy" target="_blank" rel="noopener">Privacy</a> |
-      <a href="https://www.linuxfoundation.org/trademark-usage" target="_blank" rel="noopener">Trademarks</a> |
-      <a href="{{ .Site.Params.github_repo }}/blob/{{ .Site.Params.github_branch }}/LICENSE" target="_blank" rel="noopener">License</a>
+
+  <div class="footer-list-blog">
+    <h4>Blogs</h4>
+    <ul>
+      <li><a href="blog/">Posts in 2023</a></li>
+      <li><a href="blog/">Posts in 2022</a></li>
+      <li><a href="blog/">Posts in 2021</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-list-com">
+    <h4>Communities</h4>
+    <ul>
+      <li>
+        <a href="https://app.slack.com/client/T08PSQ7BQ/CQUH8U287/">Slack</a>
+      </li>
+      <li>
+        <a href="https://hackmd.io/_vrqBGAOSUC_VWvFzWruZw"
+          >Notary Project Meeting doc</a
+        >
+      </li>
+      <li>
+        <a href="https://hackmd.io/wii3-L8ZQZ-U3ET0XNY8Gg">TUF Meeting doc</a>
+      </li>
+      <li>
+        <a
+          href="https://www.youtube.com/playlist?list=PL1ykZdgmLkb7SlXax-hJVUgvNHmq4Cyz9"
+          >YouTube</a
+        >
+      </li>
+    </ul>
+  </div>
+
+  <div class="f-line"></div>
+
+  <div class="f-l-block">
+    <div class="f-legals">
+      <div>
+        <a href="{{ .Site.Home.RelPermalink }}">
+          {{ $image := resources.Get "icons/logo-dark.png" }}
+          <img
+            src="{{ $image.RelPermalink }}"
+            alt="notary logo"
+            class="f-logo"
+          />
+        </a>
+      </div>
+
+      <p class="f-cr">© Copyright 2022 | All Rights Reserved</p>
     </div>
-  </div>
-  <div>
-    <small class="text-white">
-      &copy; copyright {{ now.Year }} | All Rights Reserved
-    </small>
+
+    <div class="f-terms">
+      <div>
+        <a
+          href="https://www.linuxfoundation.org/terms"
+          target="_blank"
+          rel="noopener"
+          class="f-text"
+          >Terms</a
+        >
+        <a
+          href="https://www.linuxfoundation.org/privacy"
+          target="_blank"
+          rel="noopener"
+          class="f-text"
+          >Privacy</a
+        >
+        <a
+          href="https://www.linuxfoundation.org/trademark-usage"
+          target="_blank"
+          rel="noopener"
+          class="f-text"
+          >Trademarks</a
+        >
+        <a
+          href="{{ .Site.Params.github_repo }}/blob/{{ .Site.Params.github_branch }}/LICENSE"
+          target="_blank"
+          rel="noopener"
+          class="f-text"
+          >License</a
+        >
+      </div>
+    </div>
+
+    <div class="f-l-logos">
+      <div class="sphere">
+        <a href="https://twitter.com/NotaryProject" class="f-twt-l">
+          {{ $image := resources.Get "icons/twitter.png" }}
+          <img
+            src="{{ $image.RelPermalink }}"
+            alt="notary logo"
+            class="f-twt"
+          />
+        </a>
+      </div>
+      <div class="sphere">
+        <a
+          href="https://app.slack.com/client/T08PSQ7BQ/CQUH8U287/"
+          class="f-twt-l"
+        >
+          {{ $image := resources.Get "icons/slack.png" }}
+          <img
+            src="{{ $image.RelPermalink }}"
+            alt="notary logo"
+            class="f-twt"
+          />
+        </a>
+      </div>
+      <div class="sphere">
+        <a href="https://github.com/notaryproject" class="f-twt-l">
+          {{ $image := resources.Get "icons/github.png" }}
+          <img
+            src="{{ $image.RelPermalink }}"
+            alt="notary logo"
+            class="f-twt"
+          />
+        </a>
+      </div>
+    </div>
   </div>
 </footer>
