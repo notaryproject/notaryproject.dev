@@ -1,7 +1,7 @@
 ---
 title: Manage images as OCI image layout
 description: Build, sign, push, and verify images as OCI image layout
-weight: 10
+weight: 5
 ---
 
 OCI image layout is a directory structure that contains files and folders that refer to an OCI image. OCI image layout is defined in [OCI image spec](https://github.com/opencontainers/image-spec/blob/v1.1.0-rc2/image-layout.md).

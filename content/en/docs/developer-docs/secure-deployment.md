@@ -9,8 +9,8 @@ A deployment of Notation, specifically the `notation` CLI, is used for signing a
 
 A deployment has several sensitive components:
 
-- [Trust policies]({{< ref "/docs/how-to/manage-trust-policy" >}})
-- [Trust stores and certificates]({{< ref "/docs/concepts/directory-structure" >}})
+- [Trust policies]({{< ref "/docs/notation/how-to/manage-trust-policy" >}})
+- [Trust stores and certificates]({{< ref "/docs/notation/concepts/directory-structure" >}})
 - Plugins
 
 It is strongly recommended that you follow the best practices in this document to secure your deployment of Notation. Notation works with a shared responsibility model, meaning users and organizations are responsible for securing the `notation` CLI deployment.
