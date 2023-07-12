@@ -1,10 +1,17 @@
+---
 # TODO(chalin): drop the `title` field once Hugo is fixed to use the site title
-title: Notary Project # features: # - title: Simple interface # description:
-Read and write values using standard HTTP tools, such as curl # icon:
-interface.svg # - title: Key-value storage # description: Store data in
-hierarchically organized directories, as in a standard filesystem # icon: kv.svg
-# - title: Watch for changes # description: Watch specific keys or directories
-for changes and react to changes in values # icon: watch.svg ---
+title: Notary Project
+# features:
+#  - title: Simple interface
+#    description: Read and write values using standard HTTP tools, such as curl
+#    icon: interface.svg
+#  - title: Key-value storage
+#    description: Store data in hierarchically organized directories, as in a standard filesystem
+#    icon: kv.svg
+#  - title: Watch for changes
+#    description: Watch specific keys or directories for changes and react to changes in values
+#    icon: watch.svg
+---
 
 <style>
   #main-hero {
@@ -12,7 +19,7 @@ for changes and react to changes in values # icon: watch.svg ---
     padding-left: 80px;
     padding-right: 80px;
     background: linear-gradient(180deg, #0074ff 0%, #2758ff 100%);
-    padding-top: 30px;
+    padding-top: 120px;
     padding-bottom: 250px;
     height: 900px;
     z-index: 1;
@@ -198,6 +205,7 @@ for changes and react to changes in values # icon: watch.svg ---
   }
 
   .desc-at-block {
+    margin-top: 60px;
     color: #595959;
     text-align: center;
     font-size: 18px !important;
@@ -212,6 +220,7 @@ for changes and react to changes in values # icon: watch.svg ---
     align-items: center;
     width: 80px;
     height: 80px;
+    /* margin-bottom: 60px; */
   }
 
   .img-container-md img {
@@ -414,15 +423,12 @@ for changes and react to changes in values # icon: watch.svg ---
   }
 
   .u-container-1 {
-    margin-top: 40px;
+    margin-top: 80px;
   }
 
   .u-container-2,
+  .u-container-4,
   .u-container-3,
-  .u-container-4 {
-    margin-top: -40px;
-  }
-
   .u-container-5 {
     margin-top: -20px;
   }
@@ -432,9 +438,20 @@ for changes and react to changes in values # icon: watch.svg ---
   .u-container-3,
   .u-container-4,
   .u-container-5 {
+    /* padding-left: 70px; */
     width: 100%;
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .all-containers {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
   }
 
   .u-h-1,
@@ -442,13 +459,14 @@ for changes and react to changes in values # icon: watch.svg ---
   .u-h-3,
   .u-h-4,
   .u-h-5 {
+    font-family: inherit !important;
     color: #1a1a1a;
     font-size: 25px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
     text-align: left;
-    margin-left: 60px;
+    margin-bottom: 30px !important;
   }
 
   .u-d-1,
@@ -456,13 +474,14 @@ for changes and react to changes in values # icon: watch.svg ---
   .u-d-3,
   .u-d-4,
   .u-d-5 {
+    font-family: inherit !important;
     color: #808080;
-
     font-size: 17px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     text-align: left !important;
+    overflow-wrap: break-word;
   }
 
   .u-f-cont-1,
@@ -470,8 +489,10 @@ for changes and react to changes in values # icon: watch.svg ---
   .u-f-cont-3,
   .u-f-cont-4,
   .u-f-cont-5 {
+    width: 600px;
     display: flex;
     justify-content: left;
+    flex-direction: column;
   }
 
   .u-f-img-1,
@@ -479,6 +500,7 @@ for changes and react to changes in values # icon: watch.svg ---
   .u-f-img-3,
   .u-f-img-4,
   .u-f-img-5 {
+    margin-left: 100px;
     width: 420px;
   }
 
@@ -497,12 +519,13 @@ for changes and react to changes in values # icon: watch.svg ---
   #comm-btn {
     width: 200px;
     height: 50px;
-    border-radius: 10px;
-    border: 1px solid #0074ff;
-    background: #e9f3ff;
-    font-size: 13.5px;
+    border: none;
+    color: #4e4e4e;
+    background: #ffffff;
+
+    font-size: 15.5px;
     font-weight: 600;
-    margin-right: 10px;
+    margin-right: 30px;
   }
 
   #crypt-btn:focus,
@@ -510,20 +533,23 @@ for changes and react to changes in values # icon: watch.svg ---
   #ext-btn:focus,
   #multi-btn:focus,
   #comm-btn:focus {
-    background-color: #d0e6ff;
+    border-bottom: 3px solid #0074ff;
+    color: #0074ff;
   }
 
   .b-title {
-    color: #1a1a1a;
+    color: #ffffff;
     text-align: center;
     font-size: 33px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    margin-bottom: 90px !important;
   }
 
   .blogs-section {
-    margin-top: -270px !important;
+    background: #0074ff;
+    margin-top: -50px !important;
   }
 
   .main-ad {
@@ -538,16 +564,105 @@ for changes and react to changes in values # icon: watch.svg ---
     margin-top: 100px !important;
   }
 
-  /* @media only screen and (max-width: 767px) {
+  .un-line {
+    margin-bottom: 10px !important;
+    width: 100%;
+    height: 2.5px;
+    background: #b5b5b5;
+  }
+
+  #vert-card {
+    margin-top: 30px;
+    width: 392px;
+    height: 538px;
+    border-radius: 20px;
+    background: #ffffff;
+  }
+
+  #vert-card-img-w {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+  }
+
+  .tag {
+    background: rgba(6, 112, 255, 0.27);
+    color: #26265b;
+    font-weight: 700;
+  }
+
+  .btn-secondary {
+    width: 108px;
+    height: 38px;
+    border-radius: 20px;
+    background: #0074ff;
+    border: none;
+    color: #fff;
+    font-size: 13.94px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    transition: width 0.3s ease, height 0.3s ease, border-radius 0.3s ease,
+      background 0.3s ease, border 0.3s ease, color 0.3s ease,
+      font-size 0.3s ease, font-style 0.3s ease, font-weight 0.3s ease,
+      line-height 0.3s ease;
+  }
+
+  .btn-secondary:hover {
+    width: 108px;
+    height: 38px;
+    border-radius: 20px;
+    background: #ffffff;
+    border: 0.9px solid #0074ff;
+    color: #0074ff;
+    font-size: 13.94px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .horizontalCard {
+    height: 170px;
+    border-radius: 20px;
+    background: #ffffff;
+  }
+
+  #b-desc {
+    font-weight: 400;
+  }
+
+  @media only screen and (max-width: 767px) {
     #at-blocks {
       margin-top: 0px;
       padding-left: 0px;
       padding-right: 0px;
     }
-  } */
+
+    #main-hero {
+      width: 100%;
+      padding-left: 20px;
+      padding-right: 20px;
+      background: linear-gradient(180deg, #0074ff 0%, #2758ff 100%);
+      padding-top: 50px;
+      padding-bottom: 50px;
+      height: 900px;
+      z-index: 1;
+    }
+
+    #conts {
+      margin-top: -20px !important;
+    }
+
+    #yt-video {
+      display: none;
+      visibility: hidden;
+      height: 0;
+    }
+  }
 </style>
 
 <!-- {{< blocks/cover image_anchor="top" height="max" color="black" >}} -->
+
 <section
   class="flex gap-lg width-80 fullwidth-mobile is-centered is-align-items-center margin-top-mobile is-mobile-responsive-reverse fullwidth-tablet"
   id="main-hero"
@@ -659,7 +774,7 @@ for changes and react to changes in values # icon: watch.svg ---
 
 {{% blocks/lead color="white" %}}
 
-<section class="un-n">
+<div class="un-n">
   <div class="u-cont">
     <h4 class="u-cont-h">Why Notary is unique?</h4>
     <p class="u-cont-d">
@@ -669,89 +784,94 @@ for changes and react to changes in values # icon: watch.svg ---
   </div>
 
   <div class="u-features">
-    <button id="crypt-btn">Cryptographic Signing</button>
-    <button id="security-btn">Security Policy</button>
-    <button id="ext-btn">Extensibility</button>
-    <button id="multi-btn">Multi-registry</button>
-    <button id="comm-btn">Community-driven</button>
-
-    <div class="u-container-1">
-      <div class="u-f-cont-1">
-        <h4 class="u-h-1">Cryptographic Signing</h4>
-        <p class="u-d-1">
-          We support COSE and JWS signatures for secure authentication, enabling
-          versatile signing and verification of software artifacts. Built on
-          standard PKI, our system ensures reliable and compatible cryptographic
-          operations, accommodating online and air-gapped signing scenarios for
-          diverse requirements.
-        </p>
-      </div>
-      <div class="u-f-img-1">
-        <img src="feature1.png" alt="" class="us-img-1" />
-      </div>
-    </div>
-
-    <div class="u-container-2">
-      <div class="u-f-cont-2">
-        <h4 class="u-h-2">Security Policy</h4>
-        <p class="u-d-2">
-          We offer the ability to customize trust policies, allowing users to
-          determine the authenticity of signed artifacts. We ensure that all
-          artifacts are signed with trusted identities and originate from
-          trusted registries, enhancing system integrity and authenticity.
-        </p>
-      </div>
-      <div class="u-f-img-2">
-        <img src="feature2.png" alt="" class="us-img-2" />
-      </div>
-    </div>
-
-    <div class="u-container-3">
-      <div class="u-f-cont-3">
-        <h4 class="u-h-3">Extensibility</h4>
-        <p class="u-d-3">
-          Our system provides extensibility options that allow users to
-          customize and adapt the platform according to their specific needs.
-          With a flexible architecture and robust APIs, you can integrate and
-          extend functionalities to meet your requirements effectively.
-        </p>
-      </div>
-      <div class="u-f-img-3">
-        <img src="feature1.png" alt="" class="us-img-3" />
-      </div>
-    </div>
-
-    <div class="u-container-4">
-      <div class="u-f-cont-4">
-        <h4 class="u-h-4">Multi-registry</h4>
-        <p class="u-d-4">
-          We support multiple registries, enabling you to manage and organize
-          artifacts across different repositories. Our platform provides
-          seamless integration and synchronization capabilities, allowing you to
-          efficiently work with artifacts from various sources.
-        </p>
-      </div>
-      <div class="u-f-img-4">
-        <img src="feature2.png" alt="" class="us-img-4" />
-      </div>
-    </div>
-
-    <div class="u-container-5">
-      <div class="u-f-cont-5">
-        <h4 class="u-h-5">Community-driven</h4>
-        <p class="u-d-5">
-          Our platform is community-driven, with active participation and
-          collaboration from developers worldwide. Join our vibrant community to
-          share knowledge, contribute to the ecosystem, and benefit from
-          collective expertise to drive innovation and growth.
-        </p>
-      </div>
-      <div class="u-f-img-5">
-        <img src="feature1.png" alt="" class="us-img-5" />
-      </div>
+    <div class="un-line"></div>
+    <div class="u-btns">
+      <button id="crypt-btn">Cryptographic Signing</button>
+      <button id="security-btn">Security Policy</button>
+      <button id="ext-btn">Extensibility</button>
+      <button id="multi-btn">Multi-registry</button>
+      <button id="comm-btn">Community-driven</button>
     </div>
   </div>
-</section>
+</div>
+
+<div class="all-containers">
+  <div class="u-container-1">
+    <div class="u-f-cont-1">
+      <h4 class="u-h-1">Cryptographic Signing</h4>
+      <h5 class="u-d-1">
+        We support COSE and JWS signatures for secure authentication, enabling
+        versatile signing and verification of software artifacts. Built on
+        standard PKI, our system ensures reliable and compatible cryptographic
+        operations, accommodating online and air-gapped signing scenarios for
+        diverse requirements.
+      </h5>
+    </div>
+    <div class="u-f-img-1">
+      <img src="feature1.png" alt="" class="us-img-1" />
+    </div>
+  </div>
+
+  <div class="u-container-2">
+    <div class="u-f-cont-2">
+      <h4 class="u-h-2">Security Policy</h4>
+      <p class="u-d-2">
+        We offer the ability to customize trust policies, allowing users to
+        determine the authenticity of signed artifacts. We ensure that all
+        artifacts are signed with trusted identities and originate from trusted
+        registries, enhancing system integrity and authenticity.
+      </p>
+    </div>
+    <div class="u-f-img-2">
+      <img src="feature2.png" alt="" class="us-img-2" />
+    </div>
+  </div>
+
+  <div class="u-container-3">
+    <div class="u-f-cont-3">
+      <h4 class="u-h-3">Extensibility</h4>
+      <p class="u-d-3">
+        Our system provides extensibility options that allow users to customize
+        and adapt the platform according to their specific needs. With a
+        flexible architecture and robust APIs, you can integrate and extend
+        functionalities to meet your requirements effectively.
+      </p>
+    </div>
+    <div class="u-f-img-3">
+      <img src="feature3.png" alt="" class="us-img-3" />
+    </div>
+  </div>
+
+  <div class="u-container-4">
+    <div class="u-f-cont-4">
+      <h4 class="u-h-4">Multi-registry</h4>
+      <p class="u-d-4">
+        We support multiple registries, enabling you to manage and organize
+        artifacts across different repositories. Our platform provides seamless
+        integration and synchronization capabilities, allowing you to
+        efficiently work with artifacts from various sources.
+      </p>
+    </div>
+    <div class="u-f-img-4">
+      <img src="feature1.png" alt="" class="us-img-4" />
+    </div>
+  </div>
+
+  <div class="u-container-5">
+    <div class="u-f-cont-5">
+      <h4 class="u-h-5">Community-driven</h4>
+      <p class="u-d-5">
+        Our platform is community-driven, with active participation and
+        collaboration from developers worldwide. Join our vibrant community to
+        share knowledge, contribute to the ecosystem, and benefit from
+        collective expertise to drive innovation and growth.
+      </p>
+    </div>
+    <div class="u-f-img-5">
+      <img src="feature4.png" alt="" class="us-img-5" />
+    </div>
+  </div>
+</div>
 
 {{% /blocks/lead %}} {{% blocks/lead color="white" %}} {{< blog/list >}} {{%
 /blocks/lead %}} {{% blocks/lead color="white" %}}

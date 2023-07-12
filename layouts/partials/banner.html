@@ -43,6 +43,38 @@
     width: 14px;
     height: 14px;
   }
+
+  @media only screen and (max-width: 767px) {
+    .link {
+      margin-left: 90px;
+      color: #fff;
+      font-size: 9px;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    .link:hover {
+      color: #fff;
+    }
+
+    .cap {
+      display: none;
+    }
+
+    .close-icon {
+      padding-left: 90px;
+      cursor: pointer;
+    }
+
+    .close-icon img {
+      width: 9px;
+      height: 9px;
+    }
+
+    #star-icon {
+      display: none;
+    }
+  }
 </style>
 
 <section class="m-banner">
@@ -51,6 +83,7 @@
     <img
       src="{{ $rocketIcon.RelPermalink }}"
       class="img-container-xxxsm"
+      id="star-icon"
       alt="star icon"
     />
 
@@ -60,6 +93,7 @@
       class="banner-link"
       >Notation v1.0.0-RC.7 is available</a
     >
+
     <b class="cap"
       >Notation is currently in the release candidate phase. Some missing
       features and docs are expected until GA.</b

@@ -1,5 +1,5 @@
 <section class="blogs-section">
-  <h2 class="title">News & Blogs</h2>
+  <h2 class="b-title">News & Blogs</h2>
   <div class="gap-lg is-centered width-90 is-mobile-responsive flex">
     {{- $blogList := where .Site.RegularPages "Section" "blog" -}} {{-
     $firstBlog := index $blogList 0 -}}
@@ -7,9 +7,9 @@
     {{- if $firstBlog -}} {{- $image := "" -}} {{- if $firstBlog.Params.image
     -}} {{- $image = $firstBlog.Params.image -}} {{- else -}} {{- $image =
     "logo.svg" -}} {{- end -}}
-    <div class="verticalCard flex-30">
-      <div class="img-container-md fullwidth is-centered">
-        <img src="{{ $image }}" alt="Notary fuzz test" />
+    <div class="verticalCard flex-30" id="vert-card">
+      <div class="img-container-md fullwidth is-centered" id="vert-card-img-w">
+        <img src="{{ $image }}" alt="Notary fuzz test" class="vert-card-img" />
       </div>
       <div class="text-container-blog flex-30 text-left">
         <h3>{{ $firstBlog.Title }}</h3>
@@ -20,7 +20,7 @@
           <div class="tag">Blog</div>
         </div>
         <div class="flex flex-col gap-md">
-          <p class="font-size-sm blog-color blog-content">
+          <p class="font-size-sm blog-color blog-content" id="b-desc">
             {{ $firstBlog.Plain | safeHTML | truncate 100 }}
           </p>
           <a href="{{ $firstBlog.RelPermalink }}">
