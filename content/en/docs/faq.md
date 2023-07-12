@@ -2,7 +2,7 @@
 title: "Frequently asked questions"
 description: "Frequently asked questions about Notary"
 type: docs
-weight: 8
+weight: 6
 ---
 
 ## What registries are compatible with Notary?
