@@ -48,3 +48,9 @@ $ npm run check-links
     git push origin HEAD
     ```
 1. File a PR to [notaryproject.dev](https://github.com/notaryproject/notaryproject.dev).
+
+## Updating project maintainers
+
+1. Ensure justification is provided for the change. [Example](https://github.com/notaryproject/.github/issues/34#issue-1753758548)
+1. Create a PR that updates both [CODEOWNERS]() and [MAINTAINERS]() with the maintainer updates. [Example](https://github.com/notaryproject/notaryproject.dev/pull/310/files)
+1. Make sure `@notaryproject/notaryproject-governance-maintainers` is added as a reviewer.
