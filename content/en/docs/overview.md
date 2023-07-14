@@ -47,7 +47,7 @@ To complete Notary, three key areas of focus were identified.
 
 A Notary signature would attest to the digest of an artifact, associating it with a signing key.
 
-### Registry Persistance, Discovery and Retrieval
+### Registry Persistence, Discovery and Retrieval
 
 An artifact must be capable of being pushed to a registry, with a signature being added independently from the artifact.
 This enables the originating author of the content to sign the artifact, and subsequent entities to add additional signatures, attesting to its validity as they determine.
@@ -57,9 +57,9 @@ Docker Hub may endorse Wabbit Networks software, providing an aggregator certifi
 This would allow customers like ACME Rockets to not necessarily know of small vendors like Wabbit Networks, but allow the ACME Rockets engineering team to pull Docker Certified content.
 As ACME Rockets imports the content, scans and validates it meets their requirements, they add an additional ACME Rockets signature, which must exist for any production usage within the ACME Rockets environment.
 
-#### Registry Persistance and Retrieval
+#### Registry Persistence and Retrieval
 
-Registry persistance and retrieval are defined through the [OCI distribution-spec][oci-distribution-spec], with [OCI Artifacts][oci-artifacts] capabilities to store non-container images.
+Registry Persistence and retrieval are defined through the [OCI distribution-spec][oci-distribution-spec], with [OCI Artifacts][oci-artifacts] capabilities to store non-container images.
 No additional changes are known at this time.
 
 #### Registry Discovery
@@ -93,7 +93,7 @@ Contributors Create a pull request on some markdown so all can review.
 However, we learned _The problem isn’t in the writing, it’s in the reading._
 
 To facilitate better communications across the skill sets, respecting everyone's time, we recognized the need to invest in models and prototypes.
-We followed the design patterns of other large, complex projects like Antoni Gaudí's design of [The Sagrada Famila](https://simple.wikipedia.org/wiki/Sagrada_Fam%C3%ADlia).
+We followed the design patterns of other large, complex projects like Antoni Gaudí's design of [The Sagrada Familia](https://simple.wikipedia.org/wiki/Sagrada_Fam%C3%ADlia).
 The [sketch, prototype, build approach](https://stevelasker.blog/2020/07/31/sketch-prototype-build/) would enable the various experts to focus on their component, while understanding where they plug-into other components of the design.
 
 As a result, we identified the following stages of the Notary effort:
