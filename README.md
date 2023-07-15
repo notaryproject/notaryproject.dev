@@ -3,7 +3,9 @@
   <img src="https://github.com/sanjayk0508/notaryproject.dev/assets/102804548/63986f73-9669-4efe-a571-4d1935e0a3d4" alt="image 36">
   <br />
     <br />
-    <b>Welcome to the Notary Project! Our website, powered by Hugo and hosted on Netlify, serves as your go-to hub for all things related to Notary Project and its associated repositories.</b>
+    <b>Welcome to the Notary Project! This is the repository for the Notary Project website: https://notaryproject.dev/</b>
+    <br/>
+    <b>Our website, powered by Hugo and hosted on Netlify, and serves as your go-to hub for all things related to Notary Project and its associated repositories.</b>
     <br />
     <br />
 </p>
