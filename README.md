@@ -55,7 +55,10 @@ Visit this link to launch it - [Gitpod.io IDE-Notary](https://gitpod.io/#https:/
 We welcome contributors to contribute to The Notary Project website! We are actively enhancing this site, so we encourage interested individuals to join us and contribute code and documentation. If you encounter any issues or want to share any ideas, please open an issue/PR. You can also provide feedback by joining our [Slack Community](https://app.slack.com/client/T08PSQ7BQ/CQUH8U287/). For more information, see the [contribution guide](https://github.com/notaryproject/notaryproject.dev/blob/main/CONTRIBUTING.md).
 
 ## Join Us
-Join our growing community around the world! Check out our official [Blogs](https://notaryproject.dev/blog/). Join our [Slack community](https://app.slack.com/client/T08PSQ7BQ/CQUH8U287/) - `#notaryproject` channel for any assistance and discussions. And follow us on [Twitter](https://twitter.com/NotaryProject).
+Join our growing community around the world! 
+- Check out our official [Blogs](https://notaryproject.dev/blog/)
+- Join our [Slack community](https://app.slack.com/client/T08PSQ7BQ/CQUH8U287/) in the  `#notaryproject` channel
+- Follow us on [Twitter](https://twitter.com/NotaryProject).
 
 ## License
 notaryproject.dev is licensed under [Apache 2.0](https://github.com/notaryproject/notaryproject.dev/blob/main/LICENSE).
