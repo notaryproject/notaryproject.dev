@@ -24,7 +24,7 @@ This website serves as a comprehensive resource for information and documentatio
 ## Installation
 1. **Fork** this repository and **clone** it to your development computer.
 2. From the terminal, navigate to the directory of your cloned repository.
-3. Add the main repository as a remote named **upstream**:
+3. Add the `notaryproject/notaryproject.dev` repository as a remote named **upstream**:
 
 ```console
 git remote add upstream https://github.com/notaryproject/notaryproject.dev.git
