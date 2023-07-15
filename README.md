@@ -48,7 +48,7 @@ To build the site and check links:
 npm run build
 ```
 
-## Cloud-Based Website
+## Cloud-Based IDE
 Visit this link to launch it - [Gitpod.io IDE-Notary](https://gitpod.io/#https://github.com/notaryproject/notaryproject.dev). Start building, previewing, and making changes to this repository.
 
 ## Contributing
