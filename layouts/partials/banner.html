@@ -69,14 +69,7 @@
   @media only screen and (max-width: 767px) {
     .link {
       margin-left: 90px;
-      color: #fff;
       font-size: 9px;
-      font-weight: 600;
-      text-decoration: underline;
-    }
-
-    .link:hover {
-      color: #fff;
     }
 
     .cap {
@@ -85,7 +78,6 @@
 
     .close-icon {
       padding-left: 90px;
-      cursor: pointer;
     }
 
     .close-icon img {
@@ -135,7 +127,7 @@
 <script>
   function hideBanner() {
     var banner = document.querySelector(".m-banner");
-    banner.style.display = "none";
+    banner.classList.add("hidden");
 
     var navbar = document.querySelector(".td-navbar");
     navbar.style.top = "-30px";
