@@ -209,7 +209,7 @@ Update the trust policy to use the *missing-example* trust store.
 Use `notation verify` to verify the image using the *permissive* verification level and *missing-example* trust store and confirm it fails.
 
 ```console
-$ notation notation verify $IMAGE
+$ notation verify $IMAGE
 Error: signature verification failed for all the signatures associated with localhost:5000/net-monitor@sha256:1111111111111111111111111111111111111111111111111111111111111111
 ```
 
