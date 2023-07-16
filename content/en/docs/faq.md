@@ -18,11 +18,11 @@ The following registries are compatible with Notary for artifact signing and ver
 
 ## JWS signature envelope
 
-**Q:** Why JWT is not used as the signature envelope format?
+**Q: Why JWT is not used as the signature envelope format?**
 
 **A:** JWT uses JWS compact serialization which do not support unsigned attributes. Notary signature requires support for unsigned attributes. Instead we use the *JWS JSON Serialization* representation, which supports unsigned attributes.
 
-**Q:** Why JWT `exp` and `iat` claims are not used?
+**Q: Why JWT `exp` and `iat` claims are not used?**
 
 **A:** Unlike JWT which always contains a JSON payload, Notary envelope can support payloads other than JSON, like binary. Reusing the JWT payload structure and claims, limits the Notary JWS envelope to only support JSON payload, which is undesirable. Also, reusing JWT claims requires following same claim semantics as defined in JWT specifications. The [`exp`](https://datatracker.ietf.org/doc/html/rfc7519#section-4.1.4) claim requires that verifier MUST reject the signature if current time equals or is greater than `exp`, where as Notary allows verification policy to define how expiry is handled.
 
@@ -41,14 +41,14 @@ For [JWS JSON serialization](https://github.com/notaryproject/notaryproject/blob
 
 ## Signature scheme
 
-*Q:* What is the relationship of Signing Scheme with Signature Envelope format?
+**Q: What is the relationship of Signing Scheme with Signature Envelope format?**
 
-*A:* Signing Scheme aims to be agnostic of the Signature Envelope format.
+**A:** Signing Scheme aims to be agnostic of the Signature Envelope format.
 A given signing scheme can be implemented through any signature envelope format (such as JWS or COSE) as long as it can support the required signature schema used by the signing scheme.
 
-*Q:* Why is the trust store used for Signing Authority (`x509/signingAuthority`) distinct from trust store for Certificate Authority (`x509/ca`), why can’t they share the same trust store?
+**Q: Why is the trust store used for Signing Authority (`x509/signingAuthority`) distinct from trust store for Certificate Authority (`x509/ca`), why can’t they share the same trust store?**
 
-*A:* Signing Authority is a different type of trusted entity as compared to Certificate Authority (CA) or Timestamping Authority (TSA).
+**A:** Signing Authority is a different type of trusted entity as compared to Certificate Authority (CA) or Timestamping Authority (TSA).
 A CA is trusted for verifying the identity of a signing entity (end user) and issuing it a certificate, whereas a TSA is trusted to generate authentic timestamp.
 In contrast, an SA is trusted to generate signatures on behalf of an end user (signature requestor) and also to generate authentic timestamp as part of the signature.
 If we use a shared trust store for CA and SA, a verifying entity does not have the ability to differentiate between CA and SA when the verifying entity configures trusted roots in the trust store.

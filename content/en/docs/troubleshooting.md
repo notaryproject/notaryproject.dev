@@ -1,6 +1,6 @@
 ---
 title: "Troubleshooting"
-description: "Troubleshooting common problems with Notary"
+description: "Troubleshooting common problems with Notation"
 type: docs
 weight: 7
 ---
@@ -88,7 +88,7 @@ In addition, there is `--debug`, which is intended for developers to debug the n
 
 ## When I verify an artifact, I get the error 'Error: open $HOME/.config/notation/trustpolicy.json: no such file or directory'
 
-This error is likely related to trust policy configuration. Verify you have a trust policy set up before you attempt to verify an artifact. For more details, see [Manage trust policies]({{< ref "/docs/how-to/manage-trust-policy" >}})
+This error is likely related to trust policy configuration. Verify you have a trust policy set up before you attempt to verify an artifact. `notation policy show` can be used to view the current trust policy in use. If you need to override an existing trust policy with a new one, you can use the `notation policy import` command to import a new trust policy. For more details, see [Manage trust policies]({{< ref "/docs/how-to/manage-trust-policy" >}})
 
 ## When I verify an artifact, I get the error '"$HOME/.config/notation/truststore/x509/ca/mytruststore" does not exist'
 
@@ -112,7 +112,7 @@ Specifically, this error indicates that the artifact is signed by an unknown ide
 
 To confirm the trust store and trust policy are configured correctly:
 
-1. If you have multiple trust policies in `trustpolicy.json` file, confirm you are using the correct trust policy for this artifact.
+1. If you have multiple trust policies in `trustpolicy.json` file, confirm you are using the correct trust policy for this artifact by running `notation policy show`. This will display information about the trust policy used for verifying the artifact.
 2. Check the `trustStores` property and confirm the value is correctly configured.
 3. Check the `trustedIdentities` property and confirm the value is correctly configured. 
   - If the value is `"*"`, it means all the certificates stored in the trust stored (configured in `trustStores`) are trusted.  then you need to make sure the certificates in the trust stores can be used to verify the signatures. 
@@ -131,10 +131,10 @@ Certificate details
 --------------------------------------------------------------------------------
 Issuer: CN=example.io,O=Notary,L=Seattle,ST=WA,C=US
 Subject: CN=example.io,O=Notary,L=Seattle,ST=WA,C=US
-Valid from: 2023-01-15 07:55:01 +0000 UTC
-Valid to: 2023-01-16 07:55:01 +0000 UTC
+Valid from: 2023-06-22 08:33:39 +0000 UTC
+Valid to: 2023-06-23 08:33:39 +0000 UTC
 IsCA: false
-SHA1 Thumbprint: xxx
+SHA256 Thumbprint: 3ab41b683b24b40abfa87c1fe26c81b917a9ccc1c4bf60f90e2b41deb86f5220
 ```
 
 Check the `Subject` info in the output. If it is the identity that signs the artifact, you need to add the `Subject` info into `trustedIdentities`.
@@ -162,6 +162,6 @@ Windows PowerShell (prior to v6) uses the Unicode `UTF-16LE` encoding by default
 
 ## When I verify an artifact, I get the error 'Failed to unmarshal the payload content in the signature blob to envelope.Payload'
 
-This is usually an encoding problem of payload content in the signature envelope. Notary signatures can be produced by different tools per [signature specification](https://github.com/notaryproject/notaryproject/blob/v1.0.0-rc.2/specs/signature-specification.md). The payload content is a `JSON` document defined in the signature specification, and the encoding should be `utf-8 without BOM` or `ascii`.
+This is usually an encoding problem of payload content in the signature envelope. Notary Project signatures can be produced by different tools per [signature specification](https://github.com/notaryproject/notaryproject/blob/v1.0.0-rc.2/specs/signature-specification.md). The payload content is a `JSON` document defined in the signature specification, and the encoding should be `utf-8 without BOM` or `ascii`.
 
 Windows PowerShell (prior to v6) uses the Unicode `UTF-16LE` encoding by default, and `utf-8 without BOM` is not supported. If you are building payload content in Windows PowerShell (prior to v6), make sure you change the payload content encoding to `ascii`.
