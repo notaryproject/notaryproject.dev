@@ -12,13 +12,11 @@
     top: 0;
     left: 0;
     z-index: 9999;
-  }
-
-  .m-banner {
     text-align: center;
   }
 
-  .link {
+  .link,
+  .link:hover {
     color: #fff;
     font-size: 14px;
     font-weight: 600;
@@ -47,14 +45,7 @@
   @media only screen and (max-width: 767px) {
     .link {
       margin-left: 90px;
-      color: #fff;
       font-size: 9px;
-      font-weight: 600;
-      text-decoration: underline;
-    }
-
-    .link:hover {
-      color: #fff;
     }
 
     .cap {
@@ -63,7 +54,6 @@
 
     .close-icon {
       padding-left: 90px;
-      cursor: pointer;
     }
 
     .close-icon img {
@@ -78,7 +68,7 @@
 </style>
 
 <section class="m-banner">
-  <div class="b-content">
+  <div>
     {{ $rocketIcon := resources.Get "icons/star.png" }}
     <img
       src="{{ $rocketIcon.RelPermalink }}"
@@ -88,30 +78,32 @@
     />
 
     <a
-      class="link"
       href="https://github.com/notaryproject/notation/releases/tag/v1.0.0-rc.7"
-      class="banner-link"
-      >Notation v1.0.0-RC.7 is available</a
+      class="link banner-link"
     >
+      Notation v1.0.0-RC.7 is available
+    </a>
 
-    <b class="cap"
-      >Notation is currently in the release candidate phase. Some missing
-      features and docs are expected until GA.</b
-    >
-    <span class="close-icon" onclick="hideBanner()"
-      >{{ $rocketIcon := resources.Get "icons/close.png" }}
+    <b class="cap">
+      Notation is currently in the release candidate phase. Some missing
+      features and docs are expected until GA.
+    </b>
+
+    <span class="close-icon" onclick="hideBanner()">
+      {{ $rocketIcon := resources.Get "icons/close.png" }}
       <img
         src="{{ $rocketIcon.RelPermalink }}"
         class="img-container-xxxsm"
         alt="close icon"
-    /></span>
+      />
+    </span>
   </div>
 </section>
 
 <script>
   function hideBanner() {
     var banner = document.querySelector(".m-banner");
-    banner.style.display = "none";
+    banner.classList.add("hidden");
 
     var navbar = document.querySelector(".td-navbar");
     navbar.style.top = "-20px";

@@ -1,26 +1,26 @@
 <section class="blogs-section">
   <h2 class="b-title">News & Blogs</h2>
-  <div class="gap-lg is-centered width-90 is-mobile-responsive flex">
+
+  <div
+    class="gap-lg is-centered width-90 is-mobile-responsive flex"
+    id="blog-container"
+  >
     {{- $blogList := where .Site.RegularPages "Section" "blog" -}} {{-
-    $firstBlog := index $blogList 0 -}}
-    <!-- Check if the first blog item exists -->
-    {{- if $firstBlog -}} {{- $image := "" -}} {{- if $firstBlog.Params.image
-    -}} {{- $image = $firstBlog.Params.image -}} {{- else -}} {{- $image =
-    "logo.svg" -}} {{- end -}}
-    <div class="verticalCard flex-30" id="vert-card">
+    $firstBlog := index $blogList 0 -}} {{- if $firstBlog -}} {{- $image := ""
+    -}} {{- if $firstBlog.Params.image -}} {{- $image = $firstBlog.Params.image
+    -}} {{- else -}} {{- $image = "logo.svg" -}} {{- end -}}
+    <div class="" id="vert-card">
       <div class="img-container-md fullwidth is-centered" id="vert-card-img-w">
         <img src="{{ $image }}" alt="Notary fuzz test" class="vert-card-img" />
       </div>
-      <div class="text-container-blog flex-30 text-left">
-        <h3>{{ $firstBlog.Title }}</h3>
-        <div
-          class="gap-md is-align-items-center margin-sm-top-bottom flex blog-color"
-        >
-          <h5>{{ $firstBlog.Date.Format "January 2, 2006" }}</h5>
+      <div class="text-container-blog flex-30 text-left" id="vert-card-cont">
+        <div class="b-date">
           <div class="tag">Blog</div>
+          <h5 class="dates">{{ $firstBlog.Date.Format "January 2, 2006" }}</h5>
         </div>
+        <h3 class="blog-title">{{ $firstBlog.Title }}</h3>
         <div class="flex flex-col gap-md">
-          <p class="font-size-sm blog-color blog-content" id="b-desc">
+          <p class="b-desc" id="b-desc">
             {{ $firstBlog.Plain | safeHTML | truncate 100 }}
           </p>
           <a href="{{ $firstBlog.RelPermalink }}">
@@ -29,32 +29,31 @@
         </div>
       </div>
     </div>
-    {{- end -}}
-
-    <div class="flex-70 blog-groups gap-lg">
-      {{- range $index, $blog := $blogList | first 4 -}} {{- if ne $index 0 -}}
-      {{- $image := "" -}} {{- $imageAlt := "" -}} {{- if $blog.Params.image -}}
-      {{- $image = $blog.Params.image -}} {{- $imageAlt = $blog.Params.imageAlt
-      -}} {{- else -}} {{- $image = "logo.svg" -}} {{- $imageAlt = "notary logo"
-      -}} {{- end -}}
-      <div class="horizontalCard">
-        <div class="img-container-md flex-30">
-          <img src="{{ $image }}" alt="{{ $imageAlt }}" />
+    {{- end -}} {{- range $index, $blog := $blogList | first 4 -}} {{- if ne
+    $index 0 -}} {{- $image := "" -}} {{- $imageAlt := "" -}} {{- if
+    $blog.Params.image -}} {{- $image = $blog.Params.image -}} {{- $imageAlt =
+    $blog.Params.imageAlt -}} {{- else -}} {{- $image = "logo.svg" -}} {{-
+    $imageAlt = "notary logo" -}} {{- end -}}
+    <div class="" id="vert-card">
+      <div class="img-container-md fullwidth is-centered" id="vert-card-img-w">
+        <img src="{{ $image }}" alt="Notary fuzz test" class="vert-card-img" />
+      </div>
+      <div class="text-container-blog flex-30 text-left" id="vert-card-cont">
+        <div class="b-date">
+          <div class="tag">Blog</div>
+          <h5 class="dates">{{ $blog.Date.Format "January 2, 2006" }}</h5>
         </div>
-        <div class="text-container-blog flex-70 text-left">
-          <h3>{{ $blog.Title }}</h3>
-          <div
-            class="gap-md is-align-items-center margin-sm-top-bottom flex blog-color"
-          >
-            <h5>{{ $blog.Date.Format "January 2, 2006" }}</h5>
-            <div class="tag">Blog</div>
-          </div>
+        <h3 class="blog-title">{{ $blog.Title }}</h3>
+        <div class="flex flex-col gap-md">
+          <p class="font-size-sm blog-color blog-content" id="b-desc">
+            {{ $blog.Plain | safeHTML | truncate 100 }}
+          </p>
           <a href="{{ $blog.RelPermalink }}">
             <button class="btn-secondary">Learn more</button>
           </a>
         </div>
       </div>
-      {{- end -}} {{- end -}}
     </div>
+    {{- end -}} {{- end -}}
   </div>
 </section>

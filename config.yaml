@@ -181,9 +181,9 @@ menu:
     - name: Blog
       url: ./blog/
       weight: -50
-    # - name: Roadmap
-    #   url: https://github.com/notaryproject/roadmap
-    #   weight: -20
+    - name: Roadmap
+      url: https://github.com/notaryproject/roadmap
+      weight: -20
     - name: Security
       url: ./security-audit/
       weight: -50
