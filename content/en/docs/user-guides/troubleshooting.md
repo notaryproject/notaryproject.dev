@@ -90,7 +90,7 @@ In addition, there is `--debug`, which is intended for developers to debug the n
 
 This error is likely related to trust policy configuration. Verify you have a trust policy set up before you attempt to verify an artifact. `notation policy show` can be used to view the current trust policy in use. If you need to override an existing trust policy with a new one, you can use the `notation policy import` command to import a new trust policy. For more details, see [Manage trust policies]({{< ref "/docs/user-guides/how-to/manage-trust-policy" >}})
 
-## When I verify an artifact, I get the error '"$HOME/.config/notation/truststore/x509/ca/mytruststore" does not exist'
+## When I verify an artifact, I get the error '"$HOME/.config/notation/ truststore/x509/ca/mytruststore" does not exist'
 
 This error indicates the trust store doesn't exist or the trust store name is not correct. Trust store typically contains a set of certificate files, where the trust identities are retrieved to verify signatures. You can use `notation cert add` to add trust stores.
 
