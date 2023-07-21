@@ -138,7 +138,7 @@ cat <<EOF > ./trustpolicy.json
             "name": "wabbit-networks-images",
             "registryScopes": [ "*" ],
             "signatureVerification": {
-                "level" : "strict" 
+                "level" : "strict"
             },
             "trustStores": [ "ca:wabbit-networks.io" ],
             "trustedIdentities": [
