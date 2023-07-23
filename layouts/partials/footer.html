@@ -249,8 +249,8 @@
       display: flex;
       flex-direction: row;
       width: 100% !important;
-      height: 900px !important;
-      padding-bottom: 750px !important;
+      height: 100% !important;
+      padding-bottom: 1050px !important;
     }
 
     .footer-list-doc,
@@ -313,6 +313,14 @@
       margin-top: 20px;
     }
 
+    .f-line {
+      width: 100%;
+      height: 2px;
+      background: #545454;
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+
     .f-terms {
       display: flex;
       flex-direction: row;
@@ -321,7 +329,7 @@
     }
 
     .f-l-logos {
-      margin-left: 70px;
+      margin-left: 50px;
       margin-top: 30px;
     }
   }
@@ -475,6 +483,23 @@
     <div class="f-l-logos">
       <div class="sphere">
         <a
+<<<<<<< HEAD
+=======
+          href="https://www.youtube.com/@CNCFNotary/videos"
+          class="f-twt-l"
+          target="_blank"
+        >
+          {{ $image := resources.Get "icons/youtube.png" }}
+          <img
+            src="{{ $image.RelPermalink }}"
+            alt="notary logo"
+            class="f-twt"
+          />
+        </a>
+      </div>
+      <div class="sphere">
+        <a
+>>>>>>> a12674e (UI updated)
           href="https://twitter.com/NotaryProject"
           class="f-twt-l"
           target="_blank"
