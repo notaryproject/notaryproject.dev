@@ -19,7 +19,7 @@ The Notary Project enables signatures for  [OCI Artifacts](https://github.com/op
 
 This website serves as a comprehensive resource for information and documentation on the Notary Project.
 
-> For detailed information on how to use tools from The Notary Project (such as [Notation](https://github.com/notaryproject/notation)), including quickstarts, tutorials, and other helpful guides, see the [Notary Project documentation](https://notaryproject.dev/docs/). The remaining content in this README file and other support files in this repository are specifically intended for building and contributing to the website.
+> You can learn about the overall Notary Project and organization governance from [Notary Project README](https://github.com/notaryproject/.github/blob/main/README.md). For detailed information on how to use tools from the Notary Project (such as [Notation](https://github.com/notaryproject/notation)), see the [Notary Project documentation](https://notaryproject.dev/docs/). The remaining content in this README file is specifically intended for building and contributing to the Notary Project website.
 
 ## Installation
 1. **Fork** this repository and **clone** it to your development computer.
