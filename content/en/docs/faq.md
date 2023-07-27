@@ -75,3 +75,9 @@ Not natively supported but a user can configure `revocationValidations` to `skip
 **A:** Ideally, we should validate the signing identity first and then use the public key in the signing identity to validate the artifact signature.
 However, this will lead to poor performance in the case where the signature is not valid as there are lots of validations against the signing identity including network calls for revocations, and possibly we won't even need to read the trust store/trust policy if the signature validation fails.
 Also, by validating artifact signature first we will still fail the validation if the signing identity is not trusted.
+
+## Notary Project Terms
+
+**Q: What is the difference between Notary, Notation, TUF, and Notary Project Specifications?**
+
+**A:** Notary and Notation are both artifact signing solutions, but they differ in certain key aspects. Notary is based on [The Update Framework](https://github.com/theupdateframework/specification) (TUF) specification and has both server and client components for interacting with trusted collections. Notation, on the other hand, is not based on TUF and has a client component and libraries. Notation is responsible for signing, verification, and signature portability, as well as integration with third-party key management solutions via a plugin model. The Update Framework (TUF) is a model for ensuring security in package management. Notary is based on this model. However, TUF, as a project under the Notary Project, aims to implement the full TUF specification in a registry-native way, which is an improvement over Notary. Meanwhile, Notary Project Specifications describe how other open source projects and/or vendor tools can interoperate with the Notary project tooling. For further details on each term, please refer to the glossary page.
