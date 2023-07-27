@@ -83,6 +83,7 @@ Add CNCF annual review report (PR link, TBD)
 - Plugin lifecycle management
 - Sign and verify arbitrary file
 - Timestamping
+- Manage trust policy via CLI commands
 
 ## Acknowledgements
 
