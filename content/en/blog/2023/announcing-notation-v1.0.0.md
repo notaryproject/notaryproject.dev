@@ -12,7 +12,7 @@ The Notary Project maintainers are thrilled to announce the first stable release
 
 As containers and cloud native artifacts become the common unit of deployment, users want to know the artifacts in their environments are authentic and unmodified. The Notary Project is a set of specifications and tools intended to provide a cross-industry standard for securing software supply chains through signing and verification, signature portability, and key management. It aims to solve the core issue of trusting content within, and across registries. 
 
-Notation (previously known as Notary v2) is a sub-project of Notary. It has notation CLI and two Golang libraries, which are implemented from the Notary specifications. Notation was started in [Dec 2019](https://github.com/notaryproject/meeting-notes/blob/main/meeting-notes-2019.md#notary-v2-kickoff-meeting) and the code case has matured through a series of minor and RC releases over the last four years, the first release [v0.7.0-alpha.1](https://notaryproject.dev/blog/2021/announcing-notation-alpha1/) was available in Oct 2021 and reached [v1.0.0-RC.7](https://notaryproject.dev/blog/2023/announcing-notation-rc6/) in May 2023.
+Notation (previously known as Notary v2) is a sub-project of Notary Project. It has notation CLI and two Golang libraries, which are implemented from the Notary Project specifications. Notation was started in [Dec 2019](https://github.com/notaryproject/meeting-notes/blob/main/meeting-notes-2019.md#notary-v2-kickoff-meeting) and the code case has matured through a series of minor and RC releases over the last four years, the first release [v0.7.0-alpha.1](https://notaryproject.dev/blog/2021/announcing-notation-alpha1/) was available in Oct 2021 and reached [v1.0.0-RC.7](https://notaryproject.dev/blog/2023/announcing-notation-rc6/) in May 2023.
 
 ## Highlights
 
@@ -35,7 +35,7 @@ From the software consumer's perspective, verifying the signature of a signed ar
 
 [notation inspect](https://notaryproject.dev/docs/cli-reference/notation_inspect/) command was introduced to get detailed information of signatures associated with the signed artifact in a human readable view.
 
-In addition, `--debug` and `--verbose` flags were added to all CLI commands, providing debug and troubleshooting capability for Notation developers and users respectively.
+In addition, `--verbose` flag was added to all CLI commands, providing debug and troubleshooting capability for Notation developers and users respectively.
 
 ### Introduced experimental features and switch
 
@@ -52,44 +52,42 @@ Notation has an [extensible plugin framework design](https://github.com/notarypr
 
 - AWS Signer plugin
 - Azure Key Vault plugin
-- HashiCorp Vault plugin (Experimental)
+- HashiCorp Vault plugin (Alpha)
 
 ### Integration with admission controller for Kubernetes usage
 
-As more and more users are requesting to verify and secure image deployment on Kubernetes, the Notary maintainers worked with the [Ratify](https://github.com/deislabs/ratify) and [Kyverno](https://kyverno.io/) team respectively to provide solutions for verifying images signed by Notation before deploying them to Kubernetes. Users will have two different options to build a complete end-to-end image integrity workflow for their environments. See the following two guides for details.
+As more and more users are requesting to verify and secure image deployment on Kubernetes, the Notary Project maintainers worked with the [Ratify](https://github.com/deislabs/ratify) and [Kyverno](https://kyverno.io/) team respectively to provide solutions for verifying images signed by Notation before deploying them to Kubernetes. Users will have two different options to build a complete end-to-end image integrity workflow for their environments. See the following two guides for details.
 
-- [Verify CNCF Notary format signatures with Kyverno](https://kyverno.io/docs/writing-policies/verify-images/notary/)
-- [Sign and verify an image with Notation, Ratify, and OPA Gatekeeper](https://ratify-web.netlify.app/blog/mdx-blog-post)
+- [Sign and verify an image with Notation, Ratify, and OPA Gatekeeper](https://ratify.dev/blog/sign-and-verify-image-with-notation-ratify)
+- [Verify CNCF Notary Project signatures with Kyverno](https://kyverno.io/docs/writing-policies/verify-images/notary/)
 
 ![](https://hackmd.io/_uploads/S1bow5HO2.png)
 
 
 ## Security audit report
 
-The Notary project also completed fuzzing audit and security audit in 2023. Some known vulnerabilities had been fixed by the Notary maintainers before Notation v1.0.0. You can find two audit reports as follows.
+The Notary project also completed fuzzing audit and security audit in 2023. Some known vulnerabilities had been fixed by the Notary Project maintainers before Notation v1.0.0. You can find two audit reports as follows.
 
-- [Notary Security Audit Report 2023 (TBD)]()
-- [Notary fuzzing audit report 22-23](https://github.com/notaryproject/notaryproject/tree/main/security/reports/fuzzing/ADA-fuzzing-audit-22-23.pdf)
+- [Notation Security Audit Report 2023](https://github.com/notaryproject/notaryproject/blob/main/security/reports/audit/ADA-notation-security-audit-23.pdf)
+- [Notary Project fuzzing audit report 22-23](https://github.com/notaryproject/notaryproject/tree/main/security/reports/fuzzing/ADA-fuzzing-audit-22-23.pdf)
 
 ## Community status
 
-Add CNCF annual review report (PR link)
+Add CNCF annual review report (PR link, TBD)
 
 ## What's the next
 
-(TBD) Introduce new features planned for the upcoming milestone
+(TBD) Introduce new features planned for the upcoming milestone.
 
 - GitHub Actions and CI/CD integration
 - Plugin lifecycle management
-- Sign local file
+- Sign and verify arbitrary file
 - Timestamping
 
 ## Acknowledgements
 
-The Notary release team wants to thank the entire Notary community for all the activity and engagement that has been vital for helping the project grow and reach this major milestone.
+The Notary Project release team wants to thank the entire Notary Project community for all the activity and engagement that has been vital for helping the project grow and reach this major milestone.
 
 ## Try it now
 
-You can follow this [tutorial](https://killercoda.com/notaryproject/scenario/notation) to try Notation CLI v1.0.0 in an online remote cloud interactive playground.
-
-Watch the Notation introduction video to learn more about the project.
+You can follow this [interactive tutorial](https://killercoda.com/notaryproject/scenario/notation) to try Notation CLI v1.0.0 in an online cloud playground or follow the [quick start](https://notaryproject.dev/docs/quickstart/).
