@@ -80,15 +80,15 @@ Also, by validating artifact signature first we will still fail the validation i
 
 **Q: What is Notary Project?**
 
-**A:** Notary Project is the [GitHub organization](https://github.com/notaryproject), the community, all specifications, and all repositories within the Notary Project, including community-released tools like [notary](https://github.com/notaryproject/notary) and [notation](https://github.com/notaryproject/notation).
+**A:** The Notary Project is the [GitHub organization](https://github.com/notaryproject), the community, all specifications, and all repositories within the Notary Project, including community-released tools like [notary](https://github.com/notaryproject/notary) and [notation](https://github.com/notaryproject/notation).
 
 **Q: How are Notary and Notary Project related?**
 
-**A:** Notary, a tool for artifact signing based on The Update Framework (TUF), is  developed by the Notary Project community and is hosted within the Notary Project's GitHub organization. So, notary is a tool, and Notary Project is the community that developed and maintains it.
+**A:** Notary, a tool for artifact signing based on The Update Framework (TUF), is developed by the Notary Project community and is hosted within the Notary Project's GitHub organization. So, notary is a tool, and Notary Project is the community that developed and maintains it.
 
 **Q: What is the difference between Notary Project and TUF?**
 
-**A:** The Notary Project is a GitHub organization that hosts various repositories under it. On the other hand, TUF (The Update Framework) is a specific repository within the Notary Project organization intended for prototyping the storage of TUF metadata in OCI-compliant registries.
+**A:** The Notary Project, as a [GitHub organization](https://github.com/notaryproject), host multiple repositories including a [TUF](https://github.com/notaryproject/tuf) repository, which is a specific repository intended for prototyping the storage of TUF metadata in OCI-compliant registries.
 
 **Q: What is Notary Project specification?**
 
