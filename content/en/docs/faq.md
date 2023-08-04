@@ -78,6 +78,26 @@ Also, by validating artifact signature first we will still fail the validation i
 
 ## Notary Project Terms
 
-**Q: What is the difference between Notary, Notary v2, Notation, TUF, and Notary Project?**
+**Q: What is Notary Project?**
 
-**A:** Notary and Notation are both solutions for signing artifacts. The main difference between these two tools is that Notary is based on [The Update Framework](https://theupdateframework.com) (TUF) specification while Notation is non-TUF-based. While Notary has server and client components, Notation has a CLI and libraries. An example of a Notary implementation is Docker Content Trust (DCT). In addition to signing artifacts, Notation handles artifact verification, signature portability, and integration with third-party key management solutions via a plugin model. Notary v2, a term initially used under the Notary Project, has no relevant assets under the organization. It also has no clear meaning for anything the Notary Project community collaborates on. So, to maintain clarity and prevent confusion within the Notary Project, the name Notary v2 is no longer used. Meanwhile, a TUF is a repository under the Notary Project organization intended for prototyping the storage of TUF metadata in OCI-compliant registries. Notary Project, on the other hand, is the GitHub organization, the community, all specifications, and all repositories within the Notary Project, including community-released tools like Notary and Notation. For further details on each term, please refer to the glossary page.
+**A:** Notary Project is the [GitHub organization](https://github.com/notaryproject), the community, all specifications, and all repositories within the Notary Project, including community-released tools like [notary](https://github.com/notaryproject/notary) and [notation](https://github.com/notaryproject/notation).
+
+**Q: How are Notary and Notary Project related?**
+
+**A:** Notary, a tool for artifact signing based on The Update Framework (TUF), is  developed by the Notary Project community and is hosted within the Notary Project's GitHub organization. So, notary is a tool, and Notary Project is the community that developed and maintains it.
+
+**Q: What is the difference between Notary Project and TUF?**
+
+**A:** The Notary Project is a GitHub organization that hosts various repositories under it. On the other hand, TUF (The Update Framework) is a specific repository within the Notary Project organization intended for prototyping the storage of TUF metadata in OCI-compliant registries.
+
+**Q: What is Notary Project specification?**
+
+**A:** Notary Project Specifications, mainly created between years 2021-2022, are a collection of specifications distributed across "subprojects" within the Notary Project. Notation CLI and libraries have implemented these specifications, which are also utilized by other OSS projects and/or vendor tools that seek to interoperate with the Notary Project tooling.
+
+**Q: What is the difference between Notary and Notation?**
+
+**A:** Notary and Notation are both solutions for signing artifacts. The main difference between these two tools is that notary is based on [The Update Framework](https://theupdateframework.com) (TUF) specification while Notation is non-TUF-based. While notary has server and client components, Notation has a CLI and libraries. An example of a notary implementation is Docker Content Trust (DCT). In addition to signing artifacts, Notation handles artifact verification, signature portability, and integration with third-party key management solutions via a plugin model.
+
+**Q: I've heard the term "Notary v2". What does this mean?**
+
+**A:** Notary v2, a term initially used under the Notary Project, has no relevant assets under the organization. It also has no clear meaning for anything the Notary Project community collaborates on. So, to maintain clarity and prevent confusion within the Notary Project, the name Notary v2 is no longer used.
