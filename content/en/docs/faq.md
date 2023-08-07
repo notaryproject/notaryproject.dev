@@ -100,4 +100,4 @@ Also, by validating artifact signature first we will still fail the validation i
 
 **Q: I've heard the term "Notary v2". What does this mean?**
 
-**A:** Notary v2, a term initially used under the Notary Project, has no relevant assets under the organization. It also has no clear meaning for anything the Notary Project community collaborates on. So, to maintain clarity and prevent confusion within the Notary Project, the name Notary v2 is no longer used.
+**A:** The term "notary v2" was previously used by the Notary Project and others. However, various meanings were ascribed to it, leading to its ambiguous usage with some people referring to it as the entire Notary Project and others as the Notation CLI. Because of this ambiguity, the term "notary v2" is no longer used by the Notary Project. While the term may still be visible in some articles on the internet, the name "notary v2" is no longer valid.
