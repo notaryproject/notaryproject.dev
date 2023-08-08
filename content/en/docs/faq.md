@@ -76,7 +76,7 @@ Not natively supported but a user can configure `revocationValidations` to `skip
 However, this will lead to poor performance in the case where the signature is not valid as there are lots of validations against the signing identity including network calls for revocations, and possibly we won't even need to read the trust store/trust policy if the signature validation fails.
 Also, by validating artifact signature first we will still fail the validation if the signing identity is not trusted.
 
-## Notary Project Terms
+## [Notary Project Terms](https://notaryproject.dev/docs/glossary/)
 
 **Q: What is Notary Project?**
 
@@ -94,9 +94,14 @@ Also, by validating artifact signature first we will still fail the validation i
 
 **A:** Notary Project Specifications, mainly created between years 2021-2022, are a collection of specifications distributed across "subprojects" within the Notary Project. Notation CLI and libraries have implemented these specifications, which are also utilized by other OSS projects and/or vendor tools that seek to interoperate with the Notary Project tooling.
 
+**Q: Does Notary Project signature specification leverage TUF?**
+
+**A:** 
+The Notary Project [signature specification](https://github.com/notaryproject/specifications/blob/main/specs/signature-specification.md) does not leverage TUF. Instead, it leverages [COSE](https://github.com/notaryproject/specifications/blob/main/specs/signature-envelope-cose.md) and [JWS](https://github.com/notaryproject/specifications/blob/main/specs/) envelopes to produce and handle portable signatures. 
+
 **Q: What is the difference between Notary and Notation?**
 
-**A:** Notary and Notation are both solutions for signing artifacts. The main difference between these two tools is that notary is based on [The Update Framework](https://theupdateframework.com) (TUF) specification while Notation is non-TUF-based. While notary has server and client components, Notation has a CLI and libraries. An example of a notary implementation is Docker Content Trust (DCT). In addition to signing artifacts, Notation handles artifact verification, signature portability, and integration with third-party key management solutions via a plugin model.
+**A:** Notary and Notation are both solutions for signing artifacts. The main difference between these two tools is that notary is based on [The Update Framework](https://theupdateframework.com) (TUF) specification while Notation is non-TUF-based. While notary has server and client components, Notation has a CLI and libraries. An example of a notary implementation is Docker Content Trust (DCT). In addition to signing artifacts, Notation handles artifact verification, signature portability, and integration with third-party key/certificate management solutions via a plugin model.
 
 **Q: I've heard the term "Notary v2". What does this mean?**
 
