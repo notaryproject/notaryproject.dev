@@ -76,7 +76,7 @@ Not natively supported but a user can configure `revocationValidations` to `skip
 However, this will lead to poor performance in the case where the signature is not valid as there are lots of validations against the signing identity including network calls for revocations, and possibly we won't even need to read the trust store/trust policy if the signature validation fails.
 Also, by validating artifact signature first we will still fail the validation if the signing identity is not trusted.
 
-## [Notary Project Terms]({{< relref "/docs/glossary" >}})
+## [Notary Project Terms](https://notaryproject.dev/docs/glossary/)
 
 **Q: What is Notary Project?**
 
