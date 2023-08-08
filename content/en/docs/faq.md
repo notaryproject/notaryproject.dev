@@ -76,7 +76,8 @@ Not natively supported but a user can configure `revocationValidations` to `skip
 However, this will lead to poor performance in the case where the signature is not valid as there are lots of validations against the signing identity including network calls for revocations, and possibly we won't even need to read the trust store/trust policy if the signature validation fails.
 Also, by validating artifact signature first we will still fail the validation if the signing identity is not trusted.
 
-## [Notary Project Terms](https://notaryproject.dev/docs/glossary/)
+## Notary Project Terms
+Below are the frequently asked questions about Notary Project terms. For detailed definitions of each Notary Project term, please refer to the [glossary]({{< ref "/docs/glossary" >}}) page.
 
 **Q: What is Notary Project?**
 
@@ -84,7 +85,7 @@ Also, by validating artifact signature first we will still fail the validation i
 
 **Q: How are Notary and Notary Project related?**
 
-**A:** Notary, a tool for artifact signing based on The Update Framework (TUF), is developed by the Notary Project community and is hosted within the Notary Project's GitHub organization. So, notary is a tool, and Notary Project is the community that developed and maintains it.
+**A:** [Notary](https://github.com/notaryproject/notary), a tool for artifact signing based on The Update Framework (TUF), is developed by the Notary Project community and is hosted within the Notary Project's GitHub organization. So, notary is a tool, and Notary Project is the community that developed and maintains it.
 
 **Q: What is the difference between Notary Project and TUF?**
 
@@ -92,17 +93,16 @@ Also, by validating artifact signature first we will still fail the validation i
 
 **Q: What is Notary Project specification?**
 
-**A:** Notary Project Specifications, mainly created between years 2021-2022, are a collection of specifications distributed across "subprojects" within the Notary Project. Notation CLI and libraries have implemented these specifications, which are also utilized by other OSS projects and/or vendor tools that seek to interoperate with the Notary Project tooling.
+**A:** [Notary Project Specifications](https://github.com/notaryproject/specifications), mainly created between years 2021-2022, are a collection of specifications distributed across "subprojects" within the Notary Project. Notation CLI and libraries have implemented these specifications, which are also utilized by other OSS projects and/or vendor tools that seek to interoperate with the Notary Project tooling.
 
 **Q: Does Notary Project signature specification leverage TUF?**
 
-**A:** 
-The Notary Project [signature specification](https://github.com/notaryproject/specifications/blob/main/specs/signature-specification.md) does not leverage TUF. Instead, it leverages [COSE](https://github.com/notaryproject/specifications/blob/main/specs/signature-envelope-cose.md) and [JWS](https://github.com/notaryproject/specifications/blob/main/specs/) envelopes to produce and handle portable signatures. 
+**A:** No, the Notary Project [signature specification](https://github.com/notaryproject/specifications/blob/v1.0.0/specs/signature-specification.md) does not leverage TUF. The Notary Project signature specification supports [COSE](https://github.com/notaryproject/specifications/blob/v1.0.0/specs/signature-envelope-cose.md) and [JWS](https://github.com/notaryproject/specifications/blob/v1.0.0/specs/signature-envelope-jws.md) envelopes to produce and consume portable signatures using existing key management systems without the need of additional server infrastructure.
 
 **Q: What is the difference between Notary and Notation?**
 
-**A:** Notary and Notation are both solutions for signing artifacts. The main difference between these two tools is that notary is based on [The Update Framework](https://theupdateframework.com) (TUF) specification while Notation is non-TUF-based. While notary has server and client components, Notation has a CLI and libraries. An example of a notary implementation is Docker Content Trust (DCT). In addition to signing artifacts, Notation handles artifact verification, signature portability, and integration with third-party key/certificate management solutions via a plugin model.
+**A:**  [Notary](https://github.com/notaryproject/notary) and [Notation](https://github.com/notaryproject/notation) are both solutions for signing artifacts. The main difference between these tools is that notary is based on [The Update Framework](https://theupdateframework.com) (TUF) specification while Notation implements the new [Notary Project specifications](https://github.com/notaryproject/specifications/), which do not depend on TUF. While notary has server and client components, Notation has a CLI and libraries. An example of a notary implementation is Docker Content Trust (DCT). In addition to signing artifacts, Notation handles artifact verification, signature portability, and integration with third-party key/certificate management solutions via a plugin model.
 
 **Q: I've heard the term "Notary v2". What does this mean?**
 
-**A:** The term "notary v2" was previously used by the Notary Project and others. However, various meanings were ascribed to it, leading to its ambiguous usage with some people referring to it as the entire Notary Project and others as the Notation CLI. Because of this ambiguity, the term "notary v2" is no longer used by the Notary Project. While the term may still be visible in some articles on the internet, the name "notary v2" is no longer valid.
+**A:** The term "Notary v2" or "notary v2" was previously used by the Notary Project and others. However, various meanings were ascribed to it, leading to its ambiguous usage with some people referring to it as the entire Notary Project and others as the [Notation CLI](https://github.com/notaryproject/notation). Because of this ambiguity, the term "Notary v2" or "notary v2" is no longer used by the Notary Project. While the term may still be visible in some articles on the internet, the name "Notary v2" or "notary v2" is no longer valid.
