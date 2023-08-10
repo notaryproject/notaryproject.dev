@@ -14,7 +14,7 @@ You can also follow this guide on online remote cloud interactive playground on 
 Before you begin, you need:
 
 * Docker installed and running, such as [Docker desktop](https://www.docker.com/products/docker-desktop/).
-* [Notation CLI]({{< ref "/docs/notation/installation/cli" >}}) installed and configured.
+* [Notation CLI]({{< ref "/docs/user-guides/installation/cli" >}}) installed and configured.
 
 ## Create an OCI-compatible registry
 
@@ -125,7 +125,7 @@ localhost:5001/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda27
 
 ## Create a trust policy
 
-To verify the container image, configure the trust policy to specify trusted identities that sign the artifacts, and level of signature verification to use. For more details, see [trust policy spec](https://github.com/notaryproject/notaryproject/blob/main/specs/trust-store-trust-policy.md#trust-policy).
+To verify the container image, configure the trust policy to specify trusted identities that sign the artifacts, and level of signature verification to use. For more details, see [trust policy spec](https://github.com/notaryproject/specifications/blob/main/specs/trust-store-trust-policy.md#trust-policy).
 
 Create a JSON file with the following trust policy, for example:
 
@@ -162,7 +162,7 @@ Use `notation policy show` to view the applied policy configuration. For example
 notation policy show
 ```
 
-The above JSON creates a trust policy named `wabbit-networks-images`. The policy has `registryScopes` set to `*`, which applies the policy to all the artifacts of any registry. The `signatureVerification` is set to `strict`, which checks all validations and any failure will fail the signature verification. This policy uses the `wabbit-networks.io` trust store of type `ca` which was created in the previous step. For more details on trust policies, see [trust policy spec](https://github.com/notaryproject/notaryproject/blob/main/specs/trust-store-trust-policy.md#trust-policy).
+The above JSON creates a trust policy named `wabbit-networks-images`. The policy has `registryScopes` set to `*`, which applies the policy to all the artifacts of any registry. The `signatureVerification` is set to `strict`, which checks all validations and any failure will fail the signature verification. This policy uses the `wabbit-networks.io` trust store of type `ca` which was created in the previous step. For more details on trust policies, see [trust policy spec](https://github.com/notaryproject/specifications/blob/main/specs/trust-store-trust-policy.md#trust-policy).
 
 To enable trust policy for specific repositories, set the `registryScopes` to those specific repositories. For example:
 

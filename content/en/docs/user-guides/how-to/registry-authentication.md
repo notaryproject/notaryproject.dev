@@ -19,7 +19,7 @@ By default, `notation` uses a credentials store during the following operations:
 - Delete credentials from the credentials store when you log out of a registry
  
 You have three options for configuring a credentials store:
-1. Use the [`notation` config.json file]({{< ref "/docs/notation/concepts/directory-structure" >}}).
+1. Use the [`notation` config.json file]({{< ref "/docs/notary-project-concepts.md" >}}).
 1. Use the Docker configuration file, which is located at `~/.docker/config.json`.
 1. Use the default credentials store for your operating system.
 
@@ -79,7 +79,7 @@ unset NOTATION_PASSWORD
 Storing credentials in `config.json` is not secure for storing sensitive data such as usernames and passwords and should not be used in a production environment.
 {{% /alert %}}
 
-You can configure the [`notation` config.json file]({{< ref "/docs/notation/concepts/directory-structure" >}}) to store the credentials for your OCI-compliant registry as base64 encoded values. For example:
+You can configure the [`notation` config.json file]({{< ref "/docs/notary-project-concepts.md" >}}) to store the credentials for your OCI-compliant registry as base64 encoded values. For example:
 
 ```json
 {
