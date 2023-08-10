@@ -85,7 +85,7 @@ Below are the frequently asked questions about Notary Project terms. For detaile
 
 **Q: How are Notary and Notary Project related?**
 
-**A:** Notary is one of the subprojects under the Notary Project organization. Notary uses The Update Framework (TUF) to implement client and server components that run and interact with trusted collections that describe the content in a container registry. The name Notary comes from the notary CLI that is used to manage the trusted collections. The code that has the implementation of the client and the server components is available in the [notaryproject/notary](https://github.com/notaryproject/notary) repository.
+**A:** Notary is one of the subprojects under the Notary Project organization. Notary uses The Update Framework (TUF) to implement client and server components that run and interact with trusted collections that describe the content in a container registry. The name Notary comes from the `notary` CLI that is used to manage the trusted collections. The code that has the implementation of the client and the server components is available in the [notaryproject/notary](https://github.com/notaryproject/notary) repository.
 
 **Q: What is the difference between Notary Project and TUF?**
 
@@ -101,7 +101,7 @@ Below are the frequently asked questions about Notary Project terms. For detaile
 
 **Q: What is the difference between Notation and Notary?**
 
-**A:** [Notary](https://github.com/notaryproject/notary) and [Notation](https://github.com/notaryproject/notation) are both subprojects of Notary Project and offer capabilities for signing container images. Notary is based on [The Update Framework](https://theupdateframework.com) (TUF) and does not implement any of the Notary Project specifications while Notation implements the new [Notary Project signing specification and workflows](https://github.com/notaryproject/specifications/). While Notary has a server and client components, Notation has a CLI and libraries and leverages existing key management infrastructure and [OCI-compliant](https://opencontainers.org/) registries. An example of a notary implementation is Docker Content Trust (DCT). In addition to signing artifacts, Notation handles artifact verification, signature portability, and integration with third-party key/certificate management solutions via a plugin model.
+**A:** [Notation](https://github.com/notaryproject/notation) and [Notary](https://github.com/notaryproject/notary) are both subprojects of Notary Project and offer capabilities for signing container images. Notary is based on [The Update Framework](https://theupdateframework.com) (TUF) and does not implement any of the Notary Project specifications while Notation implements the new [Notary Project signing specification and workflows](https://github.com/notaryproject/specifications/). While Notary has a server and client components, Notation has a CLI and libraries and leverages existing key management infrastructure and [OCI-compliant](https://opencontainers.org/) registries. An example of a `notary` implementation is Docker Content Trust (DCT). In addition to signing artifacts, Notation handles artifact verification, signature portability, and integration with third-party key/certificate management solutions via a plugin model.
 
 **Q: I've heard the term "Notary v2". What does this mean?**
 
