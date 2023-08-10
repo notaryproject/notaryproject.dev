@@ -64,7 +64,7 @@ params:
   github_branch: main
 
   # An optional link to a related project repo. For example, the sibling repository where your product code lives.
-  github_project_repo: https://github.com/notaryproject/notaryproject
+  github_project_repo: https://github.com/notaryproject/.github
 
   # Enable Algolia DocSearch
   algolia_docsearch: false
@@ -132,7 +132,7 @@ params:
   navbar:
     logos:
       github:
-        url: https://github.com/notaryproject/notaryproject
+        url: https://github.com/notaryproject/notation
       twitter:
         url: https://mobile.twitter.com/NotaryProject
       slack:
@@ -154,7 +154,7 @@ params:
     # Developer relevant links. These will show up on right side of footer and in the community page if you have one.
     developer:
       - name: Notary Project on GitHub
-        url: https://github.com/notaryproject/notaryproject
+        url: https://github.com/notaryproject/.github
         icon: fab fa-github-square
       - name: notaryproject.dev on GitHub
         url: https://github.com/notaryproject/notaryproject.dev
@@ -181,8 +181,6 @@ menu:
     - name: Blog
       url: ./blog/
       weight: -50
-    - name: Roadmap
-      url: https://github.com/notaryproject/roadmap
       weight: -20
     - name: Security
       url: ./security-audit/
