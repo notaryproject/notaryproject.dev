@@ -1,5 +1,5 @@
 ---
 title: Developer documentation
-description: This documentation will go over how to develop plugins for Notation, how to securely deploy notation, and Notation experimental features you can try out.
+description: This documentation covers best practices for developing plugins for Notation
 weight: 5
 ---
