@@ -81,7 +81,7 @@ Below are the frequently asked questions about Notary Project terms. For detaile
 
 **Q: What is Notary Project?**
 
-**A:** The Notary Project is a set of specifications and tools intended to provide a cross-industry standard for securing software supply chains by using authentic container images and other OCI artifacts. Notary Project is also the name of the GitHub organization that has multiple prominent subprojects like Notation, Notary Project Specifications, and Notary. Very often we use the name Notary Project to refer to all the above as well as the community that drives the specifications and the implementations.
+**A:** The Notary Project is a set of specifications and tools intended to provide a cross-industry standard for securing software supply chains by using authentic container images and other OCI artifacts. Notary Project is also the name of the GitHub organization that has multiple prominent subprojects like Notation, Notary Project specifications, and Notary. Very often we use the name Notary Project to refer to all the above as well as the community that drives the specifications and the implementations.
 
 **Q: How are Notary and Notary Project related?**
 
