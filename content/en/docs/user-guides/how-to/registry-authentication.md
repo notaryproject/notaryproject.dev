@@ -31,7 +31,7 @@ If you have Docker installed on your system and used `docker login` to authentic
 Docker also implements a fallback mechanism for storing your credentials. If no credentials store is available, Docker will store your credentials as base64 encoded values in the Docker configuration file. This is not secure and is not recommended for production environments. For more details, see [`docker login` default behavior](https://docs.docker.com/engine/reference/commandline/login/#default-behavior).
 {{% /alert %}}
 
-To configure a credentials store in the `notation` configuration file, add a `credStore` to the [`notation` config.json file]({{< ref "/docs/notation/concepts/directory-structure" >}}). The following example shows `osxkeychain` as the configured credentials store.
+To configure a credentials store in the `notation` configuration file, add a `credStore` to the [`notation` config.json file]({{< ref "/docs/notary-project-concepts.md" >}}). The following example shows `osxkeychain` as the configured credentials store.
 
 ```json
 {
