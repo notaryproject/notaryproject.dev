@@ -33,7 +33,7 @@ imaging:
 
 languages:
   en:
-    title: Notary Project | Signing and verifying container images and OCI artifacts. 
+    title: Notary | A set of specifications and tools intended to provide a cross-industry standard for securing software supply chains.
     description: >-
       The Notary Project is a set of specifications and tools intended to provide a cross-industry standard for securing software supply chains by using authentic container images and other OCI artifacts.
     languageName: English
@@ -63,7 +63,7 @@ params:
   github_branch: main
 
   # An optional link to a related project repo. For example, the sibling repository where your product code lives.
-  github_project_repo: https://github.com/notaryproject/notation
+  github_project_repo: https://github.com/notaryproject/notaryproject
 
   # Enable Algolia DocSearch
   algolia_docsearch: false
@@ -131,7 +131,7 @@ params:
   navbar:
     logos:
       github:
-        url: https://github.com/notaryproject/notation
+        url: https://github.com/notaryproject/notaryproject
       twitter:
         url: https://mobile.twitter.com/NotaryProject
       slack:
@@ -153,7 +153,7 @@ params:
     # Developer relevant links. These will show up on right side of footer and in the community page if you have one.
     developer:
       - name: Notary Project on GitHub
-        url: https://github.com/notaryproject/.github
+        url: https://github.com/notaryproject/notaryproject
         icon: fab fa-github-square
       - name: notaryproject.dev on GitHub
         url: https://github.com/notaryproject/notaryproject.dev
@@ -180,8 +180,8 @@ menu:
     - name: Blog
       url: ./blog/
       weight: -50
-    - name: Specifications
-      url: https://github.com/notaryproject/specifications
+    - name: Roadmap
+      url: https://github.com/notaryproject/roadmap
       weight: -20
     - name: Security
       url: ./security-audit/
