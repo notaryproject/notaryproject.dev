@@ -33,7 +33,7 @@ imaging:
 
 languages:
   en:
-    title: Notary | A set of specifications and tools intended to provide a cross-industry standard for securing software supply chains.
+    title: Notary Project | A set of specifications and tools intended to provide a cross-industry standard for securing software supply chains.
     description: >-
       The Notary Project is a set of specifications and tools intended to provide a cross-industry standard for securing software supply chains by using authentic container images and other OCI artifacts.
     languageName: English
