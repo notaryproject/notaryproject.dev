@@ -5,10 +5,6 @@ type: docs
 weight: 1
 ---
 
-{{% alert title="Important" color="info" %}}
-This article as well as the rest of this documentation describes the overview and latest status of the Notary Project. For documentation of older versions and implementations, please refer to the [previous Notary documentation](https://github.com/notaryproject/notary/tree/master/docs).
-{{% /alert %}}
-
 ## Introduction
 
 The Notary Project is a set of specifications and tools intended to provide a cross-industry standard for securing software supply chains by using authentic container images and other OCI artifacts. Notation Project specifications and tooling provides signing and verification workflows for OCI artifacts, signature portability across OCI compliant registries, and integration with 3rd party key management solutions through a plugin model. Notary Project is also the name of the GitHub organization that has multiple prominent subprojects like Notation, Notary Project specifications, and Notary. Very often we use the name Notary Project to refer to all the above as well as the community that drives the specifications and the implementations. To learn more about Notary Project terms, please refer to the [FAQ](https://notaryproject.dev/docs/faq/#notary-project-terms).
