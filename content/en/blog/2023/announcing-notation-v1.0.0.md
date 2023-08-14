@@ -11,7 +11,7 @@ The Notary Project maintainers are thrilled to announce the first stable release
 
 As containers and cloud native artifacts become the common unit of deployment, users want to know the artifacts in their environments are authentic and unmodified. The Notary Project is a set of specifications and tools intended to provide a cross-industry standards for securing software supply chains through signing and verification, signature portability, and key/certificate management. It aims to solve the core issue of trusting content within and across OCI compliant registries.
 
-Notation ( a reference implementation of the latest [Notary Project specifications](https://github.com/notaryproject/specifications/releases/tag/v1.0.0), previously known as Notary v2) is a sub-project of Notary Project GitHub organization. It has notation CLI and two Golang libraries, which are implemented from the Notary Project specifications. Notation was started in [Dec 2019](https://github.com/notaryproject/meeting-notes/blob/main/meeting-notes-2019.md#notary-v2-kickoff-meeting) and the code  has matured through a series of minor and RC releases over the last few years, the first release [v0.7.0-alpha.1](https://notaryproject.dev/blog/2021/announcing-notation-alpha1/) was available in Oct 2021 and reached [v1.0.0-RC.7](https://notaryproject.dev/blog/2023/announcing-notation-rc6/) in May 2023.
+Notation is a sub-project of Notary Project GitHub organization. It has `notation` CLI and two Golang libraries, which are implemented from the latest [Notary Project specifications](https://github.com/notaryproject/specifications/releases/tag/v1.0.0). Notation was started in [Dec 2019](https://github.com/notaryproject/meeting-notes/blob/main/meeting-notes-2019.md#notary-v2-kickoff-meeting) and the code  has matured through a series of minor and RC releases over the last few years, the first release [v0.7.0-alpha.1](https://notaryproject.dev/blog/2021/announcing-notation-alpha1/) was available in Oct 2021 and reached [v1.0.0-RC.7](https://notaryproject.dev/blog/2023/announcing-notation-rc6/) in May 2023.
 
 ## Highlights
 
@@ -25,16 +25,15 @@ From the software producer's perspective, signing a software artifact is the way
 - Store signatures using [OCI Image Manifest](https://github.com/opencontainers/image-spec/blob/v1.1.0-rc3/spec.md) for standardization and portability
 - Support two signature envelope formats - [JWS](https://github.com/notaryproject/notaryproject/blob/v1.0.0/specs/signature-envelope-jws.md) and [COSE](https://github.com/notaryproject/notaryproject/blob/v1.0.0/specs/signature-envelope-cose.md) for interoperability
 
-From the software consumer's perspective, verifying the signature of a signed artifact ensure the integrity and provenance. Notation v1.0.0 provides the following core capabilities for verification experience:
+From the software consumer's perspective, verifying the signature of a signed artifact ensure the integrity and authenticity. Notation v1.0.0 provides the following core capabilities for verification experience:
 
-- Verify signatures using [trust store and trust policy](https://github.com/notaryproject/specifications/blob/v1.0.0/specs/trust-store-trust-policy.md) with fine-tuned configuration for repository specific, multiple signature verification levels - audit, enforce, or intuitive control.  [notation policy](https://notaryproject.dev/docs/cli-reference/notation_policy/) command is also introduced in v1 release to simplify the policy management
-- Support validating certificate revocation with [Online Certificate Status Protocol (OCSP)](https://datatracker.ietf.org/doc/html/rfc6960)
+- Verify signatures using [trust store and trust policy](https://github.com/notaryproject/specifications/blob/v1.0.0/specs/trust-store-trust-policy.md) with fine-tuned configuration for repository specific, multiple signature verification levels and multiple signature verification levels.  [notation policy](https://notaryproject.dev/docs/cli-reference/notation_policy/) command is also introduced in v1 release to simplify the policy management
 
 ### Enhanced debug and troubleshooting experience
 
 [notation inspect](https://notaryproject.dev/docs/cli-reference/notation_inspect/) command is available to get detailed information of signatures associated with the signed artifact in a human readable view.
 
-In addition, `--verbose` flag with all CLI commands, providing debug and troubleshooting capability for Notation developers and users respectively.
+In addition, `--verbose` flag with all CLI commands, providing troubleshooting capability for Notation developers and users respectively.
 
 ### Experimental features
 
@@ -49,9 +48,9 @@ There are two major features which are marked as experimental stage but might be
 
 Notation has an [extensible plugin framework design](https://github.com/notaryproject/specifications/blob/v1.0.0/specs/plugin-extensibility.md) which provides plugin interfaces for users and vendors to implement their own integrations with the key/certificate management solutions or signing service. Notation has the following plugins available to use now.
 
-- AWS Signer plugin
-- Azure Key Vault plugin
-- HashiCorp Vault plugin (Alpha)
+- [AWS Signer plugin](https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html)
+- [Azure Key Vault plugin](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-tutorial-sign-build-push)
+- [HashiCorp Vault plugin](https://github.com/notaryproject/notation-hashicorp-vault) (Alpha)
 
 ### Integration with admission controller for Kubernetes usage
 
@@ -60,11 +59,11 @@ As more and more users are requesting to verify and secure image deployment on K
 - [Sign and verify an image with Notation, Ratify, and OPA Gatekeeper](https://ratify.dev/blog/sign-and-verify-image-with-notation-ratify)
 - [Verify CNCF Notary Project signatures with Kyverno](https://kyverno.io/docs/writing-policies/verify-images/notary/)
 
-![](https://hackmd.io/_uploads/S1bow5HO2.png)
+![e2e workflow diagram](https://hackmd.io/_uploads/S1bow5HO2.png)
 
-## Security audit report
+## Security audit
 
-The Notary project also completed fuzzing audit and security audit in 2023. All vulnerabilities found during the audit are fixed in Notation v1.0.0 (and also present in the prior v1.0.0 RC-7 release). You can find two audit reports as follows.
+The Notary project also completed fuzzing audit and security audit in 2023. All vulnerabilities found during the audit are fixed in Notation v1.0.0 (and also present in the prior v1.0.0 RC-7 release). You can find two security audit reports as follows.
 
 - [Notation Security Audit Report 2023](https://github.com/notaryproject/notaryproject/blob/main/security/reports/audit/ADA-notation-security-audit-23.pdf)
 - [Notary Project fuzzing audit report 22-23](https://github.com/notaryproject/notaryproject/tree/main/security/reports/fuzzing/ADA-fuzzing-audit-22-23.pdf)
@@ -73,7 +72,7 @@ The Notary project also completed fuzzing audit and security audit in 2023. All 
 
 The following new features are planned for the upcoming milestones. Feel free to let us know if you any ideas or requirements.
 
-- Sign and verify arbitrary file
+- Sign and verify an arbitrary file
 - GitHub Actions and other CI/CD integration for signing and verification
 - Plugin lifecycle management
 - Timestamping support
