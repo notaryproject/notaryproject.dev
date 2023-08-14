@@ -27,7 +27,7 @@ From the software producer's perspective, signing a software artifact is the way
 
 From the software consumer's perspective, verifying the signature of a signed artifact ensure the integrity and authenticity. Notation v1.0.0 provides the following core capabilities for verification experience:
 
-- Verify signatures using [trust store and trust policy](https://github.com/notaryproject/specifications/blob/v1.0.0/specs/trust-store-trust-policy.md) with fine-tuned configuration for repository specific, multiple signature verification levels and multiple signature verification levels.  [notation policy](https://notaryproject.dev/docs/cli-reference/notation_policy/) command is also introduced in v1 release to simplify the policy management
+- Verify signatures using [trust store and trust policy](https://github.com/notaryproject/specifications/blob/v1.0.0/specs/trust-store-trust-policy.md) with fine-tuned configuration for repository specific, and multiple signature verification levels and multiple signature verification levels.  [notation policy](https://notaryproject.dev/docs/cli-reference/notation_policy/) command is also introduced in v1 release to simplify the policy management
 
 ### Enhanced debug and troubleshooting experience
 
