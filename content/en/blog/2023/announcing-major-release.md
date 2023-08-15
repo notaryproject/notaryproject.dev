@@ -23,17 +23,21 @@ There are some remarkable new features and updates in the first major release. T
 
 [Notary Project specifications](https://github.com/notaryproject/specifications/releases/tag/v1.0.0) reach its first major release. All specifications, requirements, scenarios, threat model, and security audit reports are available in this release. To interoperate with Notary Project tooling or develop your own reference implementation, follow the latest Notary Project specifications for details.
 
-### Strengthen signing and verification functionalities
+### Signing and verification functionalities
 
 From the software producer's perspective, signing a software artifact is the way to ensure authenticity and trust when distributing a software to consumers. Notary Project provides the follow core capabilities for the signing experience.
 
 - Sign artifacts using signing keys stored securely in key management system (KMS) using vendor or customer specific plugins
-- Store signatures using [OCI Image Manifest](https://github.com/opencontainers/image-spec/blob/v1.1.0-rc3/spec.md) for standardization and portability
+- Sign and verify artifacts as well as list and inspect signatures stored in OCI-compliant registries
+    - Compliant with [`image-spec v1.0.2`](https://github.com/opencontainers/image-spec/tree/v1.0.2)
+    - Compliant with [`distribution-spec v1.0.1`](https://github.com/opencontainers/distribution-spec/tree/v1.0.1)
+    - Compatible with [`image-spec v1.1.0-rc4`](https://github.com/opencontainers/image-spec/tree/v1.1.0-rc4)
+    - Compatible with [`distribution-spec v1.1.0-rc3`](https://github.com/opencontainers/distribution-spec/tree/v1.1.0-rc3) (limited to [referrers tag schema](https://github.com/opencontainers/distribution-spec/blob/v1.1.0-rc3/spec.md#referrers-tag-schema))
 - Support two signature envelope formats - [JWS](https://github.com/notaryproject/notaryproject/blob/v1.0.0/specs/signature-envelope-jws.md) and [COSE](https://github.com/notaryproject/notaryproject/blob/v1.0.0/specs/signature-envelope-cose.md) for interoperability
 
 From the software consumer's perspective, verifying the signature of a signed artifact ensure the integrity and authenticity. Notary Project provides the following core capabilities for verification experience:
 
-- Verify signatures using [trust store and trust policy](https://github.com/notaryproject/specifications/blob/v1.0.0/specs/trust-store-trust-policy.md) with fine-tuned configuration for repository specific, and multiple signature verification levels and multiple signature verification levels.  [notation policy](https://notaryproject.dev/docs/cli-reference/notation_policy/) command is also introduced in v1 release to simplify the policy management
+- Verify signatures using [trust store and trust policy](https://github.com/notaryproject/specifications/blob/v1.0.0/specs/trust-store-trust-policy.md) with fine-tuned configuration for repository specific, and multiple signature verification levels.  [notation policy](https://notaryproject.dev/docs/cli-reference/notation_policy/) command is also introduced in v1 release to simplify importing and inspecting the trust policy.
 
 ### Enhanced debug and troubleshooting experience
 
@@ -76,9 +80,9 @@ The Notary Project also completed fuzzing audit and security audit in 2023. All 
 
 ## What's the next
 
-The following new features are planned for the upcoming milestones. Feel free to let us know if you any ideas or requirements.
+The following new features are planned for the upcoming milestones. Feel free to let us know of your ideas or use cases in the Slack channel or GitHub issues.
 
-- Sign and verify an arbitrary file
+- Sign and verify any file, even if distributed outside of an OCI registry
 - GitHub Actions and other CI/CD integration for signing and verification
 - Plugin lifecycle management
 - Timestamping support
