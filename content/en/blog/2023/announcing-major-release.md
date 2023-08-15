@@ -1,6 +1,6 @@
 ---
 title: Notary Project announces the first major release!
-author:  "Notation Release Team"
+author:  "Notary Project Release Team"
 date: 2023-08-15
 draft: false
 ---
