@@ -33,10 +33,9 @@ imaging:
 
 languages:
   en:
-    title: Notary | Signing and verifying artifacts. Safeguarding the software delivery security from development to deployment.
+    title: Notary Project | A set of specifications and tools intended to provide a cross-industry standard for securing software supply chains.
     description: >-
-      The Notary project comprises a server and a client for running and
-      interacting with trusted collections.
+      The Notary Project is a set of specifications and tools intended to provide a cross-industry standard for securing software supply chains by using authentic container images and other OCI artifacts.
     languageName: English
     contentDir: content/en
     weight: 1
