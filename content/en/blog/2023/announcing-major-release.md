@@ -68,7 +68,7 @@ To enable users to verify and secure image deployment on Kubernetes, the Notary 
 - [Sign and verify an image with Notation, Ratify, and OPA Gatekeeper](https://ratify.dev/blog/sign-and-verify-image-with-notation-ratify)
 - [Verify CNCF Notary Project signatures with Kyverno](https://kyverno.io/docs/writing-policies/verify-images/notary/)
 
-![e2e workflow diagram](https://hackmd.io/_uploads/S1bow5HO2.png)
+![e2e workflow](https://hackmd.io/_uploads/rkI9Krqn2.png)
 
 ## Security audit
 
