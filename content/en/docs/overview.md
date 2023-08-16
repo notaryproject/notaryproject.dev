@@ -1,137 +1,56 @@
 ---
-title: "Project overview"
-description: "An overview of the Notary project"
+title: "Overview"
+description: "An overview of the Notary Project"
 type: docs
 weight: 1
 ---
 
-{{% alert title="Important" color="info" %}}
-This article as well as the rest of this documentation describes the latest status of Notary Project and refers to it as The Notary Project. For documentation of older versions and implementations, please refer to the [previous Notary documentation](https://github.com/notaryproject/notary/tree/master/docs).
-{{% /alert %}}
+## Introduction
 
-## Project Status
+The Notary Project is a set of specifications and tools intended to provide a cross-industry standard for securing software supply chains by using authentic container images and other OCI artifacts. Notation Project specifications and tooling provides signing and verification workflows for OCI artifacts, signature portability across OCI compliant registries, and integration with 3rd party key management solutions through a plugin model. Notary Project is also the name of the GitHub organization that has multiple prominent subprojects like Notation, Notary Project specifications, and Notary. Very often we use the name Notary Project to refer to all the above as well as the community that drives the specifications and the implementations. To learn more about Notary Project terms, please refer to the [FAQ](https://notaryproject.dev/docs/faq/#notary-project-terms).
 
-The Notary project is in early development and design documents should not be considered final.
-Please refer to the [milestones](https://github.com/notaryproject/notaryproject/milestones) or [attend]({{< ref "/community" >}}) the weekly meetings for details on the roadmap.
+Here is a list of repositories under the Notary Project organization
 
-## Notary Overview
+| Repository                                                              | Description                                                                                                                                                                                                 |
+| ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [.github](https://github.com/notaryproject/.github)                     | This repository contains the Notary Project governance and other common documents that are shared across all repositories under the Notary Project organization.                                            |
+| [meeting-notes](https://github.com/notaryproject/meeting-notes)         | This repository contains the archived meeting notes.                                                                                                                                                        |
+| [notary](https://github.com/notaryproject/notary)                       | This repository contains the source code for the server and the client of the initial TUF-based implementation circa 2016.                                                                                  |
+| [specifications](https://github.com/notaryproject/specifications)       | This repository contains the latest Notary Project requirements, scenarios,  specifications, and security audits to overcome the challenges from the initial implementation of 2016.                        |
+| [notaryproject.dev](https://github.com/notaryproject/notaryproject.dev) | This repository contains the source code and content for the [Notary Project website](https://notaryproject.dev).                                                                                           | 
+| [notation](https://github.com/notaryproject/notation)                   | This repository contains the source code for the convenient CLI implementation of the new Notary Project specifications.                                                                                    |
+| [notation-go](https://github.com/notaryproject/notation-go)             | This repository contains the source code for the convenient Golang library implementation of the new Notary Project signing and verification flow.                                                          |
+| [notation-core-go](https://github.com/notaryproject/notation-core-go)   | This repository contains the source code for the Golang library implementation of the Notary Project signature (hereafter "Notary Project signature")  specification and wrapping (COSE and JWS).           |
+| [roadmap](https://github.com/notaryproject/roadmap)                     | This repository is intended for keeping track of development activities in the Notary Project. It may be retired in the future as feature request and milestones are moved to the appropriate repositories. |
+| [tuf](https://github.com/notaryproject/tuf)                             | This repository is intended for prototyping the storage of TUF metadata in OCI-compliant registries. It is not under active development at the moment but there are plans to revive it in the future.       |
 
-![Notary scenarios](/docs/notary-e2e-scenarios.svg)
+## Project status
 
-Notary provides for multiple signatures of an [OCI Artifact][oci-artifacts] (including container images) to be persisted in an [OCI conformant][oci-distribution-conformance] registry.
-Artifacts are signed (`notation sign`) with private keys, and validated with public keys (`notation verify`).
-To support user deployment flows, signing an OCI Artifact will not change the `@digest` or `artifact:tag` reference.
-To support content movement across multiple certification boundaries, artifacts and their signatures will be easily copied within and across [OCI conformant][oci-distribution-conformance] registries.
+The Notary Project is in active development. The latest release announcements are published on the [Notary Project blog](https://notaryproject.dev/blog/). The Notary Project community uses the [project board](https://github.com/orgs/notaryproject/projects/10) for project planning and status tracking. You can also use GitHub milestones to track the progress of each repository:
 
-To deliver on the Notary goals of cross registry movement of artifacts with their signatures, changes to several projects are anticipated, including [OCI distribution-spec][oci-distribution-spec], [CNCF Distribution][cncf-distribution], [OCI Artifacts][oci-artifacts], [ORAS][oras] with further consumption from projects including [containerd][containerd], [OPA][opa], [Gatekeeper][gatekeeper] and the [docker client][docker-client].
+- [The Notary Project specification milestones](https://github.com/notaryproject/specifications/milestones)
+- [notation CLI milestones](https://github.com/notaryproject/notation/milestones)
+- [notation-go library milestones](https://github.com/notaryproject/notation-go/milestones)
+- [notation-core-go library milestones](https://github.com/notaryproject/notation-core-go/milestones)
+- [notary milestones](https://github.com/notaryproject/notary/milestones)
 
-Notary aims to solve the intra and cross registry signing & validating scenarios through the following prototypical experiences:
+## Security
 
-- Docker build, sign, push, pull, verify
-- Copy a container image, with it's signatures across two registries with the existing docker tool chain
-- Copy a container image to a private registry, verifying the source then adding a verification signature
-- run one or more verification processes, then sign with the ACME Rockets key
+The Notary Project has a continuous fuzz testing implemented for the following repositories: `notary`, `notation-go`, and `notation-core-go`.
 
-## The Notary Journey
+In addition, the Notary Project has had several public security audits:
 
-Notary [kicked off in December of 2019][notaryv2-kickoff] with a [broad range of attendees][kickoff-attendees].
-The effort defined success goals, including adoption by all major vendors & projects, enabling content to be signed and flow within and across [OCI distribution-spec conformant][oci-distribution-conformance] registries.
-Throughout 2020, the group agreed upon a set of [Notary requirements](https://github.com/notaryproject/notaryproject/blob/main/requirements/requirements.md) and [scenarios][nv2-scenarios] enabling spec and design conversations to be grounded in a set of [goals](https://github.com/notaryproject/notaryproject/blob/main/requirements/requirements.md) and [non-goals][non-requirements].
-Prototypes, based on the requirements have started, focusing on the primary areas on innovations.
+- [Jul 7, 2023 by ADA Logics](https://github.com/notaryproject/specifications/blob/v1.0.0/security/reports/audit/ADA-notation-security-audit-23.pdf) security audit covering `notation`, `notation-go`, and `notation-core-go` repositories.
+- [Mar 21, 2023 by ADA Logics](https://github.com/notaryproject/specifications/blob/v1.0.0/security/reports/fuzzing/ADA-fuzzing-audit-22-23.pdf) fuzz testing audit covering `notary`, `notation-go`, and `notation-core-go` repositories.
+- [August 7, 2018 by Cure53](https://github.com/notaryproject/notary/blob/master/docs/resources/cure53_tuf_notary_audit_2018_08_07.pdf)) covering TUF and the `notary` repository.
+- [July 31, 2015 by NCC](https://github.com/notaryproject/notary/blob/master/docs/resources/ncc_docker_notary_audit_2015_07_31.pdf) covering `notary` repository.
 
-## Top Areas of Focus
+## Community
 
-To complete Notary, three key areas of focus were identified.
+You can reach the Notary Project community and developers via the following channels:
 
-### Definition of a Notary Signature
-
-A Notary signature would attest to the digest of an artifact, associating it with a signing key.
-
-### Registry Persistence, Discovery and Retrieval
-
-An artifact must be capable of being pushed to a registry, with a signature being added independently from the artifact.
-This enables the originating author of the content to sign the artifact, and subsequent entities to add additional signatures, attesting to its validity as they determine.
-
-The Notary workflow ([outlined in Scenario #0](https://github.com/notaryproject/notaryproject/blob/main/requirements/scenarios.md#scenario-0-build-publish-consume-enforce-policy-deploy)
-Docker Hub may endorse Wabbit Networks software, providing an aggregator certification by adding a Docker Hub signature.
-This would allow customers like ACME Rockets to not necessarily know of small vendors like Wabbit Networks, but allow the ACME Rockets engineering team to pull Docker Certified content.
-As ACME Rockets imports the content, scans and validates it meets their requirements, they add an additional ACME Rockets signature, which must exist for any production usage within the ACME Rockets environment.
-
-#### Registry Persistence and Retrieval
-
-Registry Persistence and retrieval are defined through the [OCI distribution-spec][oci-distribution-spec], with [OCI Artifacts][oci-artifacts] capabilities to store non-container images.
-No additional changes are known at this time.
-
-#### Registry Discovery
-
-Registry discovery of linked artifacts enables finding a signature, based on the target artifact.
-In the Notary example, the ACME Rockets production servers must be capable of efficiently finding the ACME Rockets signature for the `net-monitor:v1` image.
-Once the signature is identified, through a content addressable digest, the Notary client may validate the signature.
-
-### Key Management
-
-Key Management involves the following key scenarios:
-
-- Signing with private keys
-- Publishing and discovery of public keys for consumers to validate signatures
-- Key revocation, including support for air-gapped environments
-
-Private key management is beyond the scope of the Notary effort, as companies have well defined practices that are internal to their software development.
-
-Publishing and discovery of public keys should be easy for consumers to acquire, however, Notary will not implicitly support a **T**rust **o**n **F**irst **U**se (TOFU) model.
-
-Key revocation must support air-gap environments, enabling users to validate keys when resources inside a network isolated environment are unable to reach public endpoints.
-
-## Stages of Development
-
-To deliver Notary, we recognized the need of experts from multiple backgrounds, experiences and skill sets.
-The various perspectives were needed to assure we learned from past efforts and learned from subject matter experts.
-
-As subject matter experts converged, we found it difficult for the various SMEs to understand other components of the end to end workflow.
-The typical Open Source model for authoring specs involves “writing it down”.
-Contributors Create a pull request on some markdown so all can review.
-However, we learned _The problem isn’t in the writing, it’s in the reading._
-
-To facilitate better communications across the skill sets, respecting everyone's time, we recognized the need to invest in models and prototypes.
-We followed the design patterns of other large, complex projects like Antoni Gaudí's design of [The Sagrada Familia](https://simple.wikipedia.org/wiki/Sagrada_Fam%C3%ADlia).
-The [sketch, prototype, build approach](https://stevelasker.blog/2020/07/31/sketch-prototype-build/) would enable the various experts to focus on their component, while understanding where they plug-into other components of the design.
-
-As a result, we identified the following stages of the Notary effort:
-
-1. Define Requirements
-1. Build Prototypes
-1. Validate prototypes - learning, refining requirements, iterating prototypes
-1. Author a Notary Spec
-
-See the [Notary project on GitHub](https://github.com/notaryproject/notaryproject/tree/main/status-updates) for updates to the stages of development and areas of focus. 
-
-## Contributing & Conversations
-
-Regular conversations for Notary occur on the [Cloud Native Computing Slack](https://app.slack.com/client/T08PSQ7BQ/CQUH8U287?) channel.
-
-Weekly meetings occur each Monday.
-Please see the [CNCF Calendar](https://www.cncf.io/community/calendar/) for details.
-
-Meeting notes are captured on [hackmd.io](https://hackmd.io/_vrqBGAOSUC_VWvFzWruZw).
-
-[cncf-distribution]:            https://github.com/distribution/distribution  
-[containerd]:                   https://github.com/containerd
-[docker-client]:                https://www.docker.com/products/docker-desktop
-[gatekeeper]:                   https://github.com/open-policy-agent/gatekeeper
-[kickoff-attendees]:            https://github.com/notaryproject/meeting-notes/blob/main/meeting-notes-2019.md#attendees
-[moby]:                         https://github.com/moby
-[notaryv2-kickoff]:             https://github.com/notaryproject/meeting-notes/blob/main/meeting-notes-2019.md#notary-v2-kickoff-meeting
-[non-requirements]:             https://github.com/notaryproject/notaryproject/blob/main/requirements/requirements.md#non-goals
-[nv2-notes]:                    https://hackmd.io/_vrqBGAOSUC_VWvFzWruZw
-[nv2-scenarios]:                https://github.com/notaryproject/notaryproject/blob/main/requirements/scenarios.md
-[nv2-signature-spec]:           https://github.com/notaryproject/nv2/tree/prototype-1/docs/signature
-[nv2-threat-model]:             https://github.com/notaryproject/notaryproject/blob/main/threatmodel.md
-[nv2-key-management]:           https://github.com/notaryproject/requirements/pull/38/
-[nv2-distribution-spec]:        https://github.com/opencontainers/artifacts/pull/29
-[nv2-definitions]:              https://github.com/notaryproject/notaryproject/blob/main/requirements/definitions-terms.md
-[oci-artifacts]:                https://github.com/opencontainers/artifacts
-[oci-artifact-manifest]:        https://github.com/opencontainers/artifacts/pull/29
-[oci-distribution-spec]:        https://github.com/opencontainers/distribution-spec
-[oci-distribution-conformance]: https://github.com/opencontainers/oci-conformance
-[opa]:                          https://github.com/open-policy-agent
-[oras]:                         https://github.com/deislabs/oras
+- Join the [Notary Project Slack channel](https://app.slack.com/client/T08PSQ7BQ/CQUH8U287/) for discussions and to ask questions.
+- Follow the [@NotaryProject](https://mobile.twitter.com/NotaryProject) for news about the Notary Project.
+- Join the [Notary Project community meetings](https://notaryproject.dev/community/#community-meetings) to stay on top of the latest discussions and development activities.
+  - Active meeting notes are captured at the [Notary Project meeting notes](https://hackmd.io/_vrqBGAOSUC_VWvFzWruZw?view)
+  - Archived meeting notes are stored in the [meeting-notes repository](https://github.com/notaryproject/meeting-notes)
