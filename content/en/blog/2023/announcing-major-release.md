@@ -25,7 +25,7 @@ There are some remarkable new features and updates in the first major release. T
 
 ### Signing and verification functionalities
 
-From the software producer's perspective, signing a software artifact is the way to ensure authenticity and trust when distributing a software to consumers. Notary Project provides the follow core capabilities for the signing experience.
+From the software producer's perspective, signing a software artifact is the way to ensure authenticity and trust when distributing a software to consumers. Notary Project provides the following core capabilities for the signing experience.
 
 - Sign artifacts using signing keys stored securely in key management system (KMS) using vendor or customer specific plugins
 - Sign and verify artifacts as well as list and inspect signatures stored in OCI-compliant registries
@@ -37,7 +37,7 @@ From the software producer's perspective, signing a software artifact is the way
 
 From the software consumer's perspective, verifying the signature of a signed artifact ensure the integrity and authenticity. Notary Project provides the following core capabilities for verification experience:
 
-- Verify signatures using [trust store and trust policy](https://github.com/notaryproject/specifications/blob/v1.0.0/specs/trust-store-trust-policy.md) with fine-tuned configuration for repository specific, and multiple signature verification levels.  [notation policy](https://notaryproject.dev/docs/cli-reference/notation_policy/) command is also introduced in v1 release to simplify importing and inspecting the trust policy.
+- Verify signatures using [trust store and trust policy](https://github.com/notaryproject/specifications/blob/v1.0.0/specs/trust-store-trust-policy.md) with fine-tuned OCI repository specific trust policies, and support for various enforcement levels for signature verification (e.g. `enforce`, `permissive`, `audit`) to enable a wide range of scenarios.  [notation policy](https://notaryproject.dev/docs/cli-reference/notation_policy/) command is also introduced in v1 release to simplify importing and inspecting the trust policy.
 
 ### Enhanced debug and troubleshooting experience
 
@@ -56,15 +56,14 @@ There are two major features which are marked as experimental stage but might be
 
 ### Better extensibility and more plugins support
 
-Notation has an [extensible plugin framework design](https://github.com/notaryproject/specifications/blob/v1.0.0/specs/plugin-extensibility.md) which provides plugin interfaces for users and vendors to implement their own integrations with the key/certificate management solutions or signing service. Notation has the following plugins available to use now.
+Notation has an [extensible plugin framework design](https://github.com/notaryproject/specifications/blob/v1.0.0/specs/plugin-extensibility.md) which provides plugin interfaces for users and vendors to implement their own integrations with the key/certificate management solutions or signing service. Notation has the following plugins available for use now.
 
 - [AWS Signer plugin](https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html)
 - [Azure Key Vault plugin](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-tutorial-sign-build-push)
-- [HashiCorp Vault plugin](https://github.com/notaryproject/notation-hashicorp-vault) (experimental)
 
 ### Integration with admission controller for Kubernetes usage
 
-As more and more users are requesting to verify and secure image deployment on Kubernetes, the Notary Project maintainers worked with the [Ratify](https://github.com/deislabs/ratify) and [Kyverno](https://kyverno.io/) team respectively to provide solutions for verifying images signed by Notation before deploying them to Kubernetes. Users will have two different options to build a complete end-to-end image integrity workflow for their environments. See the following two guides for details.
+To enable users to verify and secure image deployment on Kubernetes, the Notary Project maintainers worked with the [Ratify](https://github.com/deislabs/ratify) and [Kyverno](https://kyverno.io/) team respectively to provide solutions for verifying images signed by Notation before deploying them to Kubernetes. Users will have two different options to build a complete end-to-end image integrity workflow for their environments. See the following two guides for details.
 
 - [Sign and verify an image with Notation, Ratify, and OPA Gatekeeper](https://ratify.dev/blog/sign-and-verify-image-with-notation-ratify)
 - [Verify CNCF Notary Project signatures with Kyverno](https://kyverno.io/docs/writing-policies/verify-images/notary/)
@@ -83,7 +82,8 @@ The Notary Project also completed fuzzing audit and security audit in 2023. All 
 The following new features are planned for the upcoming milestones. Feel free to let us know of your ideas or use cases in the Slack channel or GitHub issues.
 
 - Sign and verify any file, even if distributed outside of an OCI registry
-- GitHub Actions and other CI/CD integration for signing and verification
+- [GitHub Actions](https://github.com/notaryproject/notation-action) and other CI/CD integration for signing and verification
+- [HashiCorp Vault plugin](https://github.com/notaryproject/notation-hashicorp-vault) (experimental)
 - Plugin lifecycle management
 - Timestamping support
 - Manage trust policy via CLI commands
