@@ -4,9 +4,7 @@ description: Build, sign, push, and verify images as OCI image layout
 weight: 5
 ---
 
-OCI image layout is a directory structure that contains files and folders that refer to an OCI image. OCI image layout is defined in [OCI image spec](https://github.com/opencontainers/image-spec/blob/v1.1.0-rc2/image-layout.md).
-
-When you sign an image after it is pushed to a registry, it is possible that you are not signing the correct image. You also may not be certain that the image hasn't been altered. Using OCI image layout, you can sign images on local disk before pushing them to the remote registry. Signing an image before you push it a registry provides helps ensure you are signing the correct image, and consumers of that image can verify that same image.
+OCI image layout is a directory structure that contains files and folders that refer to an OCI image. OCI image layout is defined in [OCI image spec](https://github.com/opencontainers/image-spec/blob/v1.1.0-rc2/image-layout.md). Using OCI image layout, you can sign images on local disk before pushing them to the remote registry. 
 
 {{% alert title="Important" color="primary" %}}
 This feature is experimental. It is not recommended for production use.
