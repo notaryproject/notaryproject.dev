@@ -35,7 +35,7 @@ Here are some of the major capabilities and features included in this release.
 
 From the software producer's perspective, signing a software artifact is the way to ensure authenticity, anti-tampering, and increase trust when distributing software artifacts to consumers. Notary Project provides the following core capabilities for the signing experience.
 
-- Sign artifacts using signing keys stored securely in key management system (KMS). See the available plugins in the section [Better extensibility and more plugins support](#better-extensibility-and-more-plugins-support)
+- Sign artifacts using signing keys stored securely in key management system (KMS). See the available plugins in the section [Extensibility: plugin support for Notation](#extensibility-plugin-support-for-notation)
 - Sign artifacts as well as list and inspect signatures stored in OCI-compliant registries
     - Compliant with [`image-spec v1.0.2`](https://github.com/opencontainers/image-spec/tree/v1.0.2)
     - Compliant with [`distribution-spec v1.0.1`](https://github.com/opencontainers/distribution-spec/tree/v1.0.1)
