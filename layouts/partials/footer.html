@@ -96,11 +96,6 @@
     align-items: left;
   }
 
-  .f-terms {
-    padding-left: 150px;
-    margin-right: 30px;
-  }
-
   .links-row {
     display: flex;
   }
@@ -122,8 +117,6 @@
   .f-l-logos {
     display: flex;
     flex-direction: row;
-    margin-left: 150px;
-    margin-right: 30px;
   }
 
   .sphere {
@@ -158,37 +151,167 @@
     width: 100%;
     display: flex;
     flex-direction: row;
+    gap: 50px;
     justify-content: space-between;
   }
 
-  /* @media only screen and (max-width: 767px) {
-    .f-l-block {
-      display: none;
+  @media only screen and (max-width: 767px) {
+    .m-footer {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch !important;
+      width: 100% !important;
+      height: 100% !important;
+      padding-bottom: 1050px !important;
     }
-  } */
+
+    .footer-list-doc,
+    .footer-list-blog,
+    .footer-list-com {
+      padding-left: 0px;
+    }
+
+    .footer-list-doc h4,
+    .footer-list-blog h4,
+    .footer-list-com h4 {
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: normal;
+      margin-bottom: 30px;
+    }
+
+    .footer-list-doc ul,
+    .footer-list-blog ul,
+    .footer-list-com ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-list-doc li,
+    .footer-list-blog li,
+    .footer-list-com li {
+      margin-bottom: 1px !important;
+    }
+
+    .footer-list-doc li a,
+    .footer-list-blog li a,
+    .footer-list-com li a {
+      color: #b5b5b5;
+      font-size: 10px;
+      font-weight: 500;
+      line-height: normal;
+      text-decoration: none;
+    }
+
+    .footer-list-doc li a:hover,
+    .footer-list-blog li a:hover,
+    .footer-list-com li a:hover {
+      color: #c2c2c2;
+    }
+
+    .f-l-block {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .f-logo {
+      padding-left: 50px;
+    }
+
+    .f-cr {
+      padding-right: 20px;
+      margin-top: 20px;
+    }
+
+    .f-line {
+      width: 100%;
+      height: 2px;
+      background: #545454;
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+
+    .f-terms {
+      display: flex;
+      flex-direction: row;
+      padding-left: 35px;
+      margin-top: 20px;
+    }
+
+    .f-l-logos {
+      margin-left: 50px;
+      margin-top: 30px;
+    }
+  }
 </style>
 
 <footer class="m-footer">
   <div class="footer-list-doc">
-    <h4>Document</h4>
+    <h4 class="doc">Document</h4>
     <ul>
-      <li><a href="docs/overview/">Project Overview</a></li>
-      <li><a href="docs/quickstart/">Quickstart</a></li>
-      <li><a href="docs/installation/">Installation Guides</a></li>
-      <li><a href="docs/tutorials/">Tutorials</a></li>
-      <li><a href="docs/how-to/">How-to guides</a></li>
-      <li><a href="docs/concepts/">Concepts</a></li>
-      <li><a href="docs/troubleshooting/">Troubleshooting</a></li>
-      <li><a href="docs/faq/">FAQs</a></li>
+      <li>
+        <a href="https://notaryproject.dev/docs/overview/" target="_blank"
+          >Project Overview</a
+        >
+      </li>
+      <li>
+        <a href="https://notaryproject.dev/docs/quickstart/" target="_blank"
+          >Quickstart</a
+        >
+      </li>
+      <li>
+        <a href="https://notaryproject.dev/docs/installation/" target="_blank"
+          >Installation Guides</a
+        >
+      </li>
+      <li>
+        <a href="https://notaryproject.dev/docs/tutorials/" target="_blank"
+          >Tutorials</a
+        >
+      </li>
+      <li>
+        <a href="https://notaryproject.dev/docs/how-to/" target="_blank"
+          >How-to guides</a
+        >
+      </li>
+      <li>
+        <a href="https://notaryproject.dev/docs/concepts/" target="_blank"
+          >Concepts</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://notaryproject.dev/docs/troubleshooting/"
+          target="_blank"
+          >Troubleshooting</a
+        >
+      </li>
+      <li>
+        <a href="https://notaryproject.dev/docs/faq/" target="_blank">FAQs</a>
+      </li>
     </ul>
   </div>
 
   <div class="footer-list-blog">
     <h4>Blogs</h4>
     <ul>
-      <li><a href="blog/">Posts in 2023</a></li>
-      <li><a href="blog/">Posts in 2022</a></li>
-      <li><a href="blog/">Posts in 2021</a></li>
+      <li>
+        <a href="https://notaryproject.dev/blog/" target="_blank"
+          >Posts in 2023</a
+        >
+      </li>
+      <li>
+        <a href="https://notaryproject.dev/blog/" target="_blank"
+          >Posts in 2022</a
+        >
+      </li>
+      <li>
+        <a href="https://notaryproject.dev/blog/" target="_blank"
+          >Posts in 2021</a
+        >
+      </li>
     </ul>
   </div>
 
@@ -196,19 +319,22 @@
     <h4>Communities</h4>
     <ul>
       <li>
-        <a href="https://app.slack.com/client/T08PSQ7BQ/CQUH8U287/">Slack</a>
-      </li>
-      <li>
-        <a href="https://hackmd.io/_vrqBGAOSUC_VWvFzWruZw"
-          >Notary Project Meeting doc</a
+        <a
+          href="https://app.slack.com/client/T08PSQ7BQ/CQUH8U287/"
+          target="_blank"
+          >Slack</a
         >
       </li>
       <li>
-        <a href="https://hackmd.io/wii3-L8ZQZ-U3ET0XNY8Gg">TUF Meeting doc</a>
+        <a href="https://hackmd.io/_vrqBGAOSUC_VWvFzWruZw" target="_blank"
+          >Notary Project Meeting doc</a
+        >
       </li>
+
       <li>
         <a
           href="https://www.youtube.com/playlist?list=PL1ykZdgmLkb7SlXax-hJVUgvNHmq4Cyz9"
+          target="_blank"
           >YouTube</a
         >
       </li>
@@ -219,7 +345,7 @@
 
   <div class="f-l-block">
     <div class="f-legals">
-      <div>
+      <div class="f-logo">
         <a href="{{ .Site.Home.RelPermalink }}">
           {{ $image := resources.Get "icons/logo-dark.png" }}
           <img
@@ -230,11 +356,11 @@
         </a>
       </div>
 
-      <p class="f-cr">© Copyright 2022 | All Rights Reserved</p>
+      <p class="f-cr">© copyright 2023 | All Rights Reserved</p>
     </div>
 
     <div class="f-terms">
-      <div>
+      <div class="f-t-links">
         <a
           href="https://www.linuxfoundation.org/terms"
           target="_blank"
@@ -268,7 +394,11 @@
 
     <div class="f-l-logos">
       <div class="sphere">
-        <a href="https://twitter.com/NotaryProject" class="f-twt-l">
+        <a
+          href="https://twitter.com/NotaryProject"
+          class="f-twt-l"
+          target="_blank"
+        >
           {{ $image := resources.Get "icons/twitter.png" }}
           <img
             src="{{ $image.RelPermalink }}"
@@ -281,6 +411,7 @@
         <a
           href="https://app.slack.com/client/T08PSQ7BQ/CQUH8U287/"
           class="f-twt-l"
+          target="_blank"
         >
           {{ $image := resources.Get "icons/slack.png" }}
           <img
@@ -291,7 +422,11 @@
         </a>
       </div>
       <div class="sphere">
-        <a href="https://github.com/notaryproject" class="f-twt-l">
+        <a
+          href="https://github.com/notaryproject"
+          class="f-twt-l"
+          target="_blank"
+        >
           {{ $image := resources.Get "icons/github.png" }}
           <img
             src="{{ $image.RelPermalink }}"

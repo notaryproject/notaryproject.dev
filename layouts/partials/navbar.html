@@ -9,10 +9,11 @@
 
 #main-nav {
   background-color: #fff;
+  box-shadow: 0px 4px 50px 0px rgba(0, 0, 0, 0.03);
   
   width: 100%;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 13px;
+  padding-bottom: 7px;
 }
 </style>
 
@@ -44,19 +45,19 @@
 			{{ end }}
             <div class="flex gap-md nav-item mr-4 mb-2 mb-lg-0">
                 <div class="img-container-xxsm">
-                    <a class="nav-link" href="{{ .Site.Params.navbar.logos.github.url }}">
+                    <a class="nav-link" href="{{ .Site.Params.navbar.logos.github.url }}" target="_blank">
                         {{ $image := resources.Get "icons/github-logo.png" }}
                         <img src="{{ $image.RelPermalink }}" alt="github logo">
                     </a>
                 </div>
                 <div class="img-container-xxsm">
-                    <a class="nav-link" href="{{ .Site.Params.navbar.logos.twitter.url }}">
+                    <a class="nav-link" href="{{ .Site.Params.navbar.logos.twitter.url }}" target="_blank">
                         {{ $image := resources.Get "icons/twitter-logo.png" }}
                         <img src="{{ $image.RelPermalink }}" alt="twitter logo">
                     </a>
                 </div>
                 <div class="img-container-xxsm">
-                    <a class="nav-link" href="{{ .Site.Params.navbar.logos.slack.url }}">
+                    <a class="nav-link" href="{{ .Site.Params.navbar.logos.slack.url }}" target="_blank">
                         {{ $image := resources.Get "icons/slack-logo.png" }}
                         <img src="{{ $image.RelPermalink }}" alt="slack logo">
                     </a>

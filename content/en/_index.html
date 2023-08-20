@@ -1,18 +1,25 @@
+---
 # TODO(chalin): drop the `title` field once Hugo is fixed to use the site title
-title: Notary Project # features: # - title: Simple interface # description:
-Read and write values using standard HTTP tools, such as curl # icon:
-interface.svg # - title: Key-value storage # description: Store data in
-hierarchically organized directories, as in a standard filesystem # icon: kv.svg
-# - title: Watch for changes # description: Watch specific keys or directories
-for changes and react to changes in values # icon: watch.svg ---
+title: Notary Project
+# features:
+#  - title: Simple interface
+#    description: Read and write values using standard HTTP tools, such as curl
+#    icon: interface.svg
+#  - title: Key-value storage
+#    description: Store data in hierarchically organized directories, as in a standard filesystem
+#    icon: kv.svg
+#  - title: Watch for changes
+#    description: Watch specific keys or directories for changes and react to changes in values
+#    icon: watch.svg
+---
 
 <style>
   #main-hero {
     width: 100%;
     padding-left: 80px;
     padding-right: 80px;
-    background: linear-gradient(180deg, #0074ff 0%, #2758ff 100%);
-    padding-top: 30px;
+    background: linear-gradient(180deg, #0074d8 0%, #005cab 100%);
+    padding-top: 120px;
     padding-bottom: 250px;
     height: 900px;
     z-index: 1;
@@ -72,7 +79,7 @@ for changes and react to changes in values # icon: watch.svg ---
     height: 660px;
     border-radius: 50px;
     background: #fff;
-    box-shadow: 0px 4px 50px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 4px 50px 0px rgba(0, 0, 0, 0.12);
     padding: 65px;
 
     margin: 0 auto;
@@ -179,15 +186,19 @@ for changes and react to changes in values # icon: watch.svg ---
   }
 
   #at-blocks {
+    display: flex;
+    flex-direction: row;
     margin-top: 100px;
-    padding-left: 200px;
-    padding-right: 200px;
+    gap: 40px;
+    justify-content: center;
+    margin-left: 100px;
+    margin-right: 100px;
   }
 
   #s-block {
     display: flex;
     flex-direction: column;
-    width: 298.742px;
+    width: 240px;
     height: 350px;
 
     border-radius: 15px;
@@ -198,9 +209,20 @@ for changes and react to changes in values # icon: watch.svg ---
   }
 
   .desc-at-block {
+    margin-top: 10px;
     color: #595959;
     text-align: center;
-    font-size: 18px !important;
+    font-size: 17px !important;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .desc-at-block-aws {
+    margin-top: 45px;
+    color: #595959;
+    text-align: center;
+    font-size: 17px !important;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -223,8 +245,8 @@ for changes and react to changes in values # icon: watch.svg ---
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 130px;
-    height: 130px;
+    width: 110px;
+    height: 110px;
   }
 
   .img-container-md-msft img {
@@ -365,10 +387,6 @@ for changes and react to changes in values # icon: watch.svg ---
     font-family: monospace;
   }
 
-  /* .u-f-cont-5 {
-    margin-top: -100px !important;
-  } */
-
   .m-blog {
     background: #0670ff !important;
     padding: 280px;
@@ -414,17 +432,7 @@ for changes and react to changes in values # icon: watch.svg ---
   }
 
   .u-container-1 {
-    margin-top: 40px;
-  }
-
-  .u-container-2,
-  .u-container-3,
-  .u-container-4 {
-    margin-top: -40px;
-  }
-
-  .u-container-5 {
-    margin-top: -20px;
+    margin-top: 80px;
   }
 
   .u-container-1,
@@ -434,7 +442,17 @@ for changes and react to changes in values # icon: watch.svg ---
   .u-container-5 {
     width: 100%;
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .all-containers {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
   }
 
   .u-h-1,
@@ -442,13 +460,14 @@ for changes and react to changes in values # icon: watch.svg ---
   .u-h-3,
   .u-h-4,
   .u-h-5 {
+    font-family: inherit !important;
     color: #1a1a1a;
     font-size: 25px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
     text-align: left;
-    margin-left: 60px;
+    margin-bottom: 30px !important;
   }
 
   .u-d-1,
@@ -456,13 +475,24 @@ for changes and react to changes in values # icon: watch.svg ---
   .u-d-3,
   .u-d-4,
   .u-d-5 {
+    margin-bottom: 30px;
+    font-family: inherit !important;
     color: #808080;
-
     font-size: 17px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     text-align: left !important;
+    overflow-wrap: break-word;
+  }
+
+  .sub-1 {
+    color: #4e4e4e;
+    text-align: justify;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
   }
 
   .u-f-cont-1,
@@ -470,8 +500,11 @@ for changes and react to changes in values # icon: watch.svg ---
   .u-f-cont-3,
   .u-f-cont-4,
   .u-f-cont-5 {
+    width: 600px;
     display: flex;
     justify-content: left;
+    text-align: left;
+    flex-direction: column;
   }
 
   .u-f-img-1,
@@ -479,7 +512,35 @@ for changes and react to changes in values # icon: watch.svg ---
   .u-f-img-3,
   .u-f-img-4,
   .u-f-img-5 {
+    margin-left: 100px;
     width: 420px;
+  }
+
+  .sep-p {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .check-img {
+    display: flex;
+    justify-content: center;
+    margin-right: 10px;
+    margin-top: 4.2px;
+    width: 15px;
+    height: 15px;
+  }
+
+  .chk-1 {
+    width: 100%;
+  }
+
+  .u-f-cot-1 {
+    width: 45px;
+    margin-bottom: 30px;
+  }
+
+  .cot-1 {
+    width: 100%;
   }
 
   .us-img-1,
@@ -490,19 +551,36 @@ for changes and react to changes in values # icon: watch.svg ---
     width: 100%;
   }
 
+  .u-sub-p-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .u-sub-p-1 > div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .t-sub-1 {
+    margin-top: 16px;
+  }
+
   #crypt-btn,
   #security-btn,
   #ext-btn,
   #multi-btn,
   #comm-btn {
-    width: 200px;
+    width: 180px;
     height: 50px;
-    border-radius: 10px;
-    border: 1px solid #0074ff;
-    background: #e9f3ff;
-    font-size: 13.5px;
+    border: none;
+    color: #4e4e4e;
+    background: #ffffff;
+
+    font-size: 15px;
     font-weight: 600;
-    margin-right: 10px;
+    margin-right: 20px;
   }
 
   #crypt-btn:focus,
@@ -510,20 +588,23 @@ for changes and react to changes in values # icon: watch.svg ---
   #ext-btn:focus,
   #multi-btn:focus,
   #comm-btn:focus {
-    background-color: #d0e6ff;
+    border-bottom: 3px solid #0074ff;
+    color: #0074ff;
   }
 
   .b-title {
-    color: #1a1a1a;
+    color: #ffffff;
     text-align: center;
     font-size: 33px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    margin-bottom: 90px !important;
   }
 
   .blogs-section {
-    margin-top: -270px !important;
+    background: #0074d8;
+    margin-top: -50px !important;
   }
 
   .main-ad {
@@ -538,16 +619,644 @@ for changes and react to changes in values # icon: watch.svg ---
     margin-top: 100px !important;
   }
 
-  /* @media only screen and (max-width: 767px) {
+  .un-line {
+    margin-bottom: 10px !important;
+    width: 100%;
+    height: 2.5px;
+    background: #b5b5b5;
+  }
+
+  #vert-card {
+    padding: 30px;
+    margin-top: 30px;
+    width: 330px !important;
+    height: 450px;
+    border-radius: 20px;
+    background: #ffffff;
+    flex: 0 0 auto;
+    margin-bottom: 30px;
+  }
+
+  #vert-card-img-w {
+    width: 240px;
+    height: 130px;
+    padding: 45px;
+
+    border-radius: 25px;
+  }
+
+  #vert-card-cont {
+    width: 100%;
+  }
+
+  .blog-title {
+    color: #000000;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .b-date {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .tag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 71px;
+    height: 27px;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    background: rgba(6, 112, 255, 0.27);
+    color: #26265b;
+    font-weight: 700;
+    font-size: 13px;
+  }
+
+  .dates {
+    margin-bottom: 0px;
+    margin-left: 80px;
+    color: #747474;
+    font-size: 13.93px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .b-desc {
+    margin-bottom: 0px;
+  }
+
+  .btn-secondary {
+    width: 90px;
+    height: 30px;
+    border-radius: 20px;
+    background: #0074ff;
+    border: none;
+    color: #fff;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    transition: width 0.3s ease, height 0.3s ease, border-radius 0.3s ease,
+      background 0.3s ease, border 0.3s ease, color 0.3s ease,
+      font-size 0.3s ease, font-style 0.3s ease, font-weight 0.3s ease,
+      line-height 0.3s ease;
+  }
+
+  .btn-secondary:hover {
+    width: 90px;
+    height: 30px;
+    border-radius: 20px;
+    background: #ffffff;
+    border: 0.9px solid #0074ff;
+    color: #0074ff;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .horizontalCard {
+    height: 170px;
+    border-radius: 20px;
+    background: #ffffff;
+  }
+
+  #b-desc {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  #blog-container {
+    display: flex;
+    overflow-x: auto;
+  }
+
+  #blog-container::-webkit-scrollbar {
+    width: 3px !important;
+    border-radius: 40px;
+    margin-top: 20px !important;
+  }
+
+  #blog-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.37);
+    border-radius: 40px;
+  }
+
+  #blog-container::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 40px;
+  }
+
+  @media only screen and (max-width: 767px) {
     #at-blocks {
       margin-top: 0px;
+      margin-left: 0px;
+      margin-right: 0px;
+      padding-left: 0px;
+      padding-right: 0px;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #main-hero {
+      width: 100%;
+      padding-left: 20px;
+      padding-right: 20px;
+      background: linear-gradient(180deg, #0074d8 0%, #005cab 100%);
+      padding-top: 50px;
+      padding-bottom: 50px;
+      height: 730px;
+    }
+
+    #conts {
+      position: relative;
+      top: -180px;
+    }
+
+    #yt-video {
+      display: none;
+      visibility: hidden;
+      height: 0;
+    }
+
+    #yt {
+      display: none;
+      visibility: hidden;
+    }
+
+    .title {
+      color: #fff !important;
+      font-size: 25px !important;
+      line-height: 30px !important;
+      text-align: center !important;
+    }
+
+    .subtitle {
+      font-size: 20px;
+      line-height: 30px;
+      color: #fff;
+      font-weight: 300;
+    }
+
+    .gs-bt {
+      width: 130px;
+      height: 50px;
+      border-radius: 30.781px;
+      background: #26265b;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      border: none;
+    }
+
+    .gt-bt {
+      width: 130px;
+      height: 50px;
+      border-radius: 30.781px;
+      background: #ffffff;
+      color: #000;
+      font-size: 15px;
+      font-weight: 600;
+      border: none;
+    }
+
+    #main-bt {
+      margin-top: 50px;
+    }
+
+    .wf-block {
+      width: 80%;
+      height: 360px;
+      border-radius: 20px;
+      background: #fff;
+      box-shadow: 0px 4px 50px 0px rgba(0, 0, 0, 0.15);
+      padding: 25px;
+
+      margin: 0 auto;
+      margin-top: -150px;
+    }
+
+    .sn-cont {
       padding-left: 0px;
       padding-right: 0px;
     }
-  } */
+
+    .sn-hd {
+      color: #1a1a1a;
+      text-align: center;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      margin-bottom: 10px !important;
+    }
+
+    .sn-desc {
+      color: rgba(26, 26, 26, 0.8);
+      text-align: center;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 16px;
+    }
+
+    .contributors-t {
+      color: #1a1a1a;
+      text-align: center;
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-top: 250px;
+      margin-bottom: 40px;
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+
+    #contri-a {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .b-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 70px;
+      height: 40px;
+      margin-right: 10px;
+
+      border-radius: 7px;
+      border: 0.6px solid #0074ff;
+      background: #e9f3ff;
+      backdrop-filter: blur(2px);
+    }
+
+    .img-aws {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .img-aws img {
+      width: 18px;
+      height: 18px;
+    }
+
+    .img-cncf {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .img-cncf img {
+      width: 32px;
+      height: 32px;
+    }
+
+    .img-doc {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .img-doc img {
+      width: 32px;
+      height: 32px;
+    }
+
+    .img-msft {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .img-msft img {
+      width: 32px;
+      height: 32px;
+    }
+
+    .un-n {
+      padding-top: 50px !important;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-bottom: 0 !important;
+    }
+
+    .u-cont-h {
+      color: #1a1a1a;
+      text-align: center;
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      margin-bottom: 20px !important;
+    }
+
+    .u-cont-d {
+      padding-left: 0px;
+      padding-right: 0px;
+      color: #595959;
+      text-align: center;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    .u-features {
+      margin-top: 60px !important;
+    }
+
+    #crypt-btn,
+    #security-btn,
+    #ext-btn,
+    #multi-btn,
+    #comm-btn {
+      width: 70px;
+      height: 20px;
+      border: none;
+      color: #4e4e4e;
+      background: #ffffff;
+
+      font-size: 7.5px;
+      font-weight: 600;
+      margin-right: 5px;
+    }
+
+    #crypt-btn:focus,
+    #security-btn:focus,
+    #ext-btn:focus,
+    #multi-btn:focus,
+    #comm-btn:focus {
+      border-bottom: 3px solid #0074ff;
+      color: #0074ff;
+    }
+
+    .title-at {
+      color: #1a1a1a;
+      text-align: center;
+
+      margin-top: 70px;
+      margin-bottom: 80px;
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+
+    #desc-at {
+      display: flex;
+      width: 80%;
+
+      color: #595959;
+      text-align: center;
+      justify-content: center;
+
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    #s-block {
+      display: flex;
+      flex-direction: column;
+      width: 250px;
+      height: 310px;
+      /* margin-left: 55px; */
+      margin-top: 50px;
+
+      border-radius: 15px;
+      border: 1.282px solid #0074ff;
+      background: #d9eaff;
+      box-shadow: 3.418604612350464px 5.127906799316406px 29.05813980102539px
+        0px rgba(0, 0, 0, 0.1);
+    }
+
+    .sn-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding-top: 20px;
+    }
+
+    .sn-feat {
+      display: none;
+      visibility: hidden;
+    }
+
+    .sn-img {
+      width: 100%;
+    }
+
+    .contributors {
+      margin-top: 0px;
+    }
+
+    .contributors-t {
+      color: #1a1a1a;
+      text-align: center;
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-top: 90px;
+      margin-bottom: 40px;
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+
+    .u-f-cot-1 {
+      width: 30px;
+      margin-bottom: 10px;
+    }
+
+    .cot-1 {
+      width: 100%;
+    }
+
+    .all-containers {
+      margin-left: 10px;
+      width: 90%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .u-h-1,
+    .u-h-2,
+    .u-h-3,
+    .u-h-4,
+    .u-h-5 {
+      font-family: inherit !important;
+      color: #1a1a1a;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      text-align: left;
+      margin-bottom: 20px !important;
+    }
+
+    .u-d-1,
+    .u-d-2,
+    .u-d-3,
+    .u-d-4,
+    .u-d-5 {
+      margin-bottom: 20px;
+      font-family: inherit !important;
+      color: #808080;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      text-align: left !important;
+      overflow-wrap: break-word;
+    }
+
+    .check-img {
+      display: flex;
+      justify-content: center;
+      margin-right: 10px;
+      margin-top: 4.2px;
+      width: 10px;
+      height: 10px;
+    }
+
+    .sub-1 {
+      color: #4e4e4e;
+      text-align: justify;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+
+    .u-f-img-1,
+    .u-f-img-2,
+    .u-f-img-3,
+    .u-f-img-4,
+    .u-f-img-5 {
+      margin-top: 20px;
+      margin-left: 8px;
+      width: 400px;
+    }
+
+    .b-title {
+      color: #ffffff;
+      text-align: center;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      margin-bottom: 30px !important;
+    }
+
+    #vert-card {
+      padding: 30px;
+      margin-top: 30px;
+      width: 270px !important;
+      height: 390px;
+      border-radius: 20px;
+      background: #ffffff;
+      flex: 0 0 auto;
+      margin-bottom: 30px;
+    }
+
+    #blog-container {
+      display: flex;
+      overflow-x: auto;
+      flex-direction: row;
+    }
+
+    #blog-container::-webkit-scrollbar {
+      width: 3px !important;
+      border-radius: 40px;
+      margin-top: 20px !important;
+    }
+
+    #blog-container::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.37);
+      border-radius: 40px;
+    }
+
+    #blog-container::-webkit-scrollbar-thumb {
+      background-color: #ffffff;
+      border-radius: 40px;
+    }
+
+    #vert-card-img-w {
+      width: 190px;
+      height: 100px;
+      padding: 25px;
+
+      border-radius: 25px;
+    }
+
+    .tag {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 61px;
+      height: 17px;
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-top: 1px;
+      padding-bottom: 1px;
+      background: rgba(6, 112, 255, 0.27);
+      color: #26265b;
+      font-weight: 700;
+      font-size: 11px;
+    }
+
+    .dates {
+      margin-bottom: 0px;
+      margin-left: 80px;
+      color: #747474;
+      font-size: 11px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+
+    .blog-title {
+      color: #000000;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+
+    #b-desc {
+      font-size: 12px;
+      font-weight: 400;
+    }
+
+    .in-project {
+      font-size: 19px;
+    }
+
+    .cncf-logo {
+      width: 200px !important;
+    }
+  }
 </style>
 
 <!-- {{< blocks/cover image_anchor="top" height="max" color="black" >}} -->
+
 <section
   class="flex gap-lg width-80 fullwidth-mobile is-centered is-align-items-center margin-top-mobile is-mobile-responsive-reverse fullwidth-tablet"
   id="main-hero"
@@ -560,11 +1269,11 @@ for changes and react to changes in values # icon: watch.svg ---
       Signing and verifying artifacts. Safeguarding the software delivery
       security from development to deployment.
     </p>
-    <div class="flex gap-md margin-lg-top text-centered-mobile">
-      <a href="https://notaryproject.dev/docs/quickstart/">
+    <div class="flex gap-md margin-lg-top text-centered-mobile" id="main-bt">
+      <a href="https://notaryproject.dev/docs/quickstart/" target="_blank">
         <button class="gs-bt">Get started</button>
       </a>
-      <a href="https://github.com/notaryproject/notation">
+      <a href="https://github.com/notaryproject/notation" target="_blank">
         <button class="gt-bt">GitHub</button>
       </a>
     </div>
@@ -583,9 +1292,9 @@ for changes and react to changes in values # icon: watch.svg ---
   <div class="sn-cont">
     <h1 class="sn-hd">Scenarios we fit and problems we solve for</h1>
     <p class="sn-desc">
-      Sign and validate software artifacts to ensure integrity, prevent
-      tampering, and enforce security policies for approved artifacts in your
-      systems.
+      Sign and validate software artifacts, and ensure they have not been
+      tampered with. Provide security policies to determine which validated
+      artifacts are allowed to be used in your systems.
     </p>
   </div>
   <div class="sn-container">
@@ -633,6 +1342,7 @@ for changes and react to changes in values # icon: watch.svg ---
   </p>
   <div
     class="width-70 is-centered flex space-between is-align-items-center is-mobile-responsive text-centered-mobile"
+    id="contri-a"
   >
     <div class="b-box">
       <div class="img-aws">
@@ -659,99 +1369,239 @@ for changes and react to changes in values # icon: watch.svg ---
 
 {{% blocks/lead color="white" %}}
 
-<section class="un-n">
+<div class="un-n">
   <div class="u-cont">
-    <h4 class="u-cont-h">Why Notary is unique?</h4>
+    <h4 class="u-cont-h">Why the Notary Project is unique?</h4>
     <p class="u-cont-d">
-      Notary is aiming to provide enterprise-grade solutions and cross-industry
-      standards for securing software supply chain
+      The Notary Project is aiming to provide enterprise-grade solutions and
+      cross-industry standards for securing software supply chain
     </p>
   </div>
 
   <div class="u-features">
-    <button id="crypt-btn">Cryptographic Signing</button>
-    <button id="security-btn">Security Policy</button>
-    <button id="ext-btn">Extensibility</button>
-    <button id="multi-btn">Multi-registry</button>
-    <button id="comm-btn">Community-driven</button>
-
-    <div class="u-container-1">
-      <div class="u-f-cont-1">
-        <h4 class="u-h-1">Cryptographic Signing</h4>
-        <p class="u-d-1">
-          We support COSE and JWS signatures for secure authentication, enabling
-          versatile signing and verification of software artifacts. Built on
-          standard PKI, our system ensures reliable and compatible cryptographic
-          operations, accommodating online and air-gapped signing scenarios for
-          diverse requirements.
-        </p>
-      </div>
-      <div class="u-f-img-1">
-        <img src="feature1.png" alt="" class="us-img-1" />
-      </div>
-    </div>
-
-    <div class="u-container-2">
-      <div class="u-f-cont-2">
-        <h4 class="u-h-2">Security Policy</h4>
-        <p class="u-d-2">
-          We offer the ability to customize trust policies, allowing users to
-          determine the authenticity of signed artifacts. We ensure that all
-          artifacts are signed with trusted identities and originate from
-          trusted registries, enhancing system integrity and authenticity.
-        </p>
-      </div>
-      <div class="u-f-img-2">
-        <img src="feature2.png" alt="" class="us-img-2" />
-      </div>
-    </div>
-
-    <div class="u-container-3">
-      <div class="u-f-cont-3">
-        <h4 class="u-h-3">Extensibility</h4>
-        <p class="u-d-3">
-          Our system provides extensibility options that allow users to
-          customize and adapt the platform according to their specific needs.
-          With a flexible architecture and robust APIs, you can integrate and
-          extend functionalities to meet your requirements effectively.
-        </p>
-      </div>
-      <div class="u-f-img-3">
-        <img src="feature1.png" alt="" class="us-img-3" />
-      </div>
-    </div>
-
-    <div class="u-container-4">
-      <div class="u-f-cont-4">
-        <h4 class="u-h-4">Multi-registry</h4>
-        <p class="u-d-4">
-          We support multiple registries, enabling you to manage and organize
-          artifacts across different repositories. Our platform provides
-          seamless integration and synchronization capabilities, allowing you to
-          efficiently work with artifacts from various sources.
-        </p>
-      </div>
-      <div class="u-f-img-4">
-        <img src="feature2.png" alt="" class="us-img-4" />
-      </div>
-    </div>
-
-    <div class="u-container-5">
-      <div class="u-f-cont-5">
-        <h4 class="u-h-5">Community-driven</h4>
-        <p class="u-d-5">
-          Our platform is community-driven, with active participation and
-          collaboration from developers worldwide. Join our vibrant community to
-          share knowledge, contribute to the ecosystem, and benefit from
-          collective expertise to drive innovation and growth.
-        </p>
-      </div>
-      <div class="u-f-img-5">
-        <img src="feature1.png" alt="" class="us-img-5" />
-      </div>
+    <div class="un-line"></div>
+    <div class="u-btns">
+      <button id="crypt-btn">Cryptographic Signing</button>
+      <button id="security-btn">Security Policy</button>
+      <button id="ext-btn">Extensibility</button>
+      <button id="multi-btn">Multi-registry</button>
+      <button id="comm-btn">Community-driven</button>
     </div>
   </div>
-</section>
+</div>
+
+<div class="all-containers">
+  <div class="u-container-1">
+    <div class="u-f-cont-1">
+      <div class="u-f-cot-1">
+        <img src="cot1.png" class="cot-1" />
+      </div>
+      <h4 class="u-h-1">Cryptographic Signing</h4>
+      <h5 class="u-d-1">
+        COSE and JWS signatures are supported for secure authentication,
+        enabling versatile signing and verification of software artifacts. The
+        system is built on standard PKI, ensuring reliable and compatible
+        cryptographic operations. It accommodates online and air-gapped signing
+        scenarios to meet diverse requirements.
+      </h5>
+      <div class="u-sub-p-1">
+        <div>
+          <div class="sep-p">
+            <div class="check-img">
+              <img src="check.png" class="chk-1" />
+            </div>
+            <span class="sub-1">Secure authentication</span>
+          </div>
+          <div class="sep-p">
+            <div class="check-img">
+              <img src="check.png" class="chk-1" />
+            </div>
+            <span class="sub-1">Flexible signing scenarios</span>
+          </div>
+        </div>
+        <div class="t-sub-1">
+          <div class="sep-p">
+            <div class="check-img">
+              <img src="check.png" class="chk-1" />
+            </div>
+            <span class="sub-1">Compatibility and reliability</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="u-f-img-1">
+      <img src="feature1.png" alt="" class="us-img-1" />
+    </div>
+  </div>
+
+  <div class="u-container-2">
+    <div class="u-f-cont-2">
+      <div class="u-f-cot-1">
+        <img src="cot2.png" class="cot-1" />
+      </div>
+      <h4 class="u-h-2">Security Policy</h4>
+      <p class="u-d-2">
+        The ability to customize trust policies is provided, allowing users to
+        determine the authenticity of signed artifacts. It is ensured that all
+        artifacts are signed with trusted identities and originate from trusted
+        registries, thus enhancing system integrity and authenticity.
+      </p>
+      <div class="u-sub-p-1">
+        <div>
+          <div class="sep-p">
+            <div class="check-img">
+              <img src="check.png" class="chk-1" />
+            </div>
+            <span class="sub-1">Customizable trust policies</span>
+          </div>
+          <div class="sep-p">
+            <div class="check-img">
+              <img src="check.png" class="chk-1" />
+            </div>
+            <span class="sub-1">Trusted registry validation</span>
+          </div>
+        </div>
+        <div class="t-sub-1">
+          <div class="sep-p">
+            <div class="check-img">
+              <img src="check.png" class="chk-1" />
+            </div>
+            <span class="sub-1">Trusted identity verification</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="u-f-img-2">
+      <img src="feature2.png" alt="" class="us-img-2" />
+    </div>
+  </div>
+
+  <div class="u-container-3">
+    <div class="u-f-cont-3">
+      <div class="u-f-cot-1">
+        <img src="cot3.png" class="cot-1" />
+      </div>
+      <h4 class="u-h-3">Extensibility</h4>
+      <p class="u-d-3">
+        The system provides extensibility options that allow users to customize
+        and adapt the platform according to their specific needs. With a
+        flexible architecture and robust APIs, integration and extension of
+        functionalities can be achieved to meet their requirements effectively.
+      </p>
+      <div class="u-sub-p-1">
+        <div>
+          <div class="sep-p">
+            <div class="check-img">
+              <img src="check.png" class="chk-1" />
+            </div>
+            <span class="sub-1">Automated signing</span>
+          </div>
+          <div class="sep-p">
+            <div class="check-img">
+              <img src="check.png" class="chk-1" />
+            </div>
+            <span class="sub-1">SDK for development</span>
+          </div>
+        </div>
+        <div class="t-sub-1">
+          <div class="sep-p">
+            <div class="check-img">
+              <img src="check.png" class="chk-1" />
+            </div>
+            <span class="sub-1">Pluggable design & ecosystem integration</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="u-f-img-3">
+      <img src="feature3.png" alt="" class="us-img-3" />
+    </div>
+  </div>
+
+  <div class="u-container-4">
+    <div class="u-f-cont-4">
+      <div class="u-f-cot-1">
+        <img src="cot4.png" class="cot-1" />
+      </div>
+      <h4 class="u-h-4">Multi-registry</h4>
+      <p class="u-d-4">
+        Multiple registries are supported, facilitating the management and
+        organization of artifacts across different repositories. The platform
+        offers seamless integration and synchronization capabilities, enabling
+        efficient collaboration with artifacts from various sources.
+      </p>
+      <div class="u-sub-p-1">
+        <div>
+          <div class="sep-p">
+            <div class="check-img">
+              <img src="check.png" class="chk-1" />
+            </div>
+            <span class="sub-1">Push & store signatures</span>
+          </div>
+          <div class="sep-p">
+            <div class="check-img">
+              <img src="check.png" class="chk-1" />
+            </div>
+            <span class="sub-1">Consistent integrity</span>
+          </div>
+        </div>
+        <div class="t-sub-1">
+          <div class="sep-p">
+            <div class="check-img">
+              <img src="check.png" class="chk-1" />
+            </div>
+            <span class="sub-1">Portable & immutable signatures</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="u-f-img-4">
+      <img src="feature4f.png" alt="" class="us-img-4" />
+    </div>
+  </div>
+
+  <div class="u-container-5">
+    <div class="u-f-cont-5">
+      <div class="u-f-cot-1">
+        <img src="cot5.png" class="cot-1" />
+      </div>
+      <h4 class="u-h-5">Community-driven</h4>
+      <p class="u-d-5">
+        The platform is community-driven, with active participation and
+        collaboration from developers worldwide. They can join the vibrant
+        community to share knowledge, contribute to the ecosystem, and benefit
+        from collective expertise to drive innovation and growth.
+      </p>
+      <div class="u-sub-p-1">
+        <div>
+          <div class="sep-p">
+            <div class="check-img">
+              <img src="check.png" class="chk-1" />
+            </div>
+            <span class="sub-1">Fast iteration</span>
+          </div>
+          <div class="sep-p">
+            <div class="check-img">
+              <img src="check.png" class="chk-1" />
+            </div>
+            <span class="sub-1">Diverse expertise</span>
+          </div>
+        </div>
+        <div class="t-sub-1">
+          <div class="sep-p">
+            <div class="check-img">
+              <img src="check.png" class="chk-1" />
+            </div>
+            <span class="sub-1">Open-source & community-driven</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="u-f-img-5">
+      <img src="feature5.png" alt="" class="us-img-5" />
+    </div>
+  </div>
+</div>
 
 {{% /blocks/lead %}} {{% blocks/lead color="white" %}} {{< blog/list >}} {{%
 /blocks/lead %}} {{% blocks/lead color="white" %}}
@@ -764,16 +1614,14 @@ for changes and react to changes in values # icon: watch.svg ---
     for research, production, and integration with security products. If you are
     using the Notary Project, please share your case with us
   </p>
-  <div
-    class="flex gap-md width-80 is-centered font-size-sm margin-md-top is-mobile-responsive fullwidth-tablet"
-    id="at-blocks"
-  >
+  <!-- flex gap-md width-80 is-centered font-size-sm margin-md-top is-mobile-responsive fullwidth-tablet -->
+  <div class="" id="at-blocks">
     <div class="horizontalCard flex gap-md is-align-items-center" id="s-block">
       <div class="img-container-md">
         <img src="aws_logo.svg" alt="Aqua logo" />
       </div>
       <div class="text-container text-left">
-        <p class="desc-at-block">
+        <p class="desc-at-block-aws">
           AWS team is using and contributing to Notation, building the
           cryptographic signing services for customers
         </p>
@@ -788,7 +1636,7 @@ for changes and react to changes in values # icon: watch.svg ---
       </div>
       <div class="text-container text-left">
         <p class="desc-at-block">
-          Notation used across Microsoft teams and services (e.g., Windows
+          Notation used across Microsoft teams and services(eg., Windows
           container, AKS, Azure Code Signing, Ratify).
         </p>
       </div>
