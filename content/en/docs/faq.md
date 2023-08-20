@@ -24,7 +24,7 @@ The following registries are compatible with Notation for artifact signing and v
 
 **Q: Why JWT `exp` and `iat` claims are not used?**
 
-**A:** Unlike JWT which always contains a JSON payload, Notation envelope can support payloads other than JSON, like binary. Reusing the JWT payload structure and claims, limits the Notation JWS envelope to only support JSON payload, which is undesirable. Also, reusing JWT claims requires following same claim semantics as defined in JWT specifications. The [`exp`](https://datatracker.ietf.org/doc/html/rfc7519#section-4.1.4) claim requires that verifier MUST reject the signature if current time equals or is greater than `exp`, where as Notation allows verification policy to define how expiry is handled.
+**A:** Unlike JWT which always contains a JSON payload, the Notary Project signature envelope can support payloads other than JSON, like binary. Reusing the JWT payload structure and claims, limits the Notary Project signature JWS envelope to only support JSON payload, which is undesirable. Also, reusing JWT claims requires following the same claim semantics as defined in JWT specifications. The [`exp`](https://datatracker.ietf.org/doc/html/rfc7519#section-4.1.4) claim requires that the verifier MUST reject the signature if the current time equals or is greater than `exp`, where as Notation allows verification policy to define how expiry is handled.
 
 ## Signature specification
 
@@ -56,12 +56,12 @@ This has implication such as an end user with CA issued certificate can masquera
 
 ## Trust store and trust policy
 
-**Q: Does Notation Specification supports `n` out of `m` signatures verification requirement?**
+**Q: Does Notation supports `n` out of `m` signatures verification requirement?**
 
-**A:** Notation Specification doesn't support `n` out of `m` signature requirement verification scheme.
+**A:** Notation doesn't support `n` out of `m` signature requirement verification scheme.
 Signature verification workflow succeeds if verification succeeds for at least one signature.
 
-**Q: Does Notation Specification support overriding of revocation endpoints to support signature verification in disconnected environments?**
+**Q: Does Notation support overriding of revocation endpoints to support signature verification in disconnected environments?**
 
 **A:** TODO: Update after verification extensibility spec is ready.
 Not natively supported but a user can configure `revocationValidations` to `skip` and then use extended validations to check for revocation.
