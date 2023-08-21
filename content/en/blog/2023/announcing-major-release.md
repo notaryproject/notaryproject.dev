@@ -1,7 +1,7 @@
 ---
 title: Notary Project announces its first major release!
 author:  "Notary Project Release Team"
-date: 2023-08-15
+date: 2023-08-22
 draft: false
 ---
 
@@ -9,9 +9,9 @@ The Notary Project maintainers are proud to announce its first major release, in
 
 ## What is Notary Project and Notation?
 
-As containers and cloud native artifacts become common deployment units, users want to make sure that cloud-native artifacts in their environments are authentic and not tampered with. The Notary Project is a set of specifications and tools intended to provide cross-industry standards for securing software supply chains through signing and verification, signature portability, and key/certificate management. 
+As containers and cloud native artifacts become common deployment units, users want to make sure that cloud native artifacts in their environments are authentic and not tampered with. The Notary Project is a set of specifications and tools intended to provide cross-industry standards for securing software supply chains through signing and verification, signature portability, and key/certificate management. 
 
-Notation is a sub-project of the Notary Project GitHub organization. It has the `notation` CLI and two Golang libraries that implement the latest [Notary Project specifications](https://github.com/notaryproject/specifications/releases/tag/v1.0.0). Notation was started in [Dec 2019](https://github.com/notaryproject/meeting-notes/blob/main/meeting-notes-2019.md#notary-v2-kickoff-meeting) and the code  has matured through a series of minor and RC releases over the last few years, the first release [v0.7.0-alpha.1](https://notaryproject.dev/blog/2021/announcing-notation-alpha1/) was available in Oct 2021 and reached [v1.0.0-RC.7](https://notaryproject.dev/blog/2023/announcing-notation-rc6/) in May 2023.
+Notation is a sub-project of Notary Project. It has the `notation` CLI and two Golang libraries that implement the latest [Notary Project specifications](https://github.com/notaryproject/specifications/releases/tag/v1.0.0). Notation was started in [Dec 2019](https://github.com/notaryproject/meeting-notes/blob/main/meeting-notes-2019.md#notary-v2-kickoff-meeting) and the code  has matured through a series of minor and RC releases over the last few years, the first release [v0.7.0-alpha.1](https://notaryproject.dev/blog/2021/announcing-notation-alpha1/) was available in Oct 2021 and reached [v1.0.0-RC.7](https://notaryproject.dev/blog/2023/announcing-notation-rc6/) in May 2023.
 
 To learn more about the overall Notary Project and terminologies, see the [Notary Project Overview](https://github.com/notaryproject/.github#notary-project-overview) and the [FAQ - Notary Project Terms](https://notaryproject.dev/docs/faq/#notary-project-terms).
 
@@ -45,7 +45,7 @@ From the software producer's perspective, signing a software artifact is the way
     - [COSE](https://github.com/notaryproject/notaryproject/blob/v1.0.0/specs/signature-envelope-cose.md): it provides message security assurance for services like IoT applications and using [CBOR](https://datatracker.ietf.org/doc/html/rfc8152) as the message-encoding format
     - [JWS](https://github.com/notaryproject/notaryproject/blob/v1.0.0/specs/signature-envelope-jws.md): JWS is a JSON based envelope format for digital signatures that can be used when required for interoperability (mostly OIDC)
 
-From the software consumer's perspective, verifying the signature of a signed artifact ensure the integrity and authenticity. Notary Project provides the following core capabilities for verification experience:
+From the software consumer's perspective, verifying the signature of a signed artifact to ensure its integrity and authenticity. Notary Project provides the following core capabilities for verification experience:
 
 - Verify signatures using [trust store and trust policy](https://github.com/notaryproject/specifications/blob/v1.0.0/specs/trust-store-trust-policy.md) with fine-tuned OCI repository specific trust policies, and support for various enforcement levels for signature verification (e.g. `enforce`, `permissive`, `audit`) to enable a wide range of scenarios. 
 - [notation policy](https://notaryproject.dev/docs/cli-reference/notation_policy/) command is also introduced in this release to simplify the experience of importing and inspecting the trust policy.
@@ -60,8 +60,8 @@ export NOTATION_EXPERIMENTAL=1
 
 There are two major features which are marked as experimental but might be useful in some specific scenarios.
  
-- Support [signing, listing and verification with OCI image layout](https://notaryproject.dev/docs/how-to/oci-image-layout/) for signing images before they are pushed to a registry. It enables users sign and verify artifacts stored in the local file system.
-- Support [OCI distribution referrers API](https://github.com/opencontainers/distribution-spec/blob/v1.1.0-rc2/spec.md#enabling-the-referrers-api), which allows Notation CLI to fetch a list of signatures in an efficient and clean manner.
+- [Signing, listing and verification with OCI image layout](https://notaryproject.dev/docs/how-to/oci-image-layout/) for signing images before they are pushed to a registry. It enables users sign and verify artifacts stored in the local file system.
+- [OCI distribution referrers API](https://github.com/opencontainers/distribution-spec/blob/v1.1.0-rc2/spec.md#enabling-the-referrers-api), which allows Notation CLI to fetch a list of signatures in an efficient and clean manner.
 
 ### Extensibility: plugin support for Notation
 
@@ -88,7 +88,7 @@ The Notary Project also completed fuzzing audit and security audit in 2023. All 
 
 ## What's the next
 
-The Notary Project maintainers are considering the following features for the future milestones. If you are interested in the plan or you have new ideas, feel free to let us know in the Slack channel or GitHub issues.
+The Notary Project maintainers are considering the following features for the future milestones. If you are interested in the plan or you have new ideas, feel free to let us know in the [Slack channel](https://app.slack.com/client/T08PSQ7BQ/CQUH8U287/) or [GitHub issues](https://github.com/notaryproject/.github/issues).
 
 - Sign and verify any file, even if distributed outside of an OCI registry
 - [GitHub Actions](https://github.com/notaryproject/notation-action) and other CI/CD integration for signing and verification
