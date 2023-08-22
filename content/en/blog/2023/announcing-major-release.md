@@ -11,7 +11,7 @@ The Notary Project maintainers are proud to announce its first major release, in
 
 As containers and cloud native artifacts become common deployment units, users want to make sure that cloud native artifacts in their environments are authentic and not tampered with. The Notary Project is a set of specifications and tools intended to provide cross-industry standards for securing software supply chains through signing and verification, signature portability, and key/certificate management. 
 
-Notation is a sub-project of Notary Project. It has the `notation` CLI and two Golang libraries that implement the latest [Notary Project specifications](https://github.com/notaryproject/specifications/releases/tag/v1.0.0). Notation was started in [Dec 2019](https://github.com/notaryproject/meeting-notes/blob/main/meeting-notes-2019.md#notary-v2-kickoff-meeting) and the code  has matured through a series of minor and RC releases over the last few years, the first release [v0.7.0-alpha.1](https://notaryproject.dev/blog/2021/announcing-notation-alpha1/) was available in Oct 2021 and reached [v1.0.0-RC.7](https://notaryproject.dev/blog/2023/announcing-notation-rc6/) in May 2023.
+Notation is a sub-project of Notary Project. It has the `notation` CLI and two Golang libraries that implement the latest [Notary Project specifications](https://github.com/notaryproject/specifications/releases/tag/v1.0.0). Notation was started in [Dec 2019](https://github.com/notaryproject/meeting-notes/blob/main/meeting-notes-2019.md#notary-v2-kickoff-meeting) and the code  has matured through a series of minor and RC releases over the last few years; the first release [v0.7.0-alpha.1](https://notaryproject.dev/blog/2021/announcing-notation-alpha1/) was available in Oct 2021 and reached [v1.0.0-RC.7](https://notaryproject.dev/blog/2023/announcing-notation-rc6/) in May 2023.
 
 To learn more about the overall Notary Project and terminologies, see the [Notary Project Overview](https://github.com/notaryproject/.github#notary-project-overview) and the [FAQ - Notary Project Terms](https://notaryproject.dev/docs/faq/#notary-project-terms).
 
@@ -45,14 +45,14 @@ From the software producer's perspective, signing a software artifact is the way
     - [COSE](https://github.com/notaryproject/notaryproject/blob/v1.0.0/specs/signature-envelope-cose.md): it provides message security assurance for services like IoT applications and using [CBOR](https://datatracker.ietf.org/doc/html/rfc8152) as the message-encoding format
     - [JWS](https://github.com/notaryproject/notaryproject/blob/v1.0.0/specs/signature-envelope-jws.md): JWS is a JSON based envelope format for digital signatures that can be used when required for interoperability (mostly OIDC)
 
-From the software consumer's perspective, verifying the signature of a signed artifact to ensure its integrity and authenticity. Notary Project provides the following core capabilities for verification experience:
+From the software consumer's perspective, verifying the signature of a signed artifact ensures its integrity and authenticity. Notary Project provides the following core capabilities for verification experience:
 
 - Verify signatures using [trust store and trust policy](https://github.com/notaryproject/specifications/blob/v1.0.0/specs/trust-store-trust-policy.md) with fine-tuned OCI repository specific trust policies, and support for various enforcement levels for signature verification (e.g. `enforce`, `permissive`, `audit`) to enable a wide range of scenarios. 
 - [notation policy](https://notaryproject.dev/docs/cli-reference/notation_policy/) command is also introduced in this release to simplify the experience of importing and inspecting the trust policy.
 
 ### Experimental features
 
-Experimental features are intended for testing and evaluation purposes only and should not be used in production environments. Users can enable experimental features in Notation CLI by setting the environment variable `NOTATION_EXPERIMENTAL` to 1 as showing below.
+Experimental features are intended for testing and evaluation purposes only and should not be used in production environments. Users can enable experimental features in Notation CLI by setting the environment variable `NOTATION_EXPERIMENTAL` to 1 as shown below.
 
 ```
 export NOTATION_EXPERIMENTAL=1
@@ -81,12 +81,12 @@ To enable users to verify and secure image deployment on Kubernetes, the Notary 
 
 ## Built-in security
 
-The Notary Project also completed fuzzing audit and security audit in 2023. All vulnerabilities found during the audit are fixed in Notation v1.0.0 (and also present in the prior v1.0.0 RC-7 release). You can find two security audit reports as follows.
+The Notary Project also completed fuzzing and security audit in 2023. All vulnerabilities found during the audits are fixed in Notation v1.0.0 (and also present in the prior v1.0.0 RC-7 release). You can find two security audit reports as follows.
 
 - [Notation Security Audit Report 2023](https://github.com/notaryproject/notaryproject/blob/main/security/reports/audit/ADA-notation-security-audit-23.pdf)
 - [Notary Project fuzzing audit report 22-23](https://github.com/notaryproject/notaryproject/tree/main/security/reports/fuzzing/ADA-fuzzing-audit-22-23.pdf)
 
-## What's the next
+## What's next
 
 The Notary Project maintainers are considering the following features for the future milestones. If you are interested in the plan or you have new ideas, feel free to let us know in the [Slack channel](https://app.slack.com/client/T08PSQ7BQ/CQUH8U287/) or [GitHub issues](https://github.com/notaryproject/.github/issues).
 
