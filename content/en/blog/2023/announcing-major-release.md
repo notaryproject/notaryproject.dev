@@ -1,11 +1,11 @@
 ---
-title: Notary Project announces its first major release!
+title: Notary Project announces a major release!
 author:  "Notary Project Release Team"
 date: 2023-08-22
 draft: false
 ---
 
-The Notary Project maintainers are proud to announce its first major release, including [Notary Project specifications v1.0.0](https://github.com/notaryproject/specifications/releases/tag/v1.0.0), [notation v1.0.0](https://github.com/notaryproject/notation/releases/tag/v1.0.0), [notation-go v1.0.0](https://github.com/notaryproject/notation-go/releases/tag/v1.0.0), and [notation-core-go v1.0.0](https://github.com/notaryproject/notation-core-go/releases/tag/v1.0.0) which are ready for production use!
+The Notary Project maintainers are proud to announce a major release, including [Notary Project specifications v1.0.0](https://github.com/notaryproject/specifications/releases/tag/v1.0.0), [notation v1.0.0](https://github.com/notaryproject/notation/releases/tag/v1.0.0), [notation-go v1.0.0](https://github.com/notaryproject/notation-go/releases/tag/v1.0.0), and [notation-core-go v1.0.0](https://github.com/notaryproject/notation-core-go/releases/tag/v1.0.0) which are ready for production use!
 
 ## What is Notary Project and Notation?
 
@@ -21,7 +21,7 @@ Here are some of the major capabilities and features included in this release.
 
 ### Specifications
 
-[Notary Project specifications](https://github.com/notaryproject/specifications/releases/tag/v1.0.0) reached its first major release. All specifications, requirements, scenarios, threat model, and security audit reports are available in this release. ISVs and tool developers that want to interoperate with the Notary Project signatures and tooling should use the specifications to ensure compatibility.
+[Notary Project specifications](https://github.com/notaryproject/specifications/releases/tag/v1.0.0) reached its major release. All specifications, requirements, scenarios, threat model, and security audit reports are available in this release. ISVs and tool developers that want to interoperate with the Notary Project signatures and tooling should use the specifications to ensure compatibility.
 
 - [Notary Project OCI signature specification](https://github.com/notaryproject/specifications/blob/v1.0.0/specs/signature-specification.md)
 - [Notary Project OCI COSE signature envelope](https://github.com/notaryproject/specifications/blob/v1.0.0/specs/signature-envelope-cose.md)
