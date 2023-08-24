@@ -9,9 +9,9 @@ The Notary Project maintainers are proud to announce a major release, including 
 
 ## What is Notary Project and Notation?
 
-As containers and cloud native artifacts become common deployment units, users want to make sure that cloud native artifacts in their environments are authentic and not tampered with. The Notary Project is a set of specifications and tools intended to provide cross-industry standards for securing software supply chains through signing and verification, signature portability, and key/certificate management. 
+As containers and cloud native artifacts become common deployment units, users want to make sure that they are authentic in their environments. The Notary Project is a set of specifications and tools intended to provide cross-industry standards for securing software supply chains through signing and verification, signature portability, and key/certificate management. 
 
-Notation is a sub-project of Notary Project. It has the `notation` CLI and two Golang libraries that implement the latest [Notary Project specifications](https://github.com/notaryproject/specifications/releases/tag/v1.0.0). Notation was started in [Dec 2019](https://github.com/notaryproject/meeting-notes/blob/main/meeting-notes-2019.md#notary-v2-kickoff-meeting) and the code  has matured through a series of minor and RC releases over the last few years; The first version of the CLI and libraries [v0.7.0-alpha.1](https://notaryproject.dev/blog/2021/announcing-notation-alpha1/) was released in Oct 2021. Several alpha, beta, and RC releases later, the binaries reached the final [v1.0.0-RC.7](https://notaryproject.dev/blog/2023/announcing-notation-rc6/) release in May 2023.
+Notation is a sub-project of Notary Project, which consists of the `notation` CLI and two Golang libraries which implement the latest [Notary Project specifications](https://github.com/notaryproject/specifications/releases/tag/v1.0.0). Notation was started in [Dec 2019](https://github.com/notaryproject/meeting-notes/blob/main/meeting-notes-2019.md#notary-v2-kickoff-meeting) and the code  has matured through a series of minor and RC releases over the last few years; The first version of the CLI and libraries [v0.7.0-alpha.1](https://notaryproject.dev/blog/2021/announcing-notation-alpha1/) was released in Oct 2021. Several alpha, beta, and RC releases later, the binaries reached the final [v1.0.0-RC.7](https://notaryproject.dev/blog/2023/announcing-notation-rc6/) release in May 2023.
 
 To learn more about the Notary Project, see the [Notary Project Overview](https://github.com/notaryproject/.github#notary-project-overview) and the [FAQ](https://notaryproject.dev/docs/faq/#notary-project-terms).
 
@@ -33,9 +33,9 @@ Here are some of the major capabilities and features included in this release.
 
 ### Signing and verification functionalities
 
-From the software producer's perspective, signing a software artifact is the way to prevent tampering and ensure authenticity of the artifact. Signing software can also increase trust when distributing software artifacts to consumers. Notary Project provides the following core capabilities for the signing experience:
+From the software producer's perspective, signing a software artifact enables their consumers to detect tampering and ensure authenticity of the artifact. Signing software can also increase trust when distributing software artifacts to consumers. Notary Project provides the following core capabilities for the signing experience:
 
-- Sign artifacts using signing keys stored securely in a key management system (KMS). See the available plugins in the section [Extensibility: plugin support for Notation](#extensibility-plugin-support-for-notation)
+- Sign artifacts using signing keys stored securely in a key management system (KMS) or a signing service. See the available plugins in the section [Extensibility: plugin support for Notation](#extensibility-plugin-support-for-notation)
 - Sign artifacts as well as list and inspect signatures stored in OCI-compliant registries
     - Compliant with [`image-spec v1.0.2`](https://github.com/opencontainers/image-spec/tree/v1.0.2)
     - Compliant with [`distribution-spec v1.0.1`](https://github.com/opencontainers/distribution-spec/tree/v1.0.1)
