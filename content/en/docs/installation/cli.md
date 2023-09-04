@@ -60,8 +60,12 @@ Alternatively, you can expand the archive file to a different directory and add 
 tar xvzf <ARCHIVE_FILE> -C <EXAMPLE_PATH>/notation-cli/ notation
 echo 'export PATH="$PATH:<EXAMPLE_PATH>/notation-cli/"' >> ~/.bashrc
 ```
-
-## Download and install the CLI for macOS
+## Install the CLI for macOS
+### Install via Homebrew
+```console
+brew install notation
+```
+### Download the binaries and install manually
 
 Download the latest stable release of the notation CLI binary for macOS and checksum file, then verify the integrity of the download.
 
