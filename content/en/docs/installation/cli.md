@@ -2,7 +2,7 @@
 title: Install the notation CLI
 description: Install the notation CLI on Linux, macOS, and Windows
 weight: 1
-cliVer : 1.0.0
+cliVer: 1.0.0
 ---
 
 ## Download and install the CLI for Linux
@@ -121,8 +121,8 @@ echo 'export PATH="$PATH:<EXAMPLE_PATH>/notation-cli/"' >> ~/.zshrc
 
 Download the latest stable release of the notation CLI binary for Windows and checksum file:
 
-* [notation_{{< param cliVer >}}_windows_amd64.zip](https://github.com/notaryproject/notation/releases/download/v{{< param cliVer >}}/notation_{{< param cliVer >}}_windows_amd64.zip)
-* [notation_{{< param cliVer >}}_checksums.txt](https://github.com/notaryproject/notation/releases/download/v{{< param cliVer >}}/notation_{{< param cliVer >}}_checksums.txt)
+- [notation_{{< param cliVer >}}_windows_amd64.zip](https://github.com/notaryproject/notation/releases/download/v{{< param cliVer >}}/notation\_{{< param cliVer >}}\_windows_amd64.zip)
+- [notation_{{< param cliVer >}}_checksums.txt](https://github.com/notaryproject/notation/releases/download/v{{< param cliVer >}}/notation\_{{< param cliVer >}}\_checksums.txt)
 
 Use the [Get-FileHash](https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-7.3) command in powershell to generate the hash of the archive file.
 

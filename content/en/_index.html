@@ -756,6 +756,101 @@ title: Notary Project
     border-radius: 40px;
   }
 
+  .terminal {
+    width: 80%;
+    height: 235px;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0px 4px 50px 0px rgba(0, 0, 0, 0.11);
+    padding: 24px;
+
+    margin: 0 auto;
+    margin-top: 100px;
+  }
+
+  .img-t {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .tri-t {
+    order: 1;
+  }
+
+  .tri-m {
+    order: 2;
+  }
+
+  .ios-op {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 33px;
+  }
+
+  .ios-btn {
+    width: 90px;
+    height: 50px;
+    border: none;
+    color: #4e4e4e;
+    background: #ffffff;
+
+    font-size: 15px;
+    font-weight: 600;
+    margin-right: 1px;
+  }
+
+  .ios-btn:focus {
+    border-bottom: 3px solid #0074ff;
+    color: #0074ff;
+    outline: none;
+  }
+
+  .int-code {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 100%;
+    height: 60px;
+    margin-top: 20px;
+    border-radius: 5px;
+    background: #f6f8fa;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  }
+
+  .code-snp {
+    font-size: 17px;
+    text-align: center;
+    padding-left: 15px;
+  }
+
+  .ter-title {
+    color: #1a1a1a;
+    text-align: center;
+    font-size: 33px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 30px !important;
+  }
+
+  .ter-desc {
+    padding-left: 90px;
+    padding-right: 90px;
+    color: #595959;
+    text-align: center;
+    font-size: 27px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .main-term {
+    padding-top: 270px;
+  }
+
   @media only screen and (max-width: 767px) {
     #at-blocks {
       margin-top: 0px;
@@ -1603,6 +1698,40 @@ title: Notary Project
   </div>
 </div>
 
+<!-- Terminal -->
+<div class="main-term">
+  <div class="ter-title">Install the Notation CLI</div>
+  <div class="ter-desc">
+    You can install Notation CLI on different systems in just a few seconds.
+    <br />
+    See more
+    <a href="https://notaryproject.dev/docs/installation/cli/" target="_blank"
+      >Installation method</a
+    >.
+  </div>
+  <div class="terminal">
+    <div class="img-t">
+      <img src="tri-color.png" class="tri-t" />
+      <img src="tri.png" class="tri-m" />
+    </div>
+    <div class="ios-op">
+      <button class="ios-btn" onclick="showContent('macOS')" autofocus>
+        macOS
+      </button>
+      <button class="ios-btn" onclick="showContent('Windows')">Windows</button>
+      <button class="ios-btn" onclick="showContent('Linux')">Linux</button>
+    </div>
+
+    <div class="int-code">
+      <code class="code-snp" data-os="macOS">brew install notation</code>
+      <code class="code-snp" data-os="Windows"
+        >winget install notation -s winget</code
+      >
+      <code class="code-snp" data-os="Linux">brew install notation</code>
+    </div>
+  </div>
+</div>
+
 {{% /blocks/lead %}} {{% blocks/lead color="white" %}} {{< blog/list >}} {{%
 /blocks/lead %}} {{% blocks/lead color="white" %}}
 <!-- Blogs -->
@@ -1784,4 +1913,21 @@ title: Notary Project
     img4.style.display = "none";
     img5.style.display = "block";
   });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    showContent("macOS");
+  });
+
+  function showContent(os) {
+    const codeSnippets = document.querySelectorAll(".code-snp");
+
+    codeSnippets.forEach((snippet) => {
+      const snippetOs = snippet.getAttribute("data-os");
+      if (snippetOs === os) {
+        snippet.style.display = "block";
+      } else {
+        snippet.style.display = "none";
+      }
+    });
+  }
 </script>
