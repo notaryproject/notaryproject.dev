@@ -1,5 +1,5 @@
 ---
-title: "Notary Project release schedule and support policy"
+title: "Release schedule and support policy"
 description: "This document describes the Notary Project release schedule and support policy"
 type: docs
 weight: 10
