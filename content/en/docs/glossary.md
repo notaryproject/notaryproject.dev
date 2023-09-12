@@ -1,7 +1,7 @@
 ---
 title: Glossary
 description: A list of Notary Project's terminologies 
-weight: 11
+weight: 8
 ---
 ## Notary Project 
 The Notary Project refers to the [GitHub organization](https://github.com/notaryproject), the community, all specifications, and all the repositories under the GitHub organization, including community-released tools like [notary](https://github.com/notaryproject/notary) and [notation](https://github.com/notaryproject/notation).

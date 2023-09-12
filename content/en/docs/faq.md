@@ -1,13 +1,13 @@
 ---
 title: "Frequently asked questions"
-description: "Frequently asked questions about Notary"
+description: "Frequently asked questions about Notary Project"
 type: docs
-weight: 8
+weight: 7
 ---
 
-## What registries are compatible with Notary?
+## What registries are compatible with Notation?
 
-The following registries are compatible with Notary for artifact signing and verification:
+The following registries are compatible with Notation for artifact signing and verification:
 
 - [Azure Container Registry](https://learn.microsoft.com/azure/container-registry/?wt.mc_id=azurelearn_inproduct_oss_notaryproject)
 - [Amazon Elastic Container Registry](https://docs.aws.amazon.com/AmazonECR/latest/userguide/what-is-ecr.html)
@@ -18,25 +18,25 @@ The following registries are compatible with Notary for artifact signing and ver
 
 ## JWS signature envelope
 
-**Q: Why JWT is not used as the signature envelope format?**
+**Q: Why is JWT not used as the signature envelope format?**
 
-**A:** JWT uses JWS compact serialization which do not support unsigned attributes. Notary signature requires support for unsigned attributes. Instead we use the *JWS JSON Serialization* representation, which supports unsigned attributes.
+**A:** JWT uses JWS compact serialization which do not support unsigned attributes. Notary Project signature requires support for unsigned attributes. Instead we use the *JWS JSON Serialization* representation, which supports unsigned attributes.
 
 **Q: Why JWT `exp` and `iat` claims are not used?**
 
-**A:** Unlike JWT which always contains a JSON payload, Notary envelope can support payloads other than JSON, like binary. Reusing the JWT payload structure and claims, limits the Notary JWS envelope to only support JSON payload, which is undesirable. Also, reusing JWT claims requires following same claim semantics as defined in JWT specifications. The [`exp`](https://datatracker.ietf.org/doc/html/rfc7519#section-4.1.4) claim requires that verifier MUST reject the signature if current time equals or is greater than `exp`, where as Notary allows verification policy to define how expiry is handled.
+**A:** Unlike JWT which always contains a JSON payload, the Notary Project signature envelope can support payloads other than JSON, like binary. Reusing the JWT payload structure and claims, limits the Notary Project signature JWS envelope to only support JSON payload, which is undesirable. Also, reusing JWT claims requires following the same claim semantics as defined in JWT specifications. The [`exp`](https://datatracker.ietf.org/doc/html/rfc7519#section-4.1.4) claim requires that the verifier MUST reject the signature if the current time equals or is greater than `exp`, where as Notation allows verification policy to define how expiry is handled.
 
 ## Signature specification
 
-**Q: How will Notary support multiple signature envelope formats?**
+**Q: How will Notation support multiple signature envelope formats?**
 
 **A:** The `mediaType` of artifact manifest's blob identifies the signature envelope type.  
 The client implementation can use the aforementioned `mediaType` to parse the signature envelope.
 
-**Q: How will Notary support multiple payload formats?**
+**Q: How will Notation support multiple payload formats?**
 
 **A:** The Signature envelope MUST have a versioning mechanism to support multiple payload formats.
-For [JWS JSON serialization](https://github.com/notaryproject/notaryproject/blob/main/specs/signature-envelope-jws.md) signature envelope, versioning is achieved by the `cty` field in ProtectedHeaders.
+For [JWS JSON serialization](https://github.com/notaryproject/specifications/blob/main/specs/signature-envelope-jws.md) signature envelope, versioning is achieved by the `cty` field in ProtectedHeaders.
 
 
 ## Signature scheme
@@ -56,12 +56,12 @@ This has implication such as an end user with CA issued certificate can masquera
 
 ## Trust store and trust policy
 
-**Q: Does Notary supports `n` out of `m` signatures verification requirement?**
+**Q: Does Notation supports `n` out of `m` signatures verification requirement?**
 
-**A:** Notary doesn't support n out m signature requirement verification scheme.
+**A:** Notation doesn't support `n` out of `m` signature requirement verification scheme.
 Signature verification workflow succeeds if verification succeeds for at least one signature.
 
-**Q: Does Notary support overriding of revocation endpoints to support signature verification in disconnected environments?**
+**Q: Does Notation support overriding of revocation endpoints to support signature verification in disconnected environments?**
 
 **A:** TODO: Update after verification extensibility spec is ready.
 Not natively supported but a user can configure `revocationValidations` to `skip` and then use extended validations to check for revocation.

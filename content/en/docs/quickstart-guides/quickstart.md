@@ -2,7 +2,7 @@
 title: "Quickstart: Sign and validate a container image"
 description: "Quickly set up a OCI-based registry and use notation to sign and validate a container image"
 type: docs
-weight: 2
+weight: 1
 ---
 
 {{% alert title="Playground" color="info" %}}
@@ -14,7 +14,7 @@ You can also follow this guide on online remote cloud interactive playground on 
 Before you begin, you need:
 
 * Docker installed and running, such as [Docker desktop](https://www.docker.com/products/docker-desktop/).
-* [Notation CLI]({{< ref "/docs/installation/cli" >}}) installed and configured.
+* [Notation CLI]({{< ref "/docs/user-guides/installation/cli" >}}) installed and configured.
 
 ## Create an OCI-compatible registry
 
@@ -28,7 +28,7 @@ docker run -d -p 5001:5000 -e REGISTRY_STORAGE_DELETE_ENABLED=true --name regist
 If the host port 5001 is already in use, you can use another host port. 
 {{% /alert %}}
 
-If you want to use Notation with other registries, refer to [which registries are compatible with Notary]({{< ref "/docs/faq#what-registries-are-compatible-with-notary" >}}) for more alternatives. See [Authenticate with OCI-compliant registries]({{< ref "/docs/how-to/registry-authentication" >}}) when you log in to another OCI registry.
+If you want to use Notation with other registries, refer to [which registries are compatible with Notary]({{< ref "/docs/faq#what-registries-are-compatible-with-notary" >}}) for more alternatives. See [Authenticate with OCI-compliant registries]({{< ref "/docs/user-guides/how-to/registry-authentication" >}}) when you log in to another OCI registry.
 
 ## Add an image to the OCI-compatible registry
 
@@ -77,7 +77,7 @@ notation cert generate-test --default "wabbit-networks.io"
 ```
 
 {{% alert title="Note" color="primary" %}}
-At this time, test key and self-signed certificate files created using `notation cert generate-test` can't be removed using only `notation key delete` and `notation cert delete`. For more details on fully removing the test key and self-signed certificate files, see [Remove the test key and self-signed certificate]({{< ref "/docs/installation/uninstall#remove-the-test-key-and-self-signed-certificate" >}}).
+At this time, test key and self-signed certificate files created using `notation cert generate-test` can't be removed using only `notation key delete` and `notation cert delete`. For more details on fully removing the test key and self-signed certificate files, see [Remove the test key and self-signed certificate]({{< ref "/docs/user-guides/installation/uninstall#remove-the-test-key-and-self-signed-certificate" >}}).
 {{% /alert %}}
 
 Use `notation key ls` to confirm the signing key is correctly configured. Key name with a `*` prefix is the default key.
@@ -125,7 +125,7 @@ localhost:5001/net-monitor@sha256:073b75987e95b89f187a89809f08a32033972bb63cda27
 
 ## Create a trust policy
 
-To verify the container image, configure the trust policy to specify trusted identities that sign the artifacts, and level of signature verification to use. For more details, see [trust policy spec](https://github.com/notaryproject/notaryproject/blob/main/specs/trust-store-trust-policy.md#trust-policy).
+To verify the container image, configure the trust policy to specify trusted identities that sign the artifacts, and level of signature verification to use. For more details, see [trust policy spec](https://github.com/notaryproject/specifications/blob/main/specs/trust-store-trust-policy.md#trust-policy).
 
 Create a JSON file with the following trust policy, for example:
 
@@ -162,7 +162,7 @@ Use `notation policy show` to view the applied policy configuration. For example
 notation policy show
 ```
 
-The above JSON creates a trust policy named `wabbit-networks-images`. The policy has `registryScopes` set to `*`, which applies the policy to all the artifacts of any registry. The `signatureVerification` is set to `strict`, which checks all validations and any failure will fail the signature verification. This policy uses the `wabbit-networks.io` trust store of type `ca` which was created in the previous step. For more details on trust policies, see [trust policy spec](https://github.com/notaryproject/notaryproject/blob/main/specs/trust-store-trust-policy.md#trust-policy).
+The above JSON creates a trust policy named `wabbit-networks-images`. The policy has `registryScopes` set to `*`, which applies the policy to all the artifacts of any registry. The `signatureVerification` is set to `strict`, which checks all validations and any failure will fail the signature verification. This policy uses the `wabbit-networks.io` trust store of type `ca` which was created in the previous step. For more details on trust policies, see [trust policy spec](https://github.com/notaryproject/specifications/blob/main/specs/trust-store-trust-policy.md#trust-policy).
 
 To enable trust policy for specific repositories, set the `registryScopes` to those specific repositories. For example:
 
@@ -192,4 +192,4 @@ To remove the sample registry running on your development computer:
 docker rm -f registry
 ```
 
-To reset your `notation` configuration, remove the notation configuration directory. For more details, see [Remove the configuration files]({{< ref "/docs/installation/uninstall" >}}).
+To reset your `notation` configuration, remove the notation configuration directory. For more details, see [Remove the configuration files]({{< ref "/docs/user-guides/installation/uninstall" >}}).

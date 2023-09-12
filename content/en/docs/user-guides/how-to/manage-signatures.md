@@ -2,11 +2,11 @@
 title: "Manage signatures"
 description: "How to list, inspect, and delete a signature on an artifact"
 type: docs
-weight: 10
+weight: 6
 ---
 
 {{% alert title="Important" color="important" %}}
-When managing signatures on artifacts in remote repositories that require authentication, you must authenticate using `notation login` before you can manage signatures on artifacts in those repositories. For more information, see [Authenticate to a remote repository]({{< ref "/docs/how-to/registry-authentication" >}}).
+When managing signatures on artifacts in remote repositories that require authentication, you must authenticate using `notation login` before you can manage signatures on artifacts in those repositories. For more information, see [Authenticate to a remote repository]({{< ref "/docs/user-guides/how-to/registry-authentication" >}}).
 {{% /alert %}}
 
 ## List signatures on an artifact

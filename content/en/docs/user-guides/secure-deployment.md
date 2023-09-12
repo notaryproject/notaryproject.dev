@@ -2,15 +2,15 @@
 title: "Securely deploying Notation"
 description: "Best practices for securely deploying Notation"
 type: docs
-weight: 2
+weight: 5
 ---
 
 A deployment of Notation, specifically the `notation` CLI, is used for signing and verifying container images. The `notation` CLI is usually deployed on a development computer or in a CI/CD pipeline, such as GitHub Actions.
 
 A deployment has several sensitive components:
 
-- [Trust policies]({{< ref "/docs/how-to/manage-trust-policy" >}})
-- [Trust stores and certificates]({{< ref "/docs/concepts/directory-structure" >}})
+- [Trust policies]({{< ref "/docs/user-guides/how-to/manage-trust-policy" >}})
+- [Trust stores and certificates]({{< ref "/docs/user-guides/how-to/notary-project-concepts.md" >}})
 - Plugins
 
 It is strongly recommended that you follow the best practices in this document to secure your deployment of Notation. Notation works with a shared responsibility model, meaning users and organizations are responsible for securing the `notation` CLI deployment.

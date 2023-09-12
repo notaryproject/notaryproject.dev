@@ -2,7 +2,7 @@
 title: "Notation directory structure for system configuration"
 description: "How to configure the directory structure"
 type: docs
-weight: 1
+weight: 7
 ---
 
 Notation CLI requires local file systems support for the following components. They should be stored in different places per different operating system.
