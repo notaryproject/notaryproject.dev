@@ -1,7 +1,7 @@
 ---
 title: Install and manage notation plugins
 description: Install and manage notation plugins
-weight: 9
+weight: 4
 ---
 
 Plugins for `notation` provide functionality and integration with key stores and signing services. For example:
@@ -19,7 +19,7 @@ Before creating the `{plugin-name}` directory, confirm you are using a name that
 The following example downloads and installs version 0.6.0 of [notation-azure-kv](https://github.com/Azure/notation-azure-kv) plugin for on macOS with Apple Silicon using the default location for the Notation installation.
 
 {{% alert title="Warning" color="warning" %}}
-The following example only works for version 0.6.0 of the *notation-azure-kv* plugin on macOS with Apple Silicon using the default location for the Notation installation. You will need to update the filenames, location, and commands for other plugins, versions, and platforms. For more details on the default location of that directory on each platform, see [Notation directory structure for system configuration]({{< ref "/docs/concepts/directory-structure" >}}).
+The following example only works for version 0.6.0 of the *notation-azure-kv* plugin on macOS with Apple Silicon using the default location for the Notation installation. You will need to update the filenames, location, and commands for other plugins, versions, and platforms. For more details on the default location of that directory on each platform, see [Notation directory structure for system configuration]({{< ref "/docs/user-guides/how-to/notary-project-concepts.md" >}}).
 {{% /alert %}}
 
 ```console
@@ -55,7 +55,7 @@ notation plugin list
 
 ## Plugin naming structure
 
-The `notation` CLI strictly follows the [Notary Project specification for plugins](https://github.com/notaryproject/notaryproject/blob/main/specs/plugin-extensibility.md#plugin-mechanism). This includes the naming structure for the plugin binary and the plugin directory. All plugins must be named `notation-{plugin-name}` and placed in the `{NOTATION_LIBEXEC}/plugins/{plugin-name}/` directory. Also, you can't modify the filename of the plugin binary from the `tar.gz` file when installing a plugin.
+The `notation` CLI strictly follows the [Notary Project specification for plugins](https://github.com/notaryproject/specifications/blob/main/specs/plugin-extensibility.md#plugin-mechanism). This includes the naming structure for the plugin binary and the plugin directory. All plugins must be named `notation-{plugin-name}` and placed in the `{NOTATION_LIBEXEC}/plugins/{plugin-name}/` directory. Also, you can't modify the filename of the plugin binary from the `tar.gz` file when installing a plugin.
 
 For example, the full path to the [notation-azure-kv](https://github.com/Azure/notation-azure-kv) plugin is `{NOTATION_LIBEXEC}/plugins/azure-kv/notation-azure-kv`.
 

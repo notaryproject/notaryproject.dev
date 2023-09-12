@@ -2,7 +2,7 @@
 title: "Securely develop plugins for Notation"
 description: "Best practices for securely developing and distributing plugins for Notation"
 type: docs
-weight: 2
+weight: 1
 ---
 
 {{% alert title="Important" color="important" %}}

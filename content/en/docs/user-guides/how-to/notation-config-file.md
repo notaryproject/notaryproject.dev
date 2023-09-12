@@ -2,7 +2,7 @@
 title: "Customize the Notation configuration file"
 description: "How to customize Notation configuration in different OS platforms"
 type: docs
-weight: 4
+weight: 3
 ---
 
 This guide demonstrates how to customize the Notation system configuration in `config.json` and signing key in `signingkeys.json` respectively. By default, you don't need to create or modify them since Notation has default system settings and signing key configuration unless you want to customize them.
@@ -12,7 +12,7 @@ This guide demonstrates how to customize the Notation system configuration in `c
 The configuration file `config.json` location is different per operating system. `signingkeys.json` will be generated and stored in the same directory with `config.json`. You can use the Notation CLI or libraries to alter locations through the `XDG_CONFIG_HOME` environment variable.
 
 {{% alert title="Note" color="primary" %}}
-You can find the details of Notation directory structure for system configuration in this [guide]({{< ref "/docs/concepts/directory-structure" >}}).
+You can find the details of Notation directory structure for system configuration in this [guide]({{< ref "/docs/user-guides/how-to/notary-project-concepts.md" >}}).
 {{% /alert %}}
 
 ### Linux
