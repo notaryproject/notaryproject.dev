@@ -167,5 +167,5 @@ Alternatively, you can expand the archive file to a different directory and add 
 
 For more on the `NOTATION_CONFIG` directory and configuring your environment with `notation` see:
 
-- [Notation directory structure for system configuration]({{< ref "/docs/user-guides/how-to/notary-project-concepts.md" >}})
+- [Notation directory structure for system configuration]({{< ref "/docs/user-guides/how-to/directory-structure.md" >}})
 - [Customize the Notation configuration file]({{< ref "/docs/user-guides/how-to/notation-config-file" >}})

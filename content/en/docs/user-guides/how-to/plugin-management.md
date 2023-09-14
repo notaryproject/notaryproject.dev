@@ -19,7 +19,7 @@ Before creating the `{plugin-name}` directory, confirm you are using a name that
 The following example downloads and installs version 0.6.0 of [notation-azure-kv](https://github.com/Azure/notation-azure-kv) plugin for on macOS with Apple Silicon using the default location for the Notation installation.
 
 {{% alert title="Warning" color="warning" %}}
-The following example only works for version 0.6.0 of the *notation-azure-kv* plugin on macOS with Apple Silicon using the default location for the Notation installation. You will need to update the filenames, location, and commands for other plugins, versions, and platforms. For more details on the default location of that directory on each platform, see [Notation directory structure for system configuration]({{< ref "/docs/user-guides/how-to/notary-project-concepts.md" >}}).
+The following example only works for version 0.6.0 of the *notation-azure-kv* plugin on macOS with Apple Silicon using the default location for the Notation installation. You will need to update the filenames, location, and commands for other plugins, versions, and platforms. For more details on the default location of that directory on each platform, see [Notation directory structure for system configuration]({{< ref "/docs/user-guides/how-to/directory-structure.md" >}}).
 {{% /alert %}}
 
 ```console
