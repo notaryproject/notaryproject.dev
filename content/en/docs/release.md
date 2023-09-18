@@ -33,10 +33,10 @@ The Notary Project community will support "n" (current) and "n-1" `vX.Y` release
 
 ## Upcoming releases
 
-| Quarter in Year | Release version                  | Code freeze | Target date |
+| Quarter in Year | Release                          | Code freeze | Target date |
 | --------------- | -------------------------------- | ----------- | ----------- |
 | Q4 2023         | Notary Project v1.1.0            | 11/15/2023  | 11/22/2023  |
-| Q4 2023         | Notation CLI or Libraries v1.0.1 |     N/A     | 11/15/2023  |
+| Q4 2023         | Patch releases                   |     N/A     | 11/15/2023  |
 | Q1 2024         | Notary Project v1.2.0            | 3/13/2024   | 3/20/2024   |
 
 ## Attribution
