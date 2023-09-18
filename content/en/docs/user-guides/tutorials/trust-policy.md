@@ -5,7 +5,7 @@ type: docs
 weight: 1
 ---
 
-As part of the process to verify a container image with notary, you need to configure the trust policy to specify trusted identities that sign the artifacts, and the level of signature verification to use. For more details, see [trust policy spec](https://github.com/notaryproject/specifications/blob/main/specs/trust-store-trust-policy.md#trust-store).
+As part of the process to verify a container image with Notation, you need to configure the trust policy to specify trusted identities that sign the artifacts, and the level of signature verification to use. For more details, see [trust policy spec](https://github.com/notaryproject/notaryproject/blob/v1.0.0/specs/trust-store-trust-policy.md#trust-store).
 
 This tutorial shows you how to create a trust policy with different trusted identities and levels of signature verification. 
 
