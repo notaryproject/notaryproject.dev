@@ -53,7 +53,7 @@ npm run build
 Visit this link to launch it - [Gitpod.io IDE-Notary](https://gitpod.io/#https://github.com/notaryproject/notaryproject.dev). Start building, previewing, and making changes to this repository.
 
 ## Contributing
-We welcome contributors to contribute to The Notary Project website! We are actively enhancing this site, so we encourage interested individuals to join us and contribute code and documentation. If you encounter any issues or want to share any ideas, please open an issue/PR. You can also provide feedback by joining our [Slack Community](https://app.slack.com/client/T08PSQ7BQ/CQUH8U287/). For more information, see the [contribution guide](https://github.com/notaryproject/notaryproject.dev/blob/main/CONTRIBUTING.md).
+We welcome contributors to contribute to the Notary Project website! We are actively enhancing this site, so we encourage interested individuals to join us and contribute code and documentation. If you encounter any issues or want to share any ideas, please open an issue/PR. You can also provide feedback by joining our [Slack Community](https://app.slack.com/client/T08PSQ7BQ/CQUH8U287/). For more information, see the [contribution guide](https://github.com/notaryproject/notaryproject.dev/blob/main/CONTRIBUTING.md).
 
 ## Join Us
 Join our growing community around the world! 
