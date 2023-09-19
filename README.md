@@ -15,8 +15,6 @@
 
 ---
 
-## Introduction
-[**Checkout Notary Project's website!**](https://notaryproject.dev/)
 
 The Notary Project is a set of specifications and tools intended to provide a cross-industry standard for securing software supply chains by using authentic container images and other OCI artifacts. Notary Project specification and tooling provides signing and verification workflows for OCI artifacts, signature portability across OCI compliant registries, and integration with 3rd party key management solutions through a plugin model
 
