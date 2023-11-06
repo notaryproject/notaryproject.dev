@@ -29,8 +29,8 @@ The directories for various components are classified into the following catagor
 
 On Unix systems, `notation` follows [XDG Base Directory Specification][XDG] for user level directories. On Windows, [Known Folders][KF] and [App Settings][AS] are followed equivalently. On Darwin, [macOS File System][macOS_FS] with [System Integrity Protection][SIP] is followed equivalently. 
 
-{{% alert title="Note" color="primary" %}}
-Default directory paths in Notation 0.12.0-beta.1 only supports user level.
+{{% alert title="Important" color="important" %}}
+The aliases used to refer to the directories are not environment variables. They are used to represent the directory paths in this documentation and are not set when installing the `notation` CLI.
 {{% /alert %}}
 
 ### User Level

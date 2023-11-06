@@ -10,6 +10,11 @@ To suggest a troubleshooting item, [create a pull request PR with your suggested
 {{% /alert %}}
 
 
+## Where is the Notation CLI installation/configuration files/certificates/trust store?
+
+By default, the Notation CLI stores configuration files, certificates, and trust stores in the directories which are specific to the operating system. For more details, see [Notation directory structure for system configuration]({{< ref "/docs/user-guides/how-to/directory-structure" >}}).
+
+
 ## How do I troubleshoot issues with signatures?
 
 `oras manifest fetch` fetches information about an artifact; such as mediatype, config, layers, and annotations. By using the `--descriptor` flag, you can fetch only the descriptor of an artifact. Inspect the descriptor of a remote artifact sent for signing using `oras manifest fetch --descriptor`. For example: 
