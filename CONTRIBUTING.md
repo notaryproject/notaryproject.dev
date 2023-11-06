@@ -41,7 +41,7 @@ $ npm run check-links
 1. Make your changes.
 1. Build and test the site on your development computer to verify your changes appear as you intended.
 1. If you updated any CLI commands, manifest examples, or code/configuration examples, please test those changes as well to ensure they work as you intended.
-1. Commit and push your changes.
+1. Commit and push your changes. Note that Notary project repositories require signed commits. You can refer to  GitHub documentation on [commit signatures verification](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification) to know more about signing commits.
     ```console
     git add <files_changed>
     git commit -m <commit_message>
