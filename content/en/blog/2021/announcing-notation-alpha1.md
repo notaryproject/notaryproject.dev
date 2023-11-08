@@ -122,9 +122,9 @@ Here are some resources to help get started with Notation and Notary V2:
 - [Join the notary v2 community](https://github.com/notaryproject/notation#community)
 
 [notary-v2]:              https://github.com/notaryproject/notaryproject/
-[notary-v2-goals]:        https://github.com/notaryproject/notaryproject/blob/main/requirements.md#goals
+[notary-v2-goals]:        https://github.com/notaryproject/notaryproject/blob/main/requirements/requirements.md#goals
 [notation-release]:       https://github.com/notaryproject/notation/releases/tag/v0.7.0-alpha.1
-[notary-v2-release]:       https://github.com/notaryproject/roadmap/blob/main/RELEASENOTES/v2.0.0.alpha-1.MD
+[notary-v2-release]:      https://github.com/notaryproject/roadmap/blob/main/RELEASENOTES/v2.0.0.alpha-1.MD
 [notation-lib-release]:   https://github.com/notaryproject/notation-go-lib/releases/tag/v0.7.0-alpha.1
 [notary-v2-specs]:        https://github.com/notaryproject/notaryproject/releases/tag/v1.0.0-draft.1
 [oci-distribution]:       https://github.com/opencontainers/distribution-spec

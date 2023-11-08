@@ -13,30 +13,245 @@ title: Notary Project
 #    icon: watch.svg
 ---
 
-{{< blocks/cover image_anchor="top" height="min" color="primary" >}}
-<img src="notary-horizontal-white.png" class="site-logo" />
-<h2 class="mt-4">
-  The Notary project comprises a server and a client for running and interacting
-with trusted collections.
-</h2>
+{{< blocks/cover image_anchor="top" height="max" color="black" >}}
+<section
+  class="gap-lg width-80 fullwidth-mobile is-centered is-align-items-center margin-top-mobile is-mobile-responsive-reverse fullwidth-tablet flex"
+>
+  <div class="text-centered-mobile text-left">
+    <h4 class="title">
+      Standards-based spec and tooling
+      <span class="text-blue-gradient">for securing software supply chains</span>
+    </h4>
+    <p class="subtitle">
+      Signing and verifying artifacts. Safeguarding the software delivery security from development to deployment.
+    </p>
+    <div class="gap-md margin-lg-top text-centered-mobile flex">
+      <a href="https://notaryproject.dev/docs/quickstart-guides/quickstart/">
+        <button class="button is-medium is-dark get-started">Get started</button>
+      </a>
+      <a href="https://killercoda.com/notaryproject/scenario/notation" target="_blank" rel="noopener noreferrer">
+        <button class="button is-medium is-dark demo">Try it
+          <span></span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" style="height: 1rem;">
+          <path fill-rule="evenodd" d="M4.25 5.5a.75.75 0 00-.75.75v8.5c0 .414.336.75.75.75h8.5a.75.75 0 00.75-.75v-4a.75.75 0 011.5 0v4A2.25 2.25 0 0112.75 17h-8.5A2.25 2.25 0 012 14.75v-8.5A2.25 2.25 0 014.25 4h5a.75.75 0 010 1.5h-5z" clip-rule="evenodd" />
+          <path fill-rule="evenodd" d="M6.194 12.753a.75.75 0 001.06.053L16.5 4.44v2.81a.75.75 0 001.5 0v-4.5a.75.75 0 00-.75-.75h-4.5a.75.75 0 000 1.5h2.553l-9.056 8.194a.75.75 0 00-.053 1.06z" clip-rule="evenodd" />
+        </svg>
+        </button>
+      </a>
+    </div>
+  </div>
+  <div class="img-long is-hidden-mobile">
+    <iframe src="https://www.youtube.com/embed/ZMNUazoGwdk" frameborder="0"></iframe>
+  </div>
+</section>
+<section>
+  <p><b>Contributed by the community, in collaboration with</b></p>
+  <div class="width-80 is-centered space-between is-align-items-center is-mobile-responsive text-centered-mobile flex">
+    <div class="img-container-smd is-centered">
+      <img src="aws_logo.svg" alt="AWS logo" />
+    </div>
+    <div class="img-container-mdl is-centered">
+      <img src="cncf_logo.svg" alt="CNCF logo" />
+    </div>
+    <div class="img-container-sm is-centered">
+      <img src="docker_logo.svg" alt="Docker logo" />
+    </div>
+    <div class="img-container-sm is-centered">
+      <img src="microsoft_logo.svg" alt="Microsoft logo" />
+    </div>
+  </div>
+  <hr class="broken-line" />
+</section>
 {{< /blocks/cover >}}
 
+<section class="bg-container text-centered">
+  <div class="text-container">
+    <h1 class="title">Scenarios we fit and problems we solve for</h1>
+    <p class="width-60 is-centered font-size-md">
+      Signing and validating software artifacts, ensure they have not been tampered with and provide security policies
+      to determine which validated artifacts are allowed to be used in your systems
+    </p>
+  </div>
+  <div class="max-width width-70-tablet is-centered is-align-items-center gap-md is-mobile-responsive-reverse flex">
+    <div class="fullwidth">
+      <div class="margin-md-top-bottom is-align-items-center gap-md flex">
+        <div class="img-container-xsm">
+          <img src="sc_logo1.svg" alt="" />
+        </div>
+        <div class="content text-left">
+          <h4 class="is-5">Secure containers and K8s</h4>
+          <p>For Developers</p>
+        </div>
+      </div>
+      <div class="margin-md-top-bottom is-align-items-center gap-md flex">
+        <div class="img-container-xsm">
+          <img src="sc_logo2.svg" alt="" />
+        </div>
+        <div class="content text-left">
+          <h4 class="is-5">DevSecOps</h4>
+          <p>For DevOps engineers</p>
+        </div>
+      </div>
+      <div class="margin-md-top-bottom is-align-items-center gap-md flex">
+        <div class="img-container-xsm">
+          <img src="sc_logo3.svg" alt="" />
+        </div>
+        <div class="content text-left">
+          <h4 class="is-5">Auditing and Compliance</h4>
+          <p>For Security Operators</p>
+        </div>
+      </div>
+    </div>
+    <div class="img-long is-hidden-mobile">
+      <img src="notary_scenarios.svg" alt="" />
+    </div>
+  </div>
+</section>
+
 {{% blocks/lead color="white" %}}
-  <h1>What is Notary?</h1>
-  <p>Notary is a set of tools that helps you sign, store, and verify <a href="https://github.com/opencontainers/artifacts">OCI artifacts</a> using <a href="https://github.com/opencontainers/oci-conformance">OCI-conformant</a> registries.</p>
+<section class="feature-container">
+  <div class="feature-text-container text-center">
+    <h1 class="title">Why the Notary Project is unique</h1>
+    <p class="width-60 is-centered font-size-md">
+      The Notary Project is aiming to provide enterprise-grade solutions and cross-industry standards for securing
+      software supply chain
+    </p>
+  </div>
+  <div class="feature-cards is-list width-80 is-mobile-responsive fullwidth-tablet flex">
+    <div class="feature-card">
+      <div class="order-number is-digit">01</div>
+      <div class="feature-title">
+        <h1 class="text-left">Cryptographic Signing</h1>
+      </div>
+      <div class="feature-description text-left">
+        <div class="description is-bullets">
+          <ul>
+            <li>Support COSE and JWS signature format</li>
+            <li>Not only images, it allows to sign and verify any software artifacts</li>
+            <li>Built on standard PKI</li>
+            <li>Support online and air-gapped signing scenario</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="order-number is-digit">02</div>
+      <div class="feature-title">
+        <h1 class="text-left">Fine-grained security policy</h1>
+      </div>
+      <div class="feature-description text-left">
+        <div class="description is-bullets">
+          <ul>
+            <li>Able to custom trust policy and determine if a signed artifact is considered authentic</li>
+            <li>Ensure artifacts are signed with trusted identities and from trusted registry</li>
+            <li>Improve system integrity and authenticity</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="order-number is-digit">03</div>
+      <div class="feature-title">
+        <h1 class="text-left">Easy to use and extensible</h1>
+      </div>
+      <div class="feature-description text-left">
+        <div class="description is-bullets">
+          <ul>
+            <li>Automating signing and verification into a few simple CLI commands</li>
+            <li>Pluggable design allows you to develop plugins and ecosystem integration</li>
+            <li>Provides SDK which allows you to develop your own client</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="order-number is-digit">04</div>
+      <div class="feature-title">
+        <h1 class="text-left">Multi-registry support</h1>
+      </div>
+      <div class="feature-description text-left">
+        <div class="description is-bullets">
+          <ul>
+            <li>
+              It supports push and store signatures alongside the artifacts in OCI registries, such as Docker Hub, ACR,
+              Zot registry, etc.
+            </li>
+            <li>Portable and immutable, you can copy an artifact with its signature across registries</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="order-number is-digit">05</div>
+      <div class="feature-title">
+        <h1 class="text-left">
+          Community- <br />
+          driven
+        </h1>
+      </div>
+      <div class="feature-description text-left">
+        <div class="description is-bullets">
+          <ul>
+            <li>100% open source, built and improved by the active community</li>
+            <li>100+ contributors in total, from multiple organizations</li>
+            <li>Fast iteration cadence and open community governance</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{% /blocks/lead %}} {{% blocks/lead color="white" %}}
+<h1 class="title">Adopted and trusted by</h1>
+<p class="width-60 is-centered font-size-md">
+  Industry-leading enterprises and organizations are using the Notary Project for research, production, and integration
+  with security products. If you are using the Notary Project, please share your case with us
+</p>
 
-  <h1>Why use Notary?</h1>
+<div class="gap-md width-80 is-centered font-size-sm margin-md-top is-mobile-responsive fullwidth-tablet flex">
+  <div class="horizontalCard gap-md is-align-items-center flex">
+    <div class="img-container-md">
+      <img src="aws_logo.svg" alt="Aqua logo" />
+    </div>
+    <div class="text-container text-left">
+      <p>AWS team is using and contributing to Notation, building the cryptographic signing services for customers</p>
+    </div>
+  </div>
+  <div class="horizontalCard gap-md space-between is-align-items-center flex">
+    <div class="img-container-md">
+      <img src="microsoft_logo.svg" alt="Aqua logo" />
+    </div>
+    <div class="text-container text-left">
+      <p>
+        Notation is widely adopted by multiple Microsoft teams and services, such as Windows container team, AKS team,
+        Azure Code Signing service, Ratify, etc.
+      </p>
+    </div>
+  </div>
+  <div class="horizontalCard gap-md space-between is-align-items-center box flex">
+    <div class="img-container-md">
+      <img src="zot.svg" alt="Zot logo" />
+    </div>
+    <div class="text-container text-left">
+      <p>Zot registry supports store Notation signature as OCI artifacts</p>
+    </div>
+  </div>
+  <div class="horizontalCard gap-md space-between is-align-items-center flex">
+    <div class="img-container-md">
+      <img src="docker_logo.svg" alt="Aqua logo" />
+    </div>
+    <div class="text-container text-left">
+      <p>
+        Docker Hub supports signing container images with Notation and storing signatures and other supply chain
+        artifacts
+      </p>
+    </div>
+  </div>
+</div>
+{{% /blocks/lead %}} {{% blocks/lead color="white" %}}
+{{< blog/list >}}
 
-  <ul>
-    <li>Sign, store, and verify any OCI artifact, including container images</li>
-    <li>Signing and verifying uses public/private key verification</li>
-    <li>Signing does not change the <code>@digest</code> or <code>artifact:tag</code> reference</li>
-    <li>Signatures are portable across OCI-conformant registries</li>
-    <li>Support for multiple signatures</li>
-    <li>Designed to support multiple development flows</li>
-  </ul>
 {{% /blocks/lead %}}
-
 <div class="container">
   <!-- {{< home/features >}} -->
   <!-- {{< home/used-by >}} -->

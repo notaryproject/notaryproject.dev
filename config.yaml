@@ -11,7 +11,6 @@ contentDir: content/en
 defaultContentLanguage: en
 defaultContentLanguageInSubdir: false
 languageCode: en-us
-googleAnalytics: G-64X4HRE9R0
 
 # Useful when translating.
 enableMissingTranslationPlaceholders: true
@@ -34,10 +33,9 @@ imaging:
 
 languages:
   en:
-    title: Notary Project
+    title: Notary Project | A set of specifications and tools intended to provide a cross-industry standard for securing software supply chains.
     description: >-
-      The Notary project comprises a server and a client for running and
-      interacting with trusted collections.
+      The Notary Project is a set of specifications and tools intended to provide a cross-industry standard for securing software supply chains by using authentic container images and other OCI artifacts.
     languageName: English
     contentDir: content/en
     weight: 1
@@ -74,7 +72,7 @@ params:
   offlineSearch: false
 
   # Enable syntax highlighting and copy buttons on code blocks with Prism
-  prism_syntax_highlighting: false
+  prism_syntax_highlighting: true
 
   # Versions
 
@@ -82,13 +80,13 @@ params:
   # This menu appears only if you have at least one [params.versions] set.
   # version_menu: Versions
   # versions:
-    # latest: v2
-    # all:
-      # - v2
-      # - v1
-    # deprecation_warning: |-
-      # the documentation is no longer actively maintained.
-      # The page that you are viewing is the last archived version.
+  # latest: v2
+  # all:
+  # - v2
+  # - v1
+  # deprecation_warning: |-
+  # the documentation is no longer actively maintained.
+  # The page that you are viewing is the last archived version.
 
   # User interface configuration
   ui:
@@ -114,11 +112,11 @@ params:
     feedback:
       enable: true
       # The responses that the user sees after clicking "yes" (the page was helpful) or "no" (the page was not helpful).
-      'yes': >-
+      "yes": >-
         Glad to hear it! Please <a
         href="https://github.com/notaryproject/notaryproject.dev/issues/new">tell us how we
         can improve</a>.
-      'no': >-
+      "no": >-
         Sorry to hear that. Please <a
         href="https://github.com/notaryproject/notaryproject.dev/issues/new">tell us how we
         can improve</a>.
@@ -128,6 +126,16 @@ params:
     # add "hide_readingtime: true" to the page's front matter
     readingtime:
       enable: false
+
+  # Navbar config
+  navbar:
+    logos:
+      github:
+        url: https://github.com/notaryproject/notaryproject
+      twitter:
+        url: https://mobile.twitter.com/NotaryProject
+      slack:
+        url: https://app.slack.com/client/T08PSQ7BQ/CQUH8U287/
 
   # Footer Links
   links:
@@ -152,7 +160,7 @@ params:
         icon: fab fa-github
   # [params.logos]
   hero: >-
-    https://github.com/cncf/artwork/raw/master/projects/notary/horizontal/white/notary-horizontal-white.png
+    https://github.com/cncf/artwork/raw/master/projects/notary/horizontal/black/notary-horizontal-black.png
 
 mediaTypes:
   text/netlify: {}
@@ -169,12 +177,12 @@ outputs:
 # Site menu (partial -- also see pages with 'menu' in front matter)
 menu:
   main:
-    - name: Specifications
-      url: https://github.com/notaryproject/notaryproject
+    - name: Blog
+      url: ./blog/
       weight: -50
     - name: Roadmap
       url: https://github.com/notaryproject/roadmap
       weight: -20
-    - name: Notary (historic docs)
-      url: https://github.com/notaryproject/notary/tree/master/docs
-      weight: -10
+    - name: Security
+      url: ./security-audit/
+      weight: -50

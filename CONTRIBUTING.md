@@ -14,7 +14,7 @@
     ```console
     npm install
     ```
-    **NOTE:** By default, this is done on the `origin/main` branch. This step must be performed on a branch based from `origin` before you start creating new branches based on `upstream/main`. If you skip this step, the submodules will fail to install correctly.
+    > **Note** By default, this is done on the `origin/main` branch. This step must be performed on a branch based from `origin` before you start creating new branches based on `upstream/main`. If you skip this step, the submodules will fail to install correctly.
 
 ## Build or serve the site
 
@@ -41,10 +41,16 @@ $ npm run check-links
 1. Make your changes.
 1. Build and test the site on your development computer to verify your changes appear as you intended.
 1. If you updated any CLI commands, manifest examples, or code/configuration examples, please test those changes as well to ensure they work as you intended.
-1. Commit and push your changes.
+1. Commit and push your changes. Note that Notary project repositories require signed commits. You can refer to  GitHub documentation on [commit signatures verification](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification) to know more about signing commits.
     ```console
     git add <files_changed>
     git commit -m <commit_message>
     git push origin HEAD
     ```
 1. File a PR to [notaryproject.dev](https://github.com/notaryproject/notaryproject.dev).
+
+## Updating project maintainers
+
+1. Ensure justification is provided for the change. [Example](https://github.com/notaryproject/.github/issues/34#issue-1753758548)
+1. Create a PR that updates both [CODEOWNERS]() and [MAINTAINERS]() with the maintainer updates. [Example](https://github.com/notaryproject/notaryproject.dev/pull/310/files)
+1. Make sure `@notaryproject/notaryproject-governance-maintainers` is added as a reviewer.

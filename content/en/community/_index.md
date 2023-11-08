@@ -4,9 +4,9 @@ description: Welcome to the Notary Project user and developer community page
 spelling: cSpell:ignore grpcio grpcmeetings subreddit youtube
 community_resources:
   - title: >
-      [<i class="fas fa-file-alt"></i>Notation Meeting doc][notary-v2-meeting-doc]
+      [<i class="fas fa-file-alt"></i>Notary Project Meeting doc][notary-project-meeting-doc]
     desc: >
-      For Notation meeting details, consult the [Notation community meeting][notary-v2-meeting-doc] notes.
+      For Notary Project meeting details, consult the [Notary Project community meeting][notary-project-meeting-doc] notes.
   - title: >
       [<i class="fas fa-file-alt"></i>TUF Meeting doc][tuf-meeting-doc]
     desc: >
@@ -74,7 +74,7 @@ For Notary Project contribution guidelines, see [How to contribute][].
 
 [notaryproject-youtube]: https://youtube.com/playlist?list=PL1ykZdgmLkb7SlXax-hJVUgvNHmq4Cyz9
 [How to contribute]: https://github.com/notaryproject/notaryproject/blob/main/CONTRIBUTING.md
-[notary-v2-meeting-doc]: https://hackmd.io/_vrqBGAOSUC_VWvFzWruZw
+[notary-project-meeting-doc]: https://hackmd.io/_vrqBGAOSUC_VWvFzWruZw
 [tuf-meeting-doc]: https://hackmd.io/wii3-L8ZQZ-U3ET0XNY8Gg
 [online]: https://zoom.us/j/6115932621?pwd=SGtsUXhQWHVvTjBuNnp4KzI1UFhyZz09
 [UTC]: https://www.timeanddate.com/time/zone/timezone/utc
