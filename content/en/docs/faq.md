@@ -13,7 +13,7 @@ The following registries are compatible with the Notary Project OCI signature sp
 - [Amazon Elastic Container Registry](https://docs.aws.amazon.com/AmazonECR/latest/userguide/what-is-ecr.html)
 - [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)
 - [ORAS Distribution Registry](https://github.com/oras-project/distribution/pkgs/container/registry/64589674?tag=v1.0.0-rc.4)
-- [Zot registry](https://zotregistry.io/v1.4.3/)
+- [Zot registry](https://zotregistry.io/)
 
 
 ## JWS signature envelope

@@ -7,6 +7,7 @@ weight: 4
 Plugins for `notation` provide functionality and integration with key stores and signing services. For example:
 - The [notation-azure-kv](https://github.com/Azure/notation-azure-kv) plugin allows you to sign a Notation-generated payload with a private key in [Azure Key Vault](https://learn.microsoft.com/en-us/azure/key-vault/general/overview?wt.mc_id=azurelearn_inproduct_oss_notaryproject).
 - The [AWS Signer plugin for Notation](https://docs.aws.amazon.com/signer/latest/developerguide/image-signing-prerequisites.html) lets you sign and verify images using Notation with keys and certificates managed by [AWS Signer](https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html), a signing service.
+- The [Venafi CodeSign Protect plugin for Notation](https://github.com/Venafi/notation-venafi-csp) enables the secure signing and verification of images using the [Venafi CodeSign Protect](https://venafi.com/codesign-protect/) platform.
 
 ## Install a plugin
 
@@ -38,9 +39,10 @@ Confirm the plugin is listed in the output. For example:
 
 ```console
 $ notation plugin list
-NAME                                 DESCRIPTION                                   VERSION   CAPABILITIES                                                             ERROR
-azure-kv                             Sign artifacts with keys in Azure Key Vault   0.6.0     [SIGNATURE_GENERATOR.RAW]                                                                     <nil>
-com.amazonaws.signer.notation.plugin AWS Signer plugin for Notation                1.0.290   [SIGNATURE_GENERATOR.ENVELOPE SIGNATURE_VERIFIER.TRUSTED_IDENTITY SIGNATURE_VERIFIER.REVOCATION_CHECK] <nil>
+NAME                                 DESCRIPTION                                           VERSION          CAPABILITIES                                                             ERROR
+azure-kv                             Sign artifacts with keys in Azure Key Vault           0.6.0            [SIGNATURE_GENERATOR.RAW]                                                                     <nil>
+com.amazonaws.signer.notation.plugin AWS Signer plugin for Notation                        1.0.290          [SIGNATURE_GENERATOR.ENVELOPE SIGNATURE_VERIFIER.TRUSTED_IDENTITY SIGNATURE_VERIFIER.REVOCATION_CHECK] <nil>
+venafi-csp                           Sign artifacts with keys in Venafi CodeSign Protect   0.2.0-release    [SIGNATURE_GENERATOR.ENVELOPE SIGNATURE_VERIFIER.TRUSTED_IDENTITY SIGNATURE_VERIFIER.REVOCATION_CHECK] <nil>
 ```
 
 ## Uninstall a plugin
@@ -74,3 +76,4 @@ The following plugins are currently available for `notation`:
 
 - [AWS Signer](https://docs.aws.amazon.com/signer/latest/developerguide/image-signing-prerequisites.html) plugin for Notation. For more details on using this plugin for sign and verify images, see [Notation with AWS Signer](https://aws.amazon.com/blogs/containers/announcing-container-image-signing-with-aws-signer-and-amazon-eks/)
 - [notation-azure-kv](https://github.com/Azure/notation-azure-kv). For more details on using this plugin, see [Sign a Notation-generated payload with a certificate in Azure Key Vault](https://learn.microsoft.com/azure/container-registry/container-registry-tutorial-sign-build-push?wt.mc_id=azurelearn_inproduct_oss_notaryproject).
+- [Venafi CodeSign Protect](https://github.com/Venafi/notation-venafi-csp) plugin for Notation that leverages the [Venafi CodeSign Protect](https://venafi.com/codesign-protect/) platform.  For more details on using this plugin, see the usage [instructions](https://github.com/Venafi/notation-venafi-csp/blob/main/README.md).
