@@ -13,7 +13,7 @@ All organizations are sorted alphabetically below.
 
 | Organization | Website | Scenario | 
 | --- | --- | --- | 
-| Amazon | https://aws.amazon.com/ | AWS container signing solution |
+| Amazon | https://aws.amazon.com/ | [AWS Signer](https://docs.aws.amazon.com/signer/latest/developerguide/image-signing-prerequisites.html) |
 | containerd |  http://containerd.io/ |  [container image sign and verify with notation tool](https://github.com/containerd/nerdctl/blob/main/docs/notation.md) |
 | Harbor | https://goharbor.io/ |  Storage and display Notary Project signature |
 | Kyverno | https://kyverno.io/ | [Support verifying Notary Project signature](https://kyverno.io/docs/writing-policies/verify-images/notary/) |
