@@ -132,7 +132,7 @@ params:
   navbar:
     logos:
       github:
-        url: https://github.com/notaryproject/notation
+        url: https://github.com/notaryproject/.github
       twitter:
         url: https://mobile.twitter.com/NotaryProject
       slack:
