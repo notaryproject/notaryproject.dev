@@ -15,7 +15,7 @@ All organizations are sorted alphabetically below.
 | --- | --- | --- | 
 | Amazon | https://aws.amazon.com/ | [AWS Signer](https://docs.aws.amazon.com/signer/latest/developerguide/image-signing-prerequisites.html) |
 | containerd |  http://containerd.io/ |  [container image sign and verify with notation tool](https://github.com/containerd/nerdctl/blob/main/docs/notation.md) |
-| Harbor | https://goharbor.io/ |  Storage and display Notary Project signature |
+| Harbor | https://goharbor.io/ |  [Storage and display Notary Project signature](https://goharbor.io/docs/main/working-with-projects/working-with-images/sign-images/#use-notationexperimental-to-sign-artifacts-with-distribution-spec-v11-mode) |
 | Kyverno | https://kyverno.io/ | [Support verifying Notary Project signature](https://kyverno.io/docs/writing-policies/verify-images/notary/) |
 | Microsoft | https://www.microsoft.com/ | [Build, sign, and verify container images using Notation and Azure Key Vault](https://learn.microsoft.com/azure/container-registry/container-registry-tutorial-sign-build-push?wt.mc_id=azurelearn_inproduct_oss_notaryproject)  |
 | Ratify |  https://ratify.sh/ | Validating OCI Artifact signatures using Notation library |
