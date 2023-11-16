@@ -1,8 +1,10 @@
 ---
 title: "Quickstart: Sign and validate a container image"
-description: "Quickly set up a OCI-based registry and use notation to sign and validate a container image"
+description: "Quickly set up an OCI-based registry and use notation to sign and validate a container image"
 type: docs
 weight: 1
+aliases:
+    /docs/quickstart/
 ---
 
 {{% alert title="Playground" color="info" %}}
@@ -68,7 +70,11 @@ Confirm there are no signatures shown in the output.
 
 ## Generate a test key and self-signed certificate
 
-Use `notation cert generate-test` to generate a test RSA key for signing artifacts, and a self-signed X.509 test certificate for verifying artifacts. Please note the self-signed certificate should be used for testing or development purposes only.
+Use `notation cert generate-test` to generate a test RSA key for signing artifacts, and a self-signed X.509 test certificate for verifying artifacts.
+
+{{% alert title="Warning" color="warning" %}}
+A self-signed certificate should be used for testing or development purposes only.
+{{% /alert %}}
 
 The following command generates a test key and a self-signed X.509 certificate. With the `--default` flag, the test key is set as a default signing key. The self-signed X.509 certificate is added to a named trust store `wabbit-networks.io` of type `ca`.
 
@@ -76,7 +82,8 @@ The following command generates a test key and a self-signed X.509 certificate. 
 notation cert generate-test --default "wabbit-networks.io"
 ```
 
-{{% alert title="Note" color="primary" %}}
+
+{{% alert title="Note" color="note" %}}
 At this time, test key and self-signed certificate files created using `notation cert generate-test` can't be removed using only `notation key delete` and `notation cert delete`. For more details on fully removing the test key and self-signed certificate files, see [Remove the test key and self-signed certificate]({{< ref "/docs/user-guides/installation/uninstall#remove-the-test-key-and-self-signed-certificate" >}}).
 {{% /alert %}}
 
