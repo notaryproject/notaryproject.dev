@@ -60,7 +60,7 @@ export NOTATION_EXPERIMENTAL=1
 
 There are two major features which are marked as experimental.
  
-- [Signing, listing, and verifying artifacts with OCI image layout](/docs/user-guides/how-to/oci-image-layout/how-to/oci-image-layout/) before they are pushed to a registry. This enables users sign and verify artifacts stored on the local file system.
+- [Signing, listing, and verifying artifacts with OCI image layout](/docs/user-guides/how-to/oci-image-layout/) before they are pushed to a registry. This enables users sign and verify artifacts stored on the local file system.
 - [OCI distribution referrers API](https://github.com/opencontainers/distribution-spec/blob/v1.1.0-rc2/spec.md#enabling-the-referrers-api). This allows the Notation CLI to fetch a list of signatures in an efficient and clean manner.
 
 ### Extensibility: plugin support for Notation
