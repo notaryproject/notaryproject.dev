@@ -73,7 +73,7 @@ For Notary Project contribution guidelines, see [How to contribute][].
 </div>
 
 [notaryproject-youtube]: https://youtube.com/playlist?list=PL1ykZdgmLkb7SlXax-hJVUgvNHmq4Cyz9
-[How to contribute]: https://github.com/notaryproject/notaryproject/blob/main/CONTRIBUTING.md
+[How to contribute]: https://github.com/notaryproject/.github/blob/main/CONTRIBUTING.md
 [notary-project-meeting-doc]: https://hackmd.io/_vrqBGAOSUC_VWvFzWruZw
 [tuf-meeting-doc]: https://hackmd.io/wii3-L8ZQZ-U3ET0XNY8Gg
 [online]: https://zoom.us/j/6115932621?pwd=SGtsUXhQWHVvTjBuNnp4KzI1UFhyZz09

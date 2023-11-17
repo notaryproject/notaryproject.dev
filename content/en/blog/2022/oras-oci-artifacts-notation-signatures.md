@@ -95,7 +95,7 @@ Sign the image with the certificate key just created:
 notation sign --plain-http $IMAGE
 ```
 
-Now you need to configure the [trust policy](https://notaryproject.dev/docs/concepts/trust-store-trust-policy-specification/#trust-policy) to specify trusted identities which sign the artifacts, and level of signature verification to use:
+Now you need to configure the [trust policy](https://github.com/notaryproject/specifications/blob/v1.0.0/specs/trust-store-trust-policy.md) to specify trusted identities which sign the artifacts, and level of signature verification to use:
 
 ```shell
 cat <<"EOF" > ~/.config/notation/trustpolicy.json

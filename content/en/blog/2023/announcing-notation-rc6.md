@@ -41,7 +41,7 @@ The original flag `--plain-http` and its description did not emphasize that it i
 
 ## Known issue
 
-An issue was reported on this version that `notation login/logout` commands failed to detect credentials store, which is actually present and used by Docker CLI. See [details](https://github.com/notaryproject/notation/issues/696). This issue doesn't impact other notation commands, so if you have successfully logged in registries using `docker login`, you can continue to use other Notation commands, for example, `notation sign`. If you want to fix the issue for `notation login/logout`, the workaround is to manually create or update `config.json` file with correct credentials store configuration, and store this file under notation [configuration directory](https://notaryproject.dev/docs/concepts/directory-structure/#general-configuration). For example:
+An issue was reported on this version that `notation login/logout` commands failed to detect credentials store, which is actually present and used by Docker CLI. See [details](https://github.com/notaryproject/notation/issues/696). This issue doesn't impact other notation commands, so if you have successfully logged in registries using `docker login`, you can continue to use other Notation commands, for example, `notation sign`. If you want to fix the issue for `notation login/logout`, the workaround is to manually create or update `config.json` file with correct credentials store configuration, and store this file under notation [configuration directory](/docs/user-guides/how-to/directory-structure/). For example:
 
 ```jsonc
 {

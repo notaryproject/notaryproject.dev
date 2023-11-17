@@ -48,7 +48,7 @@ From the software producer's perspective, signing a software artifact enables th
 From the software consumer's perspective, verifying the signature of a signed artifact ensures its integrity and authenticity. Notary Project provides the following core capabilities for verification experience:
 
 - Verify signatures using [trust store and trust policy](https://github.com/notaryproject/specifications/blob/v1.0.0/specs/trust-store-trust-policy.md). This also includes fine-tuned OCI repository specific trust policies and support for various enforcement levels (e.g. `enforce`, `permissive`, `audit`) to enable a wide range of scenarios. 
-- [`notation policy`](https://notaryproject.dev/docs/cli-reference/notation_policy/) command can be used to simplify the experience of importing and inspecting the trust policy.
+- [`notation policy`](/docs/user-guides/cli-reference/notation_policy/) command can be used to simplify the experience of importing and inspecting the trust policy.
 
 ### Experimental features
 
@@ -60,7 +60,7 @@ export NOTATION_EXPERIMENTAL=1
 
 There are two major features which are marked as experimental.
  
-- [Signing, listing, and verifying artifacts with OCI image layout](https://notaryproject.dev/docs/how-to/oci-image-layout/) before they are pushed to a registry. This enables users sign and verify artifacts stored on the local file system.
+- [Signing, listing, and verifying artifacts with OCI image layout](/docs/user-guides/how-to/oci-image-layout/how-to/oci-image-layout/) before they are pushed to a registry. This enables users sign and verify artifacts stored on the local file system.
 - [OCI distribution referrers API](https://github.com/opencontainers/distribution-spec/blob/v1.1.0-rc2/spec.md#enabling-the-referrers-api). This allows the Notation CLI to fetch a list of signatures in an efficient and clean manner.
 
 ### Extensibility: plugin support for Notation
