@@ -106,14 +106,21 @@ The path of the general configuration file of the `notation` CLI is as follows.
 ```
 
 ### Trust Store
+A trust store is a directory located within the filesystem that contains multiple collections of certificates, which are used to validate signatures. The Notary Project trust store currently support three types of certificates: 
+- Certificates from Certificate Authorities (CAs), which are stored in the `X509/ca` directory.
+- Signing Authority certificates, stored in the `X509/signingAuthority` directory. 
+- Time Stamping Authority (TSA) certificates, which will be supported in future releases and will be stored in the `X509/tsa` directory.
 
-The path of a certificate file in a [Trust Store][TS] follows the pattern of below
+These sub-directories also known as named stores support certificate files with the .pem, .crt, and .cer extensions.
+
+The path of a certificate file in a [Trust Store][TS] follows the pattern below:
 
 ```console
 {NOTATION_CONFIG}/truststore/{trust-store-type}/{named-store}/{cert-file}
 ```
 
 ### Trust Policy
+Developers can create a trust policy to verify artifact signatures from a registry. A trust policy is a policy language which specifies which identities are trusted to validate an artifact signature and the level of signature verification to be used. Typically, a trust policy is written in JSON and located within the notation configuration directory.
 
 The path of the [Trust Policy][TP] file is as follows.
 
