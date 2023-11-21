@@ -24,8 +24,8 @@ Below are the specific details for the seven issues identified in the security a
 * Potential endless data attack in `notation ls`, ADA-NOT-23-1, aka [CVE-2023-33958](https://github.com/notaryproject/notation/security/advisories/GHSA-rvrx-rrwh-r9p6), fixed in Notation-v1.0.0-RC.6.
 * Max allowed signatures could lead to an endless data attack, ADA-NOT-23-2, aka [CVE-2023-33957](https://github.com/notaryproject/notation/security/advisories/GHSA-9m3v-v4r5-ppx7), fixed in Notation-v1.0.0-RC.6.
 * Overwriting global variable could lead to undefined behavior of Notation in the future, ADA-NOT-23-3, fixed in Notation-v1.0.0-RC.6.
-* Insufficient security-relevant documentation findings, ADA-NOT-23-4, are fixed with documentation updates in [securely deploy Notation](https://notaryproject.dev/docs/concepts/secure-deployment/). 
-* Clear text storage of sensitive information in an environment variable, ADA-NOT-23-5, fixed by adding security best practice document on [how to authenticate to OCI registries](https://notaryproject.dev/docs/how-to/registry-authentication/).
+* Insufficient security-relevant documentation findings, ADA-NOT-23-4, are fixed with documentation updates in [securely deploy Notation](/docs/user-guides/secure-deployment/). 
+* Clear text storage of sensitive information in an environment variable, ADA-NOT-23-5, fixed by adding security best practice document on [how to authenticate to OCI registries](/docs/user-guides/how-to/registry-authentication/).
 * Insufficient verification of fetched artifact descriptor, ADA-NOT-23-6, aka [CVE-2023-33959](https://github.com/notaryproject/notation-go/security/advisories/GHSA-xhg5-42rf-296r), fixed in Notation-v1.0.0-RC.6.
 * Denial of service from resource exhaustion in `notation inspect`, ADA-NOT-23-7, fixed in Notation-v1.0.0-RC.6.
  
@@ -42,8 +42,8 @@ Notation overwrites a global import identifier in the verification command. Ther
 ### Insufficient documentation and non-descriptive CLI command (ADA-NOT-23-4 and ADA-NOT-23-5)
 
 Notation maintainers have improved documentation to include security best practices for
-- [Securely deploying Notation](https://notaryproject.dev/docs/concepts/secure-deployment/)
-- [Securely developing and managing plugins](https://notaryproject.dev/docs/concepts/secure-plugin-development/). Ensure plugins are downloaded from a trusted source
+- [Securely deploying Notation](/docs/user-guides/secure-deployment/)
+- [Securely developing and managing plugins](/docs/developer-guides/secure-plugin-development/). Ensure plugins are downloaded from a trusted source
 - Renamed `plain-http` flag to `insecure-registry` to clarify that authenticating to registries over HTTP is insecure and should only be used for testing purposes 
  
 ### Validating unintended artifact (ADA-NOT-23-6)
