@@ -1,7 +1,7 @@
 ---
 title: VMware Tanzu Application Catalog now uses Notation for signing and verifying OCI artifacts
 author:  Beltran Rueda
-date: 2023-12-18
+date: 2023-12-19
 draft: true
 ---
 
@@ -19,6 +19,6 @@ With this integration, Notation plays a key role in Tanzu Application Catalog’
 
 Thus, Notation, with its standards-based tooling for signing and verifying artifacts, helps Tanzu Application Catalog achieve improved security while delivering compliant open source software artifacts for mission critical production use cases.
 
-To read more about how Tanzu Application Catalog leverages Notation, check out [this blog](TBD).
+To read more about how Tanzu Application Catalog leverages Notation, check out [this blog](https://tanzu.vmware.com/content/vmware-application-catalog-resources/tanzu-application-catalog-leverages-notation).
 
 If you are interested in learning more about Tanzu Application Catalog, check out their [product webpage](https://tanzu.vmware.com/application-catalog) and [additional resources](https://tanzu.vmware.com/content/vmware-application-catalog-resources/jun-23-boost-developer-productivity-and-operator-confidence-with-secure-open-source-components).
