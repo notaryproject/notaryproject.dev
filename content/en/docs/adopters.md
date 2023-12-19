@@ -19,5 +19,6 @@ All organizations are sorted alphabetically below.
 | Kyverno | https://kyverno.io/ | [Support verifying Notary Project signature](https://kyverno.io/docs/writing-policies/verify-images/notary/) |
 | Microsoft | https://www.microsoft.com/ | [Build, sign, and verify container images using Notation and Azure Key Vault](https://learn.microsoft.com/azure/container-registry/container-registry-tutorial-sign-build-push?wt.mc_id=azurelearn_inproduct_oss_notaryproject)  |
 | Ratify |  https://ratify.sh/ | Validating OCI Artifact signatures using Notation library |
+| Tanzu Application Catalog | https://tanzu.vmware.com/application-catalog | Sign and Verify a large catalog of Helm charts, container images and metadata bundles. |
 | Venafi | https://venafi.com/codesign-protect/ | [Sign and Verify container images using Notation and Venafi CodeSign Protect](https://github.com/Venafi/notation-venafi-csp) |
 
