@@ -5,7 +5,7 @@ date: 2023-12-19
 draft: false
 ---
 
-[VMware Tanzu Application Catalog](https://tanzu.vmware.com/application-catalog), the enterprise edition of [Bitnami Application Catalog](https://bitnami.com/), now leverages [Notation](https://github.com/notaryproject/notation) as a tool for signing and verifying open container initiative (OCI) artifacts (container images, Helm charts, and metadata bundles).
+[VMware Tanzu Application Catalog](https://tanzu.vmware.com/application-catalog), the enterprise edition of [Bitnami Application Catalog](https://bitnami.com/), now leverages [Notation](https://github.com/notaryproject/notation) as a tool for signing and verifying open container initiative (OCI) artifacts (e.g. container images, Helm charts, and metadata bundles).
 
 Tanzu Application Catalog enables enterprises to build their own private catalog of custom-packaged open source application components that are continuously maintained and verifiably tested for use in production environments. Built by leveraging Bitnami’s expertise in packaging hundreds of open source software applications and delivering them to millions of developers, Tanzu Application Catalog aims to address the open source software needs of enterprises by providing them with customized ready-to-deploy open source applications along with extensive metadata for efficient risk assessment.
 
