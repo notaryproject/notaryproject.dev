@@ -2,7 +2,7 @@
 title: VMware Tanzu Application Catalog now uses Notation for signing and verifying OCI artifacts
 author:  Beltran Rueda
 date: 2023-12-19
-draft: true
+draft: false
 ---
 
 [VMware Tanzu Application Catalog](https://tanzu.vmware.com/application-catalog), the enterprise edition of [Bitnami Application Catalog](https://bitnami.com/), now leverages [Notation](https://github.com/notaryproject/notation) as a tool for signing and verifying open container initiative (OCI) artifacts (container images, Helm charts, and metadata bundles).
