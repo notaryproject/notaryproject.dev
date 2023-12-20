@@ -2,6 +2,10 @@
 title: Blog
 linkTitle: Blog
 description: News, updates, release announcements, and more
+menu:
+  main:
+    name: Blog
+    weight: -50
 # Notes:
 # - Place blog entries under a folder corresponding to the year of publication.
 # - By default the permalink will be /blog/year/filename. If you'd rather have
