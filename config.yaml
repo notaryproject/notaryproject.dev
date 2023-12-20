@@ -177,9 +177,6 @@ outputs:
 # Site menu (partial -- also see pages with 'menu' in front matter)
 menu:
   main:
-    - name: Blog
-      url: ./blog/
-      weight: -50
     - name: Roadmap
       url: https://github.com/notaryproject/roadmap
       weight: -20
