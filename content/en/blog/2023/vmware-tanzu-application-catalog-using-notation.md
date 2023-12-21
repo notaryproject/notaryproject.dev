@@ -13,7 +13,7 @@ With this integration, Notation plays a key role in Tanzu Application Catalog’
 
 ## What Tanzu Application Catalog achieves by using Notation
 
-* **Ensure content integrity**: By signing their OCI artifacts using Notation, Tanzu Application Catalog team can help ensure the integrity of the OCI artifacts they deliver to their customers. Tanzu team uses Notation to signs their OCI artifacts, creating a unique fingerprint for each version of the artifact. Any tampering with the OCI artifact will result in a failed verification, alerting users to potential security threats.
+* **Ensure content integrity**: By signing their OCI artifacts using Notation, Tanzu Application Catalog team can help ensure the integrity of the OCI artifacts they deliver to their customers. Tanzu team uses Notation to sign their OCI artifacts, creating a unique fingerprint for each version of the artifact. Any tampering with the OCI artifact will result in a failed verification, alerting users to potential security threats.
 * **Verify authenticity**: Knowing the source of OCI artifacts is crucial for security and compliance of enterprises. Notation, a client from the Notary Project, helps generate cryptographic signatures to verify artifact authenticity by validating signer's cryptographic identity. Validation helps ensures that the signed applications are built by trusted sources, i.e. Tanzu Application Catalog in this case, reducing the risk of deploying unapproved software.
 * **Interoperability across tools and platforms**: Notary Project along with its client tool Notation has standardized signature format. This standardization enables interoperability across different tools, registries, container orchestrators, and platforms that support the OCI image format.
 
