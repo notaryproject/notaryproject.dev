@@ -6,6 +6,6 @@ command = "npm run build:preview"
 command = "npm run build:production"
 
 [[redirects]]
-  from = "/how-to/*"
-  to = "/user-guides/how-to/"
+  from = "/docs/how-to/*"
+  to = "/docs/user-guides/how-to/*"
   status = 301
