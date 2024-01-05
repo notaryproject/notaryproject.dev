@@ -4,3 +4,8 @@ command = "npm run build:preview"
 
 [context.production]
 command = "npm run build:production"
+
+[[redirects]]
+  from = "/docs/how-to/registry-authentication/"
+  to = "/docs/user-guides/how-to/registry-authentication/"
+  status = 301
