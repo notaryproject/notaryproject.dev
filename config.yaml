@@ -1,4 +1,5 @@
 baseURL: https://notaryproject.dev/
+
 enableRobotsTxt: true
 
 theme: [docsy]
@@ -53,6 +54,19 @@ markup:
 # Everything below this are Site Params
 
 params:
+  versions:
+    # In case of adding a new version, eg. v1.1, replace master (v0.1) with v1.1.
+    - version: master
+      name: Master (v0.1)
+      url: "https://notaryproject.dev/docs/"
+
+  version_menu: "v0.1"
+  version_menu_pagelinks: true
+
+  archived_version: true
+  version: "0.1"
+  url_latest_version: "https://your-latest-doc-site.com"
+
   copyright: Notary Project Authors
   description: >-
     A distributed, reliable key-value store for the most critical data of a

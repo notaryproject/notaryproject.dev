@@ -20,6 +20,18 @@
 				<a class="nav-link{{if $active }} active{{end}}" href="{{ with .Page }}{{ .RelPermalink }}{{ else }}{{ .URL | relLangURL }}{{ end }}" {{ if ne $url.Host $baseurl.Host }}target="_blank" {{ end }}>{{ with .Pre}}{{ $pre }}{{ end }}<span{{if $active }} class="active"{{end}}>{{ .Name }}</span>{{ with .Post}}{{ $post }}{{ end }}</a>
 			</li>
 			{{ end }}
+			{{ if  .Site.Params.versions }}
+			<li class="nav-item dropdown mr-4 d-none d-lg-block">
+				<a class="nav-link dropdown-toggle" href="#" id="versionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				  {{ $.Site.Params.version_menu }}
+				</a>
+				<div class="dropdown-menu" aria-labelledby="versionDropdown">
+				  {{ range $.Site.Params.versions }}
+					<a class="dropdown-item" href="{{ .url }}">{{ .name }}</a>
+				  {{ end }}
+				</div>
+			  </li>
+			{{ end }}
             <div class="flex gap-md nav-item mr-4 mb-2 mb-lg-0">
                 <div class="img-container-xxsm">
                     <a class="nav-link" href="{{ .Site.Params.navbar.logos.github.url }}">
@@ -40,11 +52,6 @@
                     </a>
                 </div>
             </div>
-			{{ if  .Site.Params.versions }}
-			<li class="nav-item dropdown mr-4 d-none d-lg-block">
-				{{ partial "navbar-version-selector.html" . }}
-			</li>
-			{{ end }}
 			{{ if  (gt (len .Site.Home.Translations) 0) }}
 			<li class="nav-item dropdown mr-4 d-none d-lg-block">
 				{{ partial "navbar-lang-selector.html" . }}
