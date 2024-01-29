@@ -1,6 +1,6 @@
 ---
 title: Signing and Verifying of images in Harbor with Notation
-author:  "Roseline Bassey & Feynman"
+author:  "Roseline Bassey & Feynman Zhou"
 date: 2024-01-29
 draft: false
 ---
