@@ -2,7 +2,7 @@
 title: Install the notation CLI
 description: Install the notation CLI on Linux, macOS, and Windows
 weight: 1
-cliVer : 1.0.1
+cliVer : 1.1.0
 ---
 
 ## Download and install the CLI for Linux
