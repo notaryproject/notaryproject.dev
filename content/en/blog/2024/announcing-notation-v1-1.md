@@ -56,7 +56,7 @@ To get started with Notation v1.1.0 in a CI/CD workflow, you can find the Notati
 
 ## What's next
 
-The Notary Project maintainers are considering the following features for future milestones. Feel free to reach out on the [Slack channel](https://app.slack.com/client/T08PSQ7BQ/CQUH8U287/) or [GitHub issues](https://github.com/notaryproject/.github/issues) to ask questions, provide feedback, or share ideas.
+The Notary Project maintainers are considering the following features for future milestones. Feel free to reach out on the [Slack channel](https://app.slack.com/client/T08PSQ7BQ/CQUH8U287/) or [GitHub issues](https://github.com/notaryproject/notation/issues) to ask questions, provide feedback, or share ideas.
 
 - Sign and verify arbitrary blobs
 - Timestamping support
