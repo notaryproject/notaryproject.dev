@@ -38,7 +38,7 @@ npm install
 
 >Note: By default, this process is performed on the `origin/main` branch. Ensure you perform this step on a branch based on `origin` before creating new branches based on `upstream/main`. Skipping this step may result in incorrect submodule installations.
 
-### Building and Serving the Site
+### Building and Serving the Site Locally
 To locally serve the site at `localhost:8888`, run the following command:
 ```console
 npm run serve
