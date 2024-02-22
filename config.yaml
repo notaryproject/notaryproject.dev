@@ -56,9 +56,15 @@ markup:
 params:
   versions:
     - version: master
-      name: Master (v0.1)
-      url: "https://notaryproject.dev/docs/"
-  version_menu: "v0.1"
+      name: main
+      url: "https://notaryproject.dev/"
+    - version: v1.1
+      name: v1.1
+      url: "https://v1-1.notaryproject.dev/"
+    - version: v1.0
+      name: v1.0
+      url: "https://v1-0.notaryproject.dev/"
+  version_menu: "Version"
   version_menu_pagelinks: true
   archived_version: true
   version: "0.1"
