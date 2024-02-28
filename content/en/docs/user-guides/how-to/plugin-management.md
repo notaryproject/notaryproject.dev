@@ -19,20 +19,19 @@ Before creating the `{plugin-name}` directory, confirm you are using a name that
 
 ## Usage
 
-### Install a plugin from URL:
+### Install a plugin from file system:
 
 `notation plugin install --file <file_path>`
 
-### Install a plugin from file system: 
+### Install a plugin from URL: 
 
 `notation plugin install --sha256sum <digest> --url <HTTPS_URL>`
 
-The following examples show how to install each plugin:
+{{% alert title="plugin" color="info" %}}
+The following examples show how to install each plugin on a Linux AMD64 machine. To install a plugin on other operating systems and architectures, please get the URL or plugin binary file from plugin vendors' website.
+{{% /alert %}}
 
-## Install Notation AWS Signer plugin
-
-### Install from URL:
-*(Installation from URL is unsupported.)*
+## Install Notation AWS Signer plugin (v1.0.298)
 
 ### Install from file system
 
@@ -43,6 +42,9 @@ notation plugin install --file notation-aws-signer-plugin.zip
 Successfully installed plugin com.amazonaws.signer.notation.plugin, version 1.0.298
 ```
 Upon successful execution, the plugin is copied to Notation's plugin directory.
+
+### Install from URL:
+*(Installation from URL is unsupported.)*
 
 ## Install Notation Azure Key Vault Plugin (v1.0.2)
 
@@ -98,7 +100,7 @@ venafi-csp                           Sign artifacts with keys in Venafi CodeSign
 ```
 
 ## Uninstall a plugin
-To remove a plugin, use `notation plugin uninstall` and the name of the plugin.
+To uninstall a plugin, use `notation plugin uninstall`.
 
 ```console
 notation plugin uninstall <plugin_name>
