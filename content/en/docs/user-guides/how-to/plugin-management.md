@@ -32,7 +32,8 @@ The following examples show how to install each plugin on a Linux AMD64 machine.
 {{% /alert %}}
 
 ## Install Notation AWS Signer plugin
-To find out more about the AWS Signer plugin, please refer to: https://docs.aws.amazon.com/signer/latest/developerguide/image-signing-prerequisites.html
+
+To find out more about the AWS Signer plugin, please refer to their official [documentation](https://docs.aws.amazon.com/signer/latest/developerguide/image-signing-prerequisites.html).
 
 ### Install from file system
 
@@ -45,7 +46,8 @@ Successfully installed plugin com.amazonaws.signer.notation.plugin, version 1.0.
 Upon successful execution, the plugin is copied to Notation's plugin directory.
 
 ## Install Notation Azure Key Vault Plugin (v1.0.2)
-To find out more about the Azure Key Vault Plugin, please refer to: https://github.com/Azure/notation-azure-kv
+
+To find out more about the Azure Key Vault Plugin, please refer to this [GitHub repository](https://github.com/Azure/notation-azure-kv).
 
 ### Install from URL:
 
@@ -65,7 +67,8 @@ Successfully installed plugin azure-kv, version 1.0.2
 ```
 
 ## Install Notation Venafi Plugin (v0.3.0)
-To find out more about the Venafi Plugin, please refer to: https://github.com/Venafi/notation-venafi-csp
+
+To find out more about the Venafi Plugin, please refer to this [GitHub repository](https://github.com/Venafi/notation-venafi-csp).
 
 ### Install from URL:
 
