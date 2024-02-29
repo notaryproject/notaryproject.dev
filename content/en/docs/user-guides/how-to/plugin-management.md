@@ -31,7 +31,8 @@ Before creating the `{plugin-name}` directory, confirm you are using a name that
 The following examples show how to install each plugin on a Linux AMD64 machine. To install a plugin on other operating systems and architectures, please get the URL or plugin binary file from plugin vendors' website.
 {{% /alert %}}
 
-## Install Notation AWS Signer plugin (v1.0.298)
+## Install Notation AWS Signer plugin
+To find out more about the AWS Signer plugin, please refer to: https://docs.aws.amazon.com/signer/latest/developerguide/image-signing-prerequisites.html
 
 ### Install from file system
 
@@ -43,10 +44,8 @@ Successfully installed plugin com.amazonaws.signer.notation.plugin, version 1.0.
 ```
 Upon successful execution, the plugin is copied to Notation's plugin directory.
 
-### Install from URL:
-*(Installation from URL is unsupported.)*
-
 ## Install Notation Azure Key Vault Plugin (v1.0.2)
+To find out more about the Azure Key Vault Plugin, please refer to: https://github.com/Azure/notation-azure-kv
 
 ### Install from URL:
 
@@ -66,11 +65,12 @@ Successfully installed plugin azure-kv, version 1.0.2
 ```
 
 ## Install Notation Venafi Plugin (v0.3.0)
+To find out more about the Venafi Plugin, please refer to: https://github.com/Venafi/notation-venafi-csp
 
 ### Install from URL:
 
 ```console
-notation plugin install --url https://github.com/Venafi/notation-venafi-csp/releases/download/v0.3.0/notation-venafi-csp-linux-amd64.tar.gz 
+notation plugin install --url https://github.com/Venafi/notation-venafi-csp/releases/download/v0.3.0/notation-venafi-csp-linux-amd64.tar.gz --sha256sum 03771794643f18c286b6db3a25a4d0b8e7c401e685b1e95a19f03c9356344f5a
 Successfully installed plugin venafi-csp, version 0.3.0-release
 ```
 
