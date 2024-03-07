@@ -1,2 +1,1 @@
-{{ $latest := site.Params.versions.latest }}
-
+{{ $latest := index .Site.Params.versions (sub (len .Site.Params.versions) 1) }}
