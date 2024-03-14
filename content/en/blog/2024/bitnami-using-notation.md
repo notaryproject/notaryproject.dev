@@ -1,5 +1,5 @@
 ---
-title: Bitnami now uses Notation for signing and verifying images on DockerHub
+title: Bitnami now uses Notation for signing and verifying images and Helm Charts on Docker Hub
 author:  Beltran Rueda
 date: 2024-03-18
 draft: true
