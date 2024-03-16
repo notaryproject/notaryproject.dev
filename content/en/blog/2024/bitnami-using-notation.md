@@ -2,7 +2,7 @@
 title: Bitnami now uses Notation for signing and verifying containers and Helm charts on Docker Hub
 author:  Beltran Rueda
 date: 2024-03-18
-draft: true
+draft: false
 ---
 
 Bitnami-packaged open source software container images and Helm charts [available in DockerHub](https://hub.docker.com/u/bitnami) are now signed by [Notation](https://github.com/notaryproject/notation).
