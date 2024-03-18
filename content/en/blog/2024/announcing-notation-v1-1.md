@@ -5,7 +5,7 @@ date: 2024-02-08
 draft: false
 ---
 
-The Notary Project maintainers are proud to announce new releases for its sub-projects, including [Notary Project specifications v1.1.0](https://github.com/notaryproject/specifications/releases/tag/v1.1.0), [notation v1.1.0](https://github.com/notaryproject/notation/releases/tag/v1.1.0), [notation-go v1.1.0](https://github.com/notaryproject/notation-go/releases/tag/v1.1.0), and [notation-core-go v1.0.2](https://github.com/notaryproject/notation-core-go/releases/tag/v1.0.2), [Notation GitHub Actions v1.0.1](https://github.com/notaryproject/notation-action/releases/tag/v1.0.1) which are ready for production use! 
+The Notary Project maintainers are proud to announce new releases for its sub-projects, including [notation v1.1.0](https://github.com/notaryproject/notation/releases/tag/v1.1.0), [notation-go v1.1.0](https://github.com/notaryproject/notation-go/releases/tag/v1.1.0), and [notation-core-go v1.0.2](https://github.com/notaryproject/notation-core-go/releases/tag/v1.0.2), [Notation GitHub Actions v1.0.1](https://github.com/notaryproject/notation-action/releases/tag/v1.0.1) which are ready for production use! 
 
 Meanwhile, a new library [notation-plugin-framework-go
 ](https://github.com/notaryproject/notation-plugin-framework-go) released the first release v1.0.0. It contains framework required to create notation plugins as per [Notation Plugin specification](https://github.com/notaryproject/specifications/blob/v1.1.0/specs/plugin-extensibility.md). 
@@ -42,9 +42,9 @@ The following plugins have been well tested with Notation plugin commands by Not
 - [Azure Key Vault for Notation](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-tutorial-sign-build-push)
 - [Venafi CodeSign Protect Signing Plugin for Notation](https://github.com/Venafi/notation-venafi-csp)
 
-### Specifications
+### Plugin conventions
 
-For plugin vendors who want to package and distribute a Notation plugin,  [Notation Plugin specification](https://github.com/notaryproject/specifications/blob/v1.1.0/specs/plugin-extensibility.md) defines the plugin conventions to ensure plugins are delivered in a consistent format and compatible with `notation plugin` management commands.
+For plugin vendors who want to package and distribute a Notation plugin,  [Notation Plugin specification](https://github.com/notaryproject/specifications/blob/main/specs/plugin-extensibility.md#package-and-release-a-plugin) defines the plugin conventions to ensure plugins are delivered in a consistent format and compatible with `notation plugin` management commands.
 
 ### Get started with Notation v1.1.0
 
