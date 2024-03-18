@@ -14,6 +14,7 @@ All organizations are sorted alphabetically below.
 | Organization | Website | Scenario | 
 | --- | --- | --- | 
 | Amazon | https://aws.amazon.com/ | [AWS Signer](https://docs.aws.amazon.com/signer/latest/developerguide/image-signing-prerequisites.html) |
+| Bitnami | https://bitnami.com/ | [Sign and verify containers and Helm charts available in Docker Hub](https://blog.bitnami.com/2024/03/bitnami-packaged-containers-and-helm.html) |
 | containerd |  http://containerd.io/ |  [container image sign and verify with notation tool](https://github.com/containerd/nerdctl/blob/main/docs/notation.md) |
 | Harbor | https://goharbor.io/ |  [Storage and display Notary Project signature](https://goharbor.io/docs/main/working-with-projects/working-with-images/sign-images/#use-notationexperimental-to-sign-artifacts-with-distribution-spec-v11-mode) |
 | Kyverno | https://kyverno.io/ | [Support verifying Notary Project signature](https://kyverno.io/docs/writing-policies/verify-images/notary/) |
