@@ -5,10 +5,6 @@ type: docs
 weight: 7
 ---
 
-## What registries are compatible with the Notary Project OCI signature specification and its implementation in Notation?
-
-Please refer to [Registry Support](/content/en/docs/registry-support.md) page.
-
 ## JWS signature envelope
 
 **Q: Why is JWT not used as the signature envelope format?**
