@@ -9,9 +9,9 @@ The following registries, listed in alphabetical order, support Notary Project O
 
 - [Amazon Elastic Container Registry](https://docs.aws.amazon.com/AmazonECR/latest/userguide/what-is-ecr.html)
 - [Azure Container Registry](https://learn.microsoft.com/azure/container-registry/?wt.mc_id=azurelearn_inproduct_oss_notaryproject)
+- [Distribution Distribution](https://github.com/distribution/distribution)
 - [Docker Hub](https://hub.docker.com)
 - [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)
 - [Harbor](https://goharbor.io/)
 - [JFrog Artifactory](https://jfrog.com/artifactory/)
-- [ORAS Distribution Registry](https://github.com/oras-project/distribution/pkgs/container/registry/64589674?tag=v1.0.0-rc.4)
 - [Zot registry](https://zotregistry.io/)
