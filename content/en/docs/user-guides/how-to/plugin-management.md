@@ -11,22 +11,77 @@ Plugins for `notation` provide functionality and integration with key stores and
 
 ## Install a plugin
 
-To install a plugin, download the plugin binary, create a `{plugin-name}` directory in `{NOTATION_LIBEXEC}/plugins/`, and add the plugin binary to that directory. Alternatively, if you are using an application that bundles a plugin and the `notation` binary together, such as [AWS Signer](https://docs.aws.amazon.com/signer/latest/developerguide/image-signing-prerequisites.html), see the installation instructions from the vendor.
+To install a plugin, run the `notation plugin install` command to directly install a plugin either from a URL or from the host file system. This will create a `{plugin-name}` directory in `{NOTATION_LIBEXEC}/plugins/` if the directory does not exist. The supported plugin file formats are `.zip, .tar.gz` and `single plugin executable file`. Alternatively, if you are using an application that bundles a plugin and the `notation` binary together, such as [AWS Signer](https://docs.aws.amazon.com/signer/latest/developerguide/image-signing-prerequisites.html), see the installation instructions from the vendor.
 
 {{% alert title="Warning" color="warning" %}}
 Before creating the `{plugin-name}` directory, confirm you are using a name that follows the [naming structure](#plugin-naming-structure) for plugins. Plugins that do not follow the naming structure will not be recognized by `notation`.
 {{% /alert %}}
 
-The following example downloads and installs version 0.6.0 of [notation-azure-kv](https://github.com/Azure/notation-azure-kv) plugin for on macOS with Apple Silicon using the default location for the Notation installation.
+## Usage
 
-{{% alert title="Warning" color="warning" %}}
-The following example only works for version 0.6.0 of the *notation-azure-kv* plugin on macOS with Apple Silicon using the default location for the Notation installation. You will need to update the filenames, location, and commands for other plugins, versions, and platforms. For more details on the default location of that directory on each platform, see [Notation directory structure for system configuration]({{< ref "/docs/user-guides/how-to/directory-structure.md" >}}).
+### Install a plugin from file system:
+
+`notation plugin install --file <file_path>`
+
+### Install a plugin from URL: 
+
+`notation plugin install --sha256sum <digest> --url <HTTPS_URL>`
+
+{{% alert title="plugin" color="info" %}}
+The following examples show how to install each plugin on a Linux AMD64 machine. To install a plugin on other operating systems and architectures, please get the URL or plugin binary file from plugin vendors' website.
 {{% /alert %}}
 
+## Install Notation AWS Signer plugin
+
+To find out more about the AWS Signer plugin, please refer to their official [documentation](https://docs.aws.amazon.com/signer/latest/developerguide/image-signing-prerequisites.html).
+
+### Install from file system
+
 ```console
-curl -Lo notation-azure-kv_0.6.0_darwin_arm64.tar.gz "https://github.com/Azure/notation-azure-kv/releases/download/v0.6.0/notation-azure-kv_0.6.0_darwin_arm64.tar.gz"
-mkdir -p ~/Library/Application\ Support/notation/plugins/azure-kv
-tar xvzf notation-azure-kv_0.6.0_darwin_arm64.tar.gz -C ~/Library/Application\ Support/notation/plugins/azure-kv notation-azure-kv
+wget https://d2hvyiie56hcat.cloudfront.net/linux/amd64/plugin/latest/notation-aws-signer-plugin.zip
+
+notation plugin install --file notation-aws-signer-plugin.zip
+Successfully installed plugin com.amazonaws.signer.notation.plugin, version 1.0.298
+```
+Upon successful execution, the plugin is copied to Notation's plugin directory.
+
+## Install Notation Azure Key Vault Plugin (v1.0.2)
+
+To find out more about the Azure Key Vault Plugin, please refer to this [GitHub repository](https://github.com/Azure/notation-azure-kv).
+
+### Install from URL:
+
+```console
+notation plugin install --url https://github.com/Azure/notation-azure-kv/releases/download/v1.0.2/notation-azure-kv_1.0.2_linux_amd64.tar.gz --sha256sum f2b2e131a435b6a9742c202237b9aceda81859e6d4bd6242c2568ba556cee20e
+
+Downloading plugin from https://github.com/Azure/notation-azure-kv/releases/download/v1.0.2/notation-azure-kv_1.0.2_linux_amd64.tar.gz
+Download completed
+Successfully installed plugin azure-kv, version 1.0.2
+```
+
+### Install from local file:
+
+```console
+notation plugin install --file notation-azure-kv_1.0.2_linux_amd64.tar.gz
+Successfully installed plugin azure-kv, version 1.0.2
+```
+
+## Install Notation Venafi Plugin (v0.3.0)
+
+To find out more about the Venafi Plugin, please refer to this [GitHub repository](https://github.com/Venafi/notation-venafi-csp).
+
+### Install from URL:
+
+```console
+notation plugin install --url https://github.com/Venafi/notation-venafi-csp/releases/download/v0.3.0/notation-venafi-csp-linux-amd64.tar.gz --sha256sum 03771794643f18c286b6db3a25a4d0b8e7c401e685b1e95a19f03c9356344f5a
+Successfully installed plugin venafi-csp, version 0.3.0-release
+```
+
+### Install from local file:
+
+```console
+notation plugin install --file notation-venafi-csp-linux-amd64.tar.gz
+Successfully installed plugin venafi-csp, version 0.3.0-release
 ```
 
 To confirm you plugin is installed, run `notation plugin list`. For example:
@@ -40,14 +95,19 @@ Confirm the plugin is listed in the output. For example:
 ```console
 $ notation plugin list
 NAME                                 DESCRIPTION                                           VERSION          CAPABILITIES                                                             ERROR
-azure-kv                             Sign artifacts with keys in Azure Key Vault           0.6.0            [SIGNATURE_GENERATOR.RAW]                                                                     <nil>
-com.amazonaws.signer.notation.plugin AWS Signer plugin for Notation                        1.0.290          [SIGNATURE_GENERATOR.ENVELOPE SIGNATURE_VERIFIER.TRUSTED_IDENTITY SIGNATURE_VERIFIER.REVOCATION_CHECK] <nil>
-venafi-csp                           Sign artifacts with keys in Venafi CodeSign Protect   0.2.0-release    [SIGNATURE_GENERATOR.ENVELOPE SIGNATURE_VERIFIER.TRUSTED_IDENTITY SIGNATURE_VERIFIER.REVOCATION_CHECK] <nil>
+
+
+azure-kv                             Sign artifacts with keys in Azure Key Vault           1.0.2            [SIGNATURE_GENERATOR.RAW]                                                                     <nil>
+com.amazonaws.signer.notation.plugin AWS Signer plugin for Notation                        1.0.298          [SIGNATURE_GENERATOR.ENVELOPE SIGNATURE_VERIFIER.TRUSTED_IDENTITY SIGNATURE_VERIFIER.REVOCATION_CHECK] <nil>
+venafi-csp                           Sign artifacts with keys in Venafi CodeSign Protect   0.3.0-release    [SIGNATURE_GENERATOR.ENVELOPE SIGNATURE_VERIFIER.TRUSTED_IDENTITY SIGNATURE_VERIFIER.REVOCATION_CHECK] <nil>
 ```
 
 ## Uninstall a plugin
+To uninstall a plugin, use `notation plugin uninstall`.
 
-To remove a plugin, delete the entire `{NOTATION_LIBEXEC}/plugins/{plugin-name}/` directory.
+```console
+notation plugin uninstall <plugin_name>
+```
 
 To confirm your plugin is uninstalled, run `notation plugin list`. For example:
 
