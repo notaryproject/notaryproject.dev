@@ -112,7 +112,7 @@ notation policy import <POLICY_FILE_NAME>.json
 notation verify -v <REFERENCE_TO_ARTIFACT>
 ```
 
-If the signature was generated before the certificate expired and a trusted timestamp is present, the signature verification will succeed despite the certificate's expiry. However, if the trust store of the `tsa` type is not properly established and configured within the trust policy, the signature verification will fail when the certificate expires.
+If the signature was generated before certificates expiry and a trusted timestamp is present, the signature verification will succeed despite certificates expiry. However, if the trust store of the `tsa` type is not properly established and configured within the trust policy, the signature verification will fail when certificates expire.
 
 ## Configuration for timestamp verification
 
