@@ -17,23 +17,25 @@ Here are some of the major capabilities and features included in this release.
 
 ### Notary Project specifications
 
-The Notary Project specifications now include support for [RFC 3161](https://www.rfc-editor.org/rfc/rfc3161) timestamps and introduce Notation plugin conventions in the [plugin specification](https://github.com/notaryproject/specifications/blob/v1.1.0/specs/plugin-extensibility.md).
+The Notary Project specifications now include support for [RFC 3161](https://www.rfc-editor.org/rfc/rfc3161) timestamping and introduce Notation plugin conventions in the [plugin specification](https://github.com/notaryproject/specifications/blob/v1.1.0/specs/plugin-extensibility.md).
 
 ### Support OCI specification v1.1.0
 
 In Feb 2024, the Open Container Initiative (OCI) community released version 1.1.0, which includes the [OCI image specification v1.1.0](https://github.com/opencontainers/image-spec/releases/tag/v1.1.0) and the [OCI distribution specification v1.1.0](https://github.com/opencontainers/distribution-spec/releases/tag/v1.1.0). Notation now adheres to the OCI spec v1.1.0, leading to the deprecation of the experimental flag `--allow-referrers-api`. A new flag, `--force-referrers-tag` (default to true), has been introduced to the `notation sign` command, enabling users to choose the referrers tag schema over the [referrers API](https://github.com/opencontainers/distribution-spec/blob/v1.1.0/spec.md#enabling-the-referrers-api) if the registry they are using does not yet support the referrers API. The `notation verify/list/inspect` commands will now attempt to use the referrers API first and will automatically fall back to the [referrers tag schema](https://github.com/opencontainers/distribution-spec/blob/v1.1.0/spec.md#referrers-tag-schema) if the referrers API is unsupported by the registry.
 
-### Support for RFC 3161 compliant timestamps
+### Support for RFC 3161 compliant timestamping
 
-Since this release, Notary Project specifications and Notation tool supports RFC 3161 compliant Timestamps. Digital signatures must be generated within the certificate's validity period, as expired certificates compromise the signature's trustworthiness. Trusted timestamps extend the trust of signatures created within certificate validity, allowing successful signature verification even after certificates have expired. Learn more at the document [how to sign and verify artifacts in OCI-compliant registries using trusted timestamps](../../docs/user-guides/how-to/timestamps).
+Since this release, Notation supports RFC 3161 compliant timestamping. Digital signatures must be generated within the certificate's validity period, as expired certificates compromise the signature's trustworthiness. Timestamping extends the trust of signatures created within certificate validity, allowing successful signature verification even after certificates have expired. Notation's timestamping feature is built on top of the `[tspclient-go](https://github.com/notaryproject/tspclient-go)` library.
+
+Learn more at the document [how to sign and verify artifacts in OCI-compliant registries with timestamping](../../docs/user-guides/how-to/timestamping).
 
 ### Other changes
 
-Notation CLI now offers the `armv7` binary, enabling its usage in environments with arm32 processors.
+Notation CLI now offers the `armv7` binary, enabling its usage in environments with ARM32 processors.
 
 ## Get started with Notation v1.2.0
 
-You can follow the [quick start](https://notaryproject.dev/docs/quickstart/) to try Notation v1.2.0 for basic signing and verification workflow.
+You can follow the [quick start](../../docs/quickstart-guides/) to try Notation v1.2.0 for basic signing and verification workflow.
 
 ## What's next
 
