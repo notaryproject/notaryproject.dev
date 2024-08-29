@@ -7,7 +7,7 @@ weight: 9
 
 In the X.509 Public Key Infrastructure (PKI) system, digital signatures must be generated within the certificate's validity period, as expired certificates compromise the signature's trustworthiness. The [RFC 3161](https://www.rfc-editor.org/rfc/rfc3161) standard defines the internet X.509 PKI Time-Stamp Protocol (TSP), where a timestamp is issued by a trusted third party acting as a Time Stamping Authority (TSA). These trusted timestamps extend the trust of signatures created within certificates validity, enabling successful signature verification even after certificates have expired.
 
-Since Notation v1.2.0 release, Notation supports RFC 3161 compliant timestamping. During signing, a countersignature is added to the signature for the signing artifact, ensuring the trustworthiness of the timestamp through validation. However, Notation does not use timestamping to verify that the signature was created before the certificate’s revocation, as the revocation time is not deterministic. For example, the revocation time may not coincide with the time the certificates are compromised.
+Since Notation v1.2.0 release, Notation supports RFC 3161 compliant timestamping. During signing, a timestamp countersignature is added to the Notary Project signature envelope for the signing artifact, ensuring the trustworthiness of the signature through validation. However, Notation does not use timestamp to verify that the signature was created before any certificate revocation, as the revocation time is not deterministic. For example, the revocation time may not coincide with the time the certificates are compromised.
 
 This guide describes how to sign and verify artifacts in OCI ([Open Container Initiative](https://github.com/opencontainers)) compliant registries with timestamping. Artifacts in OCI-compliant registries can be container images or other artifacts such as Software Bill of Materials (SBOM).
 
@@ -22,7 +22,7 @@ Before starting, ensure you have:
 
 ## Sign artifacts in OCI-compliant registries with timestamping
 
-To sign artifacts in OCI-compliant registries with timestamping, you need to select a trusted [RFC 3161](https://www.rfc-editor.org/rfc/rfc3161) compliant TSA. There are public TSAs available, such as [DigitCert](https://www.digicert.com/) TSA and [Globalsign](https://www.globalsign.com/en) TSA. Since Notation CLI v1.2.0, two flags `--timestamp-url` and `--timestamp-root-cert` are introduced to the `notation sign` command for RFC 3161 timestamping. Use the flag `--timestamp-url` to specify the URL of the TSA that you trusted. Use the flag `--timestamp-root-cert` to specify the filepath of downloaded root cert file for the trusted TSA. The root cert serves as the trust anchor to establish the chain of trust of the TSA. This is to protect you from MITM (Man-in-the-Middle) attacks. An example command:
+To sign artifacts in OCI-compliant registries with timestamping, you need to select a trusted [RFC 3161](https://www.rfc-editor.org/rfc/rfc3161) compliant TSA. There are public TSAs available, such as [DigitCert](https://www.digicert.com/) TSA and [Globalsign](https://www.globalsign.com/en) TSA. Since Notation CLI v1.2.0, two flags `--timestamp-url` and `--timestamp-root-cert` are introduced to the `notation sign` command for RFC 3161 timestamping. Use the flag `--timestamp-url` to specify the URL of the TSA that you trusted. Use the flag `--timestamp-root-cert` to specify the filepath of downloaded root cert file for the trusted TSA. The root cert serves as the trust anchor to establish the chain of trust of the TSA. This is to protect you from MITM (Man-in-the-Middle) attacks. Upon successful execution of `notation sign`, the TSA response will be stored in the signature envelope. An example command:
 
 ```shell
 notation sign --timestamp-url <TSA_URL> --timestamp-root-cert <TSA_ROOT_CERT> --key <KEY_NAME> <REFERENCE_TO_ARTIFACT> 
@@ -65,7 +65,7 @@ An example output:
 │   │           └── expiry: Sun Nov  9 23:59:59 2031
 ```
 
-Under the field `timestamp signature`, there are `timestamp` and `certificates` fields. The value of `timestamp` field is the trusted timestamp showing when the signature was created. The value of `certificates` is the certificate chain that used for generating the countersignature.
+Under the field `timestamp signature`, there are `timestamp` and `certificates` fields. The value of `certificates` lists all the certificates included in the TSA response.
 
 ## Verify artifacts in OCI-compliant registries with timestamping
 
@@ -112,11 +112,11 @@ notation policy import <POLICY_FILE_NAME>.json
 notation verify -v <REFERENCE_TO_ARTIFACT>
 ```
 
-If the signature was generated before certificates expiry and a trusted timestamp is present, the signature verification will succeed despite certificates expiry. However, if the trust store of the `tsa` type is not properly established and configured within the trust policy, the signature verification will fail when certificates expire.
+If the signature was generated with timestamping before certificates expiry, the signature verification will succeed despite certificates expiry at verification time. However, if the trust store of the `tsa` type is not properly established or not configured within the trust policy, the signature verification will fail due to certificates expire.
 
 ## Configuration for timestamp verification
 
-By default, if the trust store of `tsa` type is created and configured in the trust policy, Notation will always validate the trusted timestamp (timestamp countersignature) no matter the certificates expire or not. In scenarios you may want to validate the trusted timestamp only after certificates expire, you can configure additional property `verifyTimestamp` under the parent property `signatureVerification` and set the value to `afterCertExpiry` in the trust policy. For example,
+By default, if the trust store of `tsa` type is created and configured in the trust policy, Notation will always perform timestamp verification no matter the certificates expire or not. In scenarios you may want to perform timestamp verification only after certificates expire, you can configure additional property `verifyTimestamp` under the parent property `signatureVerification` and set the value to `afterCertExpiry` in the trust policy. For example,
 
 ```json
 {
