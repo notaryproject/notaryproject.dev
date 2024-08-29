@@ -1,15 +1,15 @@
 ---
 title: "Timestamping"
-description: "How to sign and verify artifacts in OCI-compliant registries using trusted timestamps"
+description: "How to sign and verify artifacts in OCI-compliant registries with timestamping"
 type: docs
 weight: 9
 ---
 
-In the X.509 Public Key Infrastructure (PKI) system, digital signatures must be generated within the certificate's validity period, as expired certificates compromise the signature's trustworthiness. The [RFC 3161](https://www.rfc-editor.org/rfc/rfc3161) standard defines the internet X.509 PKI Time-Stamp Protocol (TSP), where a trusted timestamp is issued by a trusted third party acting as a Time Stamping Authority (TSA). These trusted timestamps extend the trust of signatures created within certificate validity, enabling successful signature verification even after certificates have expired.
+In the X.509 Public Key Infrastructure (PKI) system, digital signatures must be generated within the certificate's validity period, as expired certificates compromise the signature's trustworthiness. The [RFC 3161](https://www.rfc-editor.org/rfc/rfc3161) standard defines the internet X.509 PKI Time-Stamp Protocol (TSP), where a timestamp is issued by a trusted third party acting as a Time Stamping Authority (TSA). These trusted timestamps extend the trust of signatures created within certificates validity, enabling successful signature verification even after certificates have expired.
 
-Since Notation v1.2.0 release, Notation supports for RFC 3161 compliant timestamps. During signing, a countersignature is added to the signature for the signing artifact, ensuring the trustworthiness of the timestamp through validation. However, Notation does not use trusted timestamps to verify that the signature was created before the certificate’s revocation, as the revocation time is not deterministic. For example, the revocation time may not coincide with the time the certificates are compromised.
+Since Notation v1.2.0 release, Notation supports RFC 3161 compliant timestamping. During signing, a countersignature is added to the signature for the signing artifact, ensuring the trustworthiness of the timestamp through validation. However, Notation does not use timestamping to verify that the signature was created before the certificate’s revocation, as the revocation time is not deterministic. For example, the revocation time may not coincide with the time the certificates are compromised.
 
-This guide describes how to sign and verify artifacts in OCI ([Open Container Initiative](https://github.com/opencontainers)) compliant registries using trusted timestamps. Artifacts in OCI-compliant registries can be container images or other artifacts such as Software Bill of Materials (SBOM).
+This guide describes how to sign and verify artifacts in OCI ([Open Container Initiative](https://github.com/opencontainers)) compliant registries with timestamping. Artifacts in OCI-compliant registries can be container images or other artifacts such as Software Bill of Materials (SBOM).
 
 ## Prerequisites
 
@@ -20,9 +20,9 @@ Before starting, ensure you have:
 * Installed Notation plugins for signing with keys stored in a KMS (Key Management System), such as AWS Signer or Azure Key Vault.
 * A container image or artifact stored in an OCI-compliant registry.
 
-## Sign artifacts in OCI-compliant registries using trusted timestamps
+## Sign artifacts in OCI-compliant registries with timestamping
 
-To sign artifacts in OCI-compliant registries using trusted timestamps, you need to select a trusted TSA. There are public TSAs available, such as [DigitCert](https://www.digicert.com/) TSA and [Globalsign](https://www.globalsign.com/en) TSA. Since Notation CLI v1.2.0, two flags `--timestamp-url` and `--timestamp-root-cert` were introduced to the `notation sign` command for signing using trusted timestamps. Use the flag `--timestamp-url` to specify the URL of the TSA that you trusted. Use the flag `--timestamp-root-cert` to specify the filepath of downloaded root cert file for the trusted TSA. The root cert is used as the trust anchor to establish the chain of trust of TSA to protect you from MITM (Man-in-the-Middle) attacks. An example command:
+To sign artifacts in OCI-compliant registries with timestamping, you need to select a trusted [RFC 3161](https://www.rfc-editor.org/rfc/rfc3161) compliant TSA. There are public TSAs available, such as [DigitCert](https://www.digicert.com/) TSA and [Globalsign](https://www.globalsign.com/en) TSA. Since Notation CLI v1.2.0, two flags `--timestamp-url` and `--timestamp-root-cert` are introduced to the `notation sign` command for RFC 3161 timestamping. Use the flag `--timestamp-url` to specify the URL of the TSA that you trusted. Use the flag `--timestamp-root-cert` to specify the filepath of downloaded root cert file for the trusted TSA. The root cert serves as the trust anchor to establish the chain of trust of the TSA. This is to protect you from MITM (Man-in-the-Middle) attacks. An example command:
 
 ```shell
 notation sign --timestamp-url <TSA_URL> --timestamp-root-cert <TSA_ROOT_CERT> --key <KEY_NAME> <REFERENCE_TO_ARTIFACT> 
@@ -34,11 +34,11 @@ For example, if you choose DigiCert public TSA, the URL is `http://timestamp.dig
 notation sign --timestamp-url "http://timestamp.digicert.com" --timestamp-root-cert "digicert_root_cert.crt" --key <KEY_NAME> <REFERENCE_TO_ARTIFACT> 
 ```
 
-If you do not specify the two flags `--timestamp-url` and `--timestamp-root-cert`, artifacts are signed without trusted timestamps.
+If you do not specify the two flags `--timestamp-url` and `--timestamp-root-cert`, artifacts are signed without timestamping.
 
-## Inspect signatures with trusted timestamps
+## Inspect signatures with RFC 3161 timestamp
 
-Since Notation v1.2.0, the `notation inspect` command was enhanced to show the trusted timestamp.
+Since Notation v1.2.0, the `notation inspect` command is enhanced to show RFC 3161 timestamp in the output.
 
 ```shell
 notation inspect <REFERENCE_TO_ARTIFACT>
