@@ -67,9 +67,9 @@ An example output:
 
 Under the field `timestamp signature`, there are `timestamp` and `certificates` fields. The value of `timestamp` field is the trusted timestamp showing when the signature was created. The value of `certificates` is the certificate chain that used for generating the countersignature.
 
-## Verify artifacts in OCI-compliant registries using trusted timestamps
+## Verify artifacts in OCI-compliant registries with timestamping
 
-To verify artifacts in OCI-compliant registries using trusted timestamps, you need to create a trust store with the type of `tsa`, add the downloaded TSA root certificate, and use the trust store in the trust policy for verification.
+To verify artifacts in OCI-compliant registries with timestamping, you need to create a trust store with the type of `tsa`, add the downloaded TSA root certificate, and use the trust store in the trust policy for verification.
 
 Here are the steps:
 
