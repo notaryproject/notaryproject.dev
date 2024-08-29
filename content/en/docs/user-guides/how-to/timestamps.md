@@ -1,13 +1,13 @@
 ---
-title: "Timestamping"
-description: "How to sign and verify artifacts in OCI-compliant registries with trusted timestamps"
+title: "Timestamps"
+description: "How to sign and verify artifacts in OCI-compliant registries using trusted timestamps"
 type: docs
 weight: 9
 ---
 
-TODO: Add timestamping basic and diagram
+In the X.509 Public Key Infrastructure (PKI) system, digital signatures must be generated within the certificate's validity period, as expired certificates compromise the signature's trustworthiness. The [RFC 3161](https://www.rfc-editor.org/rfc/rfc3161) standard defines the internet X.509 PKI Time-Stamp Protocol (TSP), where a trusted timestamp is issued by a trusted third party acting as a Time Stamping Authority (TSA). These trusted timestamps extend the trust of signatures created within certificate validity, enabling successful signature verification even after certificates have expired. Since Notation v1.2.0 release, Notation supports for RFC 3161 compliant timestamps.
 
-This guide describes how to sign and verify artifacts in OCI ([Open Container Initiative](https://github.com/opencontainers)) compliant registries with trusted timestamps. Artifacts in OCI-compliant registries can be container images or other artifacts such as Software Bill of Materials (SBOM).
+This guide describes how to sign and verify artifacts in OCI ([Open Container Initiative](https://github.com/opencontainers)) compliant registries using trusted timestamps. Artifacts in OCI-compliant registries can be container images or other artifacts such as Software Bill of Materials (SBOM).
 
 ## Prerequisites
 
@@ -65,7 +65,7 @@ You will see timestamp countersignature was shown in the output, for example:
 
 The value of `timestamp` field showed when the signature was created. The value of `certificates` is the certificate chain that used for generating the timestamp countersignature.
 
-## Verify artifacts in OCI-compliant registries with trusted timestamps
+## Verify artifacts in OCI-compliant registries using trusted timestamps
 
 To Verify artifacts in OCI-compliant registries with trusted timestamps, you need to create a trust store with the type of `tsa`, add the downloaded TSA root certificate, and use the trust store in the trust policy for verification.
 
@@ -140,4 +140,4 @@ To restore to the default behavior, you can either remove the property `verifyTi
 
 ## What is the next?
 
-In the future, we'll use the system certificate store to verify the chain of trust of TSA, eliminating the need for you to download and use the root certificate.
+In the future, we'll use the system certificate store to verify the chain of trust of a TSA, eliminating the need for you to download and use the root certificate.
