@@ -13,22 +13,25 @@ This guide describes how to sign and verify artifacts in OCI ([Open Container In
 
 ## Prerequisites
 
+> [!IMPORTANT]
+> Signing with AWS signer currently does not support timestamping.
+
 Before starting, ensure you have:
 
 * Learned the basic signing and verification workflow following the [guide](https://notaryproject.dev/docs/quickstart-guides/) since Timestamping feature was added on top of existing signing and verification workflows.
 * Installed Notation CLI v1.2.0. If not, follow the [installation guides](https://notaryproject.dev/docs/user-guides/installation/).
-* Installed Notation plugins for signing with keys stored in a KMS (Key Management System), such as AWS Signer or Azure Key Vault.
+* Installed Notation plugins for signing with keys stored in a KMS (Key Management System), such as Azure Key Vault.
 * A container image or artifact stored in an OCI-compliant registry.
 
 ## Sign artifacts in OCI-compliant registries with timestamping
 
-To sign artifacts in OCI-compliant registries with timestamping, you need to select a trusted [RFC 3161](https://www.rfc-editor.org/rfc/rfc3161) compliant TSA. There are public TSAs available, such as [DigitCert](https://www.digicert.com/) TSA and [Globalsign](https://www.globalsign.com/en) TSA. Since Notation CLI v1.2.0, two flags `--timestamp-url` and `--timestamp-root-cert` are introduced to the `notation sign` command for RFC 3161 timestamping. Use the flag `--timestamp-url` to specify the URL of the TSA that you trusted. Use the flag `--timestamp-root-cert` to specify the filepath of downloaded root cert file for the trusted TSA. The root cert serves as the trust anchor to establish the chain of trust of the TSA. This is to protect you from MITM (Man-in-the-Middle) attacks. Upon successful execution of `notation sign`, the TSA response will be stored in the signature envelope. An example command:
+To sign artifacts in OCI-compliant registries with timestamping, you need to select a trusted [RFC 3161](https://www.rfc-editor.org/rfc/rfc3161) compliant TSA. There are public TSAs available, such as [DigitCert](https://www.digicert.com/) TSA and [Globalsign](https://www.globalsign.com/) TSA. Since Notation CLI v1.2.0, two flags `--timestamp-url` and `--timestamp-root-cert` are introduced to the `notation sign` command for RFC 3161 timestamping. Use the flag `--timestamp-url` to specify the URL of the TSA that you trusted. Use the flag `--timestamp-root-cert` to specify the filepath of downloaded root cert file for the trusted TSA. The root cert serves as the trust anchor to establish the chain of trust of the TSA. This is to protect you from MITM (Man-in-the-Middle) attacks. Upon successful execution of `notation sign`, the TSA response will be stored in the signature envelope. An example command:
 
 ```shell
 notation sign --timestamp-url <TSA_URL> --timestamp-root-cert <TSA_ROOT_CERT> --key <KEY_NAME> <REFERENCE_TO_ARTIFACT> 
 ```
 
-For example, if you choose DigiCert public TSA, the URL is `http://timestamp.digicert.com`, and you can download the root certificate [here](https://cacerts.digicert.com/DigiCertTrustedRootG4.crt?_gl=1*bx6qtj*_gcl_au*MjU0OTgzNjUuMTcyMTkwNDAzMw) and name it as `digicert_root_cert.crt`. The command looks like:
+For example, if you choose DigiCert public TSA, the URL is `http://timestamp.digicert.com`, and you can download the root certificate [here](https://cacerts.digicert.com/DigiCertTrustedRootG4.crt) and name it as `digicert_root_cert.crt`. The command looks like:
 
 ```shell
 notation sign --timestamp-url "http://timestamp.digicert.com" --timestamp-root-cert "digicert_root_cert.crt" --key <KEY_NAME> <REFERENCE_TO_ARTIFACT> 
