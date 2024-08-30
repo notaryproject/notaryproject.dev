@@ -24,7 +24,7 @@ The Notary Project specifications now include support for [RFC 3161](https://www
 In Feb 2024, the Open Container Initiative (OCI) community released version 1.1.0, which includes the [OCI image specification v1.1.0](https://github.com/opencontainers/image-spec/releases/tag/v1.1.0) and the [OCI distribution specification v1.1.0](https://github.com/opencontainers/distribution-spec/releases/tag/v1.1.0). Notation now adheres to the OCI spec v1.1.0, leading to the deprecation of the experimental flag `--allow-referrers-api`. A new flag, `--force-referrers-tag` (default to `true`), has been introduced to the `notation sign` command, enabling users to choose the referrers tag schema over the [referrers API](https://github.com/opencontainers/distribution-spec/blob/v1.1.0/spec.md#enabling-the-referrers-api) if the registry they are using does not yet support the referrers API. The `notation verify/list/inspect` commands attempt to use the referrers API first and automatically fall back to the [referrers tag schema](https://github.com/opencontainers/distribution-spec/blob/v1.1.0/spec.md#referrers-tag-schema) if the referrers API is not supported by the registry.
 
 > [!NOTE]
-> We may change the default value of `--force-referrers-tag` to `false` in Notation v2.0 release, making referrers API usage as the default.
+> We will change the default value of `--force-referrers-tag` to `false` in Notation v2.0 release, making referrers API usage as the default.
 
 ### Support for RFC 3161 compliant timestamping
 
