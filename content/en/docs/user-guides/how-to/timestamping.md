@@ -13,7 +13,7 @@ This guide describes how to sign and verify artifacts in OCI ([Open Container In
 
 ## Prerequisites
 
-> [!IMPORTANT]
+> [!NOTE]
 > Signing with AWS signer currently does not support timestamping.
 
 Before starting, ensure you have:
