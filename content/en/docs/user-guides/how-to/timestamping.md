@@ -13,10 +13,6 @@ This guide describes how to sign and verify artifacts in OCI ([Open Container In
 
 ## Prerequisites
 
-{{% alert title="Note" color="primary" %}}
-Signing with AWS signer currently does not support timestamping.
-{{% /alert %}}
-
 Before starting, ensure you have:
 
 * Learned the basic signing and verification workflow following the [guide](https://notaryproject.dev/docs/quickstart-guides/) since Timestamping feature was added on top of existing signing and verification workflows.
