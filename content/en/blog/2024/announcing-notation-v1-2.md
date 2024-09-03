@@ -30,7 +30,7 @@ In Feb 2024, the Open Container Initiative (OCI) community released version 1.1.
 
 Since this release, Notation supports RFC 3161 compliant timestamping. Digital signatures must be generated within the certificate's validity period, as expired certificates compromise the signature's trustworthiness. Timestamping extends the trust of signatures created within certificate validity, allowing successful signature verification even after certificates have expired. Notation's timestamping feature is built on top of the [tspclient-go](https://github.com/notaryproject/tspclient-go) library.
 
-Learn more at the document [how to sign and verify artifacts in OCI-compliant registries with timestamping](../../docs/user-guides/how-to/timestamping.md).
+Learn more at the document [how to sign and verify artifacts in OCI-compliant registries with timestamping](/docs/user-guides/how-to/timestamping.md).
 
 ### Other changes
 
@@ -38,7 +38,7 @@ Notation CLI now offers the `armv7` binary, enabling its usage in environments s
 
 ## Get started with Notation v1.2.0
 
-You can follow the [quick start](../../docs/quickstart-guides/quickstart-sign-image-artifact.md) to try Notation v1.2.0 for basic signing and verification workflow.
+You can follow the [quick start]({{< ref "/docs/quickstart-guides/quickstart-sign-image-artifact/" >}}) to try Notation v1.2.0 for basic signing and verification workflow.
 
 ## What's next
 
