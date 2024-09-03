@@ -38,7 +38,7 @@ Notation CLI now offers the `armv7` binary, enabling its usage in environments s
 
 ## Get started with Notation v1.2.0
 
-You can follow the [quick start](/docs/quickstart-guides/quickstart-sign-image-artifact/) to try Notation v1.2.0 for basic signing and verification workflow.
+You can follow the [quick start guide](/docs/quickstart-guides/quickstart-sign-image-artifact/) to try Notation v1.2.0 for basic signing and verification workflow.
 
 ## What's next
 
