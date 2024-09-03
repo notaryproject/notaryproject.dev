@@ -48,7 +48,7 @@ For plugin vendors who want to package and distribute a Notation plugin,  [Notat
 
 ### Get started with Notation v1.1.0
 
-You can follow this [quick start](https://notaryproject.dev/docs/quickstart/) to try Notation v1.1.0 on your terminal.
+You can follow this [quick start](/docs/quickstart-guides/quickstart-sign-image-artifact/) to try Notation v1.1.0 on your terminal.
 
 The default Notation CLI setup action in Notation GitHub Actions has also been updated to v1.1.0. It enables users to install Notation and its plugin, sign and verify OCI artifacts in GitHub Actions workflow with ease.
 
