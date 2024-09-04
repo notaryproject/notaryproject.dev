@@ -2,7 +2,7 @@
 title: "Verification of container image on Kubernetes"
 description: "This guide describes the verification of container image before deploying on Kubernetes Cluster"
 type: docs
-weight: 11
+weight: 8
 ---
 As container images continue to be distributed across various channels, it becomes increasingly important for consumers to ensure that the downloaded container images are authentic before deploying them into their Kubernetes environment. This practice helps mitigate potential cyber threats. Container image verification is the process of evaluating the digital signature of a container image to determine if a container image is considered authentic. Let’s say, you’ve downloaded a signed image from a public source for deployment within your Kubernetes cluster. How do you validate the authenticity and integrity of the image? Which tools should you use for verifying signed images during deployment? This guide describes verification scenarios on Kubernetes and suggests tools for validating signed container images before deploying them on Kubernetes. Let's take a look at this scenario in more detail:
 
