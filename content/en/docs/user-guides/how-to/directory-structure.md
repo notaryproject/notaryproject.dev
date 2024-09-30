@@ -46,8 +46,6 @@ There is no default `NOTATION_BIN` path at user level since the `notation` binar
 
 On Unix systems, if both `$HOME` and `$XDG_CONFIG_HOME` are **not** set, `notation` will create a new `.notation` folder in the current directory.
 
-
-
 ## Structure
 
 The overall directory structure for `notation` is summarized as follows.
