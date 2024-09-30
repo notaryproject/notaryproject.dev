@@ -27,7 +27,7 @@ The directories for various components are classified into the following catagor
 | `NOTATION_CONFIG`  | Directory for configurations                                                        |
 
 
-On Unix systems, `notation` follows [XDG Base Directory Specification][XDG] for user level directories. On Windows, [Known Folders][KF] and [App Settings][AS] are followed equivalently. On Darwin, [macOS File System][macOS_FS] with [System Integrity Protection][SIP] is followed equivalently. 
+On Unix systems, `notation` follows [XDG Base Directory Specification][XDG] for user level directories. On Windows, [Known Folders][KF] and [App Settings][AS] are followed equivalently. On Darwin, [macOS File System][macOS_FS] with [System Integrity Protection][SIP] is followed equivalently.
 
 {{% alert title="Note" color="primary" %}}
 Default directory paths in Notation 0.12.0-beta.1 only supports user level.
@@ -43,6 +43,8 @@ Default directory paths for various operating systems at user level are specifie
 | `NOTATION_CONFIG`  | `$XDG_CONFIG_HOME/notation` | `%AppData%/notation`      | `~/Library/Application Support/notation` |
 
 There is no default `NOTATION_BIN` path at user level since the `notation` binary can be put anywhere as long as it in the `PATH` environment variable. Common directories on Unix/Darwin are `~/bin` and `~/.local/bin` where manual `PATH` update by users may be required.
+
+On Unix systems, if both `$HOME` and `$XDG_CONFIG_HOME` are **not** set, `notation` will default to `.notation/` in the current directory.
 
 ## Structure
 
@@ -106,9 +108,9 @@ The path of the general configuration file of the `notation` CLI is as follows.
 ```
 
 ### Trust Store
-A trust store is a directory located within the filesystem that contains multiple collections of certificates, which are used to validate signatures. The Notary Project trust store currently support three types of certificates: 
+A trust store is a directory located within the filesystem that contains multiple collections of certificates, which are used to validate signatures. The Notary Project trust store currently support three types of certificates:
 - Certificates from Certificate Authorities (CAs), which are stored in the `X509/ca` directory.
-- Signing Authority certificates, stored in the `X509/signingAuthority` directory. 
+- Signing Authority certificates, stored in the `X509/signingAuthority` directory.
 - Time Stamping Authority (TSA) certificates, which will be supported in future releases and will be stored in the `X509/tsa` directory.
 
 These sub-directories also known as named stores support certificate files with the .pem, .crt, and .cer extensions.
@@ -238,7 +240,6 @@ C:.
                           └── tsa
                               └── publicly-trusted-tsa
                                   └── tsa-cert2.pem
-           
 ```
 
 [References]::
