@@ -44,7 +44,7 @@ Default directory paths for various operating systems at user level are specifie
 
 There is no default `NOTATION_BIN` path at user level since the `notation` binary can be put anywhere as long as it in the `PATH` environment variable. Common directories on Unix/Darwin are `~/bin` and `~/.local/bin` where manual `PATH` update by users may be required.
 
-On Unix systems, if both `$HOME` and `$XDG_CONFIG_HOME` are **not** set, `notation` will create a new `.notation` folder in the current directory.
+On Unix systems, if both `$HOME` and `$XDG_CONFIG_HOME` are **not** set, `notation` will default to `.notation/` in the current directory.
 
 ## Structure
 
