@@ -10,7 +10,7 @@ weight: 2
 Notary Project provides solutions to help users sign and verify artifacts in CI/CD pipelines with Notation GitHub Actions and Azure DevOps. Follow the guidance below to get started Notation in CI/CD.
 
 - [Notation GitHub Actions](https://github.com/marketplace/actions/notation-actions)
-- [Sign and verify a container image with Notation in Azure Pipeline](https://learn.microsoft.com/en-us/azure/security/container-secure-supply-chain/articles/notation-ado-task-sign)
+- [Sign and verify a container image with Notation in Azure DevOps Pipelines](https://learn.microsoft.com/en-us/azure/security/container-secure-supply-chain/articles/notation-ado-task-sign)
 
 ## GitOps
 
