@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://notaryproject.dev/">
-  <img src="/static/Notary_project_logo.png" alt="Notary Project logo">
+  <img src="/static/logo.svg" alt="Notary Project logo">
   </a>
   <br />
     <br />
