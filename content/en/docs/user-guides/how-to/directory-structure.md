@@ -13,6 +13,7 @@ Notation CLI requires local file systems support for the following components. T
 - Trust stores
 - Trust policies
 - Signing key store
+- Caches
 
 This documentation specifies the recommended directory structure for those components.
 
@@ -25,6 +26,7 @@ The directories for various components are classified into the following catagor
 | `NOTATION_BIN`     | Directory for executable binaries                                                   |
 | `NOTATION_LIBEXEC` | Directory for binaries not meant to be executed directly by users' shell or scripts |
 | `NOTATION_CONFIG`  | Directory for configurations                                                        |
+| `NOTATION_CACHE`   | Directory for caches, such as Certiifcate Revocation List (CRL) caches              |
 
 
 On Unix systems, `notation` follows [XDG Base Directory Specification][XDG] for user level directories. On Windows, [Known Folders][KF] and [App Settings][AS] are followed equivalently. On Darwin, [macOS File System][macOS_FS] with [System Integrity Protection][SIP] is followed equivalently. 
@@ -41,6 +43,9 @@ Default directory paths for various operating systems at user level are specifie
 | ------------------ | --------------------------- | ------------------------- | ---------------------------------------- |
 | `NOTATION_LIBEXEC` | `$XDG_CONFIG_HOME/notation` | `%AppData%/notation`      | `~/Library/Application Support/notation` |
 | `NOTATION_CONFIG`  | `$XDG_CONFIG_HOME/notation` | `%AppData%/notation`      | `~/Library/Application Support/notation` |
+| `NOTATION_CACHE`   | `$XDG_CACHE_HOME/notation`  | `%LocalAppData%/notation` | `~/Library/Caches/notation`              |
+
+On Unix, `$XDG_CONFIG_HOME` is default to `~/.config` and `$XDG_CACHE_HOME` is default to `~/.cache` if XDG environment variables are empty.
 
 There is no default `NOTATION_BIN` path at user level since the `notation` binary can be put anywhere as long as it in the `PATH` environment variable. Common directories on Unix/Darwin are `~/bin` and `~/.local/bin` where manual `PATH` update by users may be required.
 
@@ -51,7 +56,9 @@ The overall directory structure for `notation` is summarized as follows.
 ```
 {NOTATION_BIN}
 └── notation
-
+{NOTATION_CACHE}
+└── crl
+    └── {sha256-hash-of-the-CRL-file}
 {NOTATION_CONFIG}
 ├── config.json
 ├── localkeys
@@ -147,9 +154,17 @@ For testing purpose, the following directory structure is suggested.
 
 Since `signingkeys.json` takes references in absolute paths, it is not required to copy the private keys and certificates used for signing to the above directory structure.
 
+### Caches
+
+CRL files are cached to optimize the network traffic and improve perfromance. The path of cached CRLs follows the pattern below.
+
+```
+{NOTATION_CACHE}/crl/(sha256-hash-of-the-CRL-file}
+```
+
 ## Examples
 
-Examples are shown on various operating systems where the user `exampleuser` overrides the `notation` config and the trust policy.
+Examples are shown on various operating systems where the user `exampleuser` overrides the `notation` config, cache and the trust policy.
 
 ### Unix
 
@@ -157,6 +172,10 @@ Examples are shown on various operating systems where the user `exampleuser` ove
 /
 └── home
    └── exampleuser
+       └── .cache
+       |    └── crl
+       |       ├── f2ca1bb6c7e907d06dafe4687e579fceceae8f2e6b6b8bdf0abdd33b264e9a0e
+       |       └── 05b3abf2579a5eb66403cd78be557fd860633a1fe2103c7642030defe32c657f
        └── .config
            └── notation
                ├── config.json
@@ -178,6 +197,7 @@ Examples are shown on various operating systems where the user `exampleuser` ove
                        └── tsa
                            └── publicly-trusted-tsa
                                └── tsa-cert2.pem
+
 ```
 
 ### Windows
@@ -187,6 +207,11 @@ C:.
 └── Users
     └── exampleuser
         └── AppData
+            ├── Local
+            │   └── notation
+            │       └── crl
+            │           ├── f2ca1bb6c7e907d06dafe4687e579fceceae8f2e6b6b8bdf0abdd33b264e9a0e
+            │           └── 05b3abf2579a5eb66403cd78be557fd860633a1fe2103c7642030defe32c657f
             └── Roaming
                 └── notation
                     ├── config.json
@@ -216,6 +241,10 @@ C:.
 /
 └── Users
    └── exampleuser
+       └── Caches
+       |    └── crl
+       |       ├── f2ca1bb6c7e907d06dafe4687e579fceceae8f2e6b6b8bdf0abdd33b264e9a0e
+       |       └── 05b3abf2579a5eb66403cd78be557fd860633a1fe2103c7642030defe32c657f
        └── Library
            └── Application Support
               └── notation
@@ -238,7 +267,6 @@ C:.
                           └── tsa
                               └── publicly-trusted-tsa
                                   └── tsa-cert2.pem
-           
 ```
 
 [References]::
