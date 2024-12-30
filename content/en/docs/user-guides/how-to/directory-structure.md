@@ -159,7 +159,7 @@ Since `signingkeys.json` takes references in absolute paths, it is not required 
 Since Notation v1.3.0, CRL files are cached to optimize the network traffic and improve perfromance. The path of cached CRLs follows the pattern below.
 
 ```
-{NOTATION_CACHE}/crl/(sha256-hash-of-the-CRL-downloading-URL}
+{NOTATION_CACHE}/crl/{sha256-hash-of-the-CRL-downloading-URL}
 ```
 
 ## Examples
