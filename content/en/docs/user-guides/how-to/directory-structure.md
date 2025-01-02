@@ -26,7 +26,7 @@ The directories for various components are classified into the following catagor
 | `NOTATION_BIN`     | Directory for executable binaries                                                   |
 | `NOTATION_LIBEXEC` | Directory for binaries not meant to be executed directly by users' shell or scripts |
 | `NOTATION_CONFIG`  | Directory for configurations                                                        |
-| `NOTATION_CACHE`   | Directory for caches, such as Certiifcate Revocation List (CRL) caches              |
+| `NOTATION_CACHE`   | Directory for caches, such as Certificate Revocation List (CRL) caches              |
 
 
 On Unix systems, `notation` follows [XDG Base Directory Specification][XDG] for user level directories. On Windows, [Known Folders][KF] and [App Settings][AS] are followed equivalently. On Darwin, [macOS File System][macOS_FS] with [System Integrity Protection][SIP] is followed equivalently. 
@@ -156,7 +156,7 @@ Since `signingkeys.json` takes references in absolute paths, it is not required 
 
 ### Caches
 
-Since Notation v1.3.0, CRL files are cached to optimize the network traffic and improve perfromance. The path of cached CRLs follows the pattern below.
+Since Notation v1.3.0, CRL files are cached to optimize the network traffic and improve performance. The path of cached CRLs follows the pattern below.
 
 ```
 {NOTATION_CACHE}/crl/{sha256-hash-of-the-CRL-downloading-URL}
