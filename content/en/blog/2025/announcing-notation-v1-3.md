@@ -7,7 +7,7 @@ draft: false
 
 The Notary Project maintainers are thrilled to announce the latest releases, including [notation v1.3.0](https://github.com/notaryproject/notation/releases/tag/v1.3.0), [notation-go v1.3.0](https://github.com/notaryproject/notation-go/releases/tag/v1.3.0), [notation-core-go v1.2.0](https://github.com/notaryproject/notation-core-go/releases/tag/v1.2.0) and [tspclient-go v1.0.0](https://github.com/notaryproject/tspclient-go/releases/tag/v1.0.0)!
 
-These new versions are production ready and have successfully completed a comprehensive [security audit](https://blogpost). Check out the [security audit report](https://) for more details. Our commitment to providing secure and high-quality signing and verification tools for our users has never been stronger!
+These new versions are production ready and have successfully completed a comprehensive [security audit](https://www.cncf.io/blog/2025/01/21/notary-project-completes-its-second-audit/). Check out the [security audit report](https://github.com/notaryproject/specifications/tree/main/security/reports/audit/Quarkslab-notation-security-audit-25.pdf) for more details. Our commitment to providing secure and high-quality signing and verification tools for our users has never been stronger!
 
 ## Notable Capabilities in these Releases
 
@@ -17,7 +17,7 @@ Here are the major capabilities and features included in these releases.
 
 Looking for a robust implementation of [RFC 3161](https://datatracker.ietf.org/doc/html/rfc3161) Timestamp Protocol Client in Go? The library [tspclient-go](https://github.com/notaryproject/tspclient-go) is the answer. Here is why:
 
-- **RFC 3161 Compliance**: Adheres to the specification RFC 3161 for timestamping clients. Supports timestamping with popular public TSAs like DigiCert and GlobalSign
+- **RFC 3161 Compliance**: Adheres to the specification RFC 3161 for timestamping clients. Supports timestamping with popular public TSAs like DigiCert and GlobalSign.
 - **Secure**: Implements secure communication protocols, ensuring the integrity and authenticity of timestamps.
 - **Minimal Dependencies**: Uses only standard Go libraries. Less dependencies, more secure.
 - **High Test Coverage**: Boasts up to 95% test coverage.
