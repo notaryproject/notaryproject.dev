@@ -1,5 +1,5 @@
 ---
-title: Notary Project announces Specification v1.1.0 and Notation v1.2.0!
+title: Notary Project Completes Its Second Audit!
 author:  "Notary Project Community"
 date: 2025-01-21
 draft: false
