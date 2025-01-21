@@ -8,8 +8,7 @@ draft: false
 
 > This blog post was original published on [OSTIF blog](https://ostif.org/notaryproject-cryptography-audit-2025/) by Helen Woeste, Communications Manager, the Open Source Technology Improvement Fund.
 
-OSTIF is proud to share the results of our second security audit of Notary Project. You can read the Audit Report [HERE](https://github.com/notaryproject/specifications/blob/main/security/reports/audit/Quarkslab-notation-security-audit-25.pdf). Notary Project is “a set of specifications and tools intended to provide a cross-industry standard for securing software supply chains by using authentic container images and other OCI artifacts.”  
-With the help of Quarkslab and the Cloud Native Computing Foundation (CNCF), this project continues to provide users with trusted software supply chain management.
+OSTIF is proud to share the results of our second security audit of Notary Project. You can read the Audit Report [HERE](https://github.com/notaryproject/specifications/blob/main/security/reports/audit/Quarkslab-notation-security-audit-25.pdf). Notary Project is “a set of specifications and tools intended to provide a cross-industry standard for securing software supply chains by using authentic container images and other OCI artifacts.”  With the help of Quarkslab and the Cloud Native Computing Foundation (CNCF), this project continues to provide users with trusted software supply chain management.
 
 ## Audit Process
 
@@ -44,4 +43,4 @@ Thank you to the individuals and groups that made this engagement possible:
 
 - Notary Project maintainers and community, notably: Pritesh Bandi, Junjie Gao, Vani Rao, Shiwei Zhang, Yi Zha, Patrick Zheng, and Feynman Zhou
 - Quarkslab: Dahmun Goudarzi, Sébastien Rolland, and Ramtine Tofighi Shirazi
-- Cloud Native Computing Foundation
+- Cloud Native Computing Foundation (CNCF)
