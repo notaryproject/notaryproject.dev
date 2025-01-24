@@ -66,22 +66,22 @@ notation plugin install --file notation-azure-kv_1.0.2_linux_amd64.tar.gz
 Successfully installed plugin azure-kv, version 1.0.2
 ```
 
-## Install Notation Venafi Plugin (v0.3.0)
+## Install Notation Venafi Plugin (v0.3.2)
 
 To find out more about the Venafi Plugin, please refer to this [GitHub repository](https://github.com/Venafi/notation-venafi-csp).
 
 ### Install from URL:
 
 ```console
-notation plugin install --url https://github.com/Venafi/notation-venafi-csp/releases/download/v0.3.0/notation-venafi-csp-linux-amd64.tar.gz --sha256sum 03771794643f18c286b6db3a25a4d0b8e7c401e685b1e95a19f03c9356344f5a
-Successfully installed plugin venafi-csp, version 0.3.0-release
+notation plugin install --url https://github.com/Venafi/notation-venafi-csp/releases/download/v0.3.2/notation-venafi-csp-linux-amd64.tar.gz --sha256sum f9e52bce64c8b6dcc9a7c8d5e204b911ba29a06fb8c35cefe9fd21cc5693a6d1
+Successfully installed plugin venafi-csp, version 0.3.2-release
 ```
 
 ### Install from local file:
 
 ```console
 notation plugin install --file notation-venafi-csp-linux-amd64.tar.gz
-Successfully installed plugin venafi-csp, version 0.3.0-release
+Successfully installed plugin venafi-csp, version 0.3.2-release
 ```
 
 To confirm you plugin is installed, run `notation plugin list`. For example:
@@ -99,7 +99,7 @@ NAME                                 DESCRIPTION                                
 
 azure-kv                             Sign artifacts with keys in Azure Key Vault           1.0.2            [SIGNATURE_GENERATOR.RAW]                                                                     <nil>
 com.amazonaws.signer.notation.plugin AWS Signer plugin for Notation                        1.0.298          [SIGNATURE_GENERATOR.ENVELOPE SIGNATURE_VERIFIER.TRUSTED_IDENTITY SIGNATURE_VERIFIER.REVOCATION_CHECK] <nil>
-venafi-csp                           Sign artifacts with keys in Venafi CodeSign Protect   0.3.0-release    [SIGNATURE_GENERATOR.ENVELOPE SIGNATURE_VERIFIER.TRUSTED_IDENTITY SIGNATURE_VERIFIER.REVOCATION_CHECK] <nil>
+venafi-csp                           Sign artifacts with keys in Venafi CodeSign Protect   0.3.2-release    [SIGNATURE_GENERATOR.ENVELOPE SIGNATURE_VERIFIER.TRUSTED_IDENTITY] <nil>
 ```
 
 ## Uninstall a plugin
