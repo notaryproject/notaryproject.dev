@@ -4,7 +4,7 @@ Ensuring the authenticity and integrity of modern deployment units is becoming i
 
 For users, verifying the signatures of these artifacts confirms their legitimacy and ensures they remain unaltered. Solutions like Notation simplify the process by enabling the signing and verification of Open Container Initiative (OCI) artifacts, such as container images. By integrating with platforms like Harbor, producers can securely sign images, while consumers validate them before use, making deployments to Kubernetes or other environments more secure.
 
-The process typically includes generating cryptographic keys, attaching signatures to images, and configuring trust policies that define trusted entities and verification protocols. Such practices are essential to building a resilient software supply chain, ensuring secure deployments, and maintaining confidence in the artifacts being used.
+The process typically includes generating cryptographic Certificates, attaching signatures to images, and configuring trust policies that define trusted entities and verification protocols. Such practices are essential to building a resilient software supply chain, ensuring secure deployments, and maintaining confidence in the artifacts being used.
 
 # Explanation of Simple Terms
 
@@ -25,10 +25,10 @@ A **Docker daemon** operates in the background to oversee images, containers, an
 - When a container image is signed using Notation, a cryptographic signature is generated using private keys held securely by the software producer.
 - This signature acts as a "seal of trust," ensuring the artifact has not been tampered with and originates from the claimed source.
 
-Notation adheres to industry standards for signing and verification, making it interoperable with various platforms and tools. By using cryptographic algorithms, the tool generates a signature based on the content of the image. 
+Notation adheres to [Notary Project specifications](https://github.com/notaryproject/specifications) for signing and verification, making it interoperable with various platforms and tools. By using cryptographic algorithms, the tool generates a signature based on the [OCI descriptor of the image](https://github.com/notaryproject/specifications/blob/v1.1.0/specs/signature-specification.md#payload). 
 
 ### Verification Process:
-1. During verification, the consumer or deployment system checks the signature against the corresponding public key.
+1. During verification, the consumer or deployment system checks the signature against the corresponding public key and certificates.
 2. This ensures the artifact’s contents have not been altered and verifies that the image originates from a trusted source.
 
 ---
@@ -55,7 +55,7 @@ Through its integration with Notation, Harbor allows users to sign container ima
 
 2. **Signing Images**:
 - Producers sign container images before pushing them to the Harbor registry.
-- The cryptographic signature is attached to the image metadata.
+- The cryptographic signature is attached to the image as image metadata.
 
 3. **Verification Policies**:
 - Consumers or deployment systems configure trust policies within Harbor to specify trusted signatures or signers.
@@ -78,20 +78,6 @@ This approach mitigates risks posed by unsigned or unverified images, ensuring s
 
 ![Workflow Representation of Signing and Verifying Container Images](https://www.redhat.com/rhdc/managed-files/styles/wysiwyg_full_width/private/ohc/Signing%20and%20verifying%20container%20images-2.jpeg.webp?itok=Yd-qjm25 "Workflow Representation of Signing and Verifying Container Images")
 
-# Signing and Verifying Docker Images with Notation and Harbor 
-
-## Why is it Important? 
-
-### 1. Ensures Integrity 
-Signing Docker images guarantees that the image contents have not been altered or tampered with after being signed. Verification ensures the image is in its original state as intended by the creator. 
-
-### 2. Authenticates Source 
-By signing images, producers provide cryptographic proof of their identity. Consumers can verify the signature to ensure the image comes from a trusted source, reducing the risk of using malicious or counterfeit software. 
-
-### 3. Prevents Tampering 
-The cryptographic signature attached to the image serves as a safeguard against unauthorized modifications. If even a single byte of the image is changed, the verification process will fail, signaling potential tampering. 
-
----
 
 ## Pre-requisites for Setting Up Harbor and Notation 
 
@@ -111,7 +97,8 @@ Before diving into the setup and configuration of Harbor and Notation, it is cru
 
 ## Setting Up Harbor with HTTPS Domain Configuration 
 
-Harbor is a robust and secure container registry platform that enables organizations to store and manage Docker images in a private environment. Harbor supports both HTTP and HTTPS domain configurations, though HTTPS is recommended for security reasons. 
+Harbor is a robust and secure container registry platform that enables organizations to store and manage Docker images in a private environment. Harbor supports both HTTP and HTTPS domain configurations, though HTTPS is recommended for security reasons.
+https://goharbor.io/docs/2.0.0/install-config/.
 
 ### Steps to Set Up Harbor with HTTPS 
 
@@ -208,6 +195,11 @@ notation verify $IMAGE
 ```bash
 notation inspect $IMAGE
 ```
+## Viewing Notary Project Signatures in Harbor
+To view Notary Project signatures in Harbor and configure content trust to prevent unsigned images from being pulled, refer to:
+- [Enforce Content Trust in Harbor](https://goharbor.io/docs/main/working-with-projects/project-configuration/implementing-content-trust/#enforce-content-trust)
+- [Use Notation to Sign and Verify Artifacts in Harbor](https://goharbor.io/docs/main/working-with-projects/working-with-images/sign-images/#use-notation-to-sign-and-verify-artifacts-with-distribution-spec-v11-mode)
+
 
 # Conclusion
 
