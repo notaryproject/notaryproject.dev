@@ -45,43 +45,43 @@ Successfully installed plugin com.amazonaws.signer.notation.plugin, version 1.0.
 ```
 Upon successful execution, the plugin is copied to Notation's plugin directory.
 
-## Install Notation Azure Key Vault Plugin (v1.0.2)
+## Install Notation Azure Key Vault Plugin
 
 To find out more about the Azure Key Vault Plugin, please refer to this [GitHub repository](https://github.com/Azure/notation-azure-kv).
 
 ### Install from URL:
 
 ```console
-notation plugin install --url https://github.com/Azure/notation-azure-kv/releases/download/v1.0.2/notation-azure-kv_1.0.2_linux_amd64.tar.gz --sha256sum f2b2e131a435b6a9742c202237b9aceda81859e6d4bd6242c2568ba556cee20e
+notation plugin install --url https://github.com/Azure/notation-azure-kv/releases/download/<$VERSION_AKV_PLUGIN>/notation-azure-kv_<$VERSION_AKV_PLUGIN>_linux_amd64.tar.gz --sha256sum <$SHA256_SUM_AKV_PLUGIN>
 
-Downloading plugin from https://github.com/Azure/notation-azure-kv/releases/download/v1.0.2/notation-azure-kv_1.0.2_linux_amd64.tar.gz
+Downloading plugin from https://github.com/Azure/notation-azure-kv/releases/download/v1.0.2/notation-azure-kv_<$VERSION_AKV_PLUGIN>_linux_amd64.tar.gz
 Download completed
-Successfully installed plugin azure-kv, version 1.0.2
+Successfully installed plugin azure-kv, version <$VERSION_AKV_PLUGIN>
 ```
 
 ### Install from local file:
 
 ```console
-notation plugin install --file notation-azure-kv_1.0.2_linux_amd64.tar.gz
-Successfully installed plugin azure-kv, version 1.0.2
+notation plugin install --file notation-azure-kv_<$VERSION_AKV_PLUGIN>_linux_amd64.tar.gz
+Successfully installed plugin azure-kv, version <$VERSION_AKV_PLUGIN>
 ```
 
-## Install Notation Venafi Plugin (v0.3.2)
+## Install Notation Venafi Plugin (<$VERSION_Venafi_PLUGIN>)
 
 To find out more about the Venafi Plugin, please refer to this [GitHub repository](https://github.com/Venafi/notation-venafi-csp).
 
 ### Install from URL:
 
 ```console
-notation plugin install --url https://github.com/Venafi/notation-venafi-csp/releases/download/v0.3.2/notation-venafi-csp-linux-amd64.tar.gz --sha256sum f9e52bce64c8b6dcc9a7c8d5e204b911ba29a06fb8c35cefe9fd21cc5693a6d1
-Successfully installed plugin venafi-csp, version 0.3.2-release
+notation plugin install --url https://github.com/Venafi/notation-venafi-csp/releases/download/<$VERSION_Venafi_PLUGIN>/notation-venafi-csp-linux-amd64.tar.gz --sha256sum <$SHA256SUM_VENAFI_PLUGIN>
+Successfully installed plugin venafi-csp, version <$VERSION_VENAFI_PLUGIN>
 ```
 
 ### Install from local file:
 
 ```console
 notation plugin install --file notation-venafi-csp-linux-amd64.tar.gz
-Successfully installed plugin venafi-csp, version 0.3.2-release
+Successfully installed plugin venafi-csp, version <$VERSION_Venafi_PLUGIN>
 ```
 
 To confirm you plugin is installed, run `notation plugin list`. For example:
