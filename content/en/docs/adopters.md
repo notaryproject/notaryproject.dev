@@ -11,8 +11,9 @@ We are happy and proud to have you all as part of the community! To add your use
 
 All organizations are sorted alphabetically below.
 
-| Organization | Website | Scenario | 
-| --- | --- | --- | 
+| Organization | Website | Scenario |
+| --- | --- | --- |
+| Alibaba Cloud | https://www.alibabacloud.com/ | [Sign and verify OCI artifacts using Notation and Alibaba Cloud Key Management Service](https://www.alibabacloud.com/help/en/ack/ack-managed-and-ack-dedicated/security-and-compliance/use-notation-and-ratify-to-sign-and-verify-oci-artifacts) |
 | Amazon | https://aws.amazon.com/ | [AWS Signer](https://docs.aws.amazon.com/signer/latest/developerguide/image-signing-prerequisites.html) |
 | Bitnami | https://bitnami.com/ | [Sign and verify containers and Helm charts available in Docker Hub](https://blog.bitnami.com/2024/03/bitnami-packaged-containers-and-helm.html) |
 | containerd |  http://containerd.io/ |  [container image sign and verify with notation tool](https://github.com/containerd/nerdctl/blob/main/docs/notation.md) |
