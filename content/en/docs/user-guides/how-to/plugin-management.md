@@ -19,6 +19,8 @@ Before creating the `{plugin-name}` directory, confirm you are using a name that
 
 ## Usage
 
+Remember to replace the variables below with the desired plugin version and checksum.
+
 ### Install a plugin from file system:
 
 `notation plugin install --file <file_path>`
