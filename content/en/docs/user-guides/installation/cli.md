@@ -5,8 +5,8 @@ weight: 1
 cliVer : 2.0.0
 ---
 
-{{% alert title="Important" color="info" %}}
-`notation` v2.0.0-alpha.1 is still in an active development and not stable yet. The features in this release are subject to change until it reaches stable release v2.0.0.
+{{% alert title="Warning" color="info" %}}
+`notation` v2.0.0-alpha.1 is for testing purposes and not stable yet. The features in this release are subject to change until it reaches stable release v2.0.0.
 {{% /alert %}}
 
 ## Download and install the CLI for Linux
