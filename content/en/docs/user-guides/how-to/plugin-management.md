@@ -73,7 +73,7 @@ To find out more about the Venafi Plugin, please refer to this [GitHub repositor
 ### Install from URL:
 
 ```console
-$ notation plugin install --url https://github.com/Venafi/notation-venafi-csp/releases/download/${VERSION_Venafi_PLUGIN}/notation-venafi-csp-linux-amd64.tar.gz --sha256sum ${SHA256SUM_VENAFI_PLUGIN}
+$ notation plugin install --url https://github.com/Venafi/notation-venafi-csp/releases/download/${VERSION_VENAFI_PLUGIN}/notation-venafi-csp-linux-amd64.tar.gz --sha256sum ${SHA256SUM_VENAFI_PLUGIN}
 Successfully installed plugin venafi-csp, version ${VERSION_VENAFI_PLUGIN}
 ```
 
