@@ -81,7 +81,7 @@ Successfully installed plugin venafi-csp, version ${VERSION_VENAFI_PLUGIN}
 
 ```console
 $ notation plugin install --file notation-venafi-csp-linux-amd64.tar.gz
-Successfully installed plugin venafi-csp, version ${VERSION_Venafi_PLUGIN}
+Successfully installed plugin venafi-csp, version ${VERSION_VENAFI_PLUGIN}
 ```
 
 To confirm you plugin is installed, run `notation plugin list`. For example:
