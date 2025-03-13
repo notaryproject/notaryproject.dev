@@ -40,9 +40,14 @@ To find out more about the AWS Signer plugin, please refer to their official [do
 ### Install from file system
 
 ```console
-$ wget https://d2hvyiie56hcat.cloudfront.net/linux/amd64/plugin/latest/notation-aws-signer-plugin.zip
+wget https://d2hvyiie56hcat.cloudfront.net/linux/amd64/plugin/latest/notation-aws-signer-plugin.zip
+```
 
-$ notation plugin install --file notation-aws-signer-plugin.zip
+```console
+notation plugin install --file notation-aws-signer-plugin.zip
+```
+
+```console
 Successfully installed plugin com.amazonaws.signer.notation.plugin, version 1.0.298
 ```
 Upon successful execution, the plugin is copied to Notation's plugin directory.
@@ -54,8 +59,12 @@ To find out more about the Azure Key Vault Plugin, please refer to this [GitHub 
 ### Install from URL:
 
 ```console
-$ notation plugin install --url https://github.com/Azure/notation-azure-kv/releases/download/${VERSION_AKV_PLUGIN}/notation-azure-kv_${VERSION_AKV_PLUGIN}_linux_amd64.tar.gz --sha256sum ${SHA256SUM_AKV_PLUGIN}
+notation plugin install --url https://github.com/Azure/notation-azure-kv/releases/download/${VERSION_AKV_PLUGIN}/notation-azure-kv_${VERSION_AKV_PLUGIN}_linux_amd64.tar.gz --sha256sum ${SHA256SUM_AKV_PLUGIN}
+```
 
+Here is the sample output:
+
+```console
 Downloading plugin from https://github.com/Azure/notation-azure-kv/releases/download/${VERSION_AKV_PLUGIN}/notation-azure-kv_${VERSION_AKV_PLUGIN}_linux_amd64.tar.gz
 Download completed
 Successfully installed plugin azure-kv, version ${VERSION_AKV_PLUGIN}
@@ -64,7 +73,12 @@ Successfully installed plugin azure-kv, version ${VERSION_AKV_PLUGIN}
 ### Install from local file:
 
 ```console
-$ notation plugin install --file notation-azure-kv_${VERSION_AKV_PLUGIN}_linux_amd64.tar.gz
+notation plugin install --file notation-azure-kv_${VERSION_AKV_PLUGIN}_linux_amd64.tar.gz
+```
+
+Here is the sample output:
+
+```
 Successfully installed plugin azure-kv, version ${VERSION_AKV_PLUGIN}
 ```
 
@@ -75,14 +89,24 @@ To find out more about the Venafi Plugin, please refer to this [GitHub repositor
 ### Install from URL:
 
 ```console
-$ notation plugin install --url https://github.com/Venafi/notation-venafi-csp/releases/download/${VERSION_VENAFI_PLUGIN}/notation-venafi-csp-linux-amd64.tar.gz --sha256sum ${SHA256SUM_VENAFI_PLUGIN}
+notation plugin install --url https://github.com/Venafi/notation-venafi-csp/releases/download/${VERSION_VENAFI_PLUGIN}/notation-venafi-csp-linux-amd64.tar.gz --sha256sum ${SHA256SUM_VENAFI_PLUGIN}
+```
+
+Here is the sample output:
+
+```console
 Successfully installed plugin venafi-csp, version ${VERSION_VENAFI_PLUGIN}
 ```
 
 ### Install from local file:
 
 ```console
-$ notation plugin install --file notation-venafi-csp-linux-amd64.tar.gz
+notation plugin install --file notation-venafi-csp-linux-amd64.tar.gz
+```
+
+Here is the sample output:
+
+```console
 Successfully installed plugin venafi-csp, version ${VERSION_VENAFI_PLUGIN}
 ```
 
@@ -95,7 +119,12 @@ notation plugin list
 Confirm the plugin is listed in the output. A sample output is as follows:
 
 ```console
-$ notation plugin list
+notation plugin list
+```
+
+Here is the sample output:
+
+```
 NAME                                 DESCRIPTION                                           VERSION          CAPABILITIES                                                             ERROR
 
 
