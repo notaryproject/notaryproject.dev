@@ -58,6 +58,9 @@ params:
     - version: main
       name: main
       url: "https://notaryproject.dev/"
+    - version: v2.0-alpha.1
+      name: v2.0-alpha.1
+      url: "https://v2-0.notaryproject.dev/"
     - version: v1.2
       name: v1.2
       url: "https://v1-2.notaryproject.dev/"
