@@ -54,7 +54,7 @@ To find out more about the Azure Key Vault Plugin, please refer to this [GitHub 
 ```console
 $ notation plugin install --url https://github.com/Azure/notation-azure-kv/releases/download/{VERSION_AKV_PLUGIN}/notation-azure-kv_${VERSION_AKV_PLUGIN}_linux_amd64.tar.gz --sha256sum ${SHA256_SUM_AKV_PLUGIN}
 
-Downloading plugin from https://github.com/Azure/notation-azure-kv/releases/download/v1.0.2/notation-azure-kv_${VERSION_AKV_PLUGIN}_linux_amd64.tar.gz
+Downloading plugin from https://github.com/Azure/notation-azure-kv/releases/download/${VERSION_AKV_PLUGIN}/notation-azure-kv_${VERSION_AKV_PLUGIN}_linux_amd64.tar.gz
 Download completed
 Successfully installed plugin azure-kv, version ${VERSION_AKV_PLUGIN}
 ```
