@@ -2,20 +2,14 @@
 title: Install the notation CLI
 description: Install the notation CLI on Linux, macOS, and Windows
 weight: 1
-cliVer : 1.3.0
+cliVer : 2.0.0-alpha.1
 ---
 
+{{% alert title="Warning" color="info" %}}
+`notation` v2.0.0-alpha.1 is for testing purposes and not stable yet. The features in this release are subject to change until it reaches stable release v2.0.0.
+{{% /alert %}}
+
 ## Download and install the CLI for Linux
-
-### Homebrew
-
-Download the latest stable release of the `notation CLI` on Linux using [Homebrew](https://brew.sh/):
-
-```console
-brew install notation
-```
-
-### Binary download
 
 Download the latest stable release of the notation CLI binary for Linux and checksum file, then verify the integrity of the download.
 
@@ -73,16 +67,6 @@ echo 'export PATH="$PATH:<EXAMPLE_PATH>/notation-cli/"' >> ~/.bashrc
 
 ## Download and install the CLI for macOS
 
-### Homebrew
-
-Download the latest stable release of the `notation CLI` on macOS using [Homebrew](https://brew.sh/):
-
-```console
-brew install notation
-```
-
-### Binary download
-
 Download the latest stable release of the notation CLI binary for macOS and checksum file, then verify the integrity of the download.
 
 Set the `NOTATION_VERSION` environment variable to the version of notation you want to download. The latest version is `{{< param cliVer >}}`.
@@ -138,16 +122,6 @@ echo 'export PATH="$PATH:<EXAMPLE_PATH>/notation-cli/"' >> ~/.zshrc
 ```
 
 ## Download and install the CLI for Windows
-
-### WinGet
-
-Download the latest stable release of the `notation CLI` on Windows using [WinGet (Windows package manager)](https://github.com/microsoft/winget-pkgs):
-
-```console
-winget install notation -s winget
-```
-
-### .exe download
 
 Download the latest stable release of the notation CLI binary for Windows and checksum file:
 
