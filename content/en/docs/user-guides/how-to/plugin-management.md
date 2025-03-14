@@ -47,9 +47,12 @@ wget https://d2hvyiie56hcat.cloudfront.net/linux/amd64/plugin/latest/notation-aw
 notation plugin install --file notation-aws-signer-plugin.zip
 ```
 
+Here is the sample output:
+
 ```console
 Successfully installed plugin com.amazonaws.signer.notation.plugin, version 1.0.298
 ```
+
 Upon successful execution, the plugin is copied to Notation's plugin directory.
 
 ## Install Notation Azure Key Vault Plugin
