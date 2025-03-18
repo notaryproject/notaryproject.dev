@@ -5,7 +5,7 @@ date: 2025-03-18
 draft: false
 ---
 
-[blog cover](/static/v2.0-alpha.svg)
+[blog cover](../static/v2.0-alpha.svg)
 
 We are thrilled to announce the release of [Notation v2.0.0-alpha.1](https://github.com/notaryproject/notation/releases/tag/v2.0.0-alpha.1), marking a significant milestone in our commitment to enhancing artifact signing and verification. This alpha release also introduces several improvements designed to provide a more versatile and efficient experience for our users.
 
