@@ -83,6 +83,6 @@ Thank you for your continued support and contributions to the Notary Project. To
 Join two sessions at KubeCon EU in London to explore the challenges, lessons learned, and benefits of using the Notary Project. Dive deep into its mission and strategy, security audit, new use cases, and roadmap.
 
 - [Notary Project: The Key To Secure Software Supply Chain - Yi Zha, Microsoft & Guillaume Gill, OrangeLogic](https://sched.co/1td1W): April 4, 2025 13:45 - 14:15 BST, ICC Capital Suite 14-16, Level 3 
-- [Project Lightning Talk: Notary: Securing Binary Artifacts with Fine-grained Control - Yi Zha, Maintainer](https://sched.co/1tcut): April 1, 2025 10:13 - 10:18 BST, Platinum Suite, Level 3
+- [Project Lightning Talk: Notary Project: Securing Binary Artifacts with Fine-grained Control - Yi Zha, Maintainer](https://sched.co/1tcut): April 1, 2025 10:13 - 10:18 BST, Platinum Suite, Level 3
 
 Meet the Notary Project maintainers and ask us anything at our kiosk (18A) located at Level 1, Hall Entrance N8-N9. We'll be there every afternoon from April 2 to April 4!
