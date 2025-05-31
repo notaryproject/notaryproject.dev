@@ -5,6 +5,8 @@ date: 2025-6-2
 draft: false
 ---
 
+![notary project welcomes ratify](/notation-ratify.svg)
+
 We’re excited to announce that [Ratify](https://ratify.dev/) has officially joined the Notary Project as a subproject after the [vote](https://github.com/notaryproject/.github/issues/81) passed in the community! 🎉 This marks a significant step forward in our shared mission to deliver **secure, transparent, and trusted** software supply chain for the cloud-native ecosystem.
 
 The Notary Project is building a set of specifications and reference implementations to secure the integrity of container images and other OCI artifacts. With Ratify’s addition, we expand our surface to policy-based verification and extensibility—helping organizations validate signatures, SBOM, vulnerability scanning report, and other security metadata of container images before deploying to Kubernetes.
@@ -35,7 +37,13 @@ By welcoming Ratify as an official subproject, the Notary Project now offers a b
 - Notation enables signing of OCI artifacts at the build stage and CI/CD.
 - Ratify enforces signature and other supply chain metadata verification policies by working with Gatekeeper in runtime and Kubernetes.
 
+![notation-ratify-e2e](/notation-ratify-e2e.png)
+
 We also want to thank the contributors from Microsoft, Alibaba Cloud, and the wider community for their work on Ratify—and for their continued commitment to open governance by donating the project to Notary Project.
+
+## What Should Ratify Users Know
+
+For Ratify users, the Helm repo of Ratify has been changed from `https://ratify-project.github.io/ratify` to `https://notaryproject.github.io/ratify`. Please refer to [Ratify documentation](https://ratify.dev/docs/quick-start) to use the latest repo.
 
 ## What’s Next?
 
