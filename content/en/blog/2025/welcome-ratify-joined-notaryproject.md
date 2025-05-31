@@ -1,5 +1,5 @@
 ---
-title: Ratify Joins the Notary Project: Strengthening Software Supply Chain Security Together!
+title: Ratify Joins the Notary Project - Strengthening Software Supply Chain Security Together!
 author:  "Notary Project Community"
 date: 2025-6-2
 draft: false
