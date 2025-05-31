@@ -1,7 +1,7 @@
 ---
 title: Ratify Joins the Notary Project - Strengthening Software Supply Chain Security Together!
 author:  "Notary Project Community"
-date: 2025-6-2
+date: 2025-06-02
 draft: false
 ---
 
@@ -18,7 +18,7 @@ The Notary Project is building a set of specifications and reference implementat
 Ratify has been widely adopted by cloud providers and organizations to enforce verification of OCI artifacts across environments. As part of the Notary Project, Ratify brings:
 
 * An end-to-end policy-driven verification capabilities
-* Extensible plugin support for different verifiers (e.g., Notation, Cosign, SBOM, vulnerability report, custom plugins) and various cloud providers (AWS, Azure, Alibaba Cloud, Vanefi, etc.)
+* Extensible plugin support for different verifiers (e.g., Notation, Cosign, SBOM, vulnerability report, custom plugins) and various cloud providers (AWS, Azure, Alibaba Cloud, Venafi, etc.)
 * Enforcement at admission control when users deploying an untrusted application in Kubernetes 
 * Cross-tool ecosystem support for Gatekeeper, Trivy, etc.
 
