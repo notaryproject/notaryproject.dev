@@ -9,11 +9,11 @@ draft: false
 
 We’re excited to announce that [Ratify](https://ratify.dev/) has officially joined the Notary Project as a subproject after the [vote](https://github.com/notaryproject/.github/issues/81) passed in the community! 🎉 This marks a significant step forward in our shared mission to deliver **secure, transparent, and trusted** software supply chain for the cloud-native ecosystem.
 
-The Notary Project is building a set of specifications and reference implementations to secure the integrity of container images and other OCI artifacts. With Ratify’s addition, we expand our surface to policy-based verification and extensibility—helping organizations validate signatures, SBOM, vulnerability scanning report, and other security metadata of container images before deploying to Kubernetes.
+The Notary Project is building a set of specifications and reference implementations to secure the integrity of container images and other OCI artifacts. With Ratify’s addition, we expand our surface to policy-based verification and extensibility, helping organizations validate signatures, SBOM, vulnerability scanning report, and other security metadata of container images in CI/CD and before deploying to Kubernetes.
 
 ## Why Ratify?
 
-[Ratify](https://ratify.dev/) is an extensible verification framework for container images and other artifacts that can examine and author policies to audit existing resources in Kubernetes. Ratify can use and manage any number of custom verifiers for image metadata like signatures, SBOMs, vulnerability scan reports, and so on.
+[Ratify](https://ratify.dev/) is an extensible verification framework for container images and other artifacts that can examine and author policies to audit existing resources in Kubernetes and CI/CD. Ratify can use and manage any number of custom verifiers for image metadata like signatures, SBOMs, vulnerability scan reports, and so on.
 
 Ratify has been widely adopted by cloud providers and organizations to enforce verification of OCI artifacts across environments. As part of the Notary Project, Ratify brings:
 
@@ -34,8 +34,8 @@ These Ratify repositories have been transferred to Notary Project organization:
 
 By welcoming Ratify as an official subproject, the Notary Project now offers a broader and more opinionated solution stack for securing software supply chain:
 
-- Notation enables signing of OCI artifacts at the build stage and CI/CD.
-- Ratify enforces signature and other supply chain metadata verification policies by working with Gatekeeper in runtime and Kubernetes.
+- Notation enables signing of OCI artifacts in CI/CD pipelines.
+- Ratify enforces signature and other supply chain metadata verification policies by working with Gatekeeper in runtime, Kubernetes, and CI/CD.
 
 ![notation-ratify-e2e](/notation-ratify-e2e.png)
 
