@@ -35,7 +35,7 @@ These Ratify repositories have been transferred to Notary Project organization:
 By welcoming Ratify as an official subproject, the Notary Project now offers a broader and more opinionated solution stack for securing software supply chain:
 
 - Notation enables signing of OCI artifacts in CI/CD pipelines.
-- Ratify enforces signature and other supply chain metadata verification policies by working with Gatekeeper in runtime, Kubernetes, and CI/CD pipelines.
+- Ratify enforces signature and other supply chain metadata verification policies in container runtime, Kubernetes, and CI/CD pipelines.
 
 ![notation-ratify-e2e](/notation-ratify-e2e.png)
 
