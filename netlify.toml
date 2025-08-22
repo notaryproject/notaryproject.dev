@@ -7,5 +7,10 @@ command = "npm run build:production"
 
 [[redirects]]
   from = "/docs/how-to/registry-authentication/"
-  to = "/docs/user-guides/how-to/registry-authentication/"
+  to = "/docs/installation/cli/"
+  status = 301
+
+[[redirects]]
+  from = "/docs/how-to/registry-authentication/"
+  to = "/docs/user-guides/installation/cli/"
   status = 301
