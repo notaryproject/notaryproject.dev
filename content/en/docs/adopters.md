@@ -25,3 +25,6 @@ All organizations are sorted alphabetically below.
 | Tanzu Application Catalog | https://tanzu.vmware.com/application-catalog | [Sign and Verify OCI artifacts (e.g. Helm charts, container images, and metadata bundles](https://tanzu.vmware.com/content/vmware-application-catalog-resources/tanzu-application-catalog-leverages-notation) |
 | Venafi | https://venafi.com/codesign-protect/ | [Sign and Verify container images using Notation and Venafi CodeSign Protect](https://github.com/Venafi/notation-venafi-csp) |
 | Nomad Admission Control Proxy | https://github.com/mxab/nacp | [Uses `notation-go` remote verify to validate images when deploying Nomad Jobs](https://github.com/mxab/nacp?tab=readme-ov-file#notation) |
+| KubeStellar | https://console.kubestellar.io | [Guided Ratify install mission with automated Gatekeeper + Ratify deployment, signature verification testing, and
+  AI-powered troubleshooting across multi-cluster Kubernetes
+  fleets](https://console.kubestellar.io/missions/install-ratify?utm_source=github&utm_medium=adopters&utm_campaign=cncf_outreach&utm_term=ratify) |
